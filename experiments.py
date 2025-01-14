@@ -24,22 +24,22 @@ from resnetcifar import *
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='mlp', help='neural network used in training')
+    parser.add_argument('--model', type=str, default='simple-cnn', help='neural network used in training') # mlp
     parser.add_argument('--dataset', type=str, default='mnist', help='dataset used for training')
     parser.add_argument('--net_config', type=lambda x: list(map(int, x.split(', '))))
     parser.add_argument('--partition', type=str, default='homo', help='the data partitioning strategy')
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate (default: 0.01)')
     parser.add_argument('--epochs', type=int, default=5, help='number of local epochs')
-    parser.add_argument('--daisy', type=int, default=1, help='number of daisy rounds')
-    parser.add_argument('--n_parties', type=int, default=2,  help='number of workers in a distributed cluster')
-    parser.add_argument('--alg', type=str, default='fedavg',
-                            help='fl algorithms: fedavg/fedprox/scaffold/fednova/moon')
+    parser.add_argument('--n_parties', type=int, default=10,  help='number of workers in a distributed cluster') # 2
+    parser.add_argument('--alg', type=str, default='feddc', # fedavg
+                            help='fl algorithms: fedavg/fedprox/scaffold/fednova/moon/feddc')
     parser.add_argument('--use_projection_head', type=bool, default=False, help='whether add an additional header to model or not (see MOON)')
     parser.add_argument('--out_dim', type=int, default=256, help='the output dimension for the projection layer')
     parser.add_argument('--loss', type=str, default='contrastive', help='for moon')
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
-    parser.add_argument('--comm_round', type=int, default=50, help='number of maximum communication roun')
+    parser.add_argument('--comm_round', type=int, default=50, help='number of maximum communication round')
+    parser.add_argument('--daisy', type=int, default=0, help='number of daisy rounds')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")
@@ -48,7 +48,7 @@ def get_args():
     parser.add_argument('--logdir', type=str, required=False, default="./logs/", help='Log directory path')
     parser.add_argument('--modeldir', type=str, required=False, default="./models/", help='Model directory path')
     parser.add_argument('--beta', type=float, default=0.5, help='The parameter for the dirichlet distribution for data partitioning')
-    parser.add_argument('--device', type=str, default='cuda:0', help='The device to run the program')
+    parser.add_argument('--device', type=str, default='mps', help='The device to run the program') # cuda:0
     parser.add_argument('--log_file_name', type=str, default=None, help='The log file name')
     parser.add_argument('--optimizer', type=str, default='sgd', help='the optimizer')
     parser.add_argument('--mu', type=float, default=0.001, help='the mu parameter for fedprox')
@@ -601,45 +601,6 @@ def local_train_net(nets, selected, args, net_dataidx_map, test_dl = None, devic
     nets_list = list(nets.values())
     return nets_list
 
-def local_train_net_daisy(nets, selected, args, net_dataidx_map, test_dl = None, device="cpu"):
-    avg_acc = 0.0
-
-    for net_id, net in nets.items():
-        if net_id not in selected:
-            continue
-        dataidxs = net_dataidx_map[net_id]
-
-        logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
-        # move the model to cuda device:
-        net.to(device)
-
-        noise_level = args.noise
-        if net_id == args.n_parties - 1:
-            noise_level = 0
-
-        if args.noise_type == 'space':
-            train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level, net_id, args.n_parties-1)
-        else:
-            noise_level = args.noise / (args.n_parties - 1) * net_id
-            train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level)
-        train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
-        n_epoch = args.epochs
-
-
-        trainacc, testacc = train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, device=device)
-        logger.info("net %d final test acc %f" % (net_id, testacc))
-        avg_acc += testacc
-        # saving the trained models here
-        # save_model(net, net_id, args)
-        # else:
-        #     load_model(net, net_id, device=device)
-    avg_acc /= len(selected)
-    if args.alg == 'local_training':
-        logger.info("avg test acc %f" % avg_acc)
-
-    nets_list = list(nets.values())
-    return nets_list
-
 
 def local_train_net_fedprox(nets, selected, global_model, args, net_dataidx_map, test_dl = None, device="cpu"):
     avg_acc = 0.0
@@ -859,7 +820,7 @@ if __name__ == '__main__':
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
 
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
     logger.info(device)
 
     seed = args.init_seed
@@ -908,7 +869,6 @@ if __name__ == '__main__':
         test_dl_global = data.DataLoader(dataset=test_all_in_ds, batch_size=32, shuffle=False)
 
 
-
     if args.alg == 'fedavg':
         logger.info("Initializing nets")
         nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
@@ -938,6 +898,67 @@ if __name__ == '__main__':
 
             local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
+
+            # update global model
+            total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
+            fed_avg_freqs = [len(net_dataidx_map[r]) / total_data_points for r in selected]
+
+            for idx in range(len(selected)):
+                net_para = nets[selected[idx]].cpu().state_dict()
+                if idx == 0:
+                    for key in net_para:
+                        global_para[key] = net_para[key] * fed_avg_freqs[idx]
+                else:
+                    for key in net_para:
+                        global_para[key] += net_para[key] * fed_avg_freqs[idx]
+            global_model.load_state_dict(global_para)
+
+            logger.info('global n_training: %d' % len(train_dl_global))
+            logger.info('global n_test: %d' % len(test_dl_global))
+
+            global_model.to(device)
+            train_acc = compute_accuracy(global_model, train_dl_global, device=device)
+            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+
+
+            logger.info('>> Global Model Train accuracy: %f' % train_acc)
+            logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+    if args.alg == 'feddc':
+        logger.info("Initializing nets")
+        nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
+        global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
+        global_model = global_models[0]
+
+        global_para = global_model.state_dict()
+        if args.is_same_initial:
+            for net_id, net in nets.items():
+                net.load_state_dict(global_para)
+
+        for round in range(args.comm_round):
+            logger.info("in comm round:" + str(round))
+
+            arr = np.arange(args.n_parties)
+            np.random.shuffle(arr)
+            selected = arr[:int(args.n_parties * args.sample)]
+
+            global_para = global_model.state_dict()
+            if round == 0:
+                if args.is_same_initial:
+                    for idx in selected:
+                        nets[idx].load_state_dict(global_para)
+            else:
+                for idx in selected:
+                    nets[idx].load_state_dict(global_para)
+
+            for daisy in range(args.daisy + 1):
+                #local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+                # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
+
+                # DAISY ROUND
+                daisy_data_idx = list(net_dataidx_map.values())
+                random.shuffle(daisy_data_idx)
+                net_dataidx_map = dict(zip(net_dataidx_map.keys(), daisy_data_idx))
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
