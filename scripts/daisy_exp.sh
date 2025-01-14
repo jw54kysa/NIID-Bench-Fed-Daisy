@@ -1,3 +1,15 @@
+#!/bin/bash --
+#SBATCH --job-name=niid-bench-feddc
+#SBATCH --partition=paula
+#SBATCH -N 1
+#SBATCH --ntasks=1
+#SBATCH --gpus=a30:4
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=2-00:00:00
+#SBATCH -o log/%x.out-%j
+#SBATCH -e log/%x.error-%j
+#SBATCH --mail-type=BEGIN,END
 
 for alg in fedavg feddc
 do

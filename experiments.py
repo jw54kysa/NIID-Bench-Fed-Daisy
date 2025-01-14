@@ -820,7 +820,7 @@ if __name__ == '__main__':
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
 
     logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.NOTSET)
     logger.info(device)
 
     seed = args.init_seed
