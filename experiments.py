@@ -40,6 +40,7 @@ def get_args():
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
     parser.add_argument('--comm_round', type=int, default=50, help='number of maximum communication round')
     parser.add_argument('--daisy', type=int, default=0, help='number of daisy rounds')
+    parser.add_argument('--daisy_perm', type=str, default="random", help='type of daisy chain permutation: random/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")
@@ -820,7 +821,21 @@ if __name__ == '__main__':
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
 
     logger = logging.getLogger()
-    logger.setLevel(logging.NOTSET)
+    logger.setLevel(logging.INFO)
+
+    # Erstellen eines Handlers, um die Logs an die Konsole auszugeben
+    console_handler = logging.StreamHandler()
+
+    # Setzt das Level des Handlers auf DEBUG
+    console_handler.setLevel(logging.DEBUG)
+
+    # Formatierung der Log-Nachrichten
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
+
+    # Hinzufügen des Handlers zum Logger
+    logger.addHandler(console_handler)
+
     logger.info(device)
 
     seed = args.init_seed
@@ -930,6 +945,8 @@ if __name__ == '__main__':
         global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
         global_model = global_models[0]
 
+        real_net_dataidx_map = net_dataidx_map
+
         global_para = global_model.state_dict()
         if args.is_same_initial:
             for net_id, net in nets.items():
@@ -952,13 +969,31 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy + 1):
-                #local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+                local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
                 # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
-                # DAISY ROUND
-                daisy_data_idx = list(net_dataidx_map.values())
-                random.shuffle(daisy_data_idx)
-                net_dataidx_map = dict(zip(net_dataidx_map.keys(), daisy_data_idx))
+                # DAISY-CHAIN
+                if args.daisy_perm == 'random':
+                    # random permutation
+                    daisy_data_idx = list(net_dataidx_map.values())
+                    random.shuffle(daisy_data_idx)
+                    net_dataidx_map = dict(zip(net_dataidx_map.keys(), daisy_data_idx))
+                elif args.daisy_perm == 'prob_size':
+                    # probabilistic permutation on sample size
+                    sample_sizes = np.array([len(value) for value in real_net_dataidx_map.values()])
+
+                    # AMP ? sample_sizes = sample_sizes ** 2
+
+                    total_size = sample_sizes.sum()
+                    if total_size == 0:
+                        exit(1)
+
+                    probabilities = (sample_sizes / total_size)
+                    permutedDataIndex = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
+                                                         p=probabilities)
+
+                    for i in range(len(sample_sizes)):
+                        net_dataidx_map[i] = net_dataidx_map[permutedDataIndex[i]]
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
