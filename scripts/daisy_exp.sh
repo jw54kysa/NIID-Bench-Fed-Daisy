@@ -24,12 +24,13 @@ do
     --mu=0.01 \
     --comm_round=50 \
     --daisy 10 \
-    --partition=noniid-labeldir \
+    --daisy_perm='rand' \
+    --partition=iid-diff-quantity \
     --beta=0.5\
     --device='cuda:0'\
     --datadir='./data/' \
     --logdir='./logs/' \
     --noise=0\
-    --sample=0\
+    --sample=1\
     --init_seed=0
 done
