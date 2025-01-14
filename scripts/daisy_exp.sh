@@ -13,7 +13,9 @@
 
 for alg in fedavg feddc
 do
-  python experiments.py --model=simple-cnn \
+  srun singularity exec --nv FEDDC.sif \
+  python3.9 -u experiments.py \
+    --model=simple-cnn \
     --dataset=cifar10 \
     --alg=$alg \
     --lr=0.01 \
