@@ -12,6 +12,7 @@ import logging
 import os
 import copy
 from math import *
+import csv
 import random
 
 import datetime
@@ -799,8 +800,11 @@ if __name__ == '__main__':
     args = get_args()
     mkdirs(args.logdir)
     mkdirs(args.modeldir)
+
+    exp_log_time = datetime.datetime.now()
+
     if args.log_file_name is None:
-        argument_path='experiment_arguments-%s.json' % datetime.datetime.now().strftime("%Y-%m-%d-%H:%M-%S")
+        argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
     else:
         argument_path=args.log_file_name+'.json'
     with open(os.path.join(args.logdir, argument_path), 'w') as f:
@@ -812,7 +816,7 @@ if __name__ == '__main__':
         logging.root.removeHandler(handler)
 
     if args.log_file_name is None:
-        args.log_file_name = 'experiment_log-%s' % (datetime.datetime.now().strftime("%Y-%m-%d-%H:%M-%S"))
+        args.log_file_name = 'experiment_log-%s' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))
     log_path=args.log_file_name+'.log'
     logging.basicConfig(
         filename=os.path.join(args.logdir, log_path),
@@ -895,6 +899,8 @@ if __name__ == '__main__':
             for net_id, net in nets.items():
                 net.load_state_dict(global_para)
 
+        results = []
+
         for round in range(args.comm_round):
             logger.info("in comm round:" + str(round))
 
@@ -935,9 +941,20 @@ if __name__ == '__main__':
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
+            results.append({
+                "Round": round,
+                "Test Accuracy": test_acc,
+                "Confusion Matrix": conf_matrix.tolist()
+            })
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        # Export global results
+        with open(os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))), mode="w", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=["Round", "Test Accuracy", "Confusion Matrix"])
+            writer.writeheader()
+            writer.writerows(results)
 
     if args.alg == 'feddc':
         logger.info("Initializing nets")
@@ -951,6 +968,8 @@ if __name__ == '__main__':
         if args.is_same_initial:
             for net_id, net in nets.items():
                 net.load_state_dict(global_para)
+
+        results = []
 
         for round in range(args.comm_round):
             logger.info("in comm round:" + str(round))
@@ -1016,9 +1035,22 @@ if __name__ == '__main__':
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
+            results.append({
+                "Round": round,
+                "Daisy": args.daisy,
+                "Test Accuracy": test_acc,
+                "Confusion Matrix": conf_matrix.tolist()
+            })
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        # Export global results
+        with open(os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))),
+                  mode="w", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=["Round", "Daisy", "Test Accuracy", "Confusion Matrix"])
+            writer.writeheader()
+            writer.writerows(results)
 
 
     elif args.alg == 'fedprox':
