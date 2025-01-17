@@ -14,6 +14,7 @@ import copy
 from math import *
 import csv
 import random
+import pandas as pd
 
 import datetime
 #from torch.utils.tensorboard import SummaryWriter
@@ -950,11 +951,12 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-        # Export global results
-        with open(os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))), mode="w", newline="") as file:
-            writer = csv.DictWriter(file, fieldnames=["Round", "Test Accuracy", "Confusion Matrix"])
-            writer.writeheader()
-            writer.writerows(results)
+        # Convert the list of results to a pandas DataFrame
+        df_results = pd.DataFrame(results)
+
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv()
 
     if args.alg == 'feddc':
         logger.info("Initializing nets")
@@ -1045,12 +1047,12 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-        # Export global results
-        with open(os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))),
-                  mode="w", newline="") as file:
-            writer = csv.DictWriter(file, fieldnames=["Round", "Daisy", "Test Accuracy", "Confusion Matrix"])
-            writer.writeheader()
-            writer.writerows(results)
+        # Convert the list of results to a pandas DataFrame
+        df_results=pd.DataFrame(results)
+
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv()
 
 
     elif args.alg == 'fedprox':
