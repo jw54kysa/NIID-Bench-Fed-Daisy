@@ -802,14 +802,19 @@ if __name__ == '__main__':
     mkdirs(args.logdir)
     mkdirs(args.modeldir)
 
+    log_path = os.path.join("results", args.dataset, args.partition, args.alg, args.model)
+    mkdirs(log_path)
+
     exp_log_time = datetime.datetime.now()
 
     if args.log_file_name is None:
         argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
     else:
         argument_path=args.log_file_name+'.json'
-    with open(os.path.join(args.logdir, argument_path), 'w') as f:
+
+    with open(os.path.join(log_path, argument_path), 'w') as f:
         json.dump(str(args), f)
+
     device = torch.device(args.device)
     # logging.basicConfig(filename='test.log', level=logger.info, filemode='w')
     # logging.info("test")
@@ -818,9 +823,9 @@ if __name__ == '__main__':
 
     if args.log_file_name is None:
         args.log_file_name = 'experiment_log-%s' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))
-    log_path=args.log_file_name+'.log'
+    log_file_name=args.log_file_name+'.log'
     logging.basicConfig(
-        filename=os.path.join(args.logdir, log_path),
+        filename=os.path.join(log_path, log_file_name),
         # filename='/home/qinbin/test.log',
         format='%(asctime)s %(levelname)-8s %(message)s',
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
@@ -955,7 +960,7 @@ if __name__ == '__main__':
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv()
 
     if args.alg == 'feddc':
@@ -1051,7 +1056,7 @@ if __name__ == '__main__':
         df_results=pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(args.logdir, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv()
 
 
