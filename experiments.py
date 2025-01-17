@@ -961,7 +961,7 @@ if __name__ == '__main__':
 
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
-        df_results.to_csv()
+        df_results.to_csv(filename)
 
     if args.alg == 'feddc':
         logger.info("Initializing nets")
