@@ -13,6 +13,6 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 
 # Install Python packages
 RUN pip3.9 install --upgrade pip wheel setuptools --no-cache-dir && \
-    pip3.9 install --no-cache-dir torch torchvision numpy matplotlib scikit-learn Pillow
+    pip3.9 install --no-cache-dir torch torchvision numpy matplotlib scikit-learn Pillow pandas
 
 WORKDIR /app
