@@ -11,7 +11,7 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
-for alg in fedavg feddc
+for alg in feddc
 do
   srun singularity exec --nv FEDDC.sif \
   python3.9 -u experiments.py \
@@ -24,7 +24,7 @@ do
     --n_parties=10 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=50 \
+    --comm_round=5 \
     --daisy 10 \
     --daisy_perm='rand' \
     --partition=iid-diff-quantity \
