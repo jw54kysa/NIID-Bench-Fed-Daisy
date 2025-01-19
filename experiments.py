@@ -802,10 +802,11 @@ if __name__ == '__main__':
     mkdirs(args.logdir)
     mkdirs(args.modeldir)
 
-    log_path = os.path.join("results", args.dataset, args.partition, args.alg, args.model)
-    mkdirs(log_path)
-
     exp_log_time = datetime.datetime.now()
+
+    exp_tag = 'experiment-%s' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
+    log_path = os.path.join("results", args.dataset, args.partition, args.alg, args.model, exp_tag)
+    mkdirs(log_path)
 
     if args.log_file_name is None:
         argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
