@@ -813,7 +813,7 @@ if __name__ == '__main__':
         argument_path=args.log_file_name+'.json'
 
     with open(os.path.join(log_path, argument_path), 'w') as f:
-        json.dump(str(args), f)
+        json.dump(args, f, indent=4)
 
     device = torch.device(args.device)
     # logging.basicConfig(filename='test.log', level=logger.info, filemode='w')
