@@ -15,6 +15,7 @@ from math import *
 import csv
 import random
 import pandas as pd
+from plots import *
 
 import datetime
 #from torch.utils.tensorboard import SummaryWriter
@@ -813,8 +814,10 @@ if __name__ == '__main__':
     else:
         argument_path=args.log_file_name+'.json'
 
+    args_dict = vars(args)
+
     with open(os.path.join(log_path, argument_path), 'w') as f:
-        json.dump(args, f, indent=4)
+        json.dump(args_dict, f, indent=4)
 
     device = torch.device(args.device)
     # logging.basicConfig(filename='test.log', level=logger.info, filemode='w')
@@ -857,6 +860,8 @@ if __name__ == '__main__':
     logger.info("Partitioning data")
     X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
         args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, beta=args.beta)
+
+    plot_rss(net_dataidx_map, [0 for i in range(len(net_dataidx_map))], log_path, args)
 
     n_classes = len(np.unique(y_train))
 
