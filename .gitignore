@@ -4,3 +4,5 @@ data/
 niid-b/
 *.sif
 Singularity
+compare_results.ipynb
+tmp/

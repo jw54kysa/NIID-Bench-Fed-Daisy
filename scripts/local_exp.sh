@@ -1,0 +1,21 @@
+python -u experiments.py \
+      --model=simple-cnn \
+      --dataset=cifar10 \
+      --alg=fedavg \
+      --lr=0.01 \
+      --batch-size=64 \
+      --epochs=10 \
+      --n_parties=100 \
+      --rho=0.9 \
+      --mu=0.01 \
+      --comm_round=5 \
+      --daisy 10 \
+      --daisy_perm='rand' \
+      --partition=iid-diff-quantity \
+      --beta=0.5\
+      --device='mps'\
+      --datadir='./data/' \
+      --logdir='./local_logs/' \
+      --noise=0\
+      --sample=1\
+      --init_seed=0
