@@ -3,8 +3,8 @@
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --gpus=a30:4
-#SBATCH --cpus-per-task=8
+#SBATCH --gpus=a30:1
+#SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
@@ -15,9 +15,10 @@ for dataset in cifar10
 do
   for part in noniid-labeldir
   do
-    for n_parties in 50
+    for n_parties in 10 50 100 150 200
     do
-      python create_partitions.py \
+      srun singularity exec --nv FEDDC.sif \
+      python3.9 -u create_partitions.py \
         --dataset=$dataset \
         --n_parties=$n_parties \
         --partition=$part \
