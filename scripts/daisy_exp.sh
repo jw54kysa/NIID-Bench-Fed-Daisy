@@ -29,7 +29,8 @@ do
       --comm_round=50 \
       --daisy 10 \
       --daisy_perm=$perm \
-      --partition=iid-diff-quantity \
+      --partition=noniid-labeldir \
+      --partition_path='partitions/cifar10/150/noniid-labeldir/partition_tuple.pkl' \
       --beta=0.5\
       --device='cuda:0'\
       --datadir='./data/' \
