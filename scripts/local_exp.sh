@@ -5,13 +5,14 @@ python -u experiments.py \
       --lr=0.01 \
       --batch-size=64 \
       --epochs=10 \
-      --n_parties=100 \
+      --n_parties=10 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=5 \
       --daisy 10 \
       --daisy_perm='rand' \
       --partition=iid-diff-quantity \
+      --partition_path='results/cifar10/iid-diff-quantity/fedavg/simple-cnn/experiment-2025-01-21-11:56-40/partition_tuple.pkl' \
       --beta=0.5\
       --device='mps'\
       --datadir='./data/' \

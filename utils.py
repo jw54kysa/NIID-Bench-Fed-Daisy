@@ -21,6 +21,7 @@ import torch.optim as optim
 import torchvision.utils as vutils
 import time
 import random
+import pickle
 
 from models.mnist_model import Generator, Discriminator, DHead, QHead
 from config import params
@@ -176,7 +177,7 @@ def record_net_data_stats(y_train, net_dataidx_map, logdir):
 
     return net_cls_counts
 
-def partition_data(dataset, datadir, logdir, partition, n_parties, beta=0.4):
+def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, beta=0.4):
     #np.random.seed(2020)
     #torch.manual_seed(2020)
 
@@ -542,6 +543,10 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, beta=0.4):
             net_dataidx_map[j] = idx_batch[j]
             
     traindata_cls_counts = record_net_data_stats(y_train, net_dataidx_map, logdir)
+
+    with open(log_path + '/partition_tuple.pkl', 'wb') as file:
+        pickle.dump((X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts), file)
+
     return (X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts)
 
 
