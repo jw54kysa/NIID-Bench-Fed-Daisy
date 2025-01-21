@@ -31,6 +31,7 @@ def get_args():
     parser.add_argument('--dataset', type=str, default='mnist', help='dataset used for training')
     parser.add_argument('--net_config', type=lambda x: list(map(int, x.split(', '))))
     parser.add_argument('--partition', type=str, default='homo', help='the data partitioning strategy')
+    parser.add_argument('--partition_path', type=str, default=None, help='the path to partition pickle file')
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate (default: 0.01)')
     parser.add_argument('--epochs', type=int, default=5, help='number of local epochs')
@@ -857,9 +858,16 @@ if __name__ == '__main__':
     np.random.seed(seed)
     torch.manual_seed(seed)
     random.seed(seed)
-    logger.info("Partitioning data")
-    X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
-        args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, beta=args.beta)
+
+    if args.partition_path is not None:
+        logger.info("Using Partition Pickle File")
+        with open(args.partition_path, 'rb') as file:
+            # Load (unpickle) the tuple from the file
+            X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = pickle.load(file)
+    else:
+        logger.info("Partitioning data")
+        X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
+            args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
     plot_rss(net_dataidx_map, [0 for i in range(len(net_dataidx_map))], log_path, args)
 
