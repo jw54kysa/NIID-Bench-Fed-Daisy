@@ -13,9 +13,9 @@
 
 for dataset in cifar10
 do
-  for part in homo iid-diff-quantity noniid-labeldir real mixed
+  for part in noniid-labeldir
   do
-    for n_parties in 10 50 100 150
+    for n_parties in 50
     do
       python create_partitions.py \
         --dataset=$dataset \

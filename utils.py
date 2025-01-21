@@ -187,6 +187,7 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         X_train, y_train, X_test, y_test = load_fmnist_data(datadir)
     elif dataset == 'cifar10':
         X_train, y_train, X_test, y_test = load_cifar10_data(datadir)
+        print('>>> data loaded')
     elif dataset == 'svhn':
         X_train, y_train, X_test, y_test = load_svhn_data(datadir)
     elif dataset == 'celeba':
@@ -299,6 +300,7 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         idxs = np.random.permutation(n_train)
         batch_idxs = np.array_split(idxs, n_parties)
         net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
+        print('>>> homo partition created')
 
 
     elif partition == "noniid-labeldir":
@@ -398,6 +400,7 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         proportions = (np.cumsum(proportions)*len(idxs)).astype(int)[:-1]
         batch_idxs = np.split(idxs,proportions)
         net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
+        print('>>> iid-diff-quantity partition created')
         
     elif partition == "mixed":
         min_size = 0
