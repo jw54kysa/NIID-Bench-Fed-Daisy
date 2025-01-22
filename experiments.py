@@ -963,6 +963,8 @@ if __name__ == '__main__':
 
             results.append({
                 "Round": round,
+                "Epoch": args.epoch,
+                "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
@@ -1059,6 +1061,8 @@ if __name__ == '__main__':
             results.append({
                 "Round": round,
                 "Daisy": args.daisy,
+                "Epoch": args.epoch,
+                "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
@@ -1066,12 +1070,12 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-            # Convert the list of results to a pandas DataFrame
-            df_results = pd.DataFrame(results)
+        # Convert the list of results to a pandas DataFrame
+        df_results = pd.DataFrame(results)
 
-            # Save the DataFrame as a CSV file
-            filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
-            df_results.to_csv(filename)
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv(filename)
 
 
     elif args.alg == 'fedprox':
