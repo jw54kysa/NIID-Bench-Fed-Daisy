@@ -23,13 +23,14 @@ do
       --lr=0.01 \
       --batch-size=64 \
       --epochs=1 \
-      --n_parties=150 \
+      --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
       --daisy 10 \
       --daisy_perm=$perm \
       --partition=noniid-labeldir \
+      --partition_path='partitions/cifar10/100/noniid-labeldir/partition_tuple.pkl' \
       --beta=0.5\
       --device='cuda:0'\
       --datadir='./data/' \
