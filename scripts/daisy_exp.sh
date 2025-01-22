@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=niid-bench-feddc
+#SBATCH --job-name=feddc-niid-bench
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1

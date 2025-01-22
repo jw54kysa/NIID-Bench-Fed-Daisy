@@ -43,16 +43,16 @@ def plot_rss(client_idxs, visits, path, args):
 
     plt.savefig(path + "/rss_plt_niid.png")
 
-    #combined = sorted(zip(counts, visits), key=lambda x: x[0])
-
-    # Separate the sorted lists
-    #sorted_counts, sorted_visits = zip(*combined)
-
-    # Convert back to lists
-    #counts = list(sorted_counts)
-    #visits = list(sorted_visits)
+    # PLOT SAMPLE SIZE AND VISITS
 
     fig, ax1 = plt.subplots(figsize=(16, 8))
+
+    if visits is not None:
+        combined = sorted(zip(counts, visits), key=lambda x: x[0])
+        sorted_counts, sorted_visits = zip(*combined)
+
+        counts = list(sorted_counts)
+        visits = list(sorted_visits)
 
     # Bar plot for sample size
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
@@ -62,14 +62,34 @@ def plot_rss(client_idxs, visits, path, args):
     ax1.set_ylabel("Sample Size", color='blue')
     ax1.tick_params(axis='y', labelcolor='blue')
 
-    # Create second y-axis for visits
-    # ax2 = ax1.twinx()
-    # ax2.plot(np.arange(len(visits)), visits, label='Visits', color='red', marker='o')
-    # ax2.set_ylabel("Visits", color='red')
-    # ax2.tick_params(axis='y', labelcolor='red')
+    if visits is not None:
+        # Create second y-axis for visits
+        ax2 = ax1.twinx()
+        ax2.plot(np.arange(len(visits)), visits, label='Visits', color='red', marker='o')
+        ax2.set_ylabel("Visits", color='red')
+        ax2.tick_params(axis='y', labelcolor='red')
 
     # Adding legends for both plots
     fig.legend()
 
     # Save and display the plot
     plt.savefig(path + "/rss_plt.png")
+
+
+def calculate_label_distribution(client_idxs, path, args):
+    counts = {}
+    data = {}
+    for idx, l in client_idxs.items():
+        sample_size = len(l)
+        counts[idx] = sample_size
+
+        train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, l,
+                                                             0)
+        label_counter = Counter()
+        for inputs, labels in train_dl_local:
+            # Update the counter with the labels in the current batch
+            label_counter.update(labels.tolist())
+
+        # To print the counts of each label
+        data[idx] = dict(label_counter)
+        print(data[idx])

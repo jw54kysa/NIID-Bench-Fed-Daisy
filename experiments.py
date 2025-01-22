@@ -869,7 +869,12 @@ if __name__ == '__main__':
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-    plot_rss(net_dataidx_map, [0 for i in range(len(net_dataidx_map))], log_path, args)
+
+    calculate_label_distribution(net_dataidx_map, log_path, args)
+
+    exit(99)
+
+    plot_rss(net_dataidx_map, None, log_path, args)
 
     n_classes = len(np.unique(y_train))
 
@@ -963,7 +968,7 @@ if __name__ == '__main__':
 
             results.append({
                 "Round": round,
-                "Epoch": args.epoch,
+                "Epoch": args.epochs,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
@@ -1061,7 +1066,7 @@ if __name__ == '__main__':
             results.append({
                 "Round": round,
                 "Daisy": args.daisy,
-                "Epoch": args.epoch,
+                "Epoch": args.epochs,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
