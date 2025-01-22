@@ -12,7 +12,7 @@ python -u experiments.py \
       --daisy 10 \
       --daisy_perm='rand' \
       --partition=iid-diff-quantity \
-      --partition_path='results/cifar10/iid-diff-quantity/fedavg/simple-cnn/experiment-2025-01-21-11:56-40/partition_tuple.pkl' \
+      --partition_path='partitions/cifar10/100/noniid-labeldir/partition_tuple.pkl' \
       --beta=0.5\
       --device='mps'\
       --datadir='./data/' \
