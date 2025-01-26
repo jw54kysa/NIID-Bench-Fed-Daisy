@@ -18,6 +18,7 @@ import pandas as pd
 from plots import *
 
 import datetime
+import time
 #from torch.utils.tensorboard import SummaryWriter
 
 from model import *
@@ -799,6 +800,7 @@ def get_partition_dict(dataset, partition, n_parties, init_seed=0, datadir='./da
     return net_dataidx_map
 
 if __name__ == '__main__':
+    start_time = time.time()
     # torch.set_printoptions(profile="full")
     args = get_args()
     mkdirs(args.logdir)
@@ -836,7 +838,7 @@ if __name__ == '__main__':
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
 
     logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.WARNING)
 
     # Erstellen eines Handlers, um die Logs an die Konsole auszugeben
     console_handler = logging.StreamHandler()
@@ -860,21 +862,16 @@ if __name__ == '__main__':
     random.seed(seed)
 
     if args.partition_path is not None:
-        logger.info("Using Partition Pickle File")
+        logger.warning("Using Partition Pickle File")
         with open(args.partition_path, 'rb') as file:
             # Load (unpickle) the tuple from the file
             X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = pickle.load(file)
     else:
-        logger.info("Partitioning data")
+        logger.warning("Partitioning data")
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-
-    calculate_label_distribution(net_dataidx_map, log_path, args)
-
-    exit(99)
-
-    plot_rss(net_dataidx_map, None, log_path, args)
+        plot_rss(net_dataidx_map, None, log_path, args)
 
     n_classes = len(np.unique(y_train))
 
@@ -927,7 +924,7 @@ if __name__ == '__main__':
         results = []
 
         for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+            logger.warning("in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
@@ -1000,7 +997,7 @@ if __name__ == '__main__':
         results = []
 
         for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+            logger.warning("in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
@@ -1081,7 +1078,6 @@ if __name__ == '__main__':
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
-
 
     elif args.alg == 'fedprox':
         logger.info("Initializing nets")
@@ -1384,4 +1380,10 @@ if __name__ == '__main__':
 
         logger.info("All in test acc: %f" % testacc)
 
-   
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    hours, rem = divmod(elapsed_time, 3600)
+    minutes, seconds = divmod(rem, 60)
+
+    logger.warning(f"Execution time: {int(hours)} hours, {int(minutes)} minutes, {seconds:.2f} seconds")

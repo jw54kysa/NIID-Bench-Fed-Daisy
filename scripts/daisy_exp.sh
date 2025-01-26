@@ -29,14 +29,14 @@ do
       --comm_round=50 \
       --daisy 10 \
       --daisy_perm=$perm \
-      --partition=noniid-labeldir \
-      --partition_path='partitions/cifar10/100/noniid-labeldir/partition_tuple.pkl' \
-      --beta=0.5\
+      --partition=iid-diff-quantity \
+      --partition_path='partitions/cifar10/100/iid-diff-quantity/partition_tuple.pkl' \
+      --beta=0.5 \
       --device='cuda:0'\
       --datadir='./data/' \
       --logdir='./logs/' \
-      --noise=0\
-      --sample=1\
+      --noise=0 \
+      --sample=1 \
       --init_seed=0
   done
 done
