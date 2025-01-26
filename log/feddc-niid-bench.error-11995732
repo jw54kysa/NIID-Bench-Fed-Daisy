@@ -1,0 +1,8 @@
+2025-01-22 18:50:27,933 - root - INFO - cuda:0
+2025-01-22 18:50:27,933 - root - INFO - ####################################################################################################
+2025-01-22 18:50:27,935 - root - INFO - Using Partition Pickle File
+srun: error: paula12: task 0: Exited with exit code 99
+2025-01-22 18:53:25,789 - root - INFO - cuda:0
+2025-01-22 18:53:25,789 - root - INFO - ####################################################################################################
+2025-01-22 18:53:25,792 - root - INFO - Using Partition Pickle File
+srun: error: paula12: task 0: Exited with exit code 99
