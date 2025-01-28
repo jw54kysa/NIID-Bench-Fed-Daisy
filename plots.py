@@ -56,7 +56,7 @@ def plot_rss(client_idxs, visits, path, args):
 
     # Bar plot for sample size
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
-    ax1.bar(np.arange(len(counts)), counts.values(), label='Sample Size', alpha=0.7, color='blue')
+    ax1.bar(np.arange(len(counts)), counts, label='Sample Size', alpha=0.7, color='blue')
     ax1.set_title("Client Sample Size")
     ax1.set_xlabel("Client")
     ax1.set_ylabel("Sample Size", color='blue')
