@@ -19,20 +19,20 @@ do
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
-      --alg=$alg \
+      --alg=feddc \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=10 \
+      --epochs=1 \
       --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=50 \
-      --daisy 10 \
+      --comm_round=5 \
+      --daisy=5 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity \
       --partition_path='partitions/cifar10/100/iid-diff-quantity/partition_tuple.pkl' \
       --beta=0.5 \
-      --device='cuda:0'\
+      --device='cuda' \
       --datadir='./data/' \
       --logdir='./logs/' \
       --noise=0 \

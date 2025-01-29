@@ -600,13 +600,13 @@ def train_single_net(net_id, net, dataidxs, args, device, logger):
     return testacc
 
 # Parallel training using ProcessPoolExecutor
-def parallel_train_networks(nets, selected, net_dataidx_map, args, device, logger):
+def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
     avg_acc = 0
     with concurrent.futures.ProcessPoolExecutor() as executor:
         # Prepare the futures for parallel execution
         futures = [
             executor.submit(
-                train_single_net, net_id, net, net_dataidx_map[net_id], args, device, logger
+                train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
             )
             for net_id, net in nets.items() if net_id in selected
         ]
@@ -618,13 +618,13 @@ def parallel_train_networks(nets, selected, net_dataidx_map, args, device, logge
     return avg_acc / len(futures)
 
 
-def local_train_net(nets, selected, args, net_dataidx_map, test_dl = None, device="cpu"):
+def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = None, device="cpu"):
     avg_acc = 0.0
 
     for net_id, net in nets.items():
         if net_id not in selected:
             continue
-        dataidxs = net_dataidx_map[net_id]
+        dataidxs = net_dataidx_map[local_data_index[net_id]]
 
         logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
         # move the model to cuda device:
@@ -643,7 +643,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, test_dl = None, devic
         n_epoch = args.epochs
 
 
-        trainacc, testacc = train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, device=device)
+        trainacc, testacc = train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
         logger.info("net %d final test acc %f" % (net_id, testacc))
         avg_acc += testacc
         # saving the trained models here
@@ -989,7 +989,8 @@ if __name__ == '__main__':
                 for idx in selected:
                     nets[idx].load_state_dict(global_para)
 
-            local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+            local_data_index = np.arange(args.n_parties)
+            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model
@@ -1037,7 +1038,7 @@ if __name__ == '__main__':
         global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
         global_model = global_models[0]
 
-        real_net_dataidx_map = net_dataidx_map
+        local_data_index = np.arange(args.n_parties)
 
         global_para = global_model.state_dict()
         if args.is_same_initial:
@@ -1045,9 +1046,10 @@ if __name__ == '__main__':
                 net.load_state_dict(global_para)
 
         results = []
+        visits = {i: 1 for i in range(args.n_parties)}
 
         for round in range(args.comm_round):
-            logger.warning("in comm round: %s from %s" % (str(round), str(args.comm_round)))
+            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
@@ -1063,21 +1065,19 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy + 1):
-                parallel_train_networks(nets, selected, net_dataidx_map, args, device, logger)
-                # local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
-                # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
+                # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
-                logger.warning(">>>>>>>>>>>>> DAISY ROUND")
+                logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
                 # DAISY-CHAIN
                 if args.daisy_perm == 'random':
                     # random permutation
-                    daisy_data_idx = list(net_dataidx_map.values())
-                    random.shuffle(daisy_data_idx)
-                    net_dataidx_map = dict(zip(net_dataidx_map.keys(), daisy_data_idx))
+                    random.shuffle(local_data_index)
                 elif args.daisy_perm == 'prob_size':
                     # probabilistic permutation on sample size
-                    sample_sizes = np.array([len(value) for value in real_net_dataidx_map.values()])
+                    daisy_data_idx = list(net_dataidx_map.values())
+                    sample_sizes = np.array([len(value) for value in daisy_data_idx])
 
                     # AMP ? sample_sizes = sample_sizes ** 2
 
@@ -1086,11 +1086,13 @@ if __name__ == '__main__':
                         exit(1)
 
                     probabilities = (sample_sizes / total_size)
-                    permutedDataIndex = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
+                    permuted_data_idx = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
                                                          p=probabilities)
 
-                    for i in range(len(sample_sizes)):
-                        net_dataidx_map[i] = net_dataidx_map[permutedDataIndex[i]]
+                    for idx in permuted_data_idx:
+                        visits[idx] += 1
+
+                    local_data_index = permuted_data_idx
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
@@ -1124,6 +1126,8 @@ if __name__ == '__main__':
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        plot_rss(net_dataidx_map, visits, log_path, args)
 
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
@@ -1424,7 +1428,9 @@ if __name__ == '__main__':
         logger.info("Initializing nets")
         nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
         arr = np.arange(args.n_parties)
-        local_train_net(nets, arr, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+        args
+        local_data_index = np.arange(args.n_parties)
+        local_train_net(nets, arr, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
     elif args.alg == 'all_in':
         nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, 1, args)
