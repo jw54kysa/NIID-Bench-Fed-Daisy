@@ -154,7 +154,7 @@ def init_nets(net_configs, dropout_p, n_parties, args):
     return nets, model_meta_data, layer_type
 
 
-def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, device="cpu"):
+def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, args, device="cpu"):
     logger.info('Training network %s' % str(net_id))
 
     train_acc = compute_accuracy(net, train_dataloader, device=device)
@@ -566,6 +566,56 @@ def view_image(train_dataloader):
         np.save("img.npy", x)
         print(x.shape)
         exit(0)
+
+
+import concurrent.futures
+
+def train_single_net(net_id, net, dataidxs, args, device, logger):
+    # Same training logic for a single network
+    logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
+    net.to(device)
+
+    noise_level = args.noise
+    if net_id == args.n_parties - 1:
+        noise_level = 0
+
+    if args.noise_type == 'space':
+        train_dl_local, test_dl_local, _, _ = get_dataloader(
+            args.dataset, args.datadir, args.batch_size, 32, dataidxs,
+            noise_level, net_id, args.n_parties-1
+        )
+    else:
+        noise_level = args.noise / (args.n_parties - 1) * net_id
+        train_dl_local, test_dl_local, _, _ = get_dataloader(
+            args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level
+        )
+
+    train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
+    n_epoch = args.epochs
+
+    trainacc, testacc = train_net(
+        net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
+    )
+    logger.info("net %d final test acc %f" % (net_id, testacc))
+    return testacc
+
+# Parallel training using ProcessPoolExecutor
+def parallel_train_networks(nets, selected, net_dataidx_map, args, device, logger):
+    avg_acc = 0
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        # Prepare the futures for parallel execution
+        futures = [
+            executor.submit(
+                train_single_net, net_id, net, net_dataidx_map[net_id], args, device, logger
+            )
+            for net_id, net in nets.items() if net_id in selected
+        ]
+
+        # Gather the results as they complete
+        for future in concurrent.futures.as_completed(futures):
+            avg_acc += future.result()
+
+    return avg_acc / len(futures)
 
 
 def local_train_net(nets, selected, args, net_dataidx_map, test_dl = None, device="cpu"):
@@ -1013,8 +1063,11 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy + 1):
-                local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+                parallel_train_networks(nets, selected, net_dataidx_map, args, device, logger)
+                # local_train_net(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, device=device)
                 # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
+
+                logger.warning(">>>>>>>>>>>>> DAISY ROUND")
 
                 # DAISY-CHAIN
                 if args.daisy_perm == 'random':
@@ -1078,6 +1131,7 @@ if __name__ == '__main__':
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
+
 
     elif args.alg == 'fedprox':
         logger.info("Initializing nets")
@@ -1387,3 +1441,5 @@ if __name__ == '__main__':
     minutes, seconds = divmod(rem, 60)
 
     logger.warning(f"Execution time: {int(hours)} hours, {int(minutes)} minutes, {seconds:.2f} seconds")
+
+
