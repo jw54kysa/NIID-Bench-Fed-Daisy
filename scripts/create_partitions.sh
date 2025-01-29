@@ -15,10 +15,10 @@ for dataset in cifar10
 do
   for part in iid-diff-quantity
   do
-    for n_parties in 10 50 100
+    for n_parties in 10
     do
-      srun singularity exec --nv FEDDC.sif \
-      python3.9 -u create_partitions.py \
+
+      python -u create_partitions.py \
         --dataset=$dataset \
         --n_parties=$n_parties \
         --partition=$part \

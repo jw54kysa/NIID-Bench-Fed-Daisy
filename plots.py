@@ -6,8 +6,8 @@ from utils import *
 
 # Plot random size client samples
 def plot_rss(client_idxs, visits, path, args):
-    counts = {}
     data = {}
+    counts = [0 for _ in range(len(client_idxs))]
     for idx, l in client_idxs.items():
         counts[idx] = len(l)
 
@@ -27,12 +27,11 @@ def plot_rss(client_idxs, visits, path, args):
 
     fig, ax = plt.subplots(figsize=(16, 8))
     # Plot the bars dynamically, stacking them
-    bar_width = 0.5
     bottom = np.zeros(len(labels))  # Initialize bottom at 0 for stacking
 
     for category in categories:
         values = category_values[category]
-        ax.bar(np.arange(len(labels)), values, bar_width, bottom=bottom, label=category)
+        ax.bar(np.arange(len(labels)), values, bottom=bottom, label=category)
         bottom += np.array(values)  # Update the bottom for the next category
 
     # Adding labels and title

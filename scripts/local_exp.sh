@@ -1,5 +1,5 @@
 
-for perm in rand prob_size
+for perm in rand
 do
   python -u experiments.py \
       --model=simple-cnn \
@@ -12,15 +12,14 @@ do
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=5 \
-      --daisy 10 \
+      --daisy=5 \
       --daisy_perm=$perm \
-      --partition=iid-diff-quantity \
-      --partition_path='partitions/cifar10/100/iid-diff-quantity/partition_tuple.pkl' \
+      --partition='iid-diff-quantity' \
       --beta=0.5 \
-      --device='cpu' \
+      --device='mps' \
       --datadir='./data/' \
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=0
+      --init_seed=1
 done
