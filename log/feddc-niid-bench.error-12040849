@@ -1,0 +1,244 @@
+2025-01-30 19:47:13,749 - root - WARNING - Partitioning data
+2025-01-30 19:47:52,628 - root - WARNING - >>>>>>>>>>>>> in comm round: 0 from 10
+2025-01-30 19:50:03,363 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 19:52:46,285 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 19:55:06,295 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 19:57:49,386 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 20:00:30,521 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 20:03:10,590 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 20:06:41,821 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 20:08:52,311 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 20:12:01,450 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 20:14:37,306 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 20:17:52,504 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 20:18:12,322 - root - WARNING - >>>>>>>>>>>>> in comm round: 1 from 10
+2025-01-30 20:20:53,729 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 20:23:39,019 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 20:26:11,506 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 20:28:30,442 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 20:31:12,670 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 20:33:31,063 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 20:37:03,187 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 20:39:46,176 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 20:42:33,812 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 20:45:00,253 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 20:47:37,386 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 20:47:57,690 - root - WARNING - >>>>>>>>>>>>> in comm round: 2 from 10
+2025-01-30 20:50:55,387 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 20:53:48,315 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 20:56:18,429 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 20:58:45,338 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 21:01:17,918 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 21:04:41,491 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 21:07:25,367 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 21:10:20,036 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 21:13:10,864 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 21:16:13,557 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 21:18:43,209 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 21:19:02,307 - root - WARNING - >>>>>>>>>>>>> in comm round: 3 from 10
+2025-01-30 21:21:30,780 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 21:24:01,447 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 21:27:01,282 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 21:29:01,339 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 21:31:48,684 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 21:34:27,566 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 21:38:01,776 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 21:40:38,558 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 21:42:58,379 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 21:45:59,456 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 21:48:04,382 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 21:48:23,663 - root - WARNING - >>>>>>>>>>>>> in comm round: 4 from 10
+2025-01-30 21:51:13,535 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 21:53:46,589 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 21:56:35,631 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 21:59:36,137 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 22:02:22,224 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 22:05:16,184 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 22:08:02,897 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 22:10:45,318 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 22:13:30,334 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 22:17:06,046 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 22:19:53,826 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 22:20:13,835 - root - WARNING - >>>>>>>>>>>>> in comm round: 5 from 10
+2025-01-30 22:23:18,199 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 22:27:09,228 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 22:30:25,650 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 22:33:10,886 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 22:36:09,980 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 22:39:15,727 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 22:42:33,179 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 22:44:42,375 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 22:46:55,951 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 22:49:34,646 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 22:52:03,354 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 22:52:22,817 - root - WARNING - >>>>>>>>>>>>> in comm round: 6 from 10
+2025-01-30 22:54:19,879 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 22:57:14,931 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 22:59:58,359 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 23:02:46,303 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 23:06:05,363 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 23:08:31,326 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 23:11:15,709 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 23:14:10,876 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 23:16:47,924 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 23:19:10,871 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 23:22:11,995 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 23:22:33,076 - root - WARNING - >>>>>>>>>>>>> in comm round: 7 from 10
+2025-01-30 23:25:27,743 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 23:28:54,439 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 23:30:42,052 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-30 23:32:48,552 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-30 23:35:19,949 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-30 23:37:38,097 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-30 23:40:42,687 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-30 23:43:08,796 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-30 23:46:02,736 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-30 23:48:21,793 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-30 23:50:44,166 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-30 23:51:18,093 - root - WARNING - >>>>>>>>>>>>> in comm round: 8 from 10
+2025-01-30 23:54:08,278 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-30 23:56:28,271 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-30 23:59:31,209 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 00:02:17,150 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 00:04:53,997 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 00:07:23,901 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 00:10:05,676 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 00:12:42,266 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 00:15:14,986 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 00:17:42,208 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 00:19:59,992 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 00:20:19,172 - root - WARNING - >>>>>>>>>>>>> in comm round: 9 from 10
+2025-01-31 00:22:41,975 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 00:26:20,036 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 00:29:45,106 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 00:32:39,391 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 00:35:06,874 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 00:37:40,590 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 00:40:23,610 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 00:42:42,745 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 00:45:41,716 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 00:47:43,786 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 00:51:01,866 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 00:51:53,433 - root - WARNING - Execution time: 5 hours, 4 minutes, 39.69 seconds
+2025-01-31 00:52:04,265 - root - WARNING - Partitioning data
+2025-01-31 00:52:41,049 - root - WARNING - >>>>>>>>>>>>> in comm round: 0 from 10
+2025-01-31 00:54:41,483 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 00:57:39,043 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 01:00:23,377 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 01:03:21,777 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 01:06:17,669 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 01:09:10,170 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 01:12:37,164 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 01:14:58,454 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 01:18:25,982 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 01:21:20,434 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 01:24:46,851 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 01:25:07,954 - root - WARNING - >>>>>>>>>>>>> in comm round: 1 from 10
+2025-01-31 01:28:05,879 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 01:30:52,947 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 01:33:41,673 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 01:36:27,458 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 01:39:22,182 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 01:41:51,262 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 01:45:39,092 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 01:48:30,687 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 01:51:38,399 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 01:54:28,211 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 01:57:16,158 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 01:57:38,253 - root - WARNING - >>>>>>>>>>>>> in comm round: 2 from 10
+2025-01-31 02:00:40,284 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 02:03:44,267 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 02:06:30,551 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 02:09:16,094 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 02:11:59,163 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 02:15:13,787 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 02:18:02,782 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 02:21:09,338 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 02:24:18,556 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 02:27:30,067 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 02:30:08,673 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 02:30:32,392 - root - WARNING - >>>>>>>>>>>>> in comm round: 3 from 10
+2025-01-31 02:33:20,412 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 02:35:53,226 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 02:39:10,852 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 02:41:25,327 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 02:44:35,887 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 02:47:19,070 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 02:51:00,554 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 02:53:50,059 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 02:56:29,624 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 02:59:38,426 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 03:01:50,409 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 03:02:11,677 - root - WARNING - >>>>>>>>>>>>> in comm round: 4 from 10
+2025-01-31 03:05:14,787 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 03:08:09,570 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 03:11:17,953 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 03:14:43,459 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 03:17:42,136 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 03:20:47,184 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 03:23:37,877 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 03:26:13,498 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 03:29:05,509 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 03:33:02,438 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 03:36:09,121 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 03:36:33,283 - root - WARNING - >>>>>>>>>>>>> in comm round: 5 from 10
+2025-01-31 03:40:15,861 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 03:44:20,857 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 03:47:50,678 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 03:50:52,592 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 03:54:07,996 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 03:57:30,033 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 04:01:07,536 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 04:03:28,832 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 04:05:44,277 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 04:08:14,646 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 04:11:17,554 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 04:11:41,153 - root - WARNING - >>>>>>>>>>>>> in comm round: 6 from 10
+2025-01-31 04:13:47,871 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 04:17:03,299 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 04:20:02,322 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 04:23:11,670 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 04:26:50,476 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 04:29:35,613 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 04:32:43,939 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 04:36:00,527 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 04:38:48,820 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 04:41:33,216 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 04:44:48,591 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 04:45:21,115 - root - WARNING - >>>>>>>>>>>>> in comm round: 7 from 10
+2025-01-31 04:48:43,410 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 04:52:39,164 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 04:54:36,447 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 04:57:01,747 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 04:59:49,587 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 05:02:29,070 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 05:05:51,331 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 05:08:35,462 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 05:11:45,564 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 05:14:17,996 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 05:16:53,946 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 05:17:16,766 - root - WARNING - >>>>>>>>>>>>> in comm round: 8 from 10
+2025-01-31 05:20:24,690 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 05:23:25,127 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 05:26:31,305 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 05:29:29,970 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 05:32:16,255 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 05:35:04,313 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 05:37:53,440 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 05:40:47,447 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 05:43:52,000 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 05:46:40,086 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 05:49:18,953 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 05:49:39,609 - root - WARNING - >>>>>>>>>>>>> in comm round: 9 from 10
+2025-01-31 05:52:13,994 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-01-31 05:56:43,268 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-01-31 06:00:25,051 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-01-31 06:03:42,943 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-01-31 06:06:15,784 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-01-31 06:08:52,227 - root - WARNING - >>>>>>>>>>>>> DAISY chain 5
+2025-01-31 06:11:43,937 - root - WARNING - >>>>>>>>>>>>> DAISY chain 6
+2025-01-31 06:13:56,489 - root - WARNING - >>>>>>>>>>>>> DAISY chain 7
+2025-01-31 06:17:03,014 - root - WARNING - >>>>>>>>>>>>> DAISY chain 8
+2025-01-31 06:19:13,826 - root - WARNING - >>>>>>>>>>>>> DAISY chain 9
+2025-01-31 06:22:56,506 - root - WARNING - >>>>>>>>>>>>> DAISY chain 10
+2025-01-31 06:23:54,424 - root - WARNING - Execution time: 5 hours, 31 minutes, 50.17 seconds

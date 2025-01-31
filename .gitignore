@@ -7,3 +7,4 @@ Singularity
 compare_results.ipynb
 tmp/
 partitions/
+*.pkl
