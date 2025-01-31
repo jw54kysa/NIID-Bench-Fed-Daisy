@@ -1,0 +1,35 @@
+2025-01-28 17:31:00,471 - root - WARNING - Using Partition Pickle File
+2025-01-28 17:31:10,005 - root - WARNING - in comm round: 0 from 50
+2025-01-28 19:04:13,930 - root - WARNING - in comm round: 1 from 50
+2025-01-28 20:38:03,991 - root - WARNING - in comm round: 2 from 50
+2025-01-28 22:14:35,228 - root - WARNING - in comm round: 3 from 50
+2025-01-28 23:51:33,544 - root - WARNING - in comm round: 4 from 50
+2025-01-29 01:24:24,432 - root - WARNING - in comm round: 5 from 50
+2025-01-29 02:55:55,408 - root - WARNING - in comm round: 6 from 50
+2025-01-29 04:30:39,631 - root - WARNING - in comm round: 7 from 50
+2025-01-29 06:05:55,579 - root - WARNING - in comm round: 8 from 50
+2025-01-29 07:40:09,714 - root - WARNING - in comm round: 9 from 50
+2025-01-29 09:19:13,598 - root - WARNING - in comm round: 10 from 50
+2025-01-29 10:57:18,887 - root - WARNING - in comm round: 11 from 50
+2025-01-29 12:31:44,712 - root - WARNING - in comm round: 12 from 50
+2025-01-29 14:10:15,872 - root - WARNING - in comm round: 13 from 50
+2025-01-29 15:43:46,998 - root - WARNING - in comm round: 14 from 50
+2025-01-29 17:18:50,452 - root - WARNING - in comm round: 15 from 50
+2025-01-29 18:53:01,118 - root - WARNING - in comm round: 16 from 50
+2025-01-29 20:27:10,245 - root - WARNING - in comm round: 17 from 50
+2025-01-29 22:01:56,626 - root - WARNING - in comm round: 18 from 50
+2025-01-29 23:36:56,828 - root - WARNING - in comm round: 19 from 50
+2025-01-30 01:11:25,162 - root - WARNING - in comm round: 20 from 50
+2025-01-30 02:44:28,676 - root - WARNING - in comm round: 21 from 50
+2025-01-30 04:18:57,884 - root - WARNING - in comm round: 22 from 50
+2025-01-30 05:53:10,698 - root - WARNING - in comm round: 23 from 50
+2025-01-30 07:27:26,021 - root - WARNING - in comm round: 24 from 50
+2025-01-30 09:03:19,514 - root - WARNING - in comm round: 25 from 50
+2025-01-30 10:37:32,767 - root - WARNING - in comm round: 26 from 50
+2025-01-30 12:12:25,130 - root - WARNING - in comm round: 27 from 50
+2025-01-30 13:45:49,480 - root - WARNING - in comm round: 28 from 50
+2025-01-30 15:20:37,601 - root - WARNING - in comm round: 29 from 50
+2025-01-30 16:59:09,266 - root - WARNING - in comm round: 30 from 50
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 12036145 ON paula10 CANCELLED AT 2025-01-30T17:30:50 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 12036145.0 ON paula10 CANCELLED AT 2025-01-30T17:30:50 DUE TO TIME LIMIT ***

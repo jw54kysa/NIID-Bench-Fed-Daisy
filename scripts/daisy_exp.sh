@@ -11,26 +11,25 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
-for alg in feddc
+for alg in fedavg
 do
-  for perm in rand prob_size
+  for perm in rand
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
-      --alg=feddc \
+      --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
       --epochs=1 \
-      --n_parties=100 \
+      --n_parties=10 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=5 \
-      --daisy=5 \
+      --comm_round=100 \
+      --daisy=0 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity \
-      --partition_path='partitions/cifar10/100/iid-diff-quantity/partition_tuple.pkl' \
       --beta=0.5 \
       --device='cuda' \
       --datadir='./data/' \
