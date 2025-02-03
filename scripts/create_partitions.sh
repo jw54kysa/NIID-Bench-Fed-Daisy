@@ -1,11 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=create_niid_partitions
-#SBATCH --partition=paula
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --gpus=a30:1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=8G
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
@@ -15,7 +14,7 @@ for dataset in cifar10
 do
   for part in iid-diff-quantity
   do
-    for n_parties in 10
+    for n_parties in 100
     do
 
       python -u create_partitions.py \

@@ -567,6 +567,7 @@ def view_image(train_dataloader):
         print(x.shape)
         exit(0)
 
+# PARALLEL TRAINING DAISY
 
 import concurrent.futures
 
@@ -1065,8 +1066,8 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy + 1):
-                # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+                parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
+                # local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 

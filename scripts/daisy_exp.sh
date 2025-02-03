@@ -1,11 +1,10 @@
 #!/bin/bash --
-#SBATCH --job-name=feddc-niid-bench
-#SBATCH --partition=paula
+#SBATCH --job-name=parallel-cpu-comp
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --gpus=a30:4
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=8G
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
@@ -31,7 +30,7 @@ do
       --daisy_perm=$perm \
       --partition=iid-diff-quantity \
       --beta=0.5 \
-      --device='cuda' \
+      --device='cpu' \
       --datadir='./data/' \
       --logdir='./logs/' \
       --noise=0 \

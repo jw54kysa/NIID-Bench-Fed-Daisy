@@ -2,7 +2,7 @@ import pickle
 from utils import *
 import argparse
 import os
-from plots import plot_rss
+from plots import *
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -29,4 +29,4 @@ if __name__ == "__main__":
         args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
     print(">>> Creating Plot: ", log_path)
-    plot_rss(net_dataidx_map, [0 for i in range(len(net_dataidx_map))], log_path, args)
+    plot_data_dis(net_dataidx_map, log_path, args)
