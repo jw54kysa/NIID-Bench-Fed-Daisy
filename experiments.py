@@ -570,9 +570,9 @@ def view_image(train_dataloader):
 
 # PARALLEL TRAINING DAISY
 
-def train_single_net(net_id, net, dataidxs, args, device, logger):
+def train_single_net(net_id, net, dataidxs, args, device):
     # Same training logic for a single network
-    logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
+    # logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
     net.to(device)
 
     noise_level = args.noise
@@ -596,8 +596,8 @@ def train_single_net(net_id, net, dataidxs, args, device, logger):
     trainacc, testacc = train_net(
         net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
     )
-    logger.info("net %d final test acc %f" % (net_id, testacc))
-    return testacc
+    # logger.info("net %d final test acc %f" % (net_id, testacc))
+    return str(net_id), testacc
 
 # Parallel training using ProcessPoolExecutor
 def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
@@ -611,10 +611,10 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
         for r in results:
             try:
                 res = r.get(timeout=90)
-                print(f"Result: {res}")
+                logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
                 avg_acc += res
             except multiprocessing.TimeoutError:
-                print("A task took too long to complete and timed out.")
+                print(f"!!!!!!!!!!! Net {res[0]} took too long to complete and timed out !!!!!!!!!!!!!")
 
     # with concurrent.futures.ProcessPoolExecutor() as executor:
     #     # Prepare the futures for parallel execution
