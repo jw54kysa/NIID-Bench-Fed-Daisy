@@ -604,7 +604,7 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
     avg_acc = 0
 
     with multiprocessing.Pool(processes=12) as pool:
-        results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger))
+        results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device))
                    for net_id, net in nets.items() if net_id in selected]
 
         # Collect results
