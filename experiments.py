@@ -17,6 +17,7 @@ import random
 import pandas as pd
 from plots import *
 
+import multiprocessing
 import datetime
 import time
 #from torch.utils.tensorboard import SummaryWriter
@@ -157,11 +158,11 @@ def init_nets(net_configs, dropout_p, n_parties, args):
 def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, args, device="cpu"):
     logger.info('Training network %s' % str(net_id))
 
-    train_acc = compute_accuracy(net, train_dataloader, device=device)
-    test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
-
-    logger.info('>> Pre-Training Training accuracy: {}'.format(train_acc))
-    logger.info('>> Pre-Training Test accuracy: {}'.format(test_acc))
+    # train_acc = compute_accuracy(net, train_dataloader, device=device)
+    # test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
+    #
+    # logger.info('>> Pre-Training Training accuracy: {}'.format(train_acc))
+    # logger.info('>> Pre-Training Test accuracy: {}'.format(test_acc))
 
     if args_optimizer == 'adam':
         optimizer = optim.Adam(filter(lambda p: p.requires_grad, net.parameters()), lr=lr, weight_decay=args.reg)
@@ -569,8 +570,6 @@ def view_image(train_dataloader):
 
 # PARALLEL TRAINING DAISY
 
-import concurrent.futures
-
 def train_single_net(net_id, net, dataidxs, args, device, logger):
     # Same training logic for a single network
     logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
@@ -603,20 +602,34 @@ def train_single_net(net_id, net, dataidxs, args, device, logger):
 # Parallel training using ProcessPoolExecutor
 def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
     avg_acc = 0
-    with concurrent.futures.ProcessPoolExecutor() as executor:
-        # Prepare the futures for parallel execution
-        futures = [
-            executor.submit(
-                train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
-            )
-            for net_id, net in nets.items() if net_id in selected
-        ]
 
-        # Gather the results as they complete
-        for future in concurrent.futures.as_completed(futures):
-            avg_acc += future.result()
+    with multiprocessing.Pool(processes=12) as pool:
+        results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger))
+                   for net_id, net in nets.items() if net_id in selected]
 
-    return avg_acc / len(futures)
+        # Collect results
+        for r in results:
+            try:
+                res = r.get(timeout=90)
+                print(f"Result: {res}")
+                avg_acc += res
+            except multiprocessing.TimeoutError:
+                print("A task took too long to complete and timed out.")
+
+    # with concurrent.futures.ProcessPoolExecutor() as executor:
+    #     # Prepare the futures for parallel execution
+    #     futures = [
+    #         executor.submit(
+    #             train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
+    #         )
+    #         for net_id, net in nets.items() if net_id in selected
+    #     ]
+    #
+    #     # Gather the results as they complete
+    #     for future in concurrent.futures.as_completed(futures):
+    #         avg_acc += future.result()
+
+    return avg_acc / len(results)
 
 
 def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = None, device="cpu"):
@@ -889,7 +902,7 @@ if __name__ == '__main__':
         datefmt='%m-%d %H:%M', level=logging.DEBUG, filemode='w')
 
     logger = logging.getLogger()
-    logger.setLevel(logging.WARNING)
+    logger.setLevel(logging.INFO)
 
     # Erstellen eines Handlers, um die Logs an die Konsole auszugeben
     console_handler = logging.StreamHandler()
