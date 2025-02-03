@@ -393,7 +393,7 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
     elif partition == "iid-diff-quantity":
         idxs = np.random.permutation(n_train)
         min_size = 0
-        while min_size < 10:
+        while min_size < 2:
             proportions = np.random.dirichlet(np.repeat(beta, n_parties))
             proportions = proportions/proportions.sum()
             min_size = np.min(proportions*len(idxs))
