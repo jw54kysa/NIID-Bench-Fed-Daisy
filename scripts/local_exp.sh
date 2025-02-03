@@ -1,5 +1,5 @@
 
-for perm in rand
+for perm in prob_size
 do
   python -u experiments.py \
       --model=simple-cnn \
