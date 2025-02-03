@@ -29,23 +29,23 @@ from resnetcifar import *
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default='simple-cnn', help='neural network used in training') # mlp
-    parser.add_argument('--dataset', type=str, default='mnist', help='dataset used for training')
+    parser.add_argument('--dataset', type=str, default='cifar10', help='dataset used for training')
     parser.add_argument('--net_config', type=lambda x: list(map(int, x.split(', '))))
-    parser.add_argument('--partition', type=str, default='homo', help='the data partitioning strategy')
+    parser.add_argument('--partition', type=str, default='iid-diff-quantity', help='the data partitioning strategy')
     parser.add_argument('--partition_path', type=str, default=None, help='the path to partition pickle file')
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate (default: 0.01)')
     parser.add_argument('--epochs', type=int, default=5, help='number of local epochs')
-    parser.add_argument('--n_parties', type=int, default=10,  help='number of workers in a distributed cluster') # 2
+    parser.add_argument('--n_parties', type=int, default=100,  help='number of workers in a distributed cluster') # 2
     parser.add_argument('--alg', type=str, default='feddc', # fedavg
                             help='fl algorithms: fedavg/fedprox/scaffold/fednova/moon/feddc')
     parser.add_argument('--use_projection_head', type=bool, default=False, help='whether add an additional header to model or not (see MOON)')
     parser.add_argument('--out_dim', type=int, default=256, help='the output dimension for the projection layer')
     parser.add_argument('--loss', type=str, default='contrastive', help='for moon')
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
-    parser.add_argument('--comm_round', type=int, default=50, help='number of maximum communication round')
-    parser.add_argument('--daisy', type=int, default=0, help='number of daisy rounds')
-    parser.add_argument('--daisy_perm', type=str, default="random", help='type of daisy chain permutation: random/prob_size')
+    parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
+    parser.add_argument('--daisy', type=int, default=5, help='number of daisy rounds')
+    parser.add_argument('--daisy_perm', type=str, default="prob_size", help='type of daisy chain permutation: random/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")
@@ -921,7 +921,7 @@ if __name__ == '__main__':
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-        plot_rss(net_dataidx_map, None, log_path, args)
+        plot_data_dis(net_dataidx_map, log_path, args)
 
     n_classes = len(np.unique(y_train))
 
@@ -1127,7 +1127,7 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-        plot_rss(net_dataidx_map, visits, log_path, args)
+        plot_rss_visits(net_dataidx_map, visits, log_path)
 
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
