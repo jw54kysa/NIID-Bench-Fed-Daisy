@@ -6,9 +6,9 @@ from plots import *
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='mnist', help='dataset used for training')
-    parser.add_argument('--partition', type=str, default='homo', help='the data partitioning strategy')
-    parser.add_argument('--n_parties', type=int, default=10,  help='number of workers in a distributed cluster') # 2
+    parser.add_argument('--dataset', type=str, default='cifar10', help='dataset used for training')
+    parser.add_argument('--partition', type=str, default='iid-diff-quantity', help='the data partitioning strategy')
+    parser.add_argument('--n_parties', type=int, default=200,  help='number of workers in a distributed cluster') # 2
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--beta', type=float, default=0.5,
                         help='The parameter for the dirichlet distribution for data partitioning')

@@ -8,7 +8,7 @@ do
       --lr=0.01 \
       --batch-size=64 \
       --epochs=1 \
-      --n_parties=10 \
+      --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=5 \
