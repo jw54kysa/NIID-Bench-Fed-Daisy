@@ -1062,6 +1062,9 @@ if __name__ == '__main__':
         results = []
         visits = {i: 1 for i in range(args.n_parties)}
 
+        if args.daisy is None or args.daisy == 0:
+            args.daisy = 1
+
         for round in range(args.comm_round):
             logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
@@ -1078,7 +1081,7 @@ if __name__ == '__main__':
                 for idx in selected:
                     nets[idx].load_state_dict(global_para)
 
-            for daisy in range(args.daisy + 1):
+            for daisy in range(args.daisy):
                 # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
                 local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
@@ -1088,6 +1091,10 @@ if __name__ == '__main__':
                 if args.daisy_perm == 'random':
                     # random permutation
                     random.shuffle(local_data_index)
+
+                    for idx in local_data_index:
+                        visits[idx] += 1
+
                 elif args.daisy_perm == 'prob_size':
                     # probabilistic permutation on sample size
                     daisy_data_idx = list(net_dataidx_map.values())
