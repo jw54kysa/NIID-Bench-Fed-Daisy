@@ -8,13 +8,14 @@ do
       --lr=0.01 \
       --batch-size=64 \
       --epochs=1 \
-      --n_parties=100 \
+      --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=5 \
-      --daisy=5 \
+      --comm_round=10 \
+      --daisy=10 \
       --daisy_perm=$perm \
       --partition='iid-diff-quantity' \
+      --partition_path='partitions/cifar10/50/iid-diff-quantity/partition_tuple.pkl' \
       --beta=0.5 \
       --device='mps' \
       --datadir='./data/' \
