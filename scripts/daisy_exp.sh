@@ -1,32 +1,32 @@
 #!/bin/bash --
-#SBATCH --job-name=feddc-perm
+#SBATCH --job-name=perm_test_lr01
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --gpus=a30:4
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=3-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
 for alg in feddc
 do
-  for perm in rand
+  for perm in prob_size rand
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
       --alg=$alg \
-      --lr=0.01 \
+      --lr=0.1 \
       --batch-size=64 \
       --epochs=1 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=50 \
+      --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity \
