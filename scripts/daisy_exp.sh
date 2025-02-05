@@ -1,6 +1,7 @@
 #!/bin/bash --
-#SBATCH --job-name=fedavg-niid-bench
+#SBATCH --job-name=feddc-perm
 #SBATCH --partition=paula
+#SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --gpus=a30:4
 #SBATCH --cpus-per-task=8
@@ -12,7 +13,7 @@
 
 for alg in feddc
 do
-  for perm in prob_size
+  for perm in rand
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
@@ -22,7 +23,7 @@ do
       --lr=0.01 \
       --batch-size=64 \
       --epochs=1 \
-      --n_parties=100 \
+      --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
