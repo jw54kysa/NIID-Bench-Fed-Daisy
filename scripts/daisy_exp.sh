@@ -6,14 +6,14 @@
 #SBATCH --gpus=a30:4
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16G
-#SBATCH --time=3-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
 for alg in feddc
 do
-  for perm in prob_size rand
+  for perm in prob_size
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
