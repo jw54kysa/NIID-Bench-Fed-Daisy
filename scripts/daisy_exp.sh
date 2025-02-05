@@ -20,9 +20,9 @@ do
       --model=simple-cnn \
       --dataset=cifar10 \
       --alg=$alg \
-      --lr=0.1 \
+      --lr=0.01 \
       --batch-size=64 \
-      --epochs=1 \
+      --epochs=10 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
