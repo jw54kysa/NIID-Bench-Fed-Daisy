@@ -182,11 +182,9 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
     #writer = SummaryWriter()
 
     for epoch in range(epochs):
-        print(f"Net {net_id} - Epoch {epoch}")
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
-                print(f"batch {batch_idx}")
                 x, target = x.to(device), target.to(device)
 
                 optimizer.zero_grad()
