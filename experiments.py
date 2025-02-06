@@ -156,7 +156,7 @@ def init_nets(net_configs, dropout_p, n_parties, args):
 
 
 def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, args, device="cpu"):
-    logger.info('Training network %s' % str(net_id))
+    # logger.info('Training network %s' % str(net_id))
 
     # train_acc = compute_accuracy(net, train_dataloader, device=device)
     # test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
@@ -182,6 +182,7 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
     #writer = SummaryWriter()
 
     for epoch in range(epochs):
+        print(f"Net {net_id} - Epoch {epoch}")
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
@@ -202,7 +203,6 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
                 epoch_loss_collector.append(loss.item())
 
         epoch_loss = sum(epoch_loss_collector) / len(epoch_loss_collector)
-        logger.info('Epoch: %d Loss: %f' % (epoch, epoch_loss))
 
         #train_acc = compute_accuracy(net, train_dataloader, device=device)
         #test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
@@ -221,11 +221,12 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
     train_acc = compute_accuracy(net, train_dataloader, device=device)
     test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
 
-    logger.info('>> Training accuracy: %f' % train_acc)
-    logger.info('>> Test accuracy: %f' % test_acc)
+    print('>> Training accuracy: %f' % train_acc)
+    # logger.info('>> Training accuracy: %f' % train_acc)
+    # logger.info('>> Test accuracy: %f' % test_acc)
 
     net.to('cpu')
-    logger.info(' ** Training complete **')
+    # logger.info(' ** Training complete **')
     return train_acc, test_acc
 
 
@@ -610,11 +611,11 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
         # Collect results
         for r in results:
             try:
-                res = r.get(timeout=90)
+                res = r.get(timeout=120)
                 logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
                 avg_acc += res[1]
             except multiprocessing.TimeoutError:
-                print(f"!!!!!!!!!!! Net {res[0]} took too long to complete and timed out !!!!!!!!!!!!!")
+                print(f"!!!!!!!!!!! Net took too long to complete and timed out !!!!!!!!!!!!!")
 
     # with concurrent.futures.ProcessPoolExecutor() as executor:
     #     # Prepare the futures for parallel execution
