@@ -603,7 +603,7 @@ def train_single_net(net_id, net, dataidxs, args, device):
 def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
     avg_acc = 0
 
-    with multiprocessing.Pool(processes=12) as pool:
+    with multiprocessing.Pool(processes=4) as pool:
         results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device))
                    for net_id, net in nets.items() if net_id in selected]
 
@@ -612,7 +612,7 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
             try:
                 res = r.get(timeout=90)
                 logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
-                avg_acc += res
+                avg_acc += res[1]
             except multiprocessing.TimeoutError:
                 print(f"!!!!!!!!!!! Net {res[0]} took too long to complete and timed out !!!!!!!!!!!!!")
 
@@ -629,6 +629,7 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
     #     for future in concurrent.futures.as_completed(futures):
     #         avg_acc += future.result()
 
+    print(">>>>>>>>> FINISHED MULTIPROCESSING <<<<<<<<")
     return avg_acc / len(results)
 
 
@@ -1082,8 +1083,8 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy):
-                # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+                parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
+                # local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 

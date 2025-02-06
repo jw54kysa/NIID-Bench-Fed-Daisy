@@ -14,7 +14,7 @@ for dataset in cifar10
 do
   for part in iid-diff-quantity
   do
-    for n_parties in 200
+    for n_parties in 100
     do
       python -u create_partitions.py \
         --dataset=$dataset \

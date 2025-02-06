@@ -1,0 +1,37 @@
+02-06 17:34 INFO     mps
+02-06 17:34 INFO     ####################################################################################################
+02-06 17:34 WARNING  Using Partition Pickle File
+02-06 17:34 INFO     Initializing nets
+02-06 17:34 WARNING  >>>>>>>>>>>>> in comm round: 0 from 10
+02-06 17:34 INFO     Trained Net: 0 Result: 0.1
+02-06 17:34 INFO     Trained Net: 1 Result: 0.1
+02-06 17:34 INFO     Trained Net: 2 Result: 0.1
+02-06 17:34 INFO     Trained Net: 3 Result: 0.1
+02-06 17:34 INFO     Trained Net: 4 Result: 0.0967
+02-06 17:34 INFO     Trained Net: 5 Result: 0.1
+02-06 17:34 INFO     Trained Net: 6 Result: 0.1
+02-06 17:34 INFO     Trained Net: 7 Result: 0.1
+02-06 17:34 INFO     Trained Net: 8 Result: 0.0999
+02-06 17:34 INFO     Trained Net: 9 Result: 0.1001
+02-06 17:34 INFO     Trained Net: 10 Result: 0.1
+02-06 17:34 INFO     Trained Net: 11 Result: 0.1
+02-06 17:35 INFO     Trained Net: 12 Result: 0.1
+02-06 17:35 INFO     Trained Net: 13 Result: 0.1
+02-06 17:35 INFO     Trained Net: 14 Result: 0.1
+02-06 17:35 INFO     Trained Net: 15 Result: 0.0986
+02-06 17:35 INFO     Trained Net: 16 Result: 0.1
+02-06 17:35 INFO     Trained Net: 17 Result: 0.1
+02-06 17:35 INFO     Trained Net: 18 Result: 0.1
+02-06 17:35 INFO     Trained Net: 19 Result: 0.1057
+02-06 17:35 INFO     Trained Net: 20 Result: 0.1
+02-06 17:35 INFO     Trained Net: 21 Result: 0.1
+02-06 17:35 INFO     Trained Net: 22 Result: 0.0988
+02-06 17:35 INFO     Trained Net: 23 Result: 0.1
+02-06 17:35 INFO     Trained Net: 24 Result: 0.1
+02-06 17:35 INFO     Trained Net: 25 Result: 0.1
+02-06 17:35 INFO     Trained Net: 26 Result: 0.1
+02-06 17:35 INFO     Trained Net: 27 Result: 0.1027
+02-06 17:35 INFO     Trained Net: 28 Result: 0.1
+02-06 17:35 INFO     Trained Net: 29 Result: 0.1
+02-06 17:35 INFO     Trained Net: 30 Result: 0.1
+02-06 17:35 INFO     Trained Net: 31 Result: 0.1
