@@ -7,7 +7,7 @@ do
       --alg=feddc \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=1 \
+      --epochs=10 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
@@ -22,5 +22,5 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=1
+      --init_seed=0
 done
