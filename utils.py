@@ -407,7 +407,6 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
 
         sizes = []
         for _ in range(n_parties):
-            # Ensure the last split takes up the remaining indices
             size = np.random.randint(min_size, max_size)
             sizes.append(size)
 
