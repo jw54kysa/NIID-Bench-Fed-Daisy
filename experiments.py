@@ -182,11 +182,9 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
     #writer = SummaryWriter()
 
     for epoch in range(epochs):
-        print(f"Net {net_id} - Epoch {epoch}")
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
-                print(f"batch {batch_idx}")
                 x, target = x.to(device), target.to(device)
 
                 optimizer.zero_grad()
@@ -219,16 +217,16 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
         #     logger.info('>> Training accuracy: %f' % train_acc)
         #     logger.info('>> Test accuracy: %f' % test_acc)
 
-    train_acc = compute_accuracy(net, train_dataloader, device=device)
-    test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
+    # train_acc = compute_accuracy(net, train_dataloader, device=device)
+    # test_acc, conf_matrix = compute_accuracy(net, test_dataloader, get_confusion_matrix=True, device=device)
 
-    print('>> Training accuracy: %f' % train_acc)
+    # print('>> Training accuracy: %f' % train_acc)
     # logger.info('>> Training accuracy: %f' % train_acc)
     # logger.info('>> Test accuracy: %f' % test_acc)
 
     net.to('cpu')
     # logger.info(' ** Training complete **')
-    return train_acc, test_acc
+    # return train_acc, test_acc
 
 
 
@@ -595,11 +593,11 @@ def train_single_net(net_id, net, dataidxs, args, device):
     train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
     n_epoch = args.epochs
 
-    trainacc, testacc = train_net(
+    train_net(
         net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
     )
     # logger.info("net %d final test acc %f" % (net_id, testacc))
-    return str(net_id), testacc
+    return str(net_id)
 
 # Parallel training using ProcessPoolExecutor
 def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
@@ -660,16 +658,16 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, tes
         n_epoch = args.epochs
 
 
-        trainacc, testacc = train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
-        logger.info("net %d final test acc %f" % (net_id, testacc))
-        avg_acc += testacc
+        train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
+        logger.info("net %d trained" % (net_id))
+        # avg_acc += testacc
         # saving the trained models here
         # save_model(net, net_id, args)
         # else:
         #     load_model(net, net_id, device=device)
-    avg_acc /= len(selected)
-    if args.alg == 'local_training':
-        logger.info("avg test acc %f" % avg_acc)
+    # avg_acc /= len(selected)
+    # if args.alg == 'local_training':
+    #     logger.info("avg test acc %f" % avg_acc)
 
     nets_list = list(nets.values())
     return nets_list
@@ -1085,8 +1083,8 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy):
-                parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
-                # local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+                # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
@@ -1136,19 +1134,17 @@ if __name__ == '__main__':
             logger.info('global n_test: %d' % len(test_dl_global))
 
             global_model.to(device)
-            train_acc = compute_accuracy(global_model, train_dl_global, device=device)
+            # train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
             results.append({
                 "Round": round,
                 "Daisy": args.daisy,
                 "Epoch": args.epochs,
-                "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
-            logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
         plot_rss_visits(net_dataidx_map, visits, log_path)
