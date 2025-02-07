@@ -401,6 +401,21 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
         print('>>> iid-diff-quantity partition created')
 
+    elif partition == "iid-diff-quantity-rand":
+        min_size = 2
+        max_size = 64
+
+        sizes = []
+        for _ in range(n_parties):
+            # Ensure the last split takes up the remaining indices
+            size = np.random.randint(min_size, max_size)
+            sizes.append(size)
+
+        idxs = np.random.permutation(n_train)
+        batch_idxs = np.split(idxs, np.cumsum(sizes))
+        net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
+        print('>>> iid-diff-quantity-rand partition created')
+
     elif partition == "mixed":
         min_size = 0
         min_require_size = 10

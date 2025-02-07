@@ -41,7 +41,6 @@ def plot_rss_visits(client_idxs, visits, path):
     # Save and display the plot
     plt.savefig(path + "/rss_plt.png")
 
-# Plot random size client samples
 def plot_data_dis(client_idxs, path, args):
 
     data = {}
@@ -49,27 +48,38 @@ def plot_data_dis(client_idxs, path, args):
         train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, l,
                                                              0)
         label_counter = Counter()
-        for inputs, labels in train_dl_local:
-            # Update the counter with the labels in the current batch
-            label_counter.update(labels.tolist())
+        for inputs, clients in train_dl_local:
+            # Update the counter with the clients in the current batch
+            label_counter.update(clients.tolist())
 
         # To print the counts of each label
         data[idx] = dict(label_counter)
 
-    labels = list(data.keys())
+    clients = list(data.keys())
     categories = set(cat for label in data for cat in data[label].keys())
-    category_values = {category: [data[label].get(category, 0) for label in labels] for category in categories}
+    category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
+
+    client_sums = {client: sum(data[client].values()) for client in clients}
+
+    # Sort the clients list based on the sum of labels for each client
+    clients_sorted = sorted(clients, key=lambda client: client_sums[client])
+
+    print(clients)
+    print(clients_sorted)
 
     fig, ax = plt.subplots(figsize=(16, 8))
     # Plot the bars dynamically, stacking them
-    bottom = np.zeros(len(labels))  # Initialize bottom at 0 for stacking
+    bottom = np.zeros(len(clients))  # Initialize bottom at 0 for stacking
+
+    sorted_categories = sorted(category_values.items(), key=lambda x: x[1])
 
     for category in categories:
         values = category_values[category]
-        ax.bar(np.arange(len(labels)), values, bottom=bottom, label=category)
-        bottom += np.array(values)  # Update the bottom for the next category
+        val = [values[clients.index(client)] for client in clients_sorted]
+        ax.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
+        bottom += np.array(val)  # Update the bottom for the next category
 
-    # Adding labels and title
+    # Adding clients and title
     ax.set_xlabel('Client')
     ax.set_ylabel('Sample Size')
     ax.set_title('Sample Size & Label Distribution per Client')

@@ -659,7 +659,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, tes
 
 
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
-        logger.info("net %d trained" % (net_id))
+        # logger.info("net %d trained" % (net_id))
         # avg_acc += testacc
         # saving the trained models here
         # save_model(net, net_id, args)
