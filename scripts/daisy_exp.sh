@@ -20,14 +20,15 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=10 \
+      --epochs=1 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=25 \
+      --comm_round=50 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand \
+      --partition_path='partitions/mnist/50/iid-diff-quantity-rand/partition_tuple.pkl' \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \
