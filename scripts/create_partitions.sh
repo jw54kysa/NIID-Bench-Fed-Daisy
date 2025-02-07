@@ -12,9 +12,9 @@
 
 for dataset in cifar10
 do
-  for part in iid-diff-quantity
+  for part in iid-diff-quantity-rand
   do
-    for n_parties in 100
+    for n_parties in 50 100 150 200 250
     do
       python -u create_partitions.py \
         --dataset=$dataset \
