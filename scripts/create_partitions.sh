@@ -14,7 +14,7 @@ for dataset in mnist
 do
   for part in iid-diff-quantity-rand
   do
-    for n_parties in 50
+    for n_parties in 200
     do
       srun singularity exec --nv FEDDC.sif \
 	python3.9 -u create_partitions.py \
