@@ -9,9 +9,9 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
-for alg in fedavg
+for alg in feddc
 do
-  for perm in prob_size
+  for perm in rand #prob_size
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
@@ -21,11 +21,11 @@ do
       --lr=0.01 \
       --batch-size=64 \
       --epochs=10 \
-      --n_parties=50 \
+      --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
-      --daisy=0 \
+      --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand \
       --beta=0.5 \
