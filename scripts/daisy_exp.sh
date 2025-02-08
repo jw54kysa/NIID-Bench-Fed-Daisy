@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=parallel_test
+#SBATCH --job-name=ssds_test
 #SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -19,9 +19,9 @@ do
       --dataset=cifar10 \
       --alg=$alg \
       --lr=0.01 \
-      --batch-size=64 \
+      --batch-size=32 \
       --epochs=10 \
-      --n_parties=100 \
+      --n_parties=200 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
