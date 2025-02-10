@@ -19,12 +19,12 @@ do
       --dataset=cifar10 \
       --alg=$alg \
       --lr=0.01 \
-      --batch-size=32 \
+      --batch-size=64 \
       --epochs=10 \
-      --n_parties=200 \
+      --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=50 \
+      --comm_round=75 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand \
@@ -34,6 +34,6 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=0
+      --init_seed=1
   done
 done
