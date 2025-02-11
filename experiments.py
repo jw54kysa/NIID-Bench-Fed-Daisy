@@ -1089,7 +1089,7 @@ if __name__ == '__main__':
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
                 # DAISY-CHAIN
-                if args.daisy_perm == 'random':
+                if args.daisy_perm == 'rand':
                     # random permutation
                     random.shuffle(local_data_index)
 
