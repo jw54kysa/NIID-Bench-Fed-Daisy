@@ -15,11 +15,11 @@ do
   do
     srun singularity exec --nv FEDDC.sif \
     python3.9 -u experiments.py \
-      --model=simple-cnn \
+      --model=vgg-9 \
       --dataset=cifar10 \
       --alg=$alg \
       --lr=0.01 \
-      --batch-size=64 \
+      --batch-size=32 \
       --epochs=10 \
       --n_parties=100 \
       --rho=0.9 \
@@ -27,7 +27,7 @@ do
       --comm_round=75 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --partition=iid-diff-quantity-rand \
+      --partition=iid-diff-quantity-rand-sb \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \
