@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=vgg9_test
+#SBATCH --job-name=bs-sb-exp
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -15,7 +15,7 @@ do
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
-      --model=vgg-9 \
+      --model=simple-cnn \
       --dataset=cifar10 \
       --alg=$alg \
       --lr=0.01 \
@@ -34,6 +34,6 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=1
+      --init_seed=0
   done
 done
