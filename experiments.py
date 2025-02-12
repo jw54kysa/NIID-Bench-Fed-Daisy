@@ -32,6 +32,7 @@ def get_args():
     parser.add_argument('--model', type=str, default='simple-cnn', help='neural network used in training') # mlp
     parser.add_argument('--dataset', type=str, default='cifar10', help='dataset used for training')
     parser.add_argument('--net_config', type=lambda x: list(map(int, x.split(', '))))
+    parser.add_argument('--nets_path', type=str, default=None, help='the path to nets pickle file')
     parser.add_argument('--partition', type=str, default='iid-diff-quantity', help='the data partitioning strategy')
     parser.add_argument('--partition_path', type=str, default=None, help='the path to partition pickle file')
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
@@ -976,10 +977,18 @@ if __name__ == '__main__':
 
 
     if args.alg == 'fedavg':
-        logger.info("Initializing nets")
-        nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
-        global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
-        global_model = global_models[0]
+
+        if args.nets_path is None:
+            logger.info(">>>> Initializing nets")
+            nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
+            global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
+            global_model = global_models[0]
+        else:
+            logger.warning(">>>> Using Nets Pickle File")
+            with open(args.nets_path, 'rb') as file:
+                nets = pickle.load(file)
+            with open(args.nets_path.replace('nets.pkl', 'global_net.pkl'), 'rb') as file:
+                global_model = pickle.load(file)
 
         global_para = global_model.state_dict()
         if args.is_same_initial:
@@ -1040,6 +1049,12 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'w') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'w') as f:
+            pickle.dump(global_model, f)
+
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
 
@@ -1048,10 +1063,18 @@ if __name__ == '__main__':
         df_results.to_csv(filename)
 
     if args.alg == 'feddc':
-        logger.info("Initializing nets")
-        nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
-        global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
-        global_model = global_models[0]
+
+        if args.nets_path is None:
+            logger.info(">>>> Initializing nets")
+            nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
+            global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
+            global_model = global_models[0]
+        else:
+            logger.warning(">>>> Using Nets Pickle File")
+            with open(args.nets_path, 'rb') as file:
+                nets = pickle.load(file)
+            with open(args.nets_path.replace('nets.pkl', 'global_net.pkl'), 'rb') as file:
+                global_model = pickle.load(file)
 
         local_data_index = np.arange(args.n_parties)
 
@@ -1148,6 +1171,12 @@ if __name__ == '__main__':
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
         plot_rss_visits(net_dataidx_map, visits, log_path)
+
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'w') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'w') as f:
+            pickle.dump(global_model, f)
 
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
