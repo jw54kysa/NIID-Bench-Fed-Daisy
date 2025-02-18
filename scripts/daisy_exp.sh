@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=bs-sb-exp
+#SBATCH --job-name=big_exp_200
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -7,11 +7,11 @@
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=END
 
-for alg in fedavg
+for alg in feddc
 do
-  for perm in prob_size
+  for perm in rand
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
@@ -20,12 +20,12 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
-      --epochs=25 \
-      --n_parties=50 \
+      --epochs=10 \
+      --n_parties=200 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=50 \
-      --daisy=0 \
+      --comm_round=10 \
+      --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand-sb \
       --beta=0.5 \
@@ -34,6 +34,7 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=0
+      --init_seed=0 \
+      --experiment_id=%j
   done
 done
