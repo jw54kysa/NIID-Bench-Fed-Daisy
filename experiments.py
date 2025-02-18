@@ -32,6 +32,7 @@ def get_args():
     parser.add_argument('--model', type=str, default='simple-cnn', help='neural network used in training') # mlp
     parser.add_argument('--dataset', type=str, default='cifar10', help='dataset used for training')
     parser.add_argument('--net_config', type=lambda x: list(map(int, x.split(', '))))
+    parser.add_argument('--nets_path', type=str, default=None, help='the path to nets pickle file')
     parser.add_argument('--partition', type=str, default='iid-diff-quantity', help='the data partitioning strategy')
     parser.add_argument('--partition_path', type=str, default=None, help='the path to partition pickle file')
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
@@ -63,6 +64,7 @@ def get_args():
     parser.add_argument('--noise_type', type=str, default='level', help='Different level of noise or different space of noise')
     parser.add_argument('--rho', type=float, default=0, help='Parameter controlling the momentum SGD')
     parser.add_argument('--sample', type=float, default=1, help='Sample ratio for each communication round')
+    parser.add_argument('--experiment_id', type=str, default=None, help='Sample ratio for each communication round')
     args = parser.parse_args()
     return args
 
@@ -659,7 +661,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, tes
 
 
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
-        logger.info("net %d trained" % (net_id))
+        # logger.info("net %d trained" % (net_id))
         # avg_acc += testacc
         # saving the trained models here
         # save_model(net, net_id, args)
@@ -976,10 +978,18 @@ if __name__ == '__main__':
 
 
     if args.alg == 'fedavg':
-        logger.info("Initializing nets")
-        nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
-        global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
-        global_model = global_models[0]
+
+        if args.nets_path is None:
+            logger.info(">>>> Initializing nets")
+            nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
+            global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
+            global_model = global_models[0]
+        else:
+            logger.warning(">>>> Using Nets Pickle File")
+            with open(args.nets_path, 'rb') as file:
+                nets = pickle.load(file)
+            with open(args.nets_path.replace('nets.pkl', 'global_net.pkl'), 'rb') as file:
+                global_model = pickle.load(file)
 
         global_para = global_model.state_dict()
         if args.is_same_initial:
@@ -1047,11 +1057,25 @@ if __name__ == '__main__':
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
 
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'wb') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'wb') as f:
+            pickle.dump(global_model, f)
+
     if args.alg == 'feddc':
-        logger.info("Initializing nets")
-        nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
-        global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
-        global_model = global_models[0]
+
+        if args.nets_path is None:
+            logger.info(">>>> Initializing nets")
+            nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, args.n_parties, args)
+            global_models, global_model_meta_data, global_layer_type = init_nets(args.net_config, 0, 1, args)
+            global_model = global_models[0]
+        else:
+            logger.warning(">>>> Using Nets Pickle File")
+            with open(args.nets_path, 'rb') as file:
+                nets = pickle.load(file)
+            with open(args.nets_path.replace('nets.pkl', 'global_net.pkl'), 'rb') as file:
+                global_model = pickle.load(file)
 
         local_data_index = np.arange(args.n_parties)
 
@@ -1089,7 +1113,7 @@ if __name__ == '__main__':
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
                 # DAISY-CHAIN
-                if args.daisy_perm == 'random':
+                if args.daisy_perm == 'rand':
                     # random permutation
                     random.shuffle(local_data_index)
 
@@ -1155,6 +1179,12 @@ if __name__ == '__main__':
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
+
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'wb') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'wb') as f:
+            pickle.dump(global_model, f)
 
 
     elif args.alg == 'fedprox':

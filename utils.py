@@ -401,6 +401,39 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
         print('>>> iid-diff-quantity partition created')
 
+    elif partition == "iid-diff-quantity-rand":
+        min_size = 2
+        max_size = 32
+
+        sizes = []
+        for _ in range(n_parties):
+            size = np.random.randint(min_size, max_size)
+            sizes.append(size)
+
+        idxs = np.random.permutation(n_train)
+        batch_idxs = np.split(idxs, np.cumsum(sizes))
+        net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
+        print('>>> iid-diff-quantity-rand partition created')
+
+    elif partition == "iid-diff-quantity-rand-sb":
+        min_portion = 0.5
+        min_size = (2, 32)
+        max_size = (128, 256)
+
+        sizes = []
+        for _ in range(int(n_parties * min_portion)):
+            size = np.random.randint(min_size[0], min_size[1])
+            sizes.append(size)
+
+        for _ in range(int(n_parties - int(n_parties * min_portion))):
+            size = np.random.randint(max_size[0], max_size[1])
+            sizes.append(size)
+
+        idxs = np.random.permutation(n_train)
+        batch_idxs = np.split(idxs, np.cumsum(sizes))
+        net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
+        print('>>> iid-diff-quantity-rand-sb partition created')
+
     elif partition == "mixed":
         min_size = 0
         min_require_size = 10
