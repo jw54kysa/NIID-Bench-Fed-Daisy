@@ -1050,18 +1050,18 @@ if __name__ == '__main__':
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-        # Pickle up Nets
-        with open(os.path.join(log_path, 'nets.pkl'), 'w') as f:
-            pickle.dump(nets, f)
-        with open(os.path.join(log_path, 'global_net.pkl'), 'w') as f:
-            pickle.dump(global_model, f)
-
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
+
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'wb') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'wb') as f:
+            pickle.dump(global_model, f)
 
     if args.alg == 'feddc':
 
@@ -1173,18 +1173,18 @@ if __name__ == '__main__':
 
         plot_rss_visits(net_dataidx_map, visits, log_path)
 
-        # Pickle up Nets
-        with open(os.path.join(log_path, 'nets.pkl'), 'w') as f:
-            pickle.dump(nets, f)
-        with open(os.path.join(log_path, 'global_net.pkl'), 'w') as f:
-            pickle.dump(global_model, f)
-
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
         filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
+
+        # Pickle up Nets
+        with open(os.path.join(log_path, 'nets.pkl'), 'wb') as f:
+            pickle.dump(nets, f)
+        with open(os.path.join(log_path, 'global_net.pkl'), 'wb') as f:
+            pickle.dump(global_model, f)
 
 
     elif args.alg == 'fedprox':
