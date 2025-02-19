@@ -873,14 +873,12 @@ if __name__ == '__main__':
     mkdirs(args.logdir)
     mkdirs(args.modeldir)
 
-    exp_log_time = datetime.datetime.now()
-
-    exp_tag = 'experiment-%s' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
+    exp_tag = f"experiment-{args.experiment_id}"
     log_path = os.path.join("results", args.dataset, args.partition, args.alg, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
-        argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
+        argument_path=f'experiment_arguments-{args.experiment_id}.json'
     else:
         argument_path=args.log_file_name+'.json'
 
@@ -896,7 +894,7 @@ if __name__ == '__main__':
         logging.root.removeHandler(handler)
 
     if args.log_file_name is None:
-        args.log_file_name = 'experiment_log-%s' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))
+        args.log_file_name = f'experiment_log-{args.experiment_id}'
     log_file_name=args.log_file_name+'.log'
     logging.basicConfig(
         filename=os.path.join(log_path, log_file_name),
@@ -1054,7 +1052,7 @@ if __name__ == '__main__':
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        filename = os.path.join(log_path, f'global_results-{args.experiment_id}.csv')
         df_results.to_csv(filename)
 
         # Pickle up Nets
@@ -1177,7 +1175,7 @@ if __name__ == '__main__':
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        filename = os.path.join(log_path, f'global_results-{args.experiment_id}.csv')
         df_results.to_csv(filename)
 
         # Pickle up Nets
