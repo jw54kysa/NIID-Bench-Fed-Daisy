@@ -10,14 +10,14 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
-for dataset in mnist
+for dataset in cifar10
 do
-  for part in iid-diff-quantity-rand
+  for part in iid-diff-quantity-rand-sb
   do
     for n_parties in 200
     do
       srun singularity exec --nv FEDDC.sif \
-	python3.9 -u create_partitions.py \
+	    python3.9 -u create_partitions.py \
         --dataset=$dataset \
         --n_parties=$n_parties \
         --partition=$part \
