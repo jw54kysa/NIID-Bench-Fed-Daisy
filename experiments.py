@@ -873,12 +873,18 @@ if __name__ == '__main__':
     mkdirs(args.logdir)
     mkdirs(args.modeldir)
 
-    exp_tag = f"experiment-{args.experiment_id}"
-    log_path = os.path.join("results", args.dataset, args.partition, args.alg, args.model, exp_tag)
+    exp_log_time = datetime.datetime.now()
+
+    exp_tag = 'experiment-%s' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
+    if args.alg == 'feddc':
+        algorithm_subpath = os.path.join(args.alg, args.daisy_perm)
+    else:
+        algorithm_subpath = args.alg
+    log_path = os.path.join("results", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
-        argument_path=f'experiment_arguments-{args.experiment_id}.json'
+        argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
     else:
         argument_path=args.log_file_name+'.json'
 
@@ -894,7 +900,7 @@ if __name__ == '__main__':
         logging.root.removeHandler(handler)
 
     if args.log_file_name is None:
-        args.log_file_name = f'experiment_log-{args.experiment_id}'
+        args.log_file_name = 'experiment_log-%s' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S"))
     log_file_name=args.log_file_name+'.log'
     logging.basicConfig(
         filename=os.path.join(log_path, log_file_name),
@@ -1052,7 +1058,7 @@ if __name__ == '__main__':
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(log_path, f'global_results-{args.experiment_id}.csv')
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
 
         # Pickle up Nets
@@ -1175,7 +1181,7 @@ if __name__ == '__main__':
         df_results = pd.DataFrame(results)
 
         # Save the DataFrame as a CSV file
-        filename = os.path.join(log_path, f'global_results-{args.experiment_id}.csv')
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
         df_results.to_csv(filename)
 
         # Pickle up Nets
