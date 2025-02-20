@@ -27,7 +27,7 @@ do
       --comm_round=50 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --partition=iid-diff-quantity-rand \
+      --partition=iid-diff-quantity-rand-sb \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \

@@ -1,0 +1,4 @@
+INFO:    squashfuse_ll mount took an unexpectedly long time: 2.5s
+slurmstepd: error: *** JOB 12278176 ON paula06 CANCELLED AT 2025-02-19T10:31:44 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 12278176.0 ON paula06 CANCELLED AT 2025-02-19T10:31:44 ***
