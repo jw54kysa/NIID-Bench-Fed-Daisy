@@ -880,7 +880,7 @@ if __name__ == '__main__':
         algorithm_subpath = os.path.join(args.alg, args.daisy_perm)
     else:
         algorithm_subpath = args.alg
-    log_path = os.path.join("results", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
+    log_path = os.path.join("results_s1", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
@@ -1203,8 +1203,10 @@ if __name__ == '__main__':
             for net_id, net in nets.items():
                 net.load_state_dict(global_para)
 
+        results = []
+
         for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
@@ -1240,14 +1242,26 @@ if __name__ == '__main__':
             logger.info('global n_training: %d' % len(train_dl_global))
             logger.info('global n_test: %d' % len(test_dl_global))
 
-
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
+            results.append({
+                "Round": round,
+                "Train Accuracy": train_acc,
+                "Test Accuracy": test_acc,
+                "Confusion Matrix": conf_matrix.tolist()
+            })
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        # Convert the list of results to a pandas DataFrame
+        df_results = pd.DataFrame(results)
+
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv(filename)
 
     elif args.alg == 'scaffold':
         logger.info("Initializing nets")
@@ -1267,6 +1281,7 @@ if __name__ == '__main__':
             for net_id, net in nets.items():
                 net.load_state_dict(global_para)
 
+        results = []
 
         for round in range(args.comm_round):
             logger.info("in comm round:" + str(round))
@@ -1309,8 +1324,22 @@ if __name__ == '__main__':
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
+            results.append({
+                "Round": round,
+                "Train Accuracy": train_acc,
+                "Test Accuracy": test_acc,
+                "Confusion Matrix": conf_matrix.tolist()
+            })
+
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        # Convert the list of results to a pandas DataFrame
+        df_results = pd.DataFrame(results)
+
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv(filename)
 
     elif args.alg == 'fednova':
         logger.info("Initializing nets")
@@ -1337,6 +1366,8 @@ if __name__ == '__main__':
         if args.is_same_initial:
             for net_id, net in nets.items():
                 net.load_state_dict(global_para)
+
+        results = []
 
         for round in range(args.comm_round):
             logger.info("in comm round:" + str(round))
@@ -1401,9 +1432,22 @@ if __name__ == '__main__':
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
             test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
 
+            results.append({
+                "Round": round,
+                "Train Accuracy": train_acc,
+                "Test Accuracy": test_acc,
+                "Confusion Matrix": conf_matrix.tolist()
+            })
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
+
+        # Convert the list of results to a pandas DataFrame
+        df_results = pd.DataFrame(results)
+
+        # Save the DataFrame as a CSV file
+        filename = os.path.join(log_path, 'global_results-%s.csv' % (exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")))
+        df_results.to_csv(filename)
 
     elif args.alg == 'moon':
         logger.info("Initializing nets")
