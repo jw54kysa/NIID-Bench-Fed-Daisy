@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=big_exp_200_1
+#SBATCH --job-name=big_exp_200_2
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -9,14 +9,15 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in feddc
+for alg in fedavg
 do
   for perm in prob_size
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
       --model=simple-cnn \
-      --dataset=mnist \
+      --dataset=cifar10 \
+      --nets_path='results/cifar10/iid-diff-quantity-rand-sb/fedavg/simple-cnn/experiment-2025-02-18-15:13-50/nets.pkl' \
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
@@ -24,10 +25,11 @@ do
       --n_parties=200 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=50 \
+      --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand-sb \
+      --partition_path='results/cifar10/iid-diff-quantity-rand-sb/fedavg/simple-cnn/experiment-2025-02-18-15:13-50/partition_tuple.pkl' \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \

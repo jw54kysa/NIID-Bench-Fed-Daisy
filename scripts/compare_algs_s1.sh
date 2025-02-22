@@ -9,7 +9,7 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in fedavg
+for alg in feddc
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
@@ -23,6 +23,8 @@ do
     --rho=0.9 \
     --mu=0.01 \
     --comm_round=50 \
+    --daisy=10 \
+    --daisy_perm=prob_size \
     --partition=iid-diff-quantity \
     --beta=0.5 \
     --device='cpu' \
