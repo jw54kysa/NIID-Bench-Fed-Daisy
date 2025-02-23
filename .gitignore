@@ -8,3 +8,4 @@ compare_results.ipynb
 tmp/
 partitions/
 *.pkl
+.DS_Store
