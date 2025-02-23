@@ -25,7 +25,7 @@ do
       --n_parties=200 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=25 \
+      --comm_round=50 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand-sb \
