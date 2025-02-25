@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=compare_algs_s1
+#SBATCH --job-name=compare_algs_s2
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -9,7 +9,7 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in feddc
+for alg in fedavg #fedprox #scaffold #fednova #feddc
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
@@ -19,13 +19,13 @@ do
     --lr=0.01 \
     --batch-size=64 \
     --epochs=10 \
-    --n_parties=50 \
+    --n_parties=100 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=25 \
+    --comm_round=50 \
     --daisy=10 \
     --daisy_perm=prob_size \
-    --partition=iid-diff-quantity \
+    --partition=iid-diff-quantity-rand \
     --beta=0.5 \
     --device='cpu' \
     --datadir='./data/' \
