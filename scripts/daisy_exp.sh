@@ -11,7 +11,7 @@
 
 for alg in feddc
 do
-  for perm in rand
+  for perm in prob_size
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \

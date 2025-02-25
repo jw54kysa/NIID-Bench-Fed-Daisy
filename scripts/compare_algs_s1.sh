@@ -22,7 +22,7 @@ do
     --n_parties=50 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=50 \
+    --comm_round=25 \
     --daisy=10 \
     --daisy_perm=prob_size \
     --partition=iid-diff-quantity \
