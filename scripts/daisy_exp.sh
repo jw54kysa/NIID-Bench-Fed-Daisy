@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=big_exp_200_4
+#SBATCH --job-name=big_exp_200_4_2
 #SBATCH --partition=paula
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -17,7 +17,7 @@ do
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
-      --nets_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/rand/simple-cnn/experiment-2025-02-22-14:13-29/nets.pkl' \
+      --nets_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/prob_size/simple-cnn/experiment-2025-02-22-14:14-20/nets.pkl' \
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
