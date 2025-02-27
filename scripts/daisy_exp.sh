@@ -20,7 +20,7 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
-      --epochs=100 \
+      --epochs=50 \
       --n_parties=200 \
       --rho=0.9 \
       --mu=0.01 \
