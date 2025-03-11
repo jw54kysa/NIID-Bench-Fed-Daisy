@@ -1,15 +1,15 @@
 #!/bin/bash --
-#SBATCH --job-name=compare_algs_s2
-#SBATCH --partition=paula
+#SBATCH --job-name=compare_algs_s2_2
+#SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in fedavg #fedprox/scaffold/fednova/feddc
+for alg in feddc
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
@@ -22,9 +22,9 @@ do
     --n_parties=100 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=50 \
+    --comm_round=100 \
     --daisy=10 \
-    --daisy_perm=rand \
+    --daisy_perm=prob_size \
     --partition=iid-diff-quantity-rand-sb \
     --beta=0.5 \
     --device='cpu' \
