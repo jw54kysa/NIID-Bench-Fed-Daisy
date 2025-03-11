@@ -47,7 +47,7 @@ def get_args():
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
     parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
     parser.add_argument('--daisy', type=int, default=5, help='number of daisy rounds')
-    parser.add_argument('--daisy_perm', type=str, default="prob_size", help='type of daisy chain permutation: random/prob_size')
+    parser.add_argument('--daisy_perm', type=str, default="prob_size", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")

@@ -17,7 +17,7 @@ do
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
-      --partition_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/rand/simple-cnn/experiment-2025-02-23-20:24-38/nets.pkl' \
+      --nets_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/rand/simple-cnn/experiment-2025-02-23-20:24-38/nets.pkl' \
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
@@ -29,7 +29,6 @@ do
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=iid-diff-quantity-rand-sb \
-      --partition_path='results/cifar10/iid-diff-quantity-rand-sb/fedavg/simple-cnn/experiment-2025-02-18-15:13-50/partition_tuple.pkl' \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \
