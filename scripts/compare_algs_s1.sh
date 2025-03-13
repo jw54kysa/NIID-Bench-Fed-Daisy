@@ -1,10 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=compare_algs_s2_2
-#SBATCH --partition=paul-long
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=6-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
@@ -22,7 +22,7 @@ do
     --n_parties=100 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=100 \
+    --comm_round=25 \
     --daisy=10 \
     --daisy_perm=prob_size \
     --partition=iid-diff-quantity-rand-sb \

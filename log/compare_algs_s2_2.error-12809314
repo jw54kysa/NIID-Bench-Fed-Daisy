@@ -1,0 +1,3 @@
+slurmstepd: error: *** JOB 12809314 ON paul14 CANCELLED AT 2025-03-12T09:35:32 ***
+slurmstepd: error: *** STEP 12809314.0 ON paul14 CANCELLED AT 2025-03-12T09:35:32 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
