@@ -11,13 +11,13 @@
 
 for alg in feddc
 do
-  for perm in prob_size
+  for perm in rand
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar10 \
-      --nets_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/prob_size/simple-cnn/experiment-2025-02-25-09:50-26/nets.pkl' \
+      --nets_path='results_s1/cifar10/iid-diff-quantity-rand-sb/feddc/rand/simple-cnn/experiment-2025-02-23-20:24-38/nets.pkl' \
       --alg=$alg \
       --lr=0.01 \
       --batch-size=32 \
