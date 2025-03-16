@@ -15,17 +15,18 @@ do
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
+    --nets_path='results_s1/cifar10/iid-diff-quantity/feddc/prob_size/simple-cnn/experiment-2025-03-10-15:43-13/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
-    --batch-size=32 \
+    --batch-size=64 \
     --epochs=10 \
-    --n_parties=100 \
+    --n_parties=50 \
     --rho=0.9 \
     --mu=0.01 \
     --comm_round=25 \
     --daisy=10 \
     --daisy_perm=prob_size \
-    --partition=iid-diff-quantity-rand-sb \
+    --partition=iid-diff-quantity \
     --beta=0.5 \
     --device='cpu' \
     --datadir='./data/' \
