@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=compare_algs_s2_2
+#SBATCH --job-name=compare_algs_s1
 #SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -9,13 +9,12 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in feddc
+for alg in fednova
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
-    --nets_path='results_s1/cifar10/iid-diff-quantity/feddc/prob_size/simple-cnn/experiment-2025-03-10-15:43-13/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
     --batch-size=64 \
@@ -25,7 +24,7 @@ do
     --mu=0.01 \
     --comm_round=25 \
     --daisy=10 \
-    --daisy_perm=prob_size \
+    --daisy_perm=rand \
     --partition=iid-diff-quantity \
     --beta=0.5 \
     --device='cpu' \
