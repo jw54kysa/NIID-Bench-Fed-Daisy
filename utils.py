@@ -7,7 +7,7 @@ import torch.utils.data as data
 from torch.autograd import Variable
 import torch.nn.functional as F
 import random
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, f1_score
 from torch.utils.data import DataLoader
 import copy
 
@@ -617,7 +617,7 @@ def put_trainable_parameters(net,X):
             params.data.copy_(X[offset:offset+numel].data.view_as(params.data))
         offset+=numel
 
-def compute_accuracy(model, dataloader, get_confusion_matrix=False, moon_model=False, device="cpu"):
+def compute_accuracy(model, dataloader, get_confusion_matrix=False, w_f1=False, moon_model=False, device="cpu"):
 
     was_training = False
     if model.training:
@@ -655,10 +655,14 @@ def compute_accuracy(model, dataloader, get_confusion_matrix=False, moon_model=F
     if get_confusion_matrix:
         conf_matrix = confusion_matrix(true_labels_list, pred_labels_list)
 
+    f1 = f1_score(true_labels_list, pred_labels_list)
+
     if was_training:
         model.train()
 
     if get_confusion_matrix:
+        if w_f1:
+            return correct / float(total), conf_matrix, f1
         return correct/float(total), conf_matrix
 
     return correct/float(total)

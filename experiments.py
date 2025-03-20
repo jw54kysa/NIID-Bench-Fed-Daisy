@@ -880,7 +880,7 @@ if __name__ == '__main__':
         algorithm_subpath = os.path.join(args.alg, args.daisy_perm)
     else:
         algorithm_subpath = args.alg
-    log_path = os.path.join("results_s1", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
+    log_path = os.path.join("results_long", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
@@ -942,10 +942,10 @@ if __name__ == '__main__':
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-        #plot_data_dis(net_dataidx_map, log_path, args)
+        plot_data_dis(net_dataidx_map, log_path, args)
 
         # Sample-Index Label Distribution
-        label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value)
+        # label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value)
 
     n_classes = len(np.unique(y_train))
 
@@ -1044,13 +1044,16 @@ if __name__ == '__main__':
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True,
+                                                         w_f1=True,
+                                                         device=device)
 
             results.append({
                 "Round": round,
                 "Epoch": args.epochs,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
+                "F1": f1,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
@@ -1165,14 +1168,16 @@ if __name__ == '__main__':
             logger.info('global n_test: %d' % len(test_dl_global))
 
             global_model.to(device)
-            # train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+            train_acc = compute_accuracy(global_model, train_dl_global, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, w_f1=True,
+                                                     device=device)
 
             results.append({
                 "Round": round,
-                "Daisy": args.daisy,
                 "Epoch": args.epochs,
+                "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
+                "F1" : f1,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
