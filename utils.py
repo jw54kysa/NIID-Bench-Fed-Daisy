@@ -655,7 +655,7 @@ def compute_accuracy(model, dataloader, get_confusion_matrix=False, w_f1=False, 
     if get_confusion_matrix:
         conf_matrix = confusion_matrix(true_labels_list, pred_labels_list)
 
-    f1 = f1_score(true_labels_list, pred_labels_list)
+    f1 = f1_score(true_labels_list, pred_labels_list, average='micro')
 
     if was_training:
         model.train()
