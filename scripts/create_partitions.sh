@@ -16,8 +16,8 @@ do
   do
     for n_parties in 500
     do
-      # srun singularity exec --nv FEDDC.sif \
-	    python -u create_partitions.py \
+      srun singularity exec --nv FEDDC.sif \
+	python3.9 -u create_partitions.py \
         --dataset=$dataset \
         --n_parties=$n_parties \
         --partition=$part \
