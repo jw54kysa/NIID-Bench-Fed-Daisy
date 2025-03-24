@@ -9,7 +9,7 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in fedavg
+for alg in feddc
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
