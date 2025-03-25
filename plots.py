@@ -113,7 +113,7 @@ def plot_data_dis_sample_index(client_idxs, path, args):
     ldmax = np.max(chi_stats)
 
     for idx, val in label_distribution.items():
-        normalized_ld = [1 - ((val[0] - ldmin) / (ldmax - ldmin))]
+        normalized_ld = 1 - ((val[0] - ldmin) / (ldmax - ldmin))
         label_distribution[idx] = (val[0], val[1], normalized_ld)
 
     # sort and categories

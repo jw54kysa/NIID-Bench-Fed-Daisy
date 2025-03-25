@@ -47,8 +47,8 @@ def get_args():
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
     parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
     parser.add_argument('--daisy', type=int, default=5, help='number of daisy rounds')
-    parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
-    parser.add_argument('--daisy_perm', type=str, default="prob_size", help='type of daisy chain permutation: rand/prob_size')
+    parser.add_argument('--si_local_epochs', type=float, default=0.5, help='Sample index label distribution score for locale epochs')
+    parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")
@@ -952,7 +952,7 @@ if __name__ == '__main__':
         #plot_data_dis(net_dataidx_map, log_path, args)
 
         # Sample-Index Label Distribution
-        label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value)
+        label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value, normalized sample index)
 
     n_classes = len(np.unique(y_train))
 
@@ -1125,7 +1125,7 @@ if __name__ == '__main__':
 
             for daisy in range(args.daisy):
                 # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=label_dis, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
