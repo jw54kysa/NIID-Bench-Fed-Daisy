@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate (default: 0.01)')
     parser.add_argument('--epochs', type=int, default=10, help='number of local epochs')
-    parser.add_argument('--n_parties', type=int, default=100,  help='number of workers in a distributed cluster') # 2
+    parser.add_argument('--n_parties', type=int, default=10,  help='number of workers in a distributed cluster') # 2
     parser.add_argument('--alg', type=str, default='feddc', # fedavg
                             help='fl algorithms: fedavg/fedprox/scaffold/fednova/moon/feddc')
     parser.add_argument('--use_projection_head', type=bool, default=False, help='whether add an additional header to model or not (see MOON)')
@@ -47,6 +47,7 @@ def get_args():
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
     parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
     parser.add_argument('--daisy', type=int, default=5, help='number of daisy rounds')
+    parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
     parser.add_argument('--daisy_perm', type=str, default="prob_size", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
@@ -635,7 +636,7 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
     return avg_acc / len(results)
 
 
-def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = None, device="cpu"):
+def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis, test_dl = None, device="cpu"):
     avg_acc = 0.0
 
     for net_id, net in nets.items():
@@ -657,7 +658,13 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, tes
             noise_level = args.noise / (args.n_parties - 1) * net_id
             train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level)
         train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
-        n_epoch = args.epochs
+
+        # calculate local epochs based on label distribution
+        if args.si_local_epochs:
+            n_epoch = args.epochs * (float(label_dis[net_id][2]) + args.si_local_epochs)
+            logger.info(f"\n\n\nlocal epochs client: {net_id} - {n_epoch}\n\n\n")
+        else:
+            n_epoch = args.epochs
 
 
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
@@ -942,10 +949,10 @@ if __name__ == '__main__':
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-        plot_data_dis(net_dataidx_map, log_path, args)
+        #plot_data_dis(net_dataidx_map, log_path, args)
 
         # Sample-Index Label Distribution
-        # label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value)
+        label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value)
 
     n_classes = len(np.unique(y_train))
 
@@ -1022,7 +1029,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             local_data_index = np.arange(args.n_parties)
-            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=label_dis, test_dl = test_dl_global, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model

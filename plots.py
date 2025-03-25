@@ -3,6 +3,8 @@ from matplotlib.ticker import MaxNLocator
 import numpy as np
 from collections import Counter
 from scipy.stats import chisquare
+from sympy.physics.quantum.gate import normalized
+
 from utils import *
 
 # PLOT SAMPLE SIZE AND VISITS
@@ -105,20 +107,25 @@ def plot_data_dis_sample_index(client_idxs, path, args):
 
         label_distribution[idx] = (chi_stat, np.log(chi_stat))
 
+    # normalize sample index
+    chi_stats = [val[0] for _, val in label_distribution.items()]
+    ldmin = np.min(chi_stats)
+    ldmax = np.max(chi_stats)
+
+    for idx, val in label_distribution.items():
+        normalized_ld = [1 - ((val[0] - ldmin) / (ldmax - ldmin))]
+        label_distribution[idx] = (val[0], val[1], normalized_ld)
+
+    # sort and categories
     clients = list(data.keys())
     categories = set(cat for label in data for cat in data[label].keys())
     category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
 
-    client_sums = {client: sum(data[client].values()) for client in clients}
-
-    clients_sorted = sorted(clients, key=lambda client: label_distribution[client][0])
+    # sort after chi2
+    clients_sorted = sorted(clients, key=lambda client: label_distribution[client][2])
 
     fig, ax1 = plt.subplots(figsize=(16, 8))
     bottom = np.zeros(len(clients))
-
-    sorted_categories = sorted(category_values.items(), key=lambda x: x[1])
-
-    label_distribution_sorted = [label_distribution[client] for client in clients_sorted]
 
     for category in categories:
         values = category_values[category]
@@ -126,10 +133,17 @@ def plot_data_dis_sample_index(client_idxs, path, args):
         ax1.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
         bottom += np.array(val)
 
-    ax2 = ax1.twinx()
-    ax2.plot(np.arange(len(label_distribution_sorted)), label_distribution_sorted, label='Sample Index', color='black', marker='o')
-    ax2.set_ylabel("Sample Index Label Distribution", color='black')
-    ax2.tick_params(axis='y', labelcolor='black')
+    # ax2 = ax1.twinx()
+    # ax2.plot(np.arange(len(label_distribution_sorted)), label_distribution_sorted, label='Sample Index', color='black', marker='o')
+    # ax2.set_ylabel("Sample Index Label Distribution", color='black')
+    # ax2.tick_params(axis='y', labelcolor='black')
+
+    normalized_ld_sorted = [label_distribution[client][2] for client in clients_sorted]
+    ax3 = ax1.twinx()
+    ax3.plot(np.arange(len(normalized_ld_sorted)), normalized_ld_sorted, label='Normalized Sample Index', color='red',
+             marker='o')
+    ax3.set_ylabel("Normalized Sample Index Label Distribution", color='red')
+    ax3.tick_params(axis='y', labelcolor='red')
 
     # Adding clients and title
     ax1.set_xlabel('Client')
