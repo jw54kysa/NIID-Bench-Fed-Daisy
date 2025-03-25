@@ -660,9 +660,8 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
 
         # calculate local epochs based on label distribution
-        if args.si_local_epochs:
-            n_epoch = args.epochs * (float(label_dis[net_id][2]) + args.si_local_epochs)
-            logger.info(f"\n\n\nlocal epochs client: {net_id} - {n_epoch}\n\n\n")
+        if args.si_local_epochs is not None:
+            n_epoch = int(args.epochs * (float(label_dis[net_id][2]) + args.si_local_epochs))
         else:
             n_epoch = args.epochs
 
