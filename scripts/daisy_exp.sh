@@ -1,6 +1,6 @@
 #!/bin/bash --
-#SBATCH --job-name=big_exp_200_5
-#SBATCH --partition=paula
+#SBATCH --job-name=si_le_test
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
@@ -20,12 +20,12 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=10 \
+      --epochs=20 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=25 \
-      --daisy=20 \
+      --daisy=10 \
       --daisy_perm=$perm \
       --si_local_epochs=0.5 \
       --partition=noniid-labeldir \

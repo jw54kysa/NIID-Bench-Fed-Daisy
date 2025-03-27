@@ -1,20 +1,21 @@
 #!/bin/bash --
 #SBATCH --job-name=comp_long
-#SBATCH --partition=paul-long
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=4-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in feddc
+for alg in fedavg
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
+    --nets_path='results_long/cifar10/iid-diff-quantity-rand/fedavg/simple-cnn/experiment-2025-03-20-20:21-58/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
     --batch-size=16 \
@@ -24,7 +25,7 @@ do
     --mu=0.01 \
     --comm_round=100 \
     --daisy=10 \
-    --daisy_perm=rand \
+    --daisy_perm=prob_size \
     --partition=iid-diff-quantity-rand \
     --beta=0.5 \
     --device='cpu' \
