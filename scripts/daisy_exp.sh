@@ -1,10 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=si_le_test
-#SBATCH --partition=paul
+#SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=4-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
