@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=5-00:00:00
+#SBATCH --time=4-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
@@ -15,7 +15,7 @@ do
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
-    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/prob_size/simple-cnn/experiment-2025-03-24-09:34-53/nets.pkl' \
+    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/rand/simple-cnn/experiment-2025-03-27-16:06-01/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
     --batch-size=16 \
@@ -25,7 +25,7 @@ do
     --mu=0.01 \
     --comm_round=50 \
     --daisy=10 \
-    --daisy_perm=prob_size \
+    --daisy_perm=rand \
     --partition=iid-diff-quantity-rand \
     --beta=0.5 \
     --device='cpu' \
