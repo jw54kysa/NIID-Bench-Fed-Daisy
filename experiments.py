@@ -944,6 +944,8 @@ if __name__ == '__main__':
         with open(args.partition_path, 'rb') as file:
             # Load (unpickle) the tuple from the file
             X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = pickle.load(file)
+
+            sample_index_label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args)
     else:
         logger.warning("Partitioning data")
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
