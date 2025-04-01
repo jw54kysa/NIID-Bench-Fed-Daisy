@@ -636,7 +636,7 @@ def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, a
     return avg_acc / len(results)
 
 
-def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis, test_dl = None, device="cpu"):
+def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=None, test_dl=None, device="cpu"):
     avg_acc = 0.0
 
     for net_id, net in nets.items():
@@ -660,7 +660,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
 
         # calculate local epochs based on label distribution
-        if args.si_local_epochs is not None:
+        if label_dis is not None and args.si_local_epochs is not None:
             n_epoch = int(args.epochs * (float(label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
         else:
             n_epoch = args.epochs
@@ -952,7 +952,8 @@ if __name__ == '__main__':
         #plot_data_dis(net_dataidx_map, log_path, args)
 
         # Sample-Index Label Distribution
-        label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args) # (chi_stat, p_value, normalized sample index)
+        sample_index_label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args)
+        # {client_id: (chi_stat, p_value, normalized sample index)}
 
     n_classes = len(np.unique(y_train))
 
@@ -1029,7 +1030,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             local_data_index = np.arange(args.n_parties)
-            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=label_dis, test_dl = test_dl_global, device=device)
+            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model
@@ -1125,7 +1126,7 @@ if __name__ == '__main__':
 
             for daisy in range(args.daisy):
                 # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=label_dis, test_dl = test_dl_global, device=device)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
