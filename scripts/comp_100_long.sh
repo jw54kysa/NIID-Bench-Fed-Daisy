@@ -1,15 +1,15 @@
 #!/bin/bash --
 #SBATCH --job-name=exp0_1_100
-#SBATCH --partition=paul-long
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=5-00:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
-for alg in fedavg #feddc fedprox scaffold fednova moon local_training
+for alg in local_training
 do
   srun singularity exec FEDDC.sif \
   python3.9 -u experiments.py \
@@ -24,7 +24,7 @@ do
     --mu=0.01 \
     --comm_round=50 \
     --daisy=10 \
-    --daisy_perm=rand \
+    --daisy_perm=prob_size \
     --partition=iid-diff-quantity \
     --partition_path='partitions/cifar10/100/iid-diff-quantity/partition_tuple.pkl' \
     --beta=0.5 \

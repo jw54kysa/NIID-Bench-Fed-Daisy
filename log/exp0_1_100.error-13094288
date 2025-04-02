@@ -1,0 +1,12 @@
+2025-04-02 10:09:18,674 - root - INFO - cpu
+2025-04-02 10:09:18,674 - root - INFO - ####################################################################################################
+2025-04-02 10:09:18,677 - root - WARNING - Using Partition Pickle File
+2025-04-02 10:11:30,163 - root - INFO - Initializing nets
+2025-04-02 10:11:30,228 - root - INFO - Training network 0. n_training: 17
+Traceback (most recent call last):
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 1549, in <module>
+    local_train_net(nets, arr, args, net_dataidx_map, local_data_index, test_dl = test_dl_global, device=device)
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 668, in local_train_net
+    logger.info("Training network %s. with %s epochs with SI: %.4f " % (str(net_id), str(n_epoch), float(label_dis[local_data_index[net_id]][2])))
+TypeError: 'NoneType' object is not subscriptable
+srun: error: paul32: task 0: Exited with exit code 1
