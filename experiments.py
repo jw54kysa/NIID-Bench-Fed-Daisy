@@ -662,10 +662,11 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         # calculate local epochs based on label distribution
         if label_dis is not None and args.si_local_epochs is not None:
             n_epoch = int(args.epochs * (float(label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
+            logger.info("Training network %s. with %s epochs with SI: %.4f " % (
+            str(net_id), str(n_epoch), float(label_dis[local_data_index[net_id]][2])))
         else:
             n_epoch = args.epochs
-
-        logger.info("Training network %s. with %s epochs with SI: %.4f " % (str(net_id), str(n_epoch), float(label_dis[local_data_index[net_id]][2])))
+            logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
 
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
         # logger.info("net %d trained" % (net_id))
