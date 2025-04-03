@@ -15,7 +15,7 @@ do
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
-    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/prob_size/simple-cnn/experiment-2025-03-27-19:12-15/nets.pkl' \
+    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/prob_size/simple-cnn/experiment-2025-03-31-10:43-52/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
     --batch-size=16 \
