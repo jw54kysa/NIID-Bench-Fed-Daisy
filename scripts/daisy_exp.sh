@@ -1,10 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=si_le_test
-#SBATCH --partition=paul-long
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=4-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
@@ -27,7 +27,7 @@ do
       --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --si_local_epochs=0.5 \
+      --si_local_epochs=1.0 \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
