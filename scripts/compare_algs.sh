@@ -15,7 +15,7 @@ do
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
-    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/prob_size/simple-cnn/experiment-2025-03-31-10:43-52/nets.pkl' \
+    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/rand/simple-cnn/experiment-2025-03-31-10:42-55/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
     --batch-size=16 \
@@ -25,7 +25,7 @@ do
     --mu=0.01 \
     --comm_round=50 \
     --daisy=10 \
-    --daisy_perm=prob_size \
+    --daisy_perm=rand \
     --partition=iid-diff-quantity-rand \
     --beta=0.5 \
     --device='cpu' \
