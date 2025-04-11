@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=comp_long
+#SBATCH --job-name=sec_run_prob_perm_s1
 #SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -15,18 +15,19 @@ do
   python3.9 -u experiments.py \
     --model=simple-cnn \
     --dataset=cifar10 \
-    --nets_path='results_long/cifar10/iid-diff-quantity-rand/feddc/rand/simple-cnn/experiment-2025-03-31-10:42-55/nets.pkl' \
+    --nets_path='results_s1/cifar10/iid-diff-quantity/feddc/prob_size/simple-cnn/experiment-2025-03-10-15:43-13/nets.pkl' \
     --alg=$alg \
     --lr=0.01 \
-    --batch-size=16 \
+    --batch-size=64 \
     --epochs=10 \
-    --n_parties=200 \
+    --n_parties=50 \
     --rho=0.9 \
     --mu=0.01 \
-    --comm_round=50 \
+    --comm_round=25 \
     --daisy=10 \
-    --daisy_perm=rand \
+    --daisy_perm=prob_size \
     --partition=iid-diff-quantity-rand \
+    --partition_path='results_s1/cifar10/iid-diff-quantity/fedavg/simple-cnn/experiment-2025-02-21-17:44-37/partition_tuple.pkl' \
     --beta=0.5 \
     --device='cpu' \
     --datadir='./data/' \
