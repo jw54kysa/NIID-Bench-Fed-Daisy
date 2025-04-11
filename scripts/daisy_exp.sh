@@ -27,7 +27,7 @@ do
       --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --si_local_epochs=1.0 \
+      --si_local_epochs=0 \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
