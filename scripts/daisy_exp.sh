@@ -1,6 +1,6 @@
 #!/bin/bash --
 #SBATCH --job-name=si_le_test
-#SBATCH --partition=paul
+#SBATCH --partition=clara
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
