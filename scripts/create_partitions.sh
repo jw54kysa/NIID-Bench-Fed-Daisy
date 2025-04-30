@@ -11,7 +11,7 @@
 
 for dataset in cifar10
 do
-  for part in iid-diff-quantity iid-diff-quantity iid-diff-quantity-rand noniid-labeldir
+  for part in iid-diff-quantity iid-diff-quantity-rand iid-diff-quantity-rand-sb noniid-labeldir
   do
     for n_parties in 50 100 200
     do
