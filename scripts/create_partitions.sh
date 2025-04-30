@@ -11,15 +11,15 @@
 
 for dataset in cifar10
 do
-  for part in iid-diff-quantity, iid-diff-quantity, iid-diff-quantity-rand, noniid-labeldir
+  for part in iid-diff-quantity iid-diff-quantity iid-diff-quantity-rand noniid-labeldir
   do
-    for n_parties in 50, 100, 200
+    for n_parties in 50 100 200
     do
       srun singularity exec FEDDC.sif \
-	python3.9 -u create_partitions.py \
-        --dataset=$dataset \
+        python3.9 -u create_partitions.py \
+        --dataset="$dataset" \
         --n_parties=$n_parties \
-        --partition=$part \
+        --partition="$part" \
         --beta=0.5 \
         --datadir='./data/' \
         --logdir='./logs/'
