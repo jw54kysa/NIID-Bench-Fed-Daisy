@@ -1,8 +1,0 @@
-2025-03-10 15:39:50,921 - root - INFO - cpu
-2025-03-10 15:39:50,921 - root - INFO - ####################################################################################################
-2025-03-10 15:39:50,926 - root - WARNING - Using Partition Pickle File
-Traceback (most recent call last):
-  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 937, in <module>
-    with open(args.partition_path, 'rb') as file:
-FileNotFoundError: [Errno 2] No such file or directory: 'results_s1/cifar10/iid-diff-quantity/fedavg/simple-cnn/experiment-2025-02-21-17\\:44-37/partition_tuple.pkl'
-srun: error: paula12: task 0: Exited with exit code 1

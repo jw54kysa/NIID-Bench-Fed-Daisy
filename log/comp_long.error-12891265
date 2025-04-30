@@ -1,8 +1,0 @@
-2025-03-24 09:38:46,156 - root - INFO - cpu
-2025-03-24 09:38:46,157 - root - INFO - ####################################################################################################
-2025-03-24 09:38:46,159 - root - WARNING - Using Partition Pickle File
-Traceback (most recent call last):
-  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 939, in <module>
-    X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = pickle.load(file)
-ValueError: too many values to unpack (expected 6)
-srun: error: paul06: task 0: Exited with exit code 1

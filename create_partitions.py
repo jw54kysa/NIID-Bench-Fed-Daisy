@@ -21,7 +21,7 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
 
-    log_path = os.path.join("partitions", args.dataset, str(args.n_parties), args.partition)
+    log_path = os.path.join("partitions", args.dataset, args.partition, str(args.n_parties))
     mkdirs(log_path)
 
     print(">>> Partitioning Data ", log_path)
@@ -30,3 +30,4 @@ if __name__ == "__main__":
 
     print(">>> Creating Plot: ", log_path)
     plot_data_dis(net_dataidx_map, log_path, args)
+    plot_data_dis_sample_index(net_dataidx_map, log_path, args)

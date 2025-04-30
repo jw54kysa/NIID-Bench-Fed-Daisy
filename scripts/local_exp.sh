@@ -16,7 +16,7 @@ do
       --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --si_local_epochs=1.0 \
+      --si_local_epochs=1 \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
@@ -24,6 +24,7 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=0
+      --init_seed=0 \
+      --experiment='test_exp_local'
   done
 done

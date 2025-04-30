@@ -1,10 +1,9 @@
 #!/bin/bash --
 #SBATCH --job-name=create_niid_partitions
-#SBATCH --partition=paul
+#SBATCH --partition=clara
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=8G
+#SBATCH --mem=128G
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
@@ -12,9 +11,9 @@
 
 for dataset in cifar10
 do
-  for part in iid-diff-quantity
+  for part in iid-diff-quantity, iid-diff-quantity, iid-diff-quantity-rand, noniid-labeldir
   do
-    for n_parties in 100
+    for n_parties in 50, 100, 200
     do
       srun singularity exec FEDDC.sif \
 	python3.9 -u create_partitions.py \

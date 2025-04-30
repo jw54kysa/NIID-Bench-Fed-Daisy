@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate (default: 0.01)')
     parser.add_argument('--epochs', type=int, default=10, help='number of local epochs')
-    parser.add_argument('--n_parties', type=int, default=10,  help='number of workers in a distributed cluster') # 2
+    parser.add_argument('--n_parties', type=int, default=50,  help='number of workers in a distributed cluster') # 2
     parser.add_argument('--alg', type=str, default='feddc', # fedavg
                             help='fl algorithms: fedavg/fedprox/scaffold/fednova/moon/feddc')
     parser.add_argument('--use_projection_head', type=bool, default=False, help='whether add an additional header to model or not (see MOON)')
@@ -46,7 +46,7 @@ def get_args():
     parser.add_argument('--loss', type=str, default='contrastive', help='for moon')
     parser.add_argument('--temperature', type=float, default=0.5, help='the temperature parameter for contrastive loss')
     parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
-    parser.add_argument('--daisy', type=int, default=5, help='number of daisy rounds')
+    parser.add_argument('--daisy', type=int, default=10, help='number of daisy rounds')
     parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
     parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
@@ -65,9 +65,11 @@ def get_args():
     parser.add_argument('--noise_type', type=str, default='level', help='Different level of noise or different space of noise')
     parser.add_argument('--rho', type=float, default=0, help='Parameter controlling the momentum SGD')
     parser.add_argument('--sample', type=float, default=1, help='Sample ratio for each communication round')
-    parser.add_argument('--experiment_id', type=str, default=None, help='Sample ratio for each communication round')
+    parser.add_argument('--experiment', type=str, default='default_exp', help='Experiment name')
     args = parser.parse_args()
     return args
+
+global_epoch_counter = 0
 
 def init_nets(net_configs, dropout_p, n_parties, args):
 
@@ -159,6 +161,7 @@ def init_nets(net_configs, dropout_p, n_parties, args):
 
 
 def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, args, device="cpu"):
+    global global_epoch_counter
     logger.info('Training network %s' % str(net_id))
 
     # train_acc = compute_accuracy(net, train_dataloader, device=device)
@@ -185,6 +188,7 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
     #writer = SummaryWriter()
 
     for epoch in range(epochs):
+        global_epoch_counter += 1
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
@@ -572,68 +576,68 @@ def view_image(train_dataloader):
         exit(0)
 
 # PARALLEL TRAINING DAISY
-
-def train_single_net(net_id, net, dataidxs, args, device):
-    # Same training logic for a single network
-    # logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
-    net.to(device)
-
-    noise_level = args.noise
-    if net_id == args.n_parties - 1:
-        noise_level = 0
-
-    if args.noise_type == 'space':
-        train_dl_local, test_dl_local, _, _ = get_dataloader(
-            args.dataset, args.datadir, args.batch_size, 32, dataidxs,
-            noise_level, net_id, args.n_parties-1
-        )
-    else:
-        noise_level = args.noise / (args.n_parties - 1) * net_id
-        train_dl_local, test_dl_local, _, _ = get_dataloader(
-            args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level
-        )
-
-    train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
-    n_epoch = args.epochs
-
-    train_net(
-        net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
-    )
-    # logger.info("net %d final test acc %f" % (net_id, testacc))
-    return str(net_id)
-
-# Parallel training using ProcessPoolExecutor
-def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
-    avg_acc = 0
-
-    with multiprocessing.Pool(processes=4) as pool:
-        results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device))
-                   for net_id, net in nets.items() if net_id in selected]
-
-        # Collect results
-        for r in results:
-            try:
-                res = r.get(timeout=120)
-                logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
-                avg_acc += res[1]
-            except multiprocessing.TimeoutError:
-                print(f"!!!!!!!!!!! Net took too long to complete and timed out !!!!!!!!!!!!!")
-
-    # with concurrent.futures.ProcessPoolExecutor() as executor:
-    #     # Prepare the futures for parallel execution
-    #     futures = [
-    #         executor.submit(
-    #             train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
-    #         )
-    #         for net_id, net in nets.items() if net_id in selected
-    #     ]
-    #
-    #     # Gather the results as they complete
-    #     for future in concurrent.futures.as_completed(futures):
-    #         avg_acc += future.result()
-
-    print(">>>>>>>>> FINISHED MULTIPROCESSING <<<<<<<<")
-    return avg_acc / len(results)
+#
+# def train_single_net(net_id, net, dataidxs, args, device):
+#     # Same training logic for a single network
+#     # logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
+#     net.to(device)
+#
+#     noise_level = args.noise
+#     if net_id == args.n_parties - 1:
+#         noise_level = 0
+#
+#     if args.noise_type == 'space':
+#         train_dl_local, test_dl_local, _, _ = get_dataloader(
+#             args.dataset, args.datadir, args.batch_size, 32, dataidxs,
+#             noise_level, net_id, args.n_parties-1
+#         )
+#     else:
+#         noise_level = args.noise / (args.n_parties - 1) * net_id
+#         train_dl_local, test_dl_local, _, _ = get_dataloader(
+#             args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level
+#         )
+#
+#     train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
+#     n_epoch = args.epochs
+#
+#     train_net(
+#         net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
+#     )
+#     # logger.info("net %d final test acc %f" % (net_id, testacc))
+#     return str(net_id)
+#
+# # Parallel training using ProcessPoolExecutor
+# def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
+#     avg_acc = 0
+#
+#     with multiprocessing.Pool(processes=4) as pool:
+#         results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device))
+#                    for net_id, net in nets.items() if net_id in selected]
+#
+#         # Collect results
+#         for r in results:
+#             try:
+#                 res = r.get(timeout=120)
+#                 logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
+#                 avg_acc += res[1]
+#             except multiprocessing.TimeoutError:
+#                 print(f"!!!!!!!!!!! Net took too long to complete and timed out !!!!!!!!!!!!!")
+#
+#     # with concurrent.futures.ProcessPoolExecutor() as executor:
+#     #     # Prepare the futures for parallel execution
+#     #     futures = [
+#     #         executor.submit(
+#     #             train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
+#     #         )
+#     #         for net_id, net in nets.items() if net_id in selected
+#     #     ]
+#     #
+#     #     # Gather the results as they complete
+#     #     for future in concurrent.futures.as_completed(futures):
+#     #         avg_acc += future.result()
+#
+#     print(">>>>>>>>> FINISHED MULTIPROCESSING <<<<<<<<")
+#     return avg_acc / len(results)
 
 
 def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=None, test_dl=None, device="cpu"):
@@ -662,7 +666,6 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         # calculate local epochs based on label distribution
         if label_dis is not None and args.si_local_epochs is not None:
             n_epoch = int(args.epochs * (float(label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
-
             n_epoch = max(1,n_epoch) # min 1 epoch
 
             logger.info("Training network %s. with %s epochs with SI: %.4f " % (
@@ -878,7 +881,7 @@ def get_partition_dict(dataset, partition, n_parties, init_seed=0, datadir='./da
     return net_dataidx_map
 
 if __name__ == '__main__':
-    start_time = time.time()
+
     # torch.set_printoptions(profile="full")
     args = get_args()
     mkdirs(args.logdir)
@@ -891,18 +894,24 @@ if __name__ == '__main__':
         algorithm_subpath = os.path.join(args.alg, args.daisy_perm)
     else:
         algorithm_subpath = args.alg
-    log_path = os.path.join("results_long", args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
+    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
-        argument_path='experiment_arguments-%s.json' % exp_log_time.strftime("%Y-%m-%d-%H:%M-%S")
+        argument_path='experiment_arguments.json'
     else:
         argument_path=args.log_file_name+'.json'
 
     args_dict = vars(args)
 
-    with open(os.path.join(log_path, argument_path), 'w') as f:
-        json.dump(args_dict, f, indent=4)
+    with open(os.path.join(log_path, argument_path), 'w') as aj:
+        json.dump(args_dict, aj, indent=4)
+
+    with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+        f.write(', '.join(['round', 'train_acc', 'test_acc', 'f1', 'time_stamp']) + '\n')
+
+    with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+        f.write('Meta Daten: \n \n')
 
     device = torch.device(args.device)
     # logging.basicConfig(filename='test.log', level=logger.info, filemode='w')
@@ -970,7 +979,6 @@ if __name__ == '__main__':
 
     print("len train_dl_global:", len(train_ds_global))
 
-
     data_size = len(test_ds_global)
 
     # test_dl = data.DataLoader(dataset=test_ds_global, batch_size=32, shuffle=False)
@@ -997,6 +1005,16 @@ if __name__ == '__main__':
         test_all_in_ds = data.ConcatDataset(test_all_in_list)
         test_dl_global = data.DataLoader(dataset=test_all_in_ds, batch_size=32, shuffle=False)
 
+    # log data sizes
+    total_count = 0
+    for idx, list in net_dataidx_map.items():
+        total_count += len(list)
+
+    with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+        f.write(f'Total training data: {total_count} \n')
+
+    # start timer
+    start_time = time.time()
 
     if args.alg == 'fedavg':
 
@@ -1053,8 +1071,8 @@ if __name__ == '__main__':
                         global_para[key] += net_para[key] * fed_avg_freqs[idx]
             global_model.load_state_dict(global_para)
 
-            logger.info('global n_training: %d' % len(train_dl_global))
-            logger.info('global n_test: %d' % len(test_dl_global))
+            logger.info('global n_training: %d' % len(train_dl_global.dataset))
+            logger.info('global n_test: %d' % len(test_dl_global.dataset))
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
@@ -1070,6 +1088,9 @@ if __name__ == '__main__':
                 "F1": f1,
                 "Confusion Matrix": conf_matrix.tolist()
             })
+
+            with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1131,7 +1152,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             for daisy in range(args.daisy):
-                # parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger)
+
                 local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
@@ -1145,6 +1166,7 @@ if __name__ == '__main__':
                         visits[idx] += 1
 
                 elif args.daisy_perm == 'prob_size':
+                    dasy_start_time = time.time()
                     # probabilistic permutation on sample size
                     daisy_data_idx = list(net_dataidx_map.values())
                     sample_sizes = np.array([len(value) for value in daisy_data_idx])
@@ -1164,6 +1186,10 @@ if __name__ == '__main__':
 
                     local_data_index = permuted_data_idx
 
+                    dasy_end_time = time.time()
+                    daisy_time = dasy_end_time - dasy_start_time
+                    logger.warning(">>>>>>>>>>>>> DAISY chain completed in %s sec" % str(daisy_time))
+
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
             fed_avg_freqs = [len(net_dataidx_map[r]) / total_data_points for r in selected]
@@ -1178,8 +1204,8 @@ if __name__ == '__main__':
                         global_para[key] += net_para[key] * fed_avg_freqs[idx]
             global_model.load_state_dict(global_para)
 
-            logger.info('global n_training: %d' % len(train_dl_global))
-            logger.info('global n_test: %d' % len(test_dl_global))
+            logger.info('global n_training: %d' % len(train_dl_global.dataset))
+            logger.info('global n_test: %d' % len(test_dl_global.dataset))
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
@@ -1194,6 +1220,9 @@ if __name__ == '__main__':
                 "F1" : f1,
                 "Confusion Matrix": conf_matrix.tolist()
             })
+
+            with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
@@ -1266,7 +1295,9 @@ if __name__ == '__main__':
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True,
+                                                         w_f1=True,
+                                                         device=device)
 
             results.append({
                 "Round": round,
@@ -1274,6 +1305,9 @@ if __name__ == '__main__':
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
+
+            with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1344,7 +1378,9 @@ if __name__ == '__main__':
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True,
+                                                         w_f1=True,
+                                                         device=device)
 
             results.append({
                 "Round": round,
@@ -1352,6 +1388,9 @@ if __name__ == '__main__':
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
+
+            with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1452,7 +1491,9 @@ if __name__ == '__main__':
 
             global_model.to(device)
             train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True,
+                                                         w_f1=True,
+                                                         device=device)
 
             results.append({
                 "Round": round,
@@ -1460,6 +1501,9 @@ if __name__ == '__main__':
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
+
+            with open(os.path.join(log_path, 'results.csv'), 'a') as f:
+                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1567,5 +1611,11 @@ if __name__ == '__main__':
     minutes, seconds = divmod(rem, 60)
 
     logger.warning(f"Execution time: {int(hours)} hours, {int(minutes)} minutes, {seconds:.2f} seconds")
+
+    with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+        f.write(f'execution time: {elapsed_time} sec \n')
+        f.write(f'execution time formated: {int(hours)} hours, {int(minutes)} minutes, {seconds:.2f} seconds \n')
+        f.write(f'global epoch counter: {global_epoch_counter} \n')
+
 
 
