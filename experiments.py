@@ -238,6 +238,7 @@ def train_net(net_id, net, train_dataloader, test_dataloader, epochs, lr, args_o
 
 
 def train_net_fedprox(net_id, net, global_net, train_dataloader, test_dataloader, epochs, lr, args_optimizer, mu, device="cpu"):
+    global global_epoch_counter
     logger.info('Training network %s' % str(net_id))
     logger.info('n_training: %d' % len(train_dataloader))
     logger.info('n_test: %d' % len(test_dataloader))
@@ -264,6 +265,7 @@ def train_net_fedprox(net_id, net, global_net, train_dataloader, test_dataloader
     global_weight_collector = list(global_net.to(device).parameters())
 
     for epoch in range(epochs):
+        global_epoch_counter += 1
         epoch_loss_collector = []
         for batch_idx, (x, target) in enumerate(train_dataloader):
             x, target = x.to(device), target.to(device)
@@ -310,6 +312,7 @@ def train_net_fedprox(net_id, net, global_net, train_dataloader, test_dataloader
     return train_acc, test_acc
 
 def train_net_scaffold(net_id, net, global_model, c_local, c_global, train_dataloader, test_dataloader, epochs, lr, args_optimizer, device="cpu"):
+    global global_epoch_counter
     logger.info('Training network %s' % str(net_id))
 
     train_acc = compute_accuracy(net, train_dataloader, device=device)
@@ -343,6 +346,7 @@ def train_net_scaffold(net_id, net, global_model, c_local, c_global, train_datal
     c_local_para = c_local.state_dict()
 
     for epoch in range(epochs):
+        global_epoch_counter += 1
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
@@ -392,6 +396,7 @@ def train_net_scaffold(net_id, net, global_model, c_local, c_global, train_datal
     return train_acc, test_acc, c_delta_para
 
 def train_net_fednova(net_id, net, global_model, train_dataloader, test_dataloader, epochs, lr, args_optimizer, device="cpu"):
+    global global_epoch_counter
     logger.info('Training network %s' % str(net_id))
 
     train_acc = compute_accuracy(net, train_dataloader, device=device)
@@ -414,6 +419,7 @@ def train_net_fednova(net_id, net, global_model, train_dataloader, test_dataload
     tau = 0
 
     for epoch in range(epochs):
+        global_epoch_counter += 1
         epoch_loss_collector = []
         for tmp in train_dataloader:
             for batch_idx, (x, target) in enumerate(tmp):
@@ -574,70 +580,6 @@ def view_image(train_dataloader):
         np.save("img.npy", x)
         print(x.shape)
         exit(0)
-
-# PARALLEL TRAINING DAISY
-#
-# def train_single_net(net_id, net, dataidxs, args, device):
-#     # Same training logic for a single network
-#     # logger.info("Training network %s. n_training: %d" % (str(net_id), len(dataidxs)))
-#     net.to(device)
-#
-#     noise_level = args.noise
-#     if net_id == args.n_parties - 1:
-#         noise_level = 0
-#
-#     if args.noise_type == 'space':
-#         train_dl_local, test_dl_local, _, _ = get_dataloader(
-#             args.dataset, args.datadir, args.batch_size, 32, dataidxs,
-#             noise_level, net_id, args.n_parties-1
-#         )
-#     else:
-#         noise_level = args.noise / (args.n_parties - 1) * net_id
-#         train_dl_local, test_dl_local, _, _ = get_dataloader(
-#             args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level
-#         )
-#
-#     train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
-#     n_epoch = args.epochs
-#
-#     train_net(
-#         net_id, net, train_dl_local, test_dl_local, n_epoch, args.lr, args.optimizer,args, device=device
-#     )
-#     # logger.info("net %d final test acc %f" % (net_id, testacc))
-#     return str(net_id)
-#
-# # Parallel training using ProcessPoolExecutor
-# def parallel_train_networks(nets, selected, net_dataidx_map, local_data_index, args, device, logger):
-#     avg_acc = 0
-#
-#     with multiprocessing.Pool(processes=4) as pool:
-#         results = [pool.apply_async(train_single_net, (net_id, net, net_dataidx_map[local_data_index[net_id]], args, device))
-#                    for net_id, net in nets.items() if net_id in selected]
-#
-#         # Collect results
-#         for r in results:
-#             try:
-#                 res = r.get(timeout=120)
-#                 logger.info(f"Trained Net: {res[0]} Result: {res[1]}")
-#                 avg_acc += res[1]
-#             except multiprocessing.TimeoutError:
-#                 print(f"!!!!!!!!!!! Net took too long to complete and timed out !!!!!!!!!!!!!")
-#
-#     # with concurrent.futures.ProcessPoolExecutor() as executor:
-#     #     # Prepare the futures for parallel execution
-#     #     futures = [
-#     #         executor.submit(
-#     #             train_single_net, net_id, net, net_dataidx_map[local_data_index[net_id]], args, device, logger
-#     #         )
-#     #         for net_id, net in nets.items() if net_id in selected
-#     #     ]
-#     #
-#     #     # Gather the results as they complete
-#     #     for future in concurrent.futures.as_completed(futures):
-#     #         avg_acc += future.result()
-#
-#     print(">>>>>>>>> FINISHED MULTIPROCESSING <<<<<<<<")
-#     return avg_acc / len(results)
 
 
 def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=None, test_dl=None, device="cpu"):
@@ -869,7 +811,6 @@ def local_train_net_moon(nets, selected, args, net_dataidx_map, test_dl=None, gl
     return nets_list
 
 
-
 def get_partition_dict(dataset, partition, n_parties, init_seed=0, datadir='./data', logdir='./logs', beta=0.5):
     seed = init_seed
     np.random.seed(seed)
@@ -1055,7 +996,6 @@ if __name__ == '__main__':
 
             local_data_index = np.arange(args.n_parties)
             local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
-            # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
@@ -1135,7 +1075,11 @@ if __name__ == '__main__':
         if args.daisy is None or args.daisy == 0:
             args.daisy = 1
 
+        with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+            f.write('\nDaisy times: \n')
+
         for round in range(args.comm_round):
+            daisy_times = []
             logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
@@ -1186,9 +1130,9 @@ if __name__ == '__main__':
 
                     local_data_index = permuted_data_idx
 
-                    dasy_end_time = time.time()
-                    daisy_time = dasy_end_time - dasy_start_time
+                    daisy_time = time.time() - dasy_start_time
                     logger.warning(">>>>>>>>>>>>> DAISY chain completed in %s sec" % str(daisy_time))
+                    daisy_times.append(daisy_time)
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
@@ -1223,6 +1167,9 @@ if __name__ == '__main__':
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
                 f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
+
+            with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+                f.write(f'{np.mean(daisy_times)}\n')
 
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
