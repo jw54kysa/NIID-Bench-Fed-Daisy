@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=si_le_test
+#SBATCH --job-name=label_dis_test
 #SBATCH --partition=clara
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -7,7 +7,7 @@
 #SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=END
+#SBATCH --mail-type=BEGIN,END
 
 for alg in feddc
 do
@@ -24,7 +24,7 @@ do
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=25 \
+      --comm_round=20 \
       --daisy=10 \
       --daisy_perm=$perm \
       --si_local_epochs=0 \
@@ -35,6 +35,7 @@ do
       --logdir='./logs/' \
       --noise=0 \
       --sample=1 \
-      --init_seed=0
+      --init_seed=0 \
+      --experiment='label_dis_test'
   done
 done
