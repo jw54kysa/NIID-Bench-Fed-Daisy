@@ -948,8 +948,8 @@ if __name__ == '__main__':
 
     # log data sizes
     total_count = 0
-    for idx, list in net_dataidx_map.items():
-        total_count += len(list)
+    for idx, data_idxs in net_dataidx_map.items():
+        total_count += len(data_idxs)
 
     with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
         f.write(f'Total training data: {total_count} \n')
