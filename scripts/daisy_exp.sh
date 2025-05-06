@@ -3,11 +3,13 @@
 #SBATCH --partition=clara
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --mem=128G
-#SBATCH --time=2-00:00:00
+#SBATCH --mem=64G
+#SBATCH --time=1-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
+
+# --si_local_epochs=0 \
 
 for alg in feddc
 do
@@ -20,14 +22,13 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=10 \
+      --epochs=5 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=20 \
       --daisy=10 \
       --daisy_perm=$perm \
-      --si_local_epochs=0 \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
