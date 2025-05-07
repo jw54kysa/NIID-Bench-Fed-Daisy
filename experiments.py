@@ -1534,9 +1534,14 @@ if __name__ == '__main__':
         nets, local_model_meta_data, layer_type = init_nets(args.net_config, args.dropout_p, 1, args)
         n_epoch = args.epochs
         nets[0].to(device)
-        trainacc, testacc = train_net(0, nets[0], train_dl_global, test_dl_global, n_epoch, args.lr, args.optimizer, device=device)
+        train_net(0, nets[0], train_dl_global, test_dl_global, n_epoch, args.lr, args.optimizer, args, device=device)
 
-        logger.info("All in test acc: %f" % testacc)
+        acc = compute_accuracy(nets[0], test_dl_global, moon_model=True, device=device)
+
+        logger.info("All in test acc: %f" % acc)
+
+        with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
+            f.write(f'Final Acc: {acc} sec \n\n')
 
     end_time = time.time()
     elapsed_time = end_time - start_time

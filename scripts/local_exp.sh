@@ -1,5 +1,5 @@
 
-for alg in feddc
+for alg in all_in
 do
   for perm in rand
   do
