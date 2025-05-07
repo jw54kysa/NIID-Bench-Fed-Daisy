@@ -835,7 +835,7 @@ if __name__ == '__main__':
         algorithm_subpath = os.path.join(args.alg, args.daisy_perm)
     else:
         algorithm_subpath = args.alg
-    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, algorithm_subpath, args.model, exp_tag)
+    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, args.n_parties, algorithm_subpath, args.model, exp_tag)
     mkdirs(log_path)
 
     if args.log_file_name is None:
