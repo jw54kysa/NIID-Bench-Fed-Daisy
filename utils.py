@@ -652,6 +652,9 @@ def compute_accuracy(model, dataloader, get_confusion_matrix=False, w_f1=False, 
                     pred_labels_list = np.append(pred_labels_list, pred_label.cpu().numpy())
                     true_labels_list = np.append(true_labels_list, target.data.cpu().numpy())
 
+    if len(true_labels_list) == 0 or len(pred_labels_list) == 0:
+        raise ValueError("Empty prediction or label list – is the dataloader empty?")
+
     if get_confusion_matrix:
         conf_matrix = confusion_matrix(true_labels_list, pred_labels_list)
 

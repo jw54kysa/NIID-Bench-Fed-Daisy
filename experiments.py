@@ -1075,11 +1075,7 @@ if __name__ == '__main__':
         if args.daisy is None or args.daisy == 0:
             args.daisy = 1
 
-        with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
-            f.write('\nDaisy times: \n')
-
         for round in range(args.comm_round):
-            daisy_times = []
             logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
@@ -1110,7 +1106,6 @@ if __name__ == '__main__':
                         visits[idx] += 1
 
                 elif args.daisy_perm == 'prob_size':
-                    dasy_start_time = time.time()
                     # probabilistic permutation on sample size
                     daisy_data_idx = list(net_dataidx_map.values())
                     sample_sizes = np.array([len(value) for value in daisy_data_idx])
@@ -1130,10 +1125,6 @@ if __name__ == '__main__':
 
                     local_data_index = permuted_data_idx
 
-                    daisy_time = time.time() - dasy_start_time
-                    logger.warning(">>>>>>>>>>>>> DAISY chain completed in %s sec" % str(daisy_time))
-                    daisy_times.append(daisy_time)
-
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
             fed_avg_freqs = [len(net_dataidx_map[r]) / total_data_points for r in selected]
@@ -1152,24 +1143,20 @@ if __name__ == '__main__':
             logger.info('global n_test: %d' % len(test_dl_global.dataset))
 
             global_model.to(device)
-            train_acc = compute_accuracy(global_model, train_dl_global, device=device)
-            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, w_f1=True,
-                                                     device=device)
+            # train_acc = compute_accuracy(global_model, train_dl_global, device=device)
+            test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, w_f1=True, device=device)
 
             results.append({
                 "Round": round,
                 "Epoch": args.epochs,
-                "Train Accuracy": train_acc,
+                "Train Accuracy": 0,
                 "Test Accuracy": test_acc,
-                "F1" : f1,
-                "Confusion Matrix": conf_matrix.tolist()
+                "F1" : 0,
+                "Confusion Matrix": 0
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
-
-            with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
-                f.write(f'{np.mean(daisy_times)}\n')
+                f.write(', '.join([str(round), str(0), str(test_acc), str(0), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
