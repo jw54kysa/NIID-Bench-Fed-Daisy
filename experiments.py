@@ -1536,7 +1536,7 @@ if __name__ == '__main__':
         nets[0].to(device)
         train_net(0, nets[0], train_dl_global, test_dl_global, n_epoch, args.lr, args.optimizer, args, device=device)
 
-        acc = compute_accuracy(nets[0], test_dl_global, moon_model=True, device=device)
+        acc = compute_accuracy(nets[0], test_dl_global, device=device)
 
         logger.info("All in test acc: %f" % acc)
 
