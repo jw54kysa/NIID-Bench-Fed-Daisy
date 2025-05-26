@@ -48,6 +48,7 @@ def get_args():
     parser.add_argument('--comm_round', type=int, default=5, help='number of maximum communication round')
     parser.add_argument('--daisy', type=int, default=10, help='number of daisy rounds')
     parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
+    parser.add_argument('--local_epochs_test', type=str, default=None, help='Quick test, to exclude Clients with SI < 0.5')
     parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
@@ -615,6 +616,11 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         else:
             n_epoch = args.epochs
             logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
+
+        # skip training if SI < 0.5
+        if args.local_epochs_test is not None and label_dis is not None and float(label_dis[local_data_index[net_id]][2]) < 0.5:
+            logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(label_dis[local_data_index[net_id]][2])))
+            continue
 
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
         # logger.info("net %d trained" % (net_id))
