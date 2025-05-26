@@ -1,30 +1,31 @@
 #!/bin/bash --
-#SBATCH --job-name=label_dis_test
+#SBATCH --job-name=jan_fix_lr
 #SBATCH --partition=clara
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=1-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=END
 
 for alg in feddc
 do
   for perm in rand
   do
     srun singularity exec FEDDC.sif \
-    python3.9 -u experiments.py \
+    python3.9 -u experiments_old.py \
       --model=simple-cnn \
       --dataset=cifar10 \
+      --partition='partitions/cifar10/noniid-labeldir/50/partition_tuple.pkl' \
       --alg=$alg \
-      --lr=0.01 \
+      --lr=0.1 \
       --batch-size=64 \
       --epochs=10 \
       --n_parties=50 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=20 \
+      --comm_round=25 \
       --daisy=10 \
       --daisy_perm=$perm \
       --partition=noniid-labeldir \

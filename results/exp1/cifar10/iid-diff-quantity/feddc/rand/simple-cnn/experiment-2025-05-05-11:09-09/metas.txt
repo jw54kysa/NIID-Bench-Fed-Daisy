@@ -1,0 +1,31 @@
+Meta Daten: 
+ 
+Total training data: 50000 
+
+Daisy times: 
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan

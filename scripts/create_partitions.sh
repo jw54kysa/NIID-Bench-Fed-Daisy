@@ -4,19 +4,19 @@
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=128G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=02:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=BEGIN,END
 
 for dataset in cifar10
 do
-  for part in iid-diff-quantity iid-diff-quantity-rand #icid-diff-quantity-rand-sb noniid-labeldir
+  for part in iid-diff-quantity-rand #icid-diff-quantity-rand-sb noniid-labeldir
   do
-    for n_parties in 50 100 200
+    for n_parties in 500
     do
-#      srun singularity exec FEDDC.sif \
-        python3 -u create_partitions.py \
+        srun singularity exec FEDDC.sif \
+        python3.9 -u create_partitions.py \
         --dataset="$dataset" \
         --n_parties=$n_parties \
         --partition="$part" \

@@ -1,0 +1,11 @@
+2025-05-08 17:56:05,756 - root - INFO - cpu
+2025-05-08 17:56:05,756 - root - INFO - ####################################################################################################
+2025-05-08 17:56:05,761 - root - WARNING - Using Partition Pickle File
+2025-05-08 17:57:38,565 - root - INFO - Training network 0
+Traceback (most recent call last):
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 1539, in <module>
+    acc = compute_accuracy(nets[0], test_dl_global, moon_model=True, device=device)
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/utils.py", line 640, in compute_accuracy
+    _, _, out = model(x)
+ValueError: too many values to unpack (expected 3)
+srun: error: paul08: task 0: Exited with exit code 1

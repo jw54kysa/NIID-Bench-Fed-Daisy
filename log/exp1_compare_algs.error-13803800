@@ -1,0 +1,6 @@
+2025-05-08 19:02:26,562 - root - INFO - cpu
+2025-05-08 19:02:26,562 - root - INFO - ####################################################################################################
+2025-05-08 19:02:26,567 - root - WARNING - Using Partition Pickle File
+2025-05-08 19:03:54,148 - root - INFO - Training network 0
+2025-05-08 19:08:25,340 - root - INFO - All in test acc: 0.599100
+2025-05-08 19:08:25,342 - root - WARNING - Execution time: 0 hours, 4 minutes, 31.20 seconds
