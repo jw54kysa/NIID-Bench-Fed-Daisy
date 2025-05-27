@@ -49,6 +49,7 @@ def get_args():
     parser.add_argument('--daisy', type=int, default=10, help='number of daisy rounds')
     parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
     parser.add_argument('--local_epochs_test', type=str, default=None, help='Quick test, to exclude Clients with SI < 0.5')
+    parser.add_argument('--global_agg', type=str, default='simple', help='Aggregate global model using weighted mean?')
     parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
@@ -1132,18 +1133,35 @@ if __name__ == '__main__':
                     local_data_index = permuted_data_idx
 
             # update global model
-            total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
-            fed_avg_freqs = [len(net_dataidx_map[r]) / total_data_points for r in selected]
 
-            for idx in range(len(selected)):
-                net_para = nets[selected[idx]].cpu().state_dict()
-                if idx == 0:
-                    for key in net_para:
-                        global_para[key] = net_para[key] * fed_avg_freqs[idx]
-                else:
-                    for key in net_para:
-                        global_para[key] += net_para[key] * fed_avg_freqs[idx]
-            global_model.load_state_dict(global_para)
+            if args.global_agg == 'weight':
+                total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
+                fed_avg_freqs = [len(net_dataidx_map[local_data_index[r]]) / total_data_points for r in selected]
+
+                for idx in range(len(selected)):
+                    net_para = nets[selected[idx]].cpu().state_dict()
+                    if idx == 0:
+                        for key in net_para:
+                            global_para[key] = net_para[key] * fed_avg_freqs[idx]
+                    else:
+                        for key in net_para:
+                            global_para[key] += net_para[key] * fed_avg_freqs[idx]
+
+                global_model.load_state_dict(global_para)
+
+            elif args.global_agg == 'simple':
+                num_selected = len(selected)
+
+                for idx in range(len(selected)):
+                    net_para = nets[selected[idx]].cpu().state_dict()
+                    if idx == 0:
+                        for key in net_para:
+                            global_para[key] = net_para[key] / num_selected
+                    else:
+                        for key in net_para:
+                            global_para[key] += net_para[key] / num_selected
+
+                global_model.load_state_dict(global_para)
 
             logger.info('global n_training: %d' % len(train_dl_global.dataset))
             logger.info('global n_test: %d' % len(test_dl_global.dataset))
