@@ -1,13 +1,13 @@
 #!/bin/bash --
-#SBATCH --job-name=exp1_compare_algs
-#SBATCH --partition=paul-long
+#SBATCH --job-name=e1
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
-#SBATCH --mem=128G
-#SBATCH --time=10-00:00:00
+#SBATCH --mem=64G
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=END
 
  # --daisy_perm=rand \ prob_size
 
@@ -25,9 +25,8 @@ do
     --rho=0.9 \
     --mu=0.01 \
     --comm_round=50 \
-    --daisy=10 \
+    --daisy=2 \
     --daisy_perm=rand \
-    --global_agg='simple' \
     --partition=iid-diff-quantity \
     --partition_path='partitions/cifar10/iid-diff-quantity/50/partition_tuple.pkl' \
     --beta=0.5 \
@@ -37,5 +36,5 @@ do
     --noise=0 \
     --sample=1 \
     --init_seed=0 \
-    --experiment='exp1'
+    --experiment='E1'
 done

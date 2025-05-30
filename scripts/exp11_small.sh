@@ -7,7 +7,7 @@
 #SBATCH --time=10-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=END
 
  # --daisy_perm=rand \ prob_size
 

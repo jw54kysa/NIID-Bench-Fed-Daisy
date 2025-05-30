@@ -7,7 +7,7 @@
 #SBATCH --time=4-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=END
 
 # --si_local_epochs=0 \
 
