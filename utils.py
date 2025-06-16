@@ -434,6 +434,47 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
         net_dataidx_map = {i: batch_idxs[i] for i in range(n_parties)}
         print('>>> iid-diff-quantity-rand-sb partition created')
 
+    elif partition == "mixed-dirichlet":
+
+        K = len(np.unique(y_train))
+        N = len(y_train)
+
+        client_sizes = np.random.dirichlet(np.repeat(beta, n_parties)) * N
+        client_sizes = client_sizes.astype(int)
+
+        diff = N - np.sum(client_sizes)
+        for i in range(abs(diff)):
+            client_sizes[i % n_parties] += np.sign(diff)
+
+        class_indices = {k: np.where(y_train == k)[0].tolist() for k in range(K)}
+        for idx_list in class_indices.values():
+            np.random.shuffle(idx_list)
+
+        net_dataidx_map = {i: [] for i in range(n_parties)}
+
+        for client_id in range(n_parties):
+            size = client_sizes[client_id]
+            label_distribution = np.random.dirichlet(np.repeat(beta, K))
+            label_counts = (label_distribution * size).astype(int)
+
+            diff = size - np.sum(label_counts)
+            for i in range(abs(diff)):
+                label_counts[i % K] += np.sign(diff)
+
+            for k in range(K):
+                take = label_counts[k]
+                available = len(class_indices[k])
+                actual_take = min(take, available)
+                net_dataidx_map[client_id].extend(class_indices[k][:actual_take])
+                class_indices[k] = class_indices[k][actual_take:]
+
+        remaining = sum(class_indices.values(), [])
+        np.random.shuffle(remaining)
+        client_order = np.argsort([len(v) for v in net_dataidx_map.values()])
+        for idx, client_id in zip(remaining, np.tile(client_order, len(remaining))):
+            net_dataidx_map[client_id].append(idx)
+
+
     elif partition == "mixed":
         min_size = 0
         min_require_size = 10
