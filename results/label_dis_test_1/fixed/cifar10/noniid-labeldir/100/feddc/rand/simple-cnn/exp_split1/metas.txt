@@ -1,0 +1,4 @@
+Total training data: 50000
+execution time: 132838.18204045296 sec
+execution time formated: 36 hours, 53 minutes, 58.18 seconds
+global epoch counter: 178750
