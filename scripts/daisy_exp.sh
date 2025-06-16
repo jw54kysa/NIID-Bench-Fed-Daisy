@@ -1,19 +1,20 @@
 #!/bin/bash --
-#SBATCH --job-name=label_dis_test
+#SBATCH --job-name=ldt_2
 #SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=4-00:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
 # --si_local_epochs=0 \
+#--local_epochs_test='thresh' \
 
 for alg in feddc
 do
-  for perm in rand
+  for si in 0
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
@@ -21,17 +22,17 @@ do
       --dataset=cifar10 \
       --partition='partitions/cifar10/noniid-labeldir/100/partition_tuple.pkl' \
       --alg=$alg \
-      --lr=0.001 \
+      --lr=0.01 \
       --batch-size=64 \
-      --epochs=20 \
+      --epochs=30 \
       --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=25 \
       --daisy=10 \
-      --daisy_perm=$perm \
-      --si_local_epochs=0 \
-      --local_epochs_test='test' \
+      --daisy_perm=rand \
+      --si_local_epochs=1 \
+      --local_epochs_test='thresh' \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
@@ -40,6 +41,6 @@ do
       --noise=0 \
       --sample=1 \
       --init_seed=0 \
-      --experiment='label_dis_test'
+      --experiment='fixed_30'
   done
 done
