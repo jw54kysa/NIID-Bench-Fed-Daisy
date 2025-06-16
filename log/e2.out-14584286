@@ -1,0 +1,4 @@
+Downloading https://raw.githubusercontent.com/tao-shen/FEMNIST_pytorch/master/femnist.tar.gz to ./data/FEMNIST/raw/femnist.tar.gz
+Extracting ./data/FEMNIST/raw/femnist.tar.gz to ./data/FEMNIST/raw
+Processing...
+len train_dl_global: 341873
