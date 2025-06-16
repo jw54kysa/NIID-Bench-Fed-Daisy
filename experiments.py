@@ -611,6 +611,11 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
             n_epoch = int(args.epochs * (float(label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
             n_epoch = max(1,n_epoch) # min 1 epoch
 
+            if args.local_epochs_test is not None and "reverse" in args.local_epochs_test:
+                n_epoch = int(
+                    args.epochs * (float(1 - label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
+                n_epoch = max(1, n_epoch)  # min 1 epoch
+
             logger.info("Training network %s. with %s epochs with SI: %.4f " % (
             str(net_id), str(n_epoch), float(label_dis[local_data_index[net_id]][2])))
         else:
@@ -618,7 +623,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
             logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
 
         # skip training if SI < 0.5
-        if args.local_epochs_test is not None and label_dis is not None and float(label_dis[local_data_index[net_id]][2]) < 0.5:
+        if args.local_epochs_test is not None and "tresh" in args.local_epochs_test and label_dis is not None and float(label_dis[local_data_index[net_id]][2]) < 0.5:
             logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(label_dis[local_data_index[net_id]][2])))
             continue
 
