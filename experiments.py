@@ -610,17 +610,19 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         # calculate local epochs based on label distribution
 
         if args.local_epochs_test is not None:
-            if "sild" in args.local_epochs_test:
+            if "sild-chi" in args.local_epochs_test:
                 si_idx = 1
+            if "sild-kl" in args.local_epochs_test:
+                si_idx = 3
             elif "sicomb" in args.local_epochs_test:
-                si_idx = 2
+                si_idx = 4
 
             if label_dis is not None and args.si_local_epochs is not None:
                 si = float(label_dis[local_data_index[net_id]][si_idx])
                 n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
                 n_epoch = max(1,n_epoch) # min 1 epoch
 
-                logger.info(f"Training network {net_id} with {n_epoch} epochs on {'SILD' if si_idx == 1 else 'SICOMB'}: {si} ")
+                logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
 
             # skip training if SI < 0.2
             if "tresh" in args.local_epochs_test and si < 0.2:
@@ -917,7 +919,12 @@ if __name__ == '__main__':
 
         # Sample-Index Label Distribution
         sample_index_label_dis = create_data_dis_plots(net_dataidx_map, log_path + '/plots/plot', args)
-        # {client_id: (kl_div, normalized kl_div, combined sampling index)}
+        # {client_id:
+        # 0: (chi,
+        # 1: norm_chi,
+        # 2: kl,
+        # 3: norm_kl,
+        # 4: combined)
 
     n_classes = len(np.unique(y_train))
 
@@ -1132,15 +1139,11 @@ if __name__ == '__main__':
                 elif args.daisy_perm == 'mixed':
                     # probabilistic permutation on sample size
                     daisy_data_idx = list(net_dataidx_map.values())
-                    sample_sizes = np.array([len(value) for value in daisy_data_idx])
-                    label_scores = np.array([sample_index_label_dis[i][2] for i in range(len(sample_index_label_dis))])
+                    # use indx 4 for combined sample index
+                    label_scores = np.array([sample_index_label_dis[i][4] for i in range(len(sample_index_label_dis))])
 
-                    sample_probs = sample_sizes / sample_sizes.sum()
-                    combined = sample_probs * label_scores
-                    final_probs = combined / combined.sum()
-
-                    permuted_data_idx = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
-                                                         p=final_probs)
+                    permuted_data_idx = np.random.choice(range(len(label_scores)), size=len(label_scores), replace=True,
+                                                         p=label_scores)
 
                     for idx in permuted_data_idx:
                         visits[idx] += 1

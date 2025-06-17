@@ -170,29 +170,43 @@ def create_data_dis_plots(client_idxs, path, args):
         gesamt_summe = client_label_dis.sum()
         p = client_label_dis / gesamt_summe
 
-        # Gleichverteilung
         q = np.ones_like(p) / len(p)
 
         # KL-Divergenz
         kl_div = np.sum(rel_entr(p, q))
 
-        label_distribution[idx] = (kl_div, 0)
+        chi_gesamt_summe = client_label_dis.sum()
+        gleichverteilung = [chi_gesamt_summe / len(client_label_dis)] * len(client_label_dis)
 
-    # Normalize KL Div
-    kls = [val[0] for _, val in label_distribution.items()]
+        # Chi-Quadrat-Test
+        chi_stat, p_value = chisquare(f_obs=client_label_dis, f_exp=gleichverteilung)
+
+        label_distribution[idx] = (chi_stat, kl_div)
+
+    # Normalize Chi2
+    chi_stats = [val[0] for _, val in label_distribution.items()]
+    ldmin = np.min(chi_stats)
+    ldmax = np.max(chi_stats)
+
+    for idx, val in label_distribution.items():
+        normalized_ld = 1 - ((val[0] - ldmin) / (ldmax - ldmin))
+        label_distribution[idx] = (val[0], normalized_ld, val[1])
+
+    # Normalize KL-Div
+    kls = [val[2] for _, val in label_distribution.items()]
     kl_min = np.min(kls)
     kl_max = np.max(kls)
 
     for idx, val in label_distribution.items():
-        normalized_kl = 1 - ((val[0] - kl_min) / (kl_max - kl_min))
-        label_distribution[idx] = (val[0], normalized_kl)
+        normalized_kl = 1 - ((val[2] - kl_min) / (kl_max - kl_min))
+        label_distribution[idx] = (val[0], val[1], val[2], normalized_kl)
 
-    # Combine KL Div and Sample Size
+    # Combine KL-Div and Sample Size
     daisy_data_idx = list(client_idxs.values())
 
     sample_sizes = np.array([len(value) for value in daisy_data_idx])
     sample_scores = sample_sizes / sample_sizes.max()
-    normalized = np.array([label_distribution[i][1] for i in label_distribution.keys()])
+    normalized = np.array([label_distribution[i][3] for i in label_distribution.keys()])
 
     if args.combined_si_alpha is not None:
         alpha = float(args.combined_si_alpha)  # sample size
@@ -207,7 +221,7 @@ def create_data_dis_plots(client_idxs, path, args):
     nomalized_combined = (combined - min_combined) / (max_combined - min_combined)
 
     for idx, val in label_distribution.items():
-        label_distribution[idx] = (val[0], val[1], nomalized_combined[idx])
+        label_distribution[idx] = (val[0], val[1], val[2], val[3], nomalized_combined[idx])
 
     print_plot(path, label_distribution, data)
 
