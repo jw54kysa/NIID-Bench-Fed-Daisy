@@ -9,8 +9,12 @@
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
 
- # --daisy_perm=rand \ prob_size \ mixed
- # --partition_path='partitions/cifar10/iid-diff-quantity-rand-sb/100/partition_tuple.pkl' \
+# --daisy_perm=rand \ prob_size \ mixed
+# --partition_path='partitions/cifar10/iid-diff-quantity-rand-sb/100/partition_tuple.pkl' \
+
+# --si_local_epochs=0 \
+# --local_epochs_test='sild' \
+# --combined_si_alpha=0.6 \
 
 for alg in fedavg
 do
@@ -30,9 +34,6 @@ do
     		--comm_round=50 \
     		--daisy=5 \
     		--daisy_perm=rand \
-    		--si_local_epochs=0 \
-        --local_epochs_test='sild' \
-        --combined_si_alpha=0.6 \
     		--partition=mixed-dirichlet \
     		--partition_path='partitions/cifar10/mixed-dirichlet/50/partition_tuple.pkl' \
     		--beta=0.8 \

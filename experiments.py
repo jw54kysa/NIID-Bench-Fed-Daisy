@@ -840,7 +840,9 @@ if __name__ == '__main__':
         algorithm_subpath = os.path.join(args.alg, args.daisy_perm, str(args.daisy) + "D")
     else:
         algorithm_subpath = args.alg
-    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, str(args.n_parties), algorithm_subpath, str(args.epochs) + "E", str(args.lr) + "LR", exp_tag)
+    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, str(args.n_parties),
+                            algorithm_subpath, str(args.epochs) + "E", str(args.lr) + "LR", args.local_epochs_test,
+                            str(args.si_local_epochs), str(args.combined_si_alpha), exp_tag)
     mkdirs(log_path)
     mkdirs(log_path + '/plots')
 
