@@ -3,8 +3,8 @@ from matplotlib.ticker import MaxNLocator
 import numpy as np
 from collections import Counter
 from scipy.stats import chisquare
+from scipy.special import rel_entr
 from sympy.physics.quantum.gate import normalized
-
 from utils import *
 
 # PLOT SAMPLE SIZE AND VISITS
@@ -82,8 +82,76 @@ def plot_data_dis(client_idxs, path, args):
 
     plt.savefig(path + "/rss_plt_niid.png")
 
+# Print several plots with data distribution and sample index
+def print_plot(path, label_distribution, data):
+    clients = list(data.keys())
+
+    # categories
+    categories = set(cat for label in data for cat in data[label].keys())
+    category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
+
+    for appendix in ['_sample_size', '_kl_div', '_combined', '_kl_and_combined']:
+
+        # Sorting
+        if appendix == '_sample_size':
+            sorting_idx = None
+        elif appendix == '_kl_div':
+            sorting_idx = 1
+        elif appendix == '_combined':
+            sorting_idx = 2
+        elif appendix == '_kl_and_combined':
+            sorting_idx == 1
+        else:
+            sorting_idx = None
+
+        if sorting_idx is not None:
+            clients_sorted = sorted(clients, key=lambda client: label_distribution[client][sorting_idx])
+        else:
+            client_sums = {client: sum(data[client].values()) for client in clients}
+            clients_sorted = sorted(clients, key=lambda client: client_sums[client])
+
+        # FIG
+        fig, ax1 = plt.subplots(figsize=(16, 8))
+        bottom = np.zeros(len(clients))
+
+        for category in categories:
+            values = category_values[category]
+            val = [values[clients.index(client)] for client in clients_sorted]
+            ax1.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
+            bottom += np.array(val)
+
+        if appendix in ['_kl_div', '_kl_and_combined']:
+            normalized_kl_sorted = [label_distribution[client][1] for client in clients_sorted]
+            ax2 = ax1.twinx()
+            ax2.plot(np.arange(len(normalized_kl_sorted)), normalized_kl_sorted, label='Normalized KL-Divergenz',
+                     color='red',
+                     marker='o')
+            if appendix == '_kl_div':
+                ax2.set_ylabel("Normalized KL-Divergenz", color='red')
+                ax2.tick_params(axis='y', labelcolor='red')
+            ax2.legend(loc=0)
+
+        if appendix in ['_combined', '_kl_and_combined']:
+            combined_ld_sorted = [label_distribution[client][2] for client in clients_sorted]
+            ax3 = ax1.twinx()
+            ax3.plot(np.arange(len(combined_ld_sorted)), combined_ld_sorted, label='Combined Sample Index',
+                     color='black',
+                     marker='o')
+            ax3.set_ylabel("Normalized Combined Sample Index", color='black')
+            ax3.tick_params(axis='y', labelcolor='black')
+            ax3.legend(loc=0)
+
+        # Adding clients and title
+        ax1.set_xlabel('Client')
+        ax1.set_ylabel('Sample Size')
+        ax1.set_title('Sample Size & Label Distribution per Client')
+        # ax1.legend()
+
+        if path is not None:
+            plt.savefig(path + appendix + '.png')
+
 # Plot Label Distribution and Sampling Index Chi Stat
-def plot_data_dis_sample_index(client_idxs, path, args):
+def create_data_dis_plots(client_idxs, path, args):
     label_distribution = {}
     data = {}
     for idx, l in client_idxs.items():
@@ -97,60 +165,50 @@ def plot_data_dis_sample_index(client_idxs, path, args):
 
         # compare distributions
         all_label = range(0, 10)
-        client_label_dis = [dict(label_counter).get(label, 0) for label in all_label]
+        client_label_dis = np.array([dict(label_counter).get(label, 0) for label in all_label], dtype=np.float64)
 
-        gesamt_summe = sum(client_label_dis)
-        gleichverteilung = [gesamt_summe / len(client_label_dis)] * len(client_label_dis)
+        gesamt_summe = client_label_dis.sum()
+        p = client_label_dis / gesamt_summe
 
-        # Chi-Quadrat-Test
-        chi_stat, p_value = chisquare(f_obs=client_label_dis, f_exp=gleichverteilung)
+        # Gleichverteilung
+        q = np.ones_like(p) / len(p)
 
-        label_distribution[idx] = (chi_stat, np.log(chi_stat))
+        # KL-Divergenz
+        kl_div = np.sum(rel_entr(p, q))
 
-    # normalize sample index
-    chi_stats = [val[0] for _, val in label_distribution.items()]
-    ldmin = np.min(chi_stats)
-    ldmax = np.max(chi_stats)
+        label_distribution[idx] = (kl_div, 0)
+
+    # Normalize KL Div
+    kls = [val[0] for _, val in label_distribution.items()]
+    kl_min = np.min(kls)
+    kl_max = np.max(kls)
 
     for idx, val in label_distribution.items():
-        normalized_ld = 1 - ((val[0] - ldmin) / (ldmax - ldmin))
-        label_distribution[idx] = (val[0], val[1], normalized_ld)
+        normalized_kl = 1 - ((val[0] - kl_min) / (kl_max - kl_min))
+        label_distribution[idx] = (val[0], normalized_kl)
 
-    # sort and categories
-    clients = list(data.keys())
-    categories = set(cat for label in data for cat in data[label].keys())
-    category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
+    # Combine KL Div and Sample Size
+    daisy_data_idx = list(client_idxs.values())
 
-    # sort after chi2
-    clients_sorted = sorted(clients, key=lambda client: label_distribution[client][2])
+    sample_sizes = np.array([len(value) for value in daisy_data_idx])
+    sample_scores = sample_sizes / sample_sizes.max()
+    normalized = np.array([label_distribution[i][1] for i in label_distribution.keys()])
 
-    fig, ax1 = plt.subplots(figsize=(16, 8))
-    bottom = np.zeros(len(clients))
+    if args.combined_si_alpha is not None:
+        alpha = float(args.combined_si_alpha)  # sample size
+        beta = 1 - float(args.combined_si_alpha) # label quality
+    else:
+        alpha = 0.5  # Gewicht sample size
+        beta = 0.5  # Gewicht label quality
+    combined = alpha * sample_scores + beta * normalized
 
-    for category in categories:
-        values = category_values[category]
-        val = [values[clients.index(client)] for client in clients_sorted]
-        ax1.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
-        bottom += np.array(val)
+    min_combined = combined.min()
+    max_combined = combined.max()
+    nomalized_combined = (combined - min_combined) / (max_combined - min_combined)
 
-    # ax2 = ax1.twinx()
-    # ax2.plot(np.arange(len(label_distribution_sorted)), label_distribution_sorted, label='Sample Index', color='black', marker='o')
-    # ax2.set_ylabel("Sample Index Label Distribution", color='black')
-    # ax2.tick_params(axis='y', labelcolor='black')
+    for idx, val in label_distribution.items():
+        label_distribution[idx] = (val[0], val[1], nomalized_combined[idx])
 
-    normalized_ld_sorted = [label_distribution[client][2] for client in clients_sorted]
-    ax3 = ax1.twinx()
-    ax3.plot(np.arange(len(normalized_ld_sorted)), normalized_ld_sorted, label='Normalized Sample Index', color='red',
-             marker='o')
-    ax3.set_ylabel("Normalized Sample Index Label Distribution", color='red')
-    ax3.tick_params(axis='y', labelcolor='red')
-
-    # Adding clients and title
-    ax1.set_xlabel('Client')
-    ax1.set_ylabel('Sample Size')
-    ax1.set_title('Sample Size & Label Distribution per Client')
-    ax1.legend()
-
-    plt.savefig(path + "/rss_plt_niid_sample_index.png")
+    print_plot(path, label_distribution, data)
 
     return label_distribution

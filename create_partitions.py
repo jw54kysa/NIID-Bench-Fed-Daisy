@@ -12,6 +12,8 @@ def get_args():
     parser.add_argument('--batch-size', type=int, default=64, help='input batch size for training (default: 64)')
     parser.add_argument('--beta', type=float, default=0.5,
                         help='The parameter for the dirichlet distribution for data partitioning')
+    parser.add_argument('--combined_si_alpha', type=float, default=None, help='weight of sample size when combining si')
+
 
     parser.add_argument('--datadir', type=str, required=False, default="./data/", help="Data directory")
     parser.add_argument('--logdir', type=str, required=False, default="./logs/", help='Log directory path')
@@ -23,11 +25,12 @@ if __name__ == "__main__":
 
     log_path = os.path.join("partitions", args.dataset, args.partition, str(args.n_parties))
     mkdirs(log_path)
+    mkdirs(log_path + '/plots')
 
     print(">>> Partitioning Data ", log_path)
     X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
         args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
     print(">>> Creating Plot: ", log_path)
-    plot_data_dis(net_dataidx_map, log_path, args)
-    plot_data_dis_sample_index(net_dataidx_map, log_path, args)
+    #plot_data_dis(net_dataidx_map, log_path, args)
+    create_data_dis_plots(net_dataidx_map, log_path  + '/plots/plot', args)

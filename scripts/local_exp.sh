@@ -1,5 +1,7 @@
 
-for alg in all_in
+# --partition_path='partitions/cifar10/mixed-dirichlet/100/partition_tuple.pkl' \
+
+for alg in feddc
 do
   for perm in rand
   do
@@ -16,15 +18,17 @@ do
     --comm_round=10 \
     --daisy=1 \
     --si_local_epochs=0 \
-    --partition=iid-diff-quantity \
-    --partition_path='partitions/cifar10/iid-diff-quantity/50/partition_tuple.pkl' \
-    --beta=0.5 \
+    --local_epochs_test='sicomb' \
+    --combined_si_alpha=0.6 \
+    --partition=mixed-dirichlet \
+    --partition_path='partitions/cifar10/mixed-dirichlet/50/partition_tuple.pkl' \
+    --beta=0.8 \
     --device='cpu' \
     --datadir='./data/' \
     --logdir='./logs/' \
     --noise=0 \
     --sample=1 \
     --init_seed=0 \
-    --experiment='test_01_fail'
+    --experiment='local'
   done
 done

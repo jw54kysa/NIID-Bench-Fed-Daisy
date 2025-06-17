@@ -49,7 +49,8 @@ def get_args():
     parser.add_argument('--daisy', type=int, default=10, help='number of daisy rounds')
     parser.add_argument('--si_local_epochs', type=float, default=None, help='Sample index label distribution score for locale epochs')
     parser.add_argument('--local_epochs_test', type=str, default=None, help='Quick test, to exclude Clients with SI < 0.5')
-    parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size')
+    parser.add_argument('--combined_si_alpha', type=float, default=None, help='Weight for combined Sample Index')
+    parser.add_argument('--daisy_perm', type=str, default="rand", help='type of daisy chain permutation: rand/prob_size/mixed')
     parser.add_argument('--is_same_initial', type=int, default=1, help='Whether initial all the models with the same parameters in fedavg')
     parser.add_argument('--init_seed', type=int, default=0, help="Random seed")
     parser.add_argument('--dropout_p', type=float, required=False, default=0.0, help="Dropout probability. Default=0.0")
@@ -607,36 +608,29 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
 
         # calculate local epochs based on label distribution
-        if label_dis is not None and args.si_local_epochs is not None:
-            n_epoch = int(args.epochs * (float(label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
-            n_epoch = max(1,n_epoch) # min 1 epoch
 
-            if args.local_epochs_test is not None and "reverse" in args.local_epochs_test:
-                n_epoch = int(
-                    args.epochs * (float(1 - label_dis[local_data_index[net_id]][2]) + float(args.si_local_epochs)))
-                n_epoch = max(1, n_epoch)  # min 1 epoch
+        if args.local_epochs_test is not None:
+            if "sild" in args.local_epochs_test:
+                si_idx = 1
+            elif "sicomb" in args.local_epochs_test:
+                si_idx = 2
 
-            logger.info("Training network %s. with %s epochs with SI: %.4f " % (
-            str(net_id), str(n_epoch), float(label_dis[local_data_index[net_id]][2])))
+            if label_dis is not None and args.si_local_epochs is not None:
+                si = float(label_dis[local_data_index[net_id]][si_idx])
+                n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
+                n_epoch = max(1,n_epoch) # min 1 epoch
+
+                logger.info(f"Training network {net_id} with {n_epoch} epochs on {'SILD' if si_idx == 1 else 'SICOMB'}: {si} ")
+
+            # skip training if SI < 0.2
+            if "tresh" in args.local_epochs_test and si < 0.2:
+                logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(si)))
+                continue
         else:
             n_epoch = args.epochs
             logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
 
-        # skip training if SI < 0.5
-        if args.local_epochs_test is not None and "tresh" in args.local_epochs_test and label_dis is not None and float(label_dis[local_data_index[net_id]][2]) < 0.5:
-            logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(label_dis[local_data_index[net_id]][2])))
-            continue
-
         train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
-        # logger.info("net %d trained" % (net_id))
-        # avg_acc += testacc
-        # saving the trained models here
-        # save_model(net, net_id, args)
-        # else:
-        #     load_model(net, net_id, device=device)
-    # avg_acc /= len(selected)
-    # if args.alg == 'local_training':
-    #     logger.info("avg test acc %f" % avg_acc)
 
     nets_list = list(nets.values())
     return nets_list
@@ -848,6 +842,7 @@ if __name__ == '__main__':
         algorithm_subpath = args.alg
     log_path = os.path.join("results", args.experiment, args.dataset, args.partition, str(args.n_parties), algorithm_subpath, str(args.epochs) + "E", str(args.lr) + "LR", exp_tag)
     mkdirs(log_path)
+    mkdirs(log_path + '/plots')
 
     if args.log_file_name is None:
         argument_path='experiment_arguments.json'
@@ -910,7 +905,7 @@ if __name__ == '__main__':
             # Load (unpickle) the tuple from the file
             X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = pickle.load(file)
 
-            sample_index_label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args)
+            sample_index_label_dis = create_data_dis_plots(net_dataidx_map, log_path + '/plots/plot', args)
     else:
         logger.warning("Partitioning data")
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
@@ -919,8 +914,8 @@ if __name__ == '__main__':
         #plot_data_dis(net_dataidx_map, log_path, args)
 
         # Sample-Index Label Distribution
-        sample_index_label_dis = plot_data_dis_sample_index(net_dataidx_map, log_path, args)
-        # {client_id: (chi_stat, p_value, normalized sample index)}
+        sample_index_label_dis = create_data_dis_plots(net_dataidx_map, log_path + '/plots/plot', args)
+        # {client_id: (kl_div, normalized kl_div, combined sampling index)}
 
     n_classes = len(np.unique(y_train))
 
@@ -1123,13 +1118,27 @@ if __name__ == '__main__':
 
                     # AMP ? sample_sizes = sample_sizes ** 2
 
-                    total_size = sample_sizes.sum()
-                    if total_size == 0:
-                        exit(1)
-
-                    probabilities = (sample_sizes / total_size)
+                    probabilities = sample_sizes / sample_sizes.sum()
                     permuted_data_idx = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
                                                          p=probabilities)
+
+                    for idx in permuted_data_idx:
+                        visits[idx] += 1
+
+                    local_data_index = permuted_data_idx
+
+                elif args.daisy_perm == 'mixed':
+                    # probabilistic permutation on sample size
+                    daisy_data_idx = list(net_dataidx_map.values())
+                    sample_sizes = np.array([len(value) for value in daisy_data_idx])
+                    label_scores = np.array([sample_index_label_dis[i][2] for i in range(len(sample_index_label_dis))])
+
+                    sample_probs = sample_sizes / sample_sizes.sum()
+                    combined = sample_probs * label_scores
+                    final_probs = combined / combined.sum()
+
+                    permuted_data_idx = np.random.choice(range(len(sample_sizes)), size=len(sample_sizes), replace=True,
+                                                         p=final_probs)
 
                     for idx in permuted_data_idx:
                         visits[idx] += 1
