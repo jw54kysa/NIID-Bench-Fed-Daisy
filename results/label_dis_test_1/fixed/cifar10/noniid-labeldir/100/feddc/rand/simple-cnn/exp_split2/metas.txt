@@ -1,3 +1,0 @@
-execution time: 154079.4154946804 sec
-execution time formated: 42 hours, 47 minutes, 59.42 seconds
-global epoch counter: 235000
