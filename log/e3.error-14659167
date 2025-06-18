@@ -1,0 +1,1291 @@
+2025-06-18 09:30:12,865 - root - INFO - cpu
+2025-06-18 09:30:12,865 - root - INFO - ####################################################################################################
+2025-06-18 09:30:12,868 - root - WARNING - Using Partition Pickle File
+2025-06-18 09:32:03,771 - root - INFO - >>>> Initializing nets
+2025-06-18 09:32:03,822 - root - WARNING - in comm round: 0 from 25
+2025-06-18 09:32:03,832 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 09:32:07,038 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 09:32:07,038 - root - INFO - Training network 0
+2025-06-18 09:32:18,555 - root - INFO - Training network 1. n_training: 389
+2025-06-18 09:32:21,914 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 09:32:21,914 - root - INFO - Training network 1
+2025-06-18 09:32:24,363 - root - INFO - Training network 2. n_training: 617
+2025-06-18 09:32:27,694 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 09:32:27,694 - root - INFO - Training network 2
+2025-06-18 09:32:31,533 - root - INFO - Training network 3. n_training: 104
+2025-06-18 09:32:34,839 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 09:32:34,840 - root - INFO - Training network 3
+2025-06-18 09:32:35,505 - root - INFO - Training network 4. n_training: 609
+2025-06-18 09:32:38,820 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 09:32:38,820 - root - INFO - Training network 4
+2025-06-18 09:32:42,772 - root - INFO - Training network 5. n_training: 187
+2025-06-18 09:32:46,196 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 09:32:46,196 - root - INFO - Training network 5
+2025-06-18 09:32:47,416 - root - INFO - Training network 6. n_training: 223
+2025-06-18 09:32:50,849 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 09:32:50,850 - root - INFO - Training network 6
+2025-06-18 09:32:52,313 - root - INFO - Training network 7. n_training: 94
+2025-06-18 09:32:55,725 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 09:32:55,725 - root - INFO - Training network 7
+2025-06-18 09:32:56,368 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 09:32:59,787 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 09:32:59,787 - root - INFO - Training network 8
+2025-06-18 09:33:13,842 - root - INFO - Training network 9. n_training: 93
+2025-06-18 09:33:17,249 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 09:33:17,249 - root - INFO - Training network 9
+2025-06-18 09:33:17,883 - root - INFO - Training network 10. n_training: 180
+2025-06-18 09:33:21,367 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 09:33:21,368 - root - INFO - Training network 10
+2025-06-18 09:33:22,545 - root - INFO - Training network 11. n_training: 154
+2025-06-18 09:33:25,983 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 09:33:25,983 - root - INFO - Training network 11
+2025-06-18 09:33:26,990 - root - INFO - Training network 12. n_training: 130
+2025-06-18 09:33:30,297 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 09:33:30,297 - root - INFO - Training network 12
+2025-06-18 09:33:31,127 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 09:33:34,453 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 09:33:34,453 - root - INFO - Training network 13
+2025-06-18 09:34:05,973 - root - INFO - Training network 14. n_training: 238
+2025-06-18 09:34:09,408 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 09:34:09,408 - root - INFO - Training network 14
+2025-06-18 09:34:11,010 - root - INFO - Training network 15. n_training: 271
+2025-06-18 09:34:14,435 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 09:34:14,435 - root - INFO - Training network 15
+2025-06-18 09:34:16,219 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 09:34:19,622 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 09:34:19,622 - root - INFO - Training network 16
+2025-06-18 09:34:32,187 - root - INFO - Training network 17. n_training: 897
+2025-06-18 09:34:35,664 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 09:34:35,664 - root - INFO - Training network 17
+2025-06-18 09:34:41,489 - root - INFO - Training network 18. n_training: 556
+2025-06-18 09:34:44,868 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 09:34:44,868 - root - INFO - Training network 18
+2025-06-18 09:34:48,441 - root - INFO - Training network 19. n_training: 256
+2025-06-18 09:34:51,563 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 09:34:51,563 - root - INFO - Training network 19
+2025-06-18 09:34:53,022 - root - INFO - Training network 20. n_training: 334
+2025-06-18 09:34:56,143 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 09:34:56,143 - root - INFO - Training network 20
+2025-06-18 09:34:58,134 - root - INFO - Training network 21. n_training: 921
+2025-06-18 09:35:01,535 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 09:35:01,535 - root - INFO - Training network 21
+2025-06-18 09:35:07,581 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 09:35:11,004 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 09:35:11,005 - root - INFO - Training network 22
+2025-06-18 09:35:19,508 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 09:35:22,969 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 09:35:22,969 - root - INFO - Training network 23
+2025-06-18 09:35:41,385 - root - INFO - Training network 24. n_training: 323
+2025-06-18 09:35:44,617 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 09:35:44,617 - root - INFO - Training network 24
+2025-06-18 09:35:46,534 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 09:35:49,743 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 09:35:49,743 - root - INFO - Training network 25
+2025-06-18 09:35:56,608 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 09:36:00,054 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 09:36:00,054 - root - INFO - Training network 26
+2025-06-18 09:36:14,962 - root - INFO - Training network 27. n_training: 766
+2025-06-18 09:36:18,372 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 09:36:18,372 - root - INFO - Training network 27
+2025-06-18 09:36:23,277 - root - INFO - Training network 28. n_training: 406
+2025-06-18 09:36:26,703 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 09:36:26,703 - root - INFO - Training network 28
+2025-06-18 09:36:29,282 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 09:36:32,720 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 09:36:32,720 - root - INFO - Training network 29
+2025-06-18 09:36:48,926 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 09:36:52,414 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 09:36:52,414 - root - INFO - Training network 30
+2025-06-18 09:37:04,450 - root - INFO - Training network 31. n_training: 321
+2025-06-18 09:37:07,667 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 09:37:07,668 - root - INFO - Training network 31
+2025-06-18 09:37:09,595 - root - INFO - Training network 32. n_training: 501
+2025-06-18 09:37:12,830 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 09:37:12,830 - root - INFO - Training network 32
+2025-06-18 09:37:15,770 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 09:37:19,001 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 09:37:19,001 - root - INFO - Training network 33
+2025-06-18 09:37:29,583 - root - INFO - Training network 34. n_training: 823
+2025-06-18 09:37:32,770 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 09:37:32,770 - root - INFO - Training network 34
+2025-06-18 09:37:38,060 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 09:37:41,326 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 09:37:41,327 - root - INFO - Training network 35
+2025-06-18 09:37:47,757 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 09:37:51,273 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 09:37:51,273 - root - INFO - Training network 36
+2025-06-18 09:38:01,884 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 09:38:05,252 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 09:38:05,252 - root - INFO - Training network 37
+2025-06-18 09:38:15,086 - root - INFO - Training network 38. n_training: 216
+2025-06-18 09:38:18,504 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 09:38:18,504 - root - INFO - Training network 38
+2025-06-18 09:38:19,925 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 09:38:23,375 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 09:38:23,375 - root - INFO - Training network 39
+2025-06-18 09:38:46,060 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 09:38:49,422 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 09:38:49,422 - root - INFO - Training network 40
+2025-06-18 09:39:02,188 - root - INFO - Training network 41. n_training: 298
+2025-06-18 09:39:05,570 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 09:39:05,570 - root - INFO - Training network 41
+2025-06-18 09:39:07,495 - root - INFO - Training network 42. n_training: 498
+2025-06-18 09:39:10,875 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 09:39:10,875 - root - INFO - Training network 42
+2025-06-18 09:39:14,023 - root - INFO - Training network 43. n_training: 202
+2025-06-18 09:39:17,424 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 09:39:17,424 - root - INFO - Training network 43
+2025-06-18 09:39:18,719 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 09:39:22,142 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 09:39:22,143 - root - INFO - Training network 44
+2025-06-18 09:39:39,523 - root - INFO - Training network 45. n_training: 414
+2025-06-18 09:39:42,905 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 09:39:42,905 - root - INFO - Training network 45
+2025-06-18 09:39:45,555 - root - INFO - Training network 46. n_training: 983
+2025-06-18 09:39:48,940 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 09:39:48,940 - root - INFO - Training network 46
+2025-06-18 09:39:55,260 - root - INFO - Training network 47. n_training: 458
+2025-06-18 09:39:58,615 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 09:39:58,615 - root - INFO - Training network 47
+2025-06-18 09:40:01,546 - root - INFO - Training network 48. n_training: 326
+2025-06-18 09:40:04,895 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 09:40:04,896 - root - INFO - Training network 48
+2025-06-18 09:40:07,014 - root - INFO - Training network 49. n_training: 103
+2025-06-18 09:40:10,392 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 09:40:10,392 - root - INFO - Training network 49
+2025-06-18 09:40:11,089 - root - INFO - global n_training: 50000
+2025-06-18 09:40:11,089 - root - INFO - global n_test: 10000
+2025-06-18 09:40:38,714 - root - INFO - >> Global Model Train accuracy: 0.172800
+2025-06-18 09:40:38,714 - root - INFO - >> Global Model Test accuracy: 0.176800
+2025-06-18 09:40:38,714 - root - WARNING - in comm round: 1 from 25
+2025-06-18 09:40:38,725 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 09:40:41,919 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 09:40:41,919 - root - INFO - Training network 0
+2025-06-18 09:40:52,639 - root - INFO - Training network 1. n_training: 389
+2025-06-18 09:40:55,962 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 09:40:55,962 - root - INFO - Training network 1
+2025-06-18 09:40:58,451 - root - INFO - Training network 2. n_training: 617
+2025-06-18 09:41:01,846 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 09:41:01,846 - root - INFO - Training network 2
+2025-06-18 09:41:05,832 - root - INFO - Training network 3. n_training: 104
+2025-06-18 09:41:09,202 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 09:41:09,202 - root - INFO - Training network 3
+2025-06-18 09:41:09,878 - root - INFO - Training network 4. n_training: 609
+2025-06-18 09:41:13,282 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 09:41:13,282 - root - INFO - Training network 4
+2025-06-18 09:41:17,215 - root - INFO - Training network 5. n_training: 187
+2025-06-18 09:41:20,633 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 09:41:20,633 - root - INFO - Training network 5
+2025-06-18 09:41:21,843 - root - INFO - Training network 6. n_training: 223
+2025-06-18 09:41:25,243 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 09:41:25,243 - root - INFO - Training network 6
+2025-06-18 09:41:26,696 - root - INFO - Training network 7. n_training: 94
+2025-06-18 09:41:30,103 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 09:41:30,103 - root - INFO - Training network 7
+2025-06-18 09:41:30,718 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 09:41:34,149 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 09:41:34,149 - root - INFO - Training network 8
+2025-06-18 09:41:47,638 - root - INFO - Training network 9. n_training: 93
+2025-06-18 09:41:51,041 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 09:41:51,041 - root - INFO - Training network 9
+2025-06-18 09:41:51,648 - root - INFO - Training network 10. n_training: 180
+2025-06-18 09:41:54,889 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 09:41:54,889 - root - INFO - Training network 10
+2025-06-18 09:41:55,942 - root - INFO - Training network 11. n_training: 154
+2025-06-18 09:41:59,145 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 09:41:59,145 - root - INFO - Training network 11
+2025-06-18 09:42:00,069 - root - INFO - Training network 12. n_training: 130
+2025-06-18 09:42:03,225 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 09:42:03,225 - root - INFO - Training network 12
+2025-06-18 09:42:03,989 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 09:42:07,096 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 09:42:07,096 - root - INFO - Training network 13
+2025-06-18 09:42:37,869 - root - INFO - Training network 14. n_training: 238
+2025-06-18 09:42:41,217 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 09:42:41,217 - root - INFO - Training network 14
+2025-06-18 09:42:42,714 - root - INFO - Training network 15. n_training: 271
+2025-06-18 09:42:46,033 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 09:42:46,033 - root - INFO - Training network 15
+2025-06-18 09:42:47,756 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 09:42:51,110 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 09:42:51,111 - root - INFO - Training network 16
+2025-06-18 09:43:03,130 - root - INFO - Training network 17. n_training: 897
+2025-06-18 09:43:06,385 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 09:43:06,385 - root - INFO - Training network 17
+2025-06-18 09:43:12,052 - root - INFO - Training network 18. n_training: 556
+2025-06-18 09:43:15,397 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 09:43:15,397 - root - INFO - Training network 18
+2025-06-18 09:43:18,892 - root - INFO - Training network 19. n_training: 256
+2025-06-18 09:43:22,237 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 09:43:22,237 - root - INFO - Training network 19
+2025-06-18 09:43:23,871 - root - INFO - Training network 20. n_training: 334
+2025-06-18 09:43:27,255 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 09:43:27,255 - root - INFO - Training network 20
+2025-06-18 09:43:29,398 - root - INFO - Training network 21. n_training: 921
+2025-06-18 09:43:32,820 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 09:43:32,821 - root - INFO - Training network 21
+2025-06-18 09:43:38,731 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 09:43:42,090 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 09:43:42,091 - root - INFO - Training network 22
+2025-06-18 09:43:50,297 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 09:43:53,625 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 09:43:53,625 - root - INFO - Training network 23
+2025-06-18 09:44:12,102 - root - INFO - Training network 24. n_training: 323
+2025-06-18 09:44:15,447 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 09:44:15,447 - root - INFO - Training network 24
+2025-06-18 09:44:17,495 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 09:44:20,811 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 09:44:20,811 - root - INFO - Training network 25
+2025-06-18 09:44:27,872 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 09:44:31,259 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 09:44:31,259 - root - INFO - Training network 26
+2025-06-18 09:44:45,416 - root - INFO - Training network 27. n_training: 766
+2025-06-18 09:44:48,751 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 09:44:48,752 - root - INFO - Training network 27
+2025-06-18 09:44:53,675 - root - INFO - Training network 28. n_training: 406
+2025-06-18 09:44:56,819 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 09:44:56,819 - root - INFO - Training network 28
+2025-06-18 09:44:59,149 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 09:45:02,377 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 09:45:02,378 - root - INFO - Training network 29
+2025-06-18 09:45:18,724 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 09:45:22,120 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 09:45:22,120 - root - INFO - Training network 30
+2025-06-18 09:45:34,659 - root - INFO - Training network 31. n_training: 321
+2025-06-18 09:45:38,093 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 09:45:38,093 - root - INFO - Training network 31
+2025-06-18 09:45:40,155 - root - INFO - Training network 32. n_training: 501
+2025-06-18 09:45:43,505 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 09:45:43,505 - root - INFO - Training network 32
+2025-06-18 09:45:46,717 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 09:45:50,002 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 09:45:50,002 - root - INFO - Training network 33
+2025-06-18 09:46:00,301 - root - INFO - Training network 34. n_training: 823
+2025-06-18 09:46:03,640 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 09:46:03,640 - root - INFO - Training network 34
+2025-06-18 09:46:08,761 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 09:46:12,116 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 09:46:12,116 - root - INFO - Training network 35
+2025-06-18 09:46:18,938 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 09:46:22,326 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 09:46:22,326 - root - INFO - Training network 36
+2025-06-18 09:46:33,004 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 09:46:36,490 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 09:46:36,491 - root - INFO - Training network 37
+2025-06-18 09:46:46,363 - root - INFO - Training network 38. n_training: 216
+2025-06-18 09:46:49,843 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 09:46:49,843 - root - INFO - Training network 38
+2025-06-18 09:46:51,246 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 09:46:54,650 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 09:46:54,651 - root - INFO - Training network 39
+2025-06-18 09:47:15,762 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 09:47:18,962 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 09:47:18,962 - root - INFO - Training network 40
+2025-06-18 09:47:30,663 - root - INFO - Training network 41. n_training: 298
+2025-06-18 09:47:33,846 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 09:47:33,846 - root - INFO - Training network 41
+2025-06-18 09:47:35,632 - root - INFO - Training network 42. n_training: 498
+2025-06-18 09:47:38,864 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 09:47:38,864 - root - INFO - Training network 42
+2025-06-18 09:47:42,076 - root - INFO - Training network 43. n_training: 202
+2025-06-18 09:47:45,422 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 09:47:45,422 - root - INFO - Training network 43
+2025-06-18 09:47:46,623 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 09:47:49,889 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 09:47:49,889 - root - INFO - Training network 44
+2025-06-18 09:48:07,634 - root - INFO - Training network 45. n_training: 414
+2025-06-18 09:48:11,054 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 09:48:11,054 - root - INFO - Training network 45
+2025-06-18 09:48:13,780 - root - INFO - Training network 46. n_training: 983
+2025-06-18 09:48:17,166 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 09:48:17,166 - root - INFO - Training network 46
+2025-06-18 09:48:23,478 - root - INFO - Training network 47. n_training: 458
+2025-06-18 09:48:26,657 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 09:48:26,657 - root - INFO - Training network 47
+2025-06-18 09:48:29,310 - root - INFO - Training network 48. n_training: 326
+2025-06-18 09:48:32,481 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 09:48:32,481 - root - INFO - Training network 48
+2025-06-18 09:48:34,387 - root - INFO - Training network 49. n_training: 103
+2025-06-18 09:48:37,569 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 09:48:37,569 - root - INFO - Training network 49
+2025-06-18 09:48:38,189 - root - INFO - global n_training: 50000
+2025-06-18 09:48:38,190 - root - INFO - global n_test: 10000
+2025-06-18 09:49:05,908 - root - INFO - >> Global Model Train accuracy: 0.272640
+2025-06-18 09:49:05,908 - root - INFO - >> Global Model Test accuracy: 0.285700
+2025-06-18 09:49:05,908 - root - WARNING - in comm round: 2 from 25
+2025-06-18 09:49:05,920 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 09:49:09,332 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 09:49:09,332 - root - INFO - Training network 0
+2025-06-18 09:49:21,027 - root - INFO - Training network 1. n_training: 389
+2025-06-18 09:49:24,487 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 09:49:24,488 - root - INFO - Training network 1
+2025-06-18 09:49:27,007 - root - INFO - Training network 2. n_training: 617
+2025-06-18 09:49:30,400 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 09:49:30,401 - root - INFO - Training network 2
+2025-06-18 09:49:34,400 - root - INFO - Training network 3. n_training: 104
+2025-06-18 09:49:37,840 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 09:49:37,840 - root - INFO - Training network 3
+2025-06-18 09:49:38,520 - root - INFO - Training network 4. n_training: 609
+2025-06-18 09:49:41,967 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 09:49:41,967 - root - INFO - Training network 4
+2025-06-18 09:49:45,925 - root - INFO - Training network 5. n_training: 187
+2025-06-18 09:49:49,318 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 09:49:49,318 - root - INFO - Training network 5
+2025-06-18 09:49:50,520 - root - INFO - Training network 6. n_training: 223
+2025-06-18 09:49:53,907 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 09:49:53,907 - root - INFO - Training network 6
+2025-06-18 09:49:55,377 - root - INFO - Training network 7. n_training: 94
+2025-06-18 09:49:58,796 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 09:49:58,796 - root - INFO - Training network 7
+2025-06-18 09:49:59,420 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 09:50:02,908 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 09:50:02,908 - root - INFO - Training network 8
+2025-06-18 09:50:16,896 - root - INFO - Training network 9. n_training: 93
+2025-06-18 09:50:20,351 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 09:50:20,351 - root - INFO - Training network 9
+2025-06-18 09:50:20,980 - root - INFO - Training network 10. n_training: 180
+2025-06-18 09:50:24,411 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 09:50:24,411 - root - INFO - Training network 10
+2025-06-18 09:50:25,582 - root - INFO - Training network 11. n_training: 154
+2025-06-18 09:50:28,987 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 09:50:28,987 - root - INFO - Training network 11
+2025-06-18 09:50:30,007 - root - INFO - Training network 12. n_training: 130
+2025-06-18 09:50:33,423 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 09:50:33,423 - root - INFO - Training network 12
+2025-06-18 09:50:34,281 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 09:50:37,721 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 09:50:37,721 - root - INFO - Training network 13
+2025-06-18 09:51:08,759 - root - INFO - Training network 14. n_training: 238
+2025-06-18 09:51:12,112 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 09:51:12,112 - root - INFO - Training network 14
+2025-06-18 09:51:13,654 - root - INFO - Training network 15. n_training: 271
+2025-06-18 09:51:17,093 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 09:51:17,093 - root - INFO - Training network 15
+2025-06-18 09:51:18,842 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 09:51:22,304 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 09:51:22,304 - root - INFO - Training network 16
+2025-06-18 09:51:34,742 - root - INFO - Training network 17. n_training: 897
+2025-06-18 09:51:38,188 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 09:51:38,188 - root - INFO - Training network 17
+2025-06-18 09:51:43,958 - root - INFO - Training network 18. n_training: 556
+2025-06-18 09:51:47,440 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 09:51:47,441 - root - INFO - Training network 18
+2025-06-18 09:51:50,994 - root - INFO - Training network 19. n_training: 256
+2025-06-18 09:51:54,429 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 09:51:54,430 - root - INFO - Training network 19
+2025-06-18 09:51:56,148 - root - INFO - Training network 20. n_training: 334
+2025-06-18 09:51:59,688 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 09:51:59,688 - root - INFO - Training network 20
+2025-06-18 09:52:01,730 - root - INFO - Training network 21. n_training: 921
+2025-06-18 09:52:05,090 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 09:52:05,090 - root - INFO - Training network 21
+2025-06-18 09:52:10,874 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 09:52:14,024 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 09:52:14,025 - root - INFO - Training network 22
+2025-06-18 09:52:21,707 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 09:52:24,899 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 09:52:24,899 - root - INFO - Training network 23
+2025-06-18 09:52:42,702 - root - INFO - Training network 24. n_training: 323
+2025-06-18 09:52:45,988 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 09:52:45,988 - root - INFO - Training network 24
+2025-06-18 09:52:47,985 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 09:52:51,309 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 09:52:51,309 - root - INFO - Training network 25
+2025-06-18 09:52:58,355 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 09:53:01,595 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 09:53:01,595 - root - INFO - Training network 26
+2025-06-18 09:53:16,271 - root - INFO - Training network 27. n_training: 766
+2025-06-18 09:53:19,615 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 09:53:19,615 - root - INFO - Training network 27
+2025-06-18 09:53:24,530 - root - INFO - Training network 28. n_training: 406
+2025-06-18 09:53:27,898 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 09:53:27,898 - root - INFO - Training network 28
+2025-06-18 09:53:30,500 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 09:53:33,920 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 09:53:33,920 - root - INFO - Training network 29
+2025-06-18 09:53:50,452 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 09:53:53,851 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 09:53:53,851 - root - INFO - Training network 30
+2025-06-18 09:54:05,107 - root - INFO - Training network 31. n_training: 321
+2025-06-18 09:54:08,506 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 09:54:08,506 - root - INFO - Training network 31
+2025-06-18 09:54:10,587 - root - INFO - Training network 32. n_training: 501
+2025-06-18 09:54:14,006 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 09:54:14,006 - root - INFO - Training network 32
+2025-06-18 09:54:17,264 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 09:54:20,668 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 09:54:20,668 - root - INFO - Training network 33
+2025-06-18 09:54:31,829 - root - INFO - Training network 34. n_training: 823
+2025-06-18 09:54:35,236 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 09:54:35,237 - root - INFO - Training network 34
+2025-06-18 09:54:40,590 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 09:54:43,866 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 09:54:43,867 - root - INFO - Training network 35
+2025-06-18 09:54:50,282 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 09:54:53,576 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 09:54:53,576 - root - INFO - Training network 36
+2025-06-18 09:55:03,247 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 09:55:06,516 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 09:55:06,516 - root - INFO - Training network 37
+2025-06-18 09:55:15,727 - root - INFO - Training network 38. n_training: 216
+2025-06-18 09:55:19,077 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 09:55:19,077 - root - INFO - Training network 38
+2025-06-18 09:55:20,392 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 09:55:23,796 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 09:55:23,796 - root - INFO - Training network 39
+2025-06-18 09:55:46,072 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 09:55:49,384 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 09:55:49,385 - root - INFO - Training network 40
+2025-06-18 09:56:01,307 - root - INFO - Training network 41. n_training: 298
+2025-06-18 09:56:04,653 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 09:56:04,654 - root - INFO - Training network 41
+2025-06-18 09:56:06,504 - root - INFO - Training network 42. n_training: 498
+2025-06-18 09:56:09,953 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 09:56:09,953 - root - INFO - Training network 42
+2025-06-18 09:56:13,193 - root - INFO - Training network 43. n_training: 202
+2025-06-18 09:56:16,628 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 09:56:16,628 - root - INFO - Training network 43
+2025-06-18 09:56:17,943 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 09:56:21,391 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 09:56:21,391 - root - INFO - Training network 44
+2025-06-18 09:56:37,965 - root - INFO - Training network 45. n_training: 414
+2025-06-18 09:56:41,145 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 09:56:41,145 - root - INFO - Training network 45
+2025-06-18 09:56:43,527 - root - INFO - Training network 46. n_training: 983
+2025-06-18 09:56:46,702 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 09:56:46,702 - root - INFO - Training network 46
+2025-06-18 09:56:52,879 - root - INFO - Training network 47. n_training: 458
+2025-06-18 09:56:56,288 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 09:56:56,288 - root - INFO - Training network 47
+2025-06-18 09:56:59,275 - root - INFO - Training network 48. n_training: 326
+2025-06-18 09:57:02,627 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 09:57:02,627 - root - INFO - Training network 48
+2025-06-18 09:57:04,745 - root - INFO - Training network 49. n_training: 103
+2025-06-18 09:57:08,146 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 09:57:08,146 - root - INFO - Training network 49
+2025-06-18 09:57:08,835 - root - INFO - global n_training: 50000
+2025-06-18 09:57:08,836 - root - INFO - global n_test: 10000
+2025-06-18 09:57:34,553 - root - INFO - >> Global Model Train accuracy: 0.353440
+2025-06-18 09:57:34,554 - root - INFO - >> Global Model Test accuracy: 0.375000
+2025-06-18 09:57:34,554 - root - WARNING - in comm round: 3 from 25
+2025-06-18 09:57:34,564 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 09:57:37,894 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 09:57:37,894 - root - INFO - Training network 0
+2025-06-18 09:57:49,619 - root - INFO - Training network 1. n_training: 389
+2025-06-18 09:57:53,044 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 09:57:53,044 - root - INFO - Training network 1
+2025-06-18 09:57:55,559 - root - INFO - Training network 2. n_training: 617
+2025-06-18 09:57:58,998 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 09:57:58,998 - root - INFO - Training network 2
+2025-06-18 09:58:03,021 - root - INFO - Training network 3. n_training: 104
+2025-06-18 09:58:06,513 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 09:58:06,513 - root - INFO - Training network 3
+2025-06-18 09:58:07,201 - root - INFO - Training network 4. n_training: 609
+2025-06-18 09:58:10,660 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 09:58:10,661 - root - INFO - Training network 4
+2025-06-18 09:58:14,663 - root - INFO - Training network 5. n_training: 187
+2025-06-18 09:58:18,081 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 09:58:18,081 - root - INFO - Training network 5
+2025-06-18 09:58:19,273 - root - INFO - Training network 6. n_training: 223
+2025-06-18 09:58:22,649 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 09:58:22,649 - root - INFO - Training network 6
+2025-06-18 09:58:24,190 - root - INFO - Training network 7. n_training: 94
+2025-06-18 09:58:27,614 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 09:58:27,614 - root - INFO - Training network 7
+2025-06-18 09:58:28,204 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 09:58:31,522 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 09:58:31,522 - root - INFO - Training network 8
+2025-06-18 09:58:44,734 - root - INFO - Training network 9. n_training: 93
+2025-06-18 09:58:47,984 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 09:58:47,984 - root - INFO - Training network 9
+2025-06-18 09:58:48,544 - root - INFO - Training network 10. n_training: 180
+2025-06-18 09:58:51,701 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 09:58:51,702 - root - INFO - Training network 10
+2025-06-18 09:58:52,763 - root - INFO - Training network 11. n_training: 154
+2025-06-18 09:58:55,986 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 09:58:55,987 - root - INFO - Training network 11
+2025-06-18 09:58:56,913 - root - INFO - Training network 12. n_training: 130
+2025-06-18 09:59:00,102 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 09:59:00,102 - root - INFO - Training network 12
+2025-06-18 09:59:00,940 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 09:59:04,275 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 09:59:04,275 - root - INFO - Training network 13
+2025-06-18 09:59:34,630 - root - INFO - Training network 14. n_training: 238
+2025-06-18 09:59:37,941 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 09:59:37,941 - root - INFO - Training network 14
+2025-06-18 09:59:39,441 - root - INFO - Training network 15. n_training: 271
+2025-06-18 09:59:42,902 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 09:59:42,902 - root - INFO - Training network 15
+2025-06-18 09:59:44,601 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 09:59:47,956 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 09:59:47,956 - root - INFO - Training network 16
+2025-06-18 10:00:00,375 - root - INFO - Training network 17. n_training: 897
+2025-06-18 10:00:03,732 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 10:00:03,732 - root - INFO - Training network 17
+2025-06-18 10:00:09,453 - root - INFO - Training network 18. n_training: 556
+2025-06-18 10:00:12,787 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 10:00:12,787 - root - INFO - Training network 18
+2025-06-18 10:00:16,374 - root - INFO - Training network 19. n_training: 256
+2025-06-18 10:00:19,769 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 10:00:19,769 - root - INFO - Training network 19
+2025-06-18 10:00:21,414 - root - INFO - Training network 20. n_training: 334
+2025-06-18 10:00:24,830 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 10:00:24,831 - root - INFO - Training network 20
+2025-06-18 10:00:27,011 - root - INFO - Training network 21. n_training: 921
+2025-06-18 10:00:30,378 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 10:00:30,379 - root - INFO - Training network 21
+2025-06-18 10:00:36,224 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 10:00:39,576 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 10:00:39,576 - root - INFO - Training network 22
+2025-06-18 10:00:47,849 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 10:00:51,164 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 10:00:51,164 - root - INFO - Training network 23
+2025-06-18 10:01:09,775 - root - INFO - Training network 24. n_training: 323
+2025-06-18 10:01:13,085 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 10:01:13,086 - root - INFO - Training network 24
+2025-06-18 10:01:15,126 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 10:01:18,517 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 10:01:18,517 - root - INFO - Training network 25
+2025-06-18 10:01:25,544 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 10:01:28,931 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 10:01:28,931 - root - INFO - Training network 26
+2025-06-18 10:01:43,504 - root - INFO - Training network 27. n_training: 766
+2025-06-18 10:01:46,866 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 10:01:46,867 - root - INFO - Training network 27
+2025-06-18 10:01:51,890 - root - INFO - Training network 28. n_training: 406
+2025-06-18 10:01:55,134 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 10:01:55,134 - root - INFO - Training network 28
+2025-06-18 10:01:57,467 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 10:02:00,635 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 10:02:00,635 - root - INFO - Training network 29
+2025-06-18 10:02:15,370 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 10:02:18,787 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 10:02:18,787 - root - INFO - Training network 30
+2025-06-18 10:02:30,664 - root - INFO - Training network 31. n_training: 321
+2025-06-18 10:02:34,137 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 10:02:34,138 - root - INFO - Training network 31
+2025-06-18 10:02:36,229 - root - INFO - Training network 32. n_training: 501
+2025-06-18 10:02:39,743 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 10:02:39,743 - root - INFO - Training network 32
+2025-06-18 10:02:43,062 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 10:02:46,576 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 10:02:46,576 - root - INFO - Training network 33
+2025-06-18 10:02:57,942 - root - INFO - Training network 34. n_training: 823
+2025-06-18 10:03:01,481 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 10:03:01,481 - root - INFO - Training network 34
+2025-06-18 10:03:06,936 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 10:03:10,417 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 10:03:10,417 - root - INFO - Training network 35
+2025-06-18 10:03:17,326 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 10:03:20,819 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 10:03:20,819 - root - INFO - Training network 36
+2025-06-18 10:03:31,045 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 10:03:34,373 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 10:03:34,373 - root - INFO - Training network 37
+2025-06-18 10:03:43,443 - root - INFO - Training network 38. n_training: 216
+2025-06-18 10:03:46,665 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 10:03:46,665 - root - INFO - Training network 38
+2025-06-18 10:03:48,081 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 10:03:51,499 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 10:03:51,499 - root - INFO - Training network 39
+2025-06-18 10:04:13,012 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 10:04:16,454 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 10:04:16,454 - root - INFO - Training network 40
+2025-06-18 10:04:28,769 - root - INFO - Training network 41. n_training: 298
+2025-06-18 10:04:32,040 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 10:04:32,040 - root - INFO - Training network 41
+2025-06-18 10:04:33,863 - root - INFO - Training network 42. n_training: 498
+2025-06-18 10:04:37,188 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 10:04:37,188 - root - INFO - Training network 42
+2025-06-18 10:04:40,149 - root - INFO - Training network 43. n_training: 202
+2025-06-18 10:04:43,337 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 10:04:43,337 - root - INFO - Training network 43
+2025-06-18 10:04:44,499 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 10:04:47,596 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 10:04:47,597 - root - INFO - Training network 44
+2025-06-18 10:05:04,835 - root - INFO - Training network 45. n_training: 414
+2025-06-18 10:05:08,216 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 10:05:08,216 - root - INFO - Training network 45
+2025-06-18 10:05:10,887 - root - INFO - Training network 46. n_training: 983
+2025-06-18 10:05:14,271 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 10:05:14,271 - root - INFO - Training network 46
+2025-06-18 10:05:20,687 - root - INFO - Training network 47. n_training: 458
+2025-06-18 10:05:24,117 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 10:05:24,117 - root - INFO - Training network 47
+2025-06-18 10:05:27,152 - root - INFO - Training network 48. n_training: 326
+2025-06-18 10:05:30,549 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 10:05:30,549 - root - INFO - Training network 48
+2025-06-18 10:05:32,660 - root - INFO - Training network 49. n_training: 103
+2025-06-18 10:05:35,975 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 10:05:35,975 - root - INFO - Training network 49
+2025-06-18 10:05:36,663 - root - INFO - global n_training: 50000
+2025-06-18 10:05:36,663 - root - INFO - global n_test: 10000
+2025-06-18 10:06:01,260 - root - INFO - >> Global Model Train accuracy: 0.394420
+2025-06-18 10:06:01,260 - root - INFO - >> Global Model Test accuracy: 0.420600
+2025-06-18 10:06:01,260 - root - WARNING - in comm round: 4 from 25
+2025-06-18 10:06:01,271 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 10:06:04,618 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 10:06:04,618 - root - INFO - Training network 0
+2025-06-18 10:06:16,434 - root - INFO - Training network 1. n_training: 389
+2025-06-18 10:06:19,886 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 10:06:19,886 - root - INFO - Training network 1
+2025-06-18 10:06:22,466 - root - INFO - Training network 2. n_training: 617
+2025-06-18 10:06:25,843 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 10:06:25,843 - root - INFO - Training network 2
+2025-06-18 10:06:29,843 - root - INFO - Training network 3. n_training: 104
+2025-06-18 10:06:33,231 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 10:06:33,231 - root - INFO - Training network 3
+2025-06-18 10:06:33,904 - root - INFO - Training network 4. n_training: 609
+2025-06-18 10:06:37,278 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 10:06:37,278 - root - INFO - Training network 4
+2025-06-18 10:06:41,150 - root - INFO - Training network 5. n_training: 187
+2025-06-18 10:06:44,340 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 10:06:44,341 - root - INFO - Training network 5
+2025-06-18 10:06:45,411 - root - INFO - Training network 6. n_training: 223
+2025-06-18 10:06:48,582 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 10:06:48,582 - root - INFO - Training network 6
+2025-06-18 10:06:49,861 - root - INFO - Training network 7. n_training: 94
+2025-06-18 10:06:52,973 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 10:06:52,973 - root - INFO - Training network 7
+2025-06-18 10:06:53,518 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 10:06:56,659 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 10:06:56,659 - root - INFO - Training network 8
+2025-06-18 10:07:08,949 - root - INFO - Training network 9. n_training: 93
+2025-06-18 10:07:12,283 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 10:07:12,283 - root - INFO - Training network 9
+2025-06-18 10:07:12,912 - root - INFO - Training network 10. n_training: 180
+2025-06-18 10:07:16,347 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 10:07:16,347 - root - INFO - Training network 10
+2025-06-18 10:07:17,524 - root - INFO - Training network 11. n_training: 154
+2025-06-18 10:07:20,987 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 10:07:20,987 - root - INFO - Training network 11
+2025-06-18 10:07:22,035 - root - INFO - Training network 12. n_training: 130
+2025-06-18 10:07:25,437 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 10:07:25,437 - root - INFO - Training network 12
+2025-06-18 10:07:26,331 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 10:07:29,725 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 10:07:29,725 - root - INFO - Training network 13
+2025-06-18 10:08:00,043 - root - INFO - Training network 14. n_training: 238
+2025-06-18 10:08:03,321 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 10:08:03,322 - root - INFO - Training network 14
+2025-06-18 10:08:04,885 - root - INFO - Training network 15. n_training: 271
+2025-06-18 10:08:08,284 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 10:08:08,284 - root - INFO - Training network 15
+2025-06-18 10:08:10,052 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 10:08:13,452 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 10:08:13,452 - root - INFO - Training network 16
+2025-06-18 10:08:26,147 - root - INFO - Training network 17. n_training: 897
+2025-06-18 10:08:29,648 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 10:08:29,648 - root - INFO - Training network 17
+2025-06-18 10:08:35,485 - root - INFO - Training network 18. n_training: 556
+2025-06-18 10:08:38,943 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 10:08:38,943 - root - INFO - Training network 18
+2025-06-18 10:08:42,647 - root - INFO - Training network 19. n_training: 256
+2025-06-18 10:08:45,997 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 10:08:45,997 - root - INFO - Training network 19
+2025-06-18 10:08:47,561 - root - INFO - Training network 20. n_training: 334
+2025-06-18 10:08:50,884 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 10:08:50,884 - root - INFO - Training network 20
+2025-06-18 10:08:52,907 - root - INFO - Training network 21. n_training: 921
+2025-06-18 10:08:56,199 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 10:08:56,199 - root - INFO - Training network 21
+2025-06-18 10:09:01,711 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 10:09:04,987 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 10:09:04,987 - root - INFO - Training network 22
+2025-06-18 10:09:12,748 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 10:09:15,971 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 10:09:15,972 - root - INFO - Training network 23
+2025-06-18 10:09:33,815 - root - INFO - Training network 24. n_training: 323
+2025-06-18 10:09:37,296 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 10:09:37,297 - root - INFO - Training network 24
+2025-06-18 10:09:39,382 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 10:09:42,589 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 10:09:42,589 - root - INFO - Training network 25
+2025-06-18 10:09:49,857 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 10:09:53,316 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 10:09:53,316 - root - INFO - Training network 26
+2025-06-18 10:10:07,417 - root - INFO - Training network 27. n_training: 766
+2025-06-18 10:10:10,737 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 10:10:10,737 - root - INFO - Training network 27
+2025-06-18 10:10:15,516 - root - INFO - Training network 28. n_training: 406
+2025-06-18 10:10:18,912 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 10:10:18,912 - root - INFO - Training network 28
+2025-06-18 10:10:21,486 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 10:10:24,904 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 10:10:24,904 - root - INFO - Training network 29
+2025-06-18 10:10:41,735 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 10:10:45,134 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 10:10:45,135 - root - INFO - Training network 30
+2025-06-18 10:10:58,107 - root - INFO - Training network 31. n_training: 321
+2025-06-18 10:11:01,537 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 10:11:01,537 - root - INFO - Training network 31
+2025-06-18 10:11:03,554 - root - INFO - Training network 32. n_training: 501
+2025-06-18 10:11:06,906 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 10:11:06,906 - root - INFO - Training network 32
+2025-06-18 10:11:10,143 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 10:11:13,570 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 10:11:13,570 - root - INFO - Training network 33
+2025-06-18 10:11:24,879 - root - INFO - Training network 34. n_training: 823
+2025-06-18 10:11:28,284 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 10:11:28,284 - root - INFO - Training network 34
+2025-06-18 10:11:33,650 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 10:11:37,043 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 10:11:37,043 - root - INFO - Training network 35
+2025-06-18 10:11:43,986 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 10:11:47,438 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 10:11:47,438 - root - INFO - Training network 36
+2025-06-18 10:11:57,599 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 10:12:00,946 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 10:12:00,946 - root - INFO - Training network 37
+2025-06-18 10:12:11,011 - root - INFO - Training network 38. n_training: 216
+2025-06-18 10:12:14,437 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 10:12:14,437 - root - INFO - Training network 38
+2025-06-18 10:12:15,854 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 10:12:19,228 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 10:12:19,228 - root - INFO - Training network 39
+2025-06-18 10:12:40,091 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 10:12:43,214 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 10:12:43,214 - root - INFO - Training network 40
+2025-06-18 10:12:55,942 - root - INFO - Training network 41. n_training: 298
+2025-06-18 10:12:59,304 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 10:12:59,304 - root - INFO - Training network 41
+2025-06-18 10:13:01,254 - root - INFO - Training network 42. n_training: 498
+2025-06-18 10:13:04,578 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 10:13:04,579 - root - INFO - Training network 42
+2025-06-18 10:13:07,592 - root - INFO - Training network 43. n_training: 202
+2025-06-18 10:13:10,928 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 10:13:10,929 - root - INFO - Training network 43
+2025-06-18 10:13:12,207 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 10:13:15,598 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 10:13:15,598 - root - INFO - Training network 44
+2025-06-18 10:13:32,816 - root - INFO - Training network 45. n_training: 414
+2025-06-18 10:13:36,173 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 10:13:36,173 - root - INFO - Training network 45
+2025-06-18 10:13:38,832 - root - INFO - Training network 46. n_training: 983
+2025-06-18 10:13:42,248 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 10:13:42,248 - root - INFO - Training network 46
+2025-06-18 10:13:48,688 - root - INFO - Training network 47. n_training: 458
+2025-06-18 10:13:52,129 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 10:13:52,129 - root - INFO - Training network 47
+2025-06-18 10:13:55,159 - root - INFO - Training network 48. n_training: 326
+2025-06-18 10:13:58,624 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 10:13:58,624 - root - INFO - Training network 48
+2025-06-18 10:14:00,784 - root - INFO - Training network 49. n_training: 103
+2025-06-18 10:14:04,089 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 10:14:04,090 - root - INFO - Training network 49
+2025-06-18 10:14:04,748 - root - INFO - global n_training: 50000
+2025-06-18 10:14:04,749 - root - INFO - global n_test: 10000
+2025-06-18 10:14:31,720 - root - INFO - >> Global Model Train accuracy: 0.419280
+2025-06-18 10:14:31,720 - root - INFO - >> Global Model Test accuracy: 0.450700
+2025-06-18 10:14:31,720 - root - WARNING - in comm round: 5 from 25
+2025-06-18 10:14:31,731 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 10:14:35,104 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 10:14:35,104 - root - INFO - Training network 0
+2025-06-18 10:14:47,107 - root - INFO - Training network 1. n_training: 389
+2025-06-18 10:14:50,563 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 10:14:50,563 - root - INFO - Training network 1
+2025-06-18 10:14:53,158 - root - INFO - Training network 2. n_training: 617
+2025-06-18 10:14:56,580 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 10:14:56,580 - root - INFO - Training network 2
+2025-06-18 10:15:00,692 - root - INFO - Training network 3. n_training: 104
+2025-06-18 10:15:04,173 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 10:15:04,173 - root - INFO - Training network 3
+2025-06-18 10:15:04,858 - root - INFO - Training network 4. n_training: 609
+2025-06-18 10:15:08,269 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 10:15:08,269 - root - INFO - Training network 4
+2025-06-18 10:15:12,309 - root - INFO - Training network 5. n_training: 187
+2025-06-18 10:15:15,770 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 10:15:15,770 - root - INFO - Training network 5
+2025-06-18 10:15:16,921 - root - INFO - Training network 6. n_training: 223
+2025-06-18 10:15:20,143 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 10:15:20,143 - root - INFO - Training network 6
+2025-06-18 10:15:21,499 - root - INFO - Training network 7. n_training: 94
+2025-06-18 10:15:24,720 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 10:15:24,720 - root - INFO - Training network 7
+2025-06-18 10:15:25,296 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 10:15:28,501 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 10:15:28,501 - root - INFO - Training network 8
+2025-06-18 10:15:42,027 - root - INFO - Training network 9. n_training: 93
+2025-06-18 10:15:45,359 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 10:15:45,360 - root - INFO - Training network 9
+2025-06-18 10:15:45,925 - root - INFO - Training network 10. n_training: 180
+2025-06-18 10:15:49,103 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 10:15:49,103 - root - INFO - Training network 10
+2025-06-18 10:15:50,182 - root - INFO - Training network 11. n_training: 154
+2025-06-18 10:15:53,542 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 10:15:53,542 - root - INFO - Training network 11
+2025-06-18 10:15:54,551 - root - INFO - Training network 12. n_training: 130
+2025-06-18 10:15:57,921 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 10:15:57,922 - root - INFO - Training network 12
+2025-06-18 10:15:58,766 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 10:16:02,062 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 10:16:02,062 - root - INFO - Training network 13
+2025-06-18 10:16:34,333 - root - INFO - Training network 14. n_training: 238
+2025-06-18 10:16:37,705 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 10:16:37,705 - root - INFO - Training network 14
+2025-06-18 10:16:39,246 - root - INFO - Training network 15. n_training: 271
+2025-06-18 10:16:42,654 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 10:16:42,654 - root - INFO - Training network 15
+2025-06-18 10:16:44,419 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 10:16:47,855 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 10:16:47,855 - root - INFO - Training network 16
+2025-06-18 10:17:00,090 - root - INFO - Training network 17. n_training: 897
+2025-06-18 10:17:03,365 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 10:17:03,365 - root - INFO - Training network 17
+2025-06-18 10:17:08,842 - root - INFO - Training network 18. n_training: 556
+2025-06-18 10:17:12,107 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 10:17:12,107 - root - INFO - Training network 18
+2025-06-18 10:17:15,451 - root - INFO - Training network 19. n_training: 256
+2025-06-18 10:17:18,822 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 10:17:18,822 - root - INFO - Training network 19
+2025-06-18 10:17:20,477 - root - INFO - Training network 20. n_training: 334
+2025-06-18 10:17:23,864 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 10:17:23,864 - root - INFO - Training network 20
+2025-06-18 10:17:26,019 - root - INFO - Training network 21. n_training: 921
+2025-06-18 10:17:29,412 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 10:17:29,412 - root - INFO - Training network 21
+2025-06-18 10:17:35,269 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 10:17:38,673 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 10:17:38,673 - root - INFO - Training network 22
+2025-06-18 10:17:47,176 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 10:17:50,566 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 10:17:50,566 - root - INFO - Training network 23
+2025-06-18 10:18:08,772 - root - INFO - Training network 24. n_training: 323
+2025-06-18 10:18:12,063 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 10:18:12,063 - root - INFO - Training network 24
+2025-06-18 10:18:14,000 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 10:18:17,270 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 10:18:17,270 - root - INFO - Training network 25
+2025-06-18 10:18:23,841 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 10:18:27,095 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 10:18:27,095 - root - INFO - Training network 26
+2025-06-18 10:18:42,063 - root - INFO - Training network 27. n_training: 766
+2025-06-18 10:18:45,461 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 10:18:45,461 - root - INFO - Training network 27
+2025-06-18 10:18:50,510 - root - INFO - Training network 28. n_training: 406
+2025-06-18 10:18:53,930 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 10:18:53,931 - root - INFO - Training network 28
+2025-06-18 10:18:56,505 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 10:18:59,933 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 10:18:59,933 - root - INFO - Training network 29
+2025-06-18 10:19:16,203 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 10:19:19,366 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 10:19:19,366 - root - INFO - Training network 30
+2025-06-18 10:19:30,606 - root - INFO - Training network 31. n_training: 321
+2025-06-18 10:19:33,823 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 10:19:33,824 - root - INFO - Training network 31
+2025-06-18 10:19:35,831 - root - INFO - Training network 32. n_training: 501
+2025-06-18 10:19:39,180 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 10:19:39,180 - root - INFO - Training network 32
+2025-06-18 10:19:42,316 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 10:19:45,664 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 10:19:45,665 - root - INFO - Training network 33
+2025-06-18 10:19:56,014 - root - INFO - Training network 34. n_training: 823
+2025-06-18 10:19:59,409 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 10:19:59,410 - root - INFO - Training network 34
+2025-06-18 10:20:04,847 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 10:20:08,203 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 10:20:08,203 - root - INFO - Training network 35
+2025-06-18 10:20:15,258 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 10:20:18,662 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 10:20:18,662 - root - INFO - Training network 36
+2025-06-18 10:20:29,333 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 10:20:32,738 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 10:20:32,738 - root - INFO - Training network 37
+2025-06-18 10:20:42,690 - root - INFO - Training network 38. n_training: 216
+2025-06-18 10:20:46,044 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 10:20:46,044 - root - INFO - Training network 38
+2025-06-18 10:20:47,472 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 10:20:50,871 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 10:20:50,872 - root - INFO - Training network 39
+2025-06-18 10:21:12,875 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 10:21:16,192 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 10:21:16,192 - root - INFO - Training network 40
+2025-06-18 10:21:28,323 - root - INFO - Training network 41. n_training: 298
+2025-06-18 10:21:31,717 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 10:21:31,718 - root - INFO - Training network 41
+2025-06-18 10:21:33,611 - root - INFO - Training network 42. n_training: 498
+2025-06-18 10:21:36,983 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 10:21:36,983 - root - INFO - Training network 42
+2025-06-18 10:21:40,157 - root - INFO - Training network 43. n_training: 202
+2025-06-18 10:21:43,467 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 10:21:43,467 - root - INFO - Training network 43
+2025-06-18 10:21:44,804 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 10:21:48,171 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 10:21:48,171 - root - INFO - Training network 44
+2025-06-18 10:22:04,990 - root - INFO - Training network 45. n_training: 414
+2025-06-18 10:22:08,387 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 10:22:08,387 - root - INFO - Training network 45
+2025-06-18 10:22:11,084 - root - INFO - Training network 46. n_training: 983
+2025-06-18 10:22:14,491 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 10:22:14,491 - root - INFO - Training network 46
+2025-06-18 10:22:20,879 - root - INFO - Training network 47. n_training: 458
+2025-06-18 10:22:24,321 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 10:22:24,321 - root - INFO - Training network 47
+2025-06-18 10:22:27,335 - root - INFO - Training network 48. n_training: 326
+2025-06-18 10:22:30,735 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 10:22:30,735 - root - INFO - Training network 48
+2025-06-18 10:22:32,900 - root - INFO - Training network 49. n_training: 103
+2025-06-18 10:22:36,334 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 10:22:36,334 - root - INFO - Training network 49
+2025-06-18 10:22:37,045 - root - INFO - global n_training: 50000
+2025-06-18 10:22:37,046 - root - INFO - global n_test: 10000
+2025-06-18 10:23:04,680 - root - INFO - >> Global Model Train accuracy: 0.444080
+2025-06-18 10:23:04,680 - root - INFO - >> Global Model Test accuracy: 0.473100
+2025-06-18 10:23:04,680 - root - WARNING - in comm round: 6 from 25
+2025-06-18 10:23:04,690 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 10:23:07,979 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 10:23:07,979 - root - INFO - Training network 0
+2025-06-18 10:23:18,894 - root - INFO - Training network 1. n_training: 389
+2025-06-18 10:23:22,112 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 10:23:22,112 - root - INFO - Training network 1
+2025-06-18 10:23:24,603 - root - INFO - Training network 2. n_training: 617
+2025-06-18 10:23:28,016 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 10:23:28,016 - root - INFO - Training network 2
+2025-06-18 10:23:31,929 - root - INFO - Training network 3. n_training: 104
+2025-06-18 10:23:35,139 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 10:23:35,139 - root - INFO - Training network 3
+2025-06-18 10:23:35,769 - root - INFO - Training network 4. n_training: 609
+2025-06-18 10:23:39,263 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 10:23:39,263 - root - INFO - Training network 4
+2025-06-18 10:23:43,173 - root - INFO - Training network 5. n_training: 187
+2025-06-18 10:23:46,370 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 10:23:46,370 - root - INFO - Training network 5
+2025-06-18 10:23:47,579 - root - INFO - Training network 6. n_training: 223
+2025-06-18 10:23:51,096 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 10:23:51,096 - root - INFO - Training network 6
+2025-06-18 10:23:52,584 - root - INFO - Training network 7. n_training: 94
+2025-06-18 10:23:55,963 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 10:23:55,963 - root - INFO - Training network 7
+2025-06-18 10:23:56,569 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 10:23:59,902 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 10:23:59,902 - root - INFO - Training network 8
+2025-06-18 10:24:13,416 - root - INFO - Training network 9. n_training: 93
+2025-06-18 10:24:16,750 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 10:24:16,750 - root - INFO - Training network 9
+2025-06-18 10:24:17,334 - root - INFO - Training network 10. n_training: 180
+2025-06-18 10:24:20,675 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 10:24:20,675 - root - INFO - Training network 10
+2025-06-18 10:24:21,822 - root - INFO - Training network 11. n_training: 154
+2025-06-18 10:24:25,215 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 10:24:25,215 - root - INFO - Training network 11
+2025-06-18 10:24:26,219 - root - INFO - Training network 12. n_training: 130
+2025-06-18 10:24:29,594 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 10:24:29,595 - root - INFO - Training network 12
+2025-06-18 10:24:30,441 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 10:24:33,830 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 10:24:33,830 - root - INFO - Training network 13
+2025-06-18 10:25:06,445 - root - INFO - Training network 14. n_training: 238
+2025-06-18 10:25:09,710 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 10:25:09,710 - root - INFO - Training network 14
+2025-06-18 10:25:11,184 - root - INFO - Training network 15. n_training: 271
+2025-06-18 10:25:14,426 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 10:25:14,426 - root - INFO - Training network 15
+2025-06-18 10:25:16,070 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 10:25:19,311 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 10:25:19,311 - root - INFO - Training network 16
+2025-06-18 10:25:31,438 - root - INFO - Training network 17. n_training: 897
+2025-06-18 10:25:34,858 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 10:25:34,858 - root - INFO - Training network 17
+2025-06-18 10:25:40,699 - root - INFO - Training network 18. n_training: 556
+2025-06-18 10:25:44,124 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 10:25:44,125 - root - INFO - Training network 18
+2025-06-18 10:25:47,812 - root - INFO - Training network 19. n_training: 256
+2025-06-18 10:25:51,195 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 10:25:51,195 - root - INFO - Training network 19
+2025-06-18 10:25:52,864 - root - INFO - Training network 20. n_training: 334
+2025-06-18 10:25:56,242 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 10:25:56,242 - root - INFO - Training network 20
+2025-06-18 10:25:58,211 - root - INFO - Training network 21. n_training: 921
+2025-06-18 10:26:01,382 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 10:26:01,382 - root - INFO - Training network 21
+2025-06-18 10:26:06,733 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 10:26:09,939 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 10:26:09,939 - root - INFO - Training network 22
+2025-06-18 10:26:18,054 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 10:26:21,493 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 10:26:21,493 - root - INFO - Training network 23
+2025-06-18 10:26:40,377 - root - INFO - Training network 24. n_training: 323
+2025-06-18 10:26:43,811 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 10:26:43,811 - root - INFO - Training network 24
+2025-06-18 10:26:45,961 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 10:26:49,387 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 10:26:49,388 - root - INFO - Training network 25
+2025-06-18 10:26:56,744 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 10:27:00,230 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 10:27:00,230 - root - INFO - Training network 26
+2025-06-18 10:27:13,500 - root - INFO - Training network 27. n_training: 766
+2025-06-18 10:27:16,716 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 10:27:16,716 - root - INFO - Training network 27
+2025-06-18 10:27:21,331 - root - INFO - Training network 28. n_training: 406
+2025-06-18 10:27:24,701 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 10:27:24,701 - root - INFO - Training network 28
+2025-06-18 10:27:27,360 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 10:27:30,839 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 10:27:30,839 - root - INFO - Training network 29
+2025-06-18 10:27:47,721 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 10:27:51,152 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 10:27:51,152 - root - INFO - Training network 30
+2025-06-18 10:28:03,971 - root - INFO - Training network 31. n_training: 321
+2025-06-18 10:28:07,371 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 10:28:07,371 - root - INFO - Training network 31
+2025-06-18 10:28:09,437 - root - INFO - Training network 32. n_training: 501
+2025-06-18 10:28:12,859 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 10:28:12,859 - root - INFO - Training network 32
+2025-06-18 10:28:15,999 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 10:28:19,347 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 10:28:19,347 - root - INFO - Training network 33
+2025-06-18 10:28:30,297 - root - INFO - Training network 34. n_training: 823
+2025-06-18 10:28:33,679 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 10:28:33,679 - root - INFO - Training network 34
+2025-06-18 10:28:38,963 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 10:28:42,380 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 10:28:42,380 - root - INFO - Training network 35
+2025-06-18 10:28:49,003 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 10:28:52,120 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 10:28:52,120 - root - INFO - Training network 36
+2025-06-18 10:29:01,877 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 10:29:05,066 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 10:29:05,066 - root - INFO - Training network 37
+2025-06-18 10:29:14,599 - root - INFO - Training network 38. n_training: 216
+2025-06-18 10:29:17,984 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 10:29:17,984 - root - INFO - Training network 38
+2025-06-18 10:29:19,442 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 10:29:22,820 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 10:29:22,820 - root - INFO - Training network 39
+2025-06-18 10:29:43,945 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 10:29:47,076 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 10:29:47,076 - root - INFO - Training network 40
+2025-06-18 10:29:59,483 - root - INFO - Training network 41. n_training: 298
+2025-06-18 10:30:02,897 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 10:30:02,897 - root - INFO - Training network 41
+2025-06-18 10:30:04,766 - root - INFO - Training network 42. n_training: 498
+2025-06-18 10:30:08,169 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 10:30:08,170 - root - INFO - Training network 42
+2025-06-18 10:30:11,258 - root - INFO - Training network 43. n_training: 202
+2025-06-18 10:30:14,635 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 10:30:14,636 - root - INFO - Training network 43
+2025-06-18 10:30:15,911 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 10:30:19,253 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 10:30:19,253 - root - INFO - Training network 44
+2025-06-18 10:30:36,361 - root - INFO - Training network 45. n_training: 414
+2025-06-18 10:30:39,727 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 10:30:39,727 - root - INFO - Training network 45
+2025-06-18 10:30:42,368 - root - INFO - Training network 46. n_training: 983
+2025-06-18 10:30:45,717 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 10:30:45,717 - root - INFO - Training network 46
+2025-06-18 10:30:52,110 - root - INFO - Training network 47. n_training: 458
+2025-06-18 10:30:55,394 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 10:30:55,394 - root - INFO - Training network 47
+2025-06-18 10:30:58,284 - root - INFO - Training network 48. n_training: 326
+2025-06-18 10:31:01,542 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 10:31:01,542 - root - INFO - Training network 48
+2025-06-18 10:31:03,412 - root - INFO - Training network 49. n_training: 103
+2025-06-18 10:31:06,577 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 10:31:06,577 - root - INFO - Training network 49
+2025-06-18 10:31:07,195 - root - INFO - global n_training: 50000
+2025-06-18 10:31:07,196 - root - INFO - global n_test: 10000
+2025-06-18 10:31:32,668 - root - INFO - >> Global Model Train accuracy: 0.456340
+2025-06-18 10:31:32,668 - root - INFO - >> Global Model Test accuracy: 0.490800
+2025-06-18 10:31:32,668 - root - WARNING - in comm round: 7 from 25
+2025-06-18 10:31:32,680 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 10:31:36,120 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 10:31:36,120 - root - INFO - Training network 0
+2025-06-18 10:31:47,843 - root - INFO - Training network 1. n_training: 389
+2025-06-18 10:31:51,199 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 10:31:51,199 - root - INFO - Training network 1
+2025-06-18 10:31:53,705 - root - INFO - Training network 2. n_training: 617
+2025-06-18 10:31:57,152 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 10:31:57,153 - root - INFO - Training network 2
+2025-06-18 10:32:01,050 - root - INFO - Training network 3. n_training: 104
+2025-06-18 10:32:04,390 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 10:32:04,390 - root - INFO - Training network 3
+2025-06-18 10:32:05,037 - root - INFO - Training network 4. n_training: 609
+2025-06-18 10:32:08,398 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 10:32:08,398 - root - INFO - Training network 4
+2025-06-18 10:32:12,163 - root - INFO - Training network 5. n_training: 187
+2025-06-18 10:32:15,597 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 10:32:15,597 - root - INFO - Training network 5
+2025-06-18 10:32:16,840 - root - INFO - Training network 6. n_training: 223
+2025-06-18 10:32:20,262 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 10:32:20,262 - root - INFO - Training network 6
+2025-06-18 10:32:21,730 - root - INFO - Training network 7. n_training: 94
+2025-06-18 10:32:25,206 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 10:32:25,207 - root - INFO - Training network 7
+2025-06-18 10:32:25,841 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 10:32:29,267 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 10:32:29,267 - root - INFO - Training network 8
+2025-06-18 10:32:43,367 - root - INFO - Training network 9. n_training: 93
+2025-06-18 10:32:46,749 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 10:32:46,749 - root - INFO - Training network 9
+2025-06-18 10:32:47,381 - root - INFO - Training network 10. n_training: 180
+2025-06-18 10:32:50,788 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 10:32:50,788 - root - INFO - Training network 10
+2025-06-18 10:32:51,964 - root - INFO - Training network 11. n_training: 154
+2025-06-18 10:32:55,372 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 10:32:55,372 - root - INFO - Training network 11
+2025-06-18 10:32:56,382 - root - INFO - Training network 12. n_training: 130
+2025-06-18 10:32:59,780 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 10:32:59,781 - root - INFO - Training network 12
+2025-06-18 10:33:00,639 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 10:33:04,019 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 10:33:04,019 - root - INFO - Training network 13
+2025-06-18 10:33:35,427 - root - INFO - Training network 14. n_training: 238
+2025-06-18 10:33:38,652 - root - INFO - Training network 14. with 10 epochs
+2025-06-18 10:33:38,652 - root - INFO - Training network 14
+2025-06-18 10:33:40,092 - root - INFO - Training network 15. n_training: 271
+2025-06-18 10:33:43,267 - root - INFO - Training network 15. with 10 epochs
+2025-06-18 10:33:43,268 - root - INFO - Training network 15
+2025-06-18 10:33:45,110 - root - INFO - Training network 16. n_training: 1922
+2025-06-18 10:33:48,554 - root - INFO - Training network 16. with 10 epochs
+2025-06-18 10:33:48,554 - root - INFO - Training network 16
+2025-06-18 10:34:01,151 - root - INFO - Training network 17. n_training: 897
+2025-06-18 10:34:04,527 - root - INFO - Training network 17. with 10 epochs
+2025-06-18 10:34:04,527 - root - INFO - Training network 17
+2025-06-18 10:34:10,514 - root - INFO - Training network 18. n_training: 556
+2025-06-18 10:34:14,006 - root - INFO - Training network 18. with 10 epochs
+2025-06-18 10:34:14,006 - root - INFO - Training network 18
+2025-06-18 10:34:17,738 - root - INFO - Training network 19. n_training: 256
+2025-06-18 10:34:21,210 - root - INFO - Training network 19. with 10 epochs
+2025-06-18 10:34:21,210 - root - INFO - Training network 19
+2025-06-18 10:34:22,937 - root - INFO - Training network 20. n_training: 334
+2025-06-18 10:34:26,410 - root - INFO - Training network 20. with 10 epochs
+2025-06-18 10:34:26,410 - root - INFO - Training network 20
+2025-06-18 10:34:28,599 - root - INFO - Training network 21. n_training: 921
+2025-06-18 10:34:32,066 - root - INFO - Training network 21. with 10 epochs
+2025-06-18 10:34:32,066 - root - INFO - Training network 21
+2025-06-18 10:34:37,778 - root - INFO - Training network 22. n_training: 1305
+2025-06-18 10:34:41,123 - root - INFO - Training network 22. with 10 epochs
+2025-06-18 10:34:41,123 - root - INFO - Training network 22
+2025-06-18 10:34:49,363 - root - INFO - Training network 23. n_training: 2903
+2025-06-18 10:34:52,756 - root - INFO - Training network 23. with 10 epochs
+2025-06-18 10:34:52,756 - root - INFO - Training network 23
+2025-06-18 10:35:10,174 - root - INFO - Training network 24. n_training: 323
+2025-06-18 10:35:13,422 - root - INFO - Training network 24. with 10 epochs
+2025-06-18 10:35:13,422 - root - INFO - Training network 24
+2025-06-18 10:35:15,494 - root - INFO - Training network 25. n_training: 1109
+2025-06-18 10:35:18,950 - root - INFO - Training network 25. with 10 epochs
+2025-06-18 10:35:18,950 - root - INFO - Training network 25
+2025-06-18 10:35:25,726 - root - INFO - Training network 26. n_training: 2292
+2025-06-18 10:35:29,159 - root - INFO - Training network 26. with 10 epochs
+2025-06-18 10:35:29,159 - root - INFO - Training network 26
+2025-06-18 10:35:43,880 - root - INFO - Training network 27. n_training: 766
+2025-06-18 10:35:47,291 - root - INFO - Training network 27. with 10 epochs
+2025-06-18 10:35:47,291 - root - INFO - Training network 27
+2025-06-18 10:35:52,228 - root - INFO - Training network 28. n_training: 406
+2025-06-18 10:35:55,645 - root - INFO - Training network 28. with 10 epochs
+2025-06-18 10:35:55,645 - root - INFO - Training network 28
+2025-06-18 10:35:58,260 - root - INFO - Training network 29. n_training: 2551
+2025-06-18 10:36:01,695 - root - INFO - Training network 29. with 10 epochs
+2025-06-18 10:36:01,696 - root - INFO - Training network 29
+2025-06-18 10:36:17,832 - root - INFO - Training network 30. n_training: 1973
+2025-06-18 10:36:21,170 - root - INFO - Training network 30. with 10 epochs
+2025-06-18 10:36:21,170 - root - INFO - Training network 30
+2025-06-18 10:36:33,249 - root - INFO - Training network 31. n_training: 321
+2025-06-18 10:36:36,615 - root - INFO - Training network 31. with 10 epochs
+2025-06-18 10:36:36,615 - root - INFO - Training network 31
+2025-06-18 10:36:38,570 - root - INFO - Training network 32. n_training: 501
+2025-06-18 10:36:41,935 - root - INFO - Training network 32. with 10 epochs
+2025-06-18 10:36:41,935 - root - INFO - Training network 32
+2025-06-18 10:36:44,981 - root - INFO - Training network 33. n_training: 1719
+2025-06-18 10:36:48,216 - root - INFO - Training network 33. with 10 epochs
+2025-06-18 10:36:48,216 - root - INFO - Training network 33
+2025-06-18 10:36:58,589 - root - INFO - Training network 34. n_training: 823
+2025-06-18 10:37:01,961 - root - INFO - Training network 34. with 10 epochs
+2025-06-18 10:37:01,961 - root - INFO - Training network 34
+2025-06-18 10:37:07,075 - root - INFO - Training network 35. n_training: 1067
+2025-06-18 10:37:10,450 - root - INFO - Training network 35. with 10 epochs
+2025-06-18 10:37:10,450 - root - INFO - Training network 35
+2025-06-18 10:37:16,823 - root - INFO - Training network 36. n_training: 1637
+2025-06-18 10:37:20,168 - root - INFO - Training network 36. with 10 epochs
+2025-06-18 10:37:20,168 - root - INFO - Training network 36
+2025-06-18 10:37:30,464 - root - INFO - Training network 37. n_training: 1535
+2025-06-18 10:37:33,859 - root - INFO - Training network 37. with 10 epochs
+2025-06-18 10:37:33,859 - root - INFO - Training network 37
+2025-06-18 10:37:43,479 - root - INFO - Training network 38. n_training: 216
+2025-06-18 10:37:46,834 - root - INFO - Training network 38. with 10 epochs
+2025-06-18 10:37:46,834 - root - INFO - Training network 38
+2025-06-18 10:37:48,215 - root - INFO - Training network 39. n_training: 3469
+2025-06-18 10:37:51,576 - root - INFO - Training network 39. with 10 epochs
+2025-06-18 10:37:51,577 - root - INFO - Training network 39
+2025-06-18 10:38:13,490 - root - INFO - Training network 40. n_training: 1970
+2025-06-18 10:38:16,825 - root - INFO - Training network 40. with 10 epochs
+2025-06-18 10:38:16,825 - root - INFO - Training network 40
+2025-06-18 10:38:29,348 - root - INFO - Training network 41. n_training: 298
+2025-06-18 10:38:32,714 - root - INFO - Training network 41. with 10 epochs
+2025-06-18 10:38:32,714 - root - INFO - Training network 41
+2025-06-18 10:38:34,433 - root - INFO - Training network 42. n_training: 498
+2025-06-18 10:38:37,597 - root - INFO - Training network 42. with 10 epochs
+2025-06-18 10:38:37,597 - root - INFO - Training network 42
+2025-06-18 10:38:40,448 - root - INFO - Training network 43. n_training: 202
+2025-06-18 10:38:43,623 - root - INFO - Training network 43. with 10 epochs
+2025-06-18 10:38:43,623 - root - INFO - Training network 43
+2025-06-18 10:38:44,799 - root - INFO - Training network 44. n_training: 2719
+2025-06-18 10:38:47,961 - root - INFO - Training network 44. with 10 epochs
+2025-06-18 10:38:47,961 - root - INFO - Training network 44
+2025-06-18 10:39:04,372 - root - INFO - Training network 45. n_training: 414
+2025-06-18 10:39:07,714 - root - INFO - Training network 45. with 10 epochs
+2025-06-18 10:39:07,714 - root - INFO - Training network 45
+2025-06-18 10:39:10,179 - root - INFO - Training network 46. n_training: 983
+2025-06-18 10:39:13,470 - root - INFO - Training network 46. with 10 epochs
+2025-06-18 10:39:13,471 - root - INFO - Training network 46
+2025-06-18 10:39:19,403 - root - INFO - Training network 47. n_training: 458
+2025-06-18 10:39:22,797 - root - INFO - Training network 47. with 10 epochs
+2025-06-18 10:39:22,797 - root - INFO - Training network 47
+2025-06-18 10:39:25,753 - root - INFO - Training network 48. n_training: 326
+2025-06-18 10:39:29,120 - root - INFO - Training network 48. with 10 epochs
+2025-06-18 10:39:29,121 - root - INFO - Training network 48
+2025-06-18 10:39:31,196 - root - INFO - Training network 49. n_training: 103
+2025-06-18 10:39:34,532 - root - INFO - Training network 49. with 10 epochs
+2025-06-18 10:39:34,532 - root - INFO - Training network 49
+2025-06-18 10:39:35,228 - root - INFO - global n_training: 50000
+2025-06-18 10:39:35,228 - root - INFO - global n_test: 10000
+2025-06-18 10:40:02,358 - root - INFO - >> Global Model Train accuracy: 0.478160
+2025-06-18 10:40:02,358 - root - INFO - >> Global Model Test accuracy: 0.513400
+2025-06-18 10:40:02,358 - root - WARNING - in comm round: 8 from 25
+2025-06-18 10:40:02,369 - root - INFO - Training network 0. n_training: 1807
+2025-06-18 10:40:05,706 - root - INFO - Training network 0. with 10 epochs
+2025-06-18 10:40:05,706 - root - INFO - Training network 0
+2025-06-18 10:40:16,714 - root - INFO - Training network 1. n_training: 389
+2025-06-18 10:40:19,881 - root - INFO - Training network 1. with 10 epochs
+2025-06-18 10:40:19,881 - root - INFO - Training network 1
+2025-06-18 10:40:22,181 - root - INFO - Training network 2. n_training: 617
+2025-06-18 10:40:25,348 - root - INFO - Training network 2. with 10 epochs
+2025-06-18 10:40:25,348 - root - INFO - Training network 2
+2025-06-18 10:40:29,004 - root - INFO - Training network 3. n_training: 104
+2025-06-18 10:40:32,200 - root - INFO - Training network 3. with 10 epochs
+2025-06-18 10:40:32,200 - root - INFO - Training network 3
+2025-06-18 10:40:32,815 - root - INFO - Training network 4. n_training: 609
+2025-06-18 10:40:35,988 - root - INFO - Training network 4. with 10 epochs
+2025-06-18 10:40:35,988 - root - INFO - Training network 4
+2025-06-18 10:40:39,553 - root - INFO - Training network 5. n_training: 187
+2025-06-18 10:40:42,702 - root - INFO - Training network 5. with 10 epochs
+2025-06-18 10:40:42,702 - root - INFO - Training network 5
+2025-06-18 10:40:43,811 - root - INFO - Training network 6. n_training: 223
+2025-06-18 10:40:46,971 - root - INFO - Training network 6. with 10 epochs
+2025-06-18 10:40:46,971 - root - INFO - Training network 6
+2025-06-18 10:40:48,405 - root - INFO - Training network 7. n_training: 94
+2025-06-18 10:40:51,798 - root - INFO - Training network 7. with 10 epochs
+2025-06-18 10:40:51,798 - root - INFO - Training network 7
+2025-06-18 10:40:52,431 - root - INFO - Training network 8. n_training: 2140
+2025-06-18 10:40:55,836 - root - INFO - Training network 8. with 10 epochs
+2025-06-18 10:40:55,836 - root - INFO - Training network 8
+2025-06-18 10:41:08,802 - root - INFO - Training network 9. n_training: 93
+2025-06-18 10:41:11,987 - root - INFO - Training network 9. with 10 epochs
+2025-06-18 10:41:11,987 - root - INFO - Training network 9
+2025-06-18 10:41:12,555 - root - INFO - Training network 10. n_training: 180
+2025-06-18 10:41:15,725 - root - INFO - Training network 10. with 10 epochs
+2025-06-18 10:41:15,726 - root - INFO - Training network 10
+2025-06-18 10:41:16,797 - root - INFO - Training network 11. n_training: 154
+2025-06-18 10:41:19,976 - root - INFO - Training network 11. with 10 epochs
+2025-06-18 10:41:19,977 - root - INFO - Training network 11
+2025-06-18 10:41:20,906 - root - INFO - Training network 12. n_training: 130
+2025-06-18 10:41:24,049 - root - INFO - Training network 12. with 10 epochs
+2025-06-18 10:41:24,049 - root - INFO - Training network 12
+2025-06-18 10:41:24,821 - root - INFO - Training network 13. n_training: 4991
+2025-06-18 10:41:27,961 - root - INFO - Training network 13. with 10 epochs
+2025-06-18 10:41:27,961 - root - INFO - Training network 13
+2025-06-18 10:41:59,381 - root - INFO - Training network 14. n_training: 238
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 14659167 ON paul25 CANCELLED AT 2025-06-18T10:42:01 ***
+slurmstepd: error: *** STEP 14659167.0 ON paul25 CANCELLED AT 2025-06-18T10:42:01 ***

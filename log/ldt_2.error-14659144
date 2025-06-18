@@ -1,0 +1,1676 @@
+2025-06-18 09:20:27,512 - root - INFO - cpu
+2025-06-18 09:20:27,512 - root - INFO - ####################################################################################################
+2025-06-18 09:20:27,517 - root - WARNING - Partitioning data
+2025-06-18 09:20:29,197 - root - INFO - Data statistics: {0: {np.int64(0): np.int64(86), np.int64(1): np.int64(69), np.int64(2): np.int64(2), np.int64(3): np.int64(34), np.int64(4): np.int64(83), np.int64(5): np.int64(17), np.int64(6): np.int64(21), np.int64(7): np.int64(209)}, 1: {np.int64(0): np.int64(2), np.int64(1): np.int64(28), np.int64(2): np.int64(37), np.int64(3): np.int64(135), np.int64(4): np.int64(11), np.int64(5): np.int64(62), np.int64(7): np.int64(132), np.int64(8): np.int64(47), np.int64(9): np.int64(318)}, 2: {np.int64(0): np.int64(1), np.int64(1): np.int64(3), np.int64(2): np.int64(6), np.int64(3): np.int64(3), np.int64(5): np.int64(7), np.int64(6): np.int64(2), np.int64(7): np.int64(114), np.int64(8): np.int64(5), np.int64(9): np.int64(35)}, 3: {np.int64(0): np.int64(36), np.int64(1): np.int64(1), np.int64(2): np.int64(21), np.int64(3): np.int64(70), np.int64(5): np.int64(47), np.int64(6): np.int64(7), np.int64(7): np.int64(5), np.int64(8): np.int64(226), np.int64(9): np.int64(5)}, 4: {np.int64(0): np.int64(46), np.int64(1): np.int64(54), np.int64(2): np.int64(46), np.int64(3): np.int64(37), np.int64(4): np.int64(8), np.int64(5): np.int64(296), np.int64(6): np.int64(82)}, 5: {np.int64(0): np.int64(114), np.int64(1): np.int64(123), np.int64(2): np.int64(68), np.int64(3): np.int64(49), np.int64(4): np.int64(8), np.int64(5): np.int64(132), np.int64(6): np.int64(89)}, 6: {np.int64(0): np.int64(1), np.int64(2): np.int64(32), np.int64(3): np.int64(24), np.int64(4): np.int64(180), np.int64(5): np.int64(1), np.int64(7): np.int64(16), np.int64(8): np.int64(166), np.int64(9): np.int64(54)}, 7: {np.int64(0): np.int64(66), np.int64(2): np.int64(9), np.int64(3): np.int64(38), np.int64(4): np.int64(32), np.int64(5): np.int64(8), np.int64(6): np.int64(24), np.int64(8): np.int64(1), np.int64(9): np.int64(30)}, 8: {np.int64(0): np.int64(103), np.int64(1): np.int64(34), np.int64(2): np.int64(1), np.int64(3): np.int64(86), np.int64(4): np.int64(55), np.int64(5): np.int64(5), np.int64(6): np.int64(105), np.int64(7): np.int64(45)}, 9: {np.int64(1): np.int64(10), np.int64(2): np.int64(250), np.int64(3): np.int64(1), np.int64(4): np.int64(21), np.int64(5): np.int64(24), np.int64(6): np.int64(186), np.int64(7): np.int64(12)}, 10: {np.int64(0): np.int64(106), np.int64(1): np.int64(19), np.int64(3): np.int64(182), np.int64(4): np.int64(15), np.int64(5): np.int64(114), np.int64(6): np.int64(82)}, 11: {np.int64(0): np.int64(47), np.int64(2): np.int64(103), np.int64(3): np.int64(1), np.int64(4): np.int64(19), np.int64(5): np.int64(36), np.int64(6): np.int64(1), np.int64(7): np.int64(1), np.int64(8): np.int64(314)}, 12: {np.int64(0): np.int64(42), np.int64(1): np.int64(45), np.int64(2): np.int64(56), np.int64(3): np.int64(12), np.int64(5): np.int64(60), np.int64(6): np.int64(86), np.int64(7): np.int64(95), np.int64(8): np.int64(6)}, 13: {np.int64(0): np.int64(45), np.int64(1): np.int64(80), np.int64(2): np.int64(87), np.int64(3): np.int64(59), np.int64(4): np.int64(33), np.int64(5): np.int64(2), np.int64(6): np.int64(27), np.int64(7): np.int64(296)}, 14: {np.int64(0): np.int64(82), np.int64(1): np.int64(26), np.int64(2): np.int64(22), np.int64(3): np.int64(4), np.int64(4): np.int64(18), np.int64(5): np.int64(17), np.int64(6): np.int64(231), np.int64(7): np.int64(19), np.int64(8): np.int64(9), np.int64(9): np.int64(197)}, 15: {np.int64(0): np.int64(24), np.int64(1): np.int64(120), np.int64(2): np.int64(23), np.int64(3): np.int64(42), np.int64(4): np.int64(82), np.int64(5): np.int64(123), np.int64(6): np.int64(162)}, 16: {np.int64(0): np.int64(5), np.int64(2): np.int64(44), np.int64(3): np.int64(28), np.int64(4): np.int64(77), np.int64(5): np.int64(19), np.int64(6): np.int64(1), np.int64(7): np.int64(42), np.int64(8): np.int64(18), np.int64(9): np.int64(115)}, 17: {np.int64(0): np.int64(1), np.int64(1): np.int64(2), np.int64(2): np.int64(35), np.int64(3): np.int64(49), np.int64(4): np.int64(27), np.int64(5): np.int64(96), np.int64(6): np.int64(10), np.int64(7): np.int64(11), np.int64(8): np.int64(25), np.int64(9): np.int64(15)}, 18: {np.int64(0): np.int64(5), np.int64(2): np.int64(59), np.int64(3): np.int64(31), np.int64(4): np.int64(30), np.int64(5): np.int64(23), np.int64(6): np.int64(15), np.int64(7): np.int64(109), np.int64(8): np.int64(13), np.int64(9): np.int64(24)}, 19: {np.int64(0): np.int64(6), np.int64(1): np.int64(18), np.int64(2): np.int64(53), np.int64(3): np.int64(62), np.int64(4): np.int64(15), np.int64(5): np.int64(47), np.int64(6): np.int64(40), np.int64(7): np.int64(22), np.int64(8): np.int64(9), np.int64(9): np.int64(353)}, 20: {np.int64(0): np.int64(2), np.int64(1): np.int64(25), np.int64(5): np.int64(117), np.int64(6): np.int64(23), np.int64(7): np.int64(1)}, 21: {np.int64(0): np.int64(13), np.int64(1): np.int64(1), np.int64(2): np.int64(121), np.int64(3): np.int64(4), np.int64(4): np.int64(15), np.int64(5): np.int64(37), np.int64(7): np.int64(10), np.int64(8): np.int64(102), np.int64(9): np.int64(268)}, 22: {np.int64(0): np.int64(40), np.int64(1): np.int64(221), np.int64(2): np.int64(60), np.int64(3): np.int64(143), np.int64(4): np.int64(4), np.int64(5): np.int64(119)}, 23: {np.int64(1): np.int64(48), np.int64(2): np.int64(2), np.int64(3): np.int64(24), np.int64(4): np.int64(18), np.int64(5): np.int64(19), np.int64(6): np.int64(461)}, 24: {np.int64(0): np.int64(20), np.int64(1): np.int64(271), np.int64(2): np.int64(105), np.int64(3): np.int64(61), np.int64(4): np.int64(551)}, 25: {np.int64(0): np.int64(97), np.int64(1): np.int64(28), np.int64(2): np.int64(36), np.int64(3): np.int64(43), np.int64(4): np.int64(64), np.int64(5): np.int64(1), np.int64(7): np.int64(20), np.int64(8): np.int64(4), np.int64(9): np.int64(416)}, 26: {np.int64(0): np.int64(111), np.int64(1): np.int64(15), np.int64(2): np.int64(17), np.int64(3): np.int64(27), np.int64(4): np.int64(110), np.int64(5): np.int64(1), np.int64(6): np.int64(5), np.int64(7): np.int64(149), np.int64(8): np.int64(56), np.int64(9): np.int64(46)}, 27: {np.int64(0): np.int64(56), np.int64(1): np.int64(234), np.int64(2): np.int64(59), np.int64(3): np.int64(4), np.int64(4): np.int64(79), np.int64(5): np.int64(52), np.int64(7): np.int64(4), np.int64(8): np.int64(87)}, 28: {np.int64(0): np.int64(2), np.int64(1): np.int64(5), np.int64(2): np.int64(148), np.int64(3): np.int64(1), np.int64(4): np.int64(17), np.int64(5): np.int64(13), np.int64(6): np.int64(191), np.int64(7): np.int64(61), np.int64(8): np.int64(63)}, 29: {np.int64(0): np.int64(40), np.int64(1): np.int64(2), np.int64(2): np.int64(64), np.int64(4): np.int64(299), np.int64(5): np.int64(148)}, 30: {np.int64(0): np.int64(11), np.int64(1): np.int64(95), np.int64(2): np.int64(12), np.int64(3): np.int64(4), np.int64(4): np.int64(52), np.int64(5): np.int64(38), np.int64(6): np.int64(16), np.int64(8): np.int64(183), np.int64(9): np.int64(171)}, 31: {np.int64(0): np.int64(273), np.int64(1): np.int64(23), np.int64(2): np.int64(19), np.int64(3): np.int64(107), np.int64(4): np.int64(5), np.int64(5): np.int64(18), np.int64(6): np.int64(17), np.int64(7): np.int64(50)}, 32: {np.int64(0): np.int64(193), np.int64(1): np.int64(135), np.int64(2): np.int64(58), np.int64(3): np.int64(120)}, 33: {np.int64(0): np.int64(12), np.int64(1): np.int64(2), np.int64(2): np.int64(31), np.int64(3): np.int64(124), np.int64(4): np.int64(123), np.int64(5): np.int64(5), np.int64(7): np.int64(310)}, 34: {np.int64(0): np.int64(124), np.int64(1): np.int64(23), np.int64(2): np.int64(5), np.int64(3): np.int64(107), np.int64(4): np.int64(4), np.int64(5): np.int64(454)}, 35: {np.int64(0): np.int64(481), np.int64(2): np.int64(58)}, 36: {np.int64(0): np.int64(195), np.int64(1): np.int64(15), np.int64(3): np.int64(3), np.int64(4): np.int64(16), np.int64(5): np.int64(39), np.int64(6): np.int64(1), np.int64(7): np.int64(303)}, 37: {np.int64(0): np.int64(9), np.int64(1): np.int64(128), np.int64(2): np.int64(5), np.int64(3): np.int64(77), np.int64(4): np.int64(123), np.int64(5): np.int64(1), np.int64(6): np.int64(54), np.int64(7): np.int64(39), np.int64(8): np.int64(100)}, 38: {np.int64(0): np.int64(31), np.int64(1): np.int64(229), np.int64(2): np.int64(215), np.int64(3): np.int64(2), np.int64(4): np.int64(88)}, 39: {np.int64(0): np.int64(76), np.int64(1): np.int64(1), np.int64(2): np.int64(5), np.int64(3): np.int64(16), np.int64(4): np.int64(2), np.int64(5): np.int64(90), np.int64(7): np.int64(13), np.int64(8): np.int64(25), np.int64(9): np.int64(100)}, 40: {np.int64(0): np.int64(32), np.int64(1): np.int64(19), np.int64(3): np.int64(214), np.int64(4): np.int64(140), np.int64(5): np.int64(3), np.int64(6): np.int64(8), np.int64(7): np.int64(10), np.int64(8): np.int64(344)}, 41: {np.int64(0): np.int64(5), np.int64(1): np.int64(47), np.int64(2): np.int64(10), np.int64(3): np.int64(34), np.int64(4): np.int64(62), np.int64(5): np.int64(173), np.int64(6): np.int64(317)}, 42: {np.int64(0): np.int64(8), np.int64(1): np.int64(22), np.int64(2): np.int64(55), np.int64(3): np.int64(138), np.int64(4): np.int64(29), np.int64(5): np.int64(32), np.int64(6): np.int64(113), np.int64(7): np.int64(20), np.int64(8): np.int64(32)}, 43: {np.int64(0): np.int64(4), np.int64(1): np.int64(2), np.int64(2): np.int64(1), np.int64(3): np.int64(1), np.int64(4): np.int64(65), np.int64(5): np.int64(19), np.int64(6): np.int64(2), np.int64(7): np.int64(13), np.int64(8): np.int64(22), np.int64(9): np.int64(154)}, 44: {np.int64(0): np.int64(13), np.int64(1): np.int64(26), np.int64(2): np.int64(9), np.int64(3): np.int64(120), np.int64(4): np.int64(2), np.int64(5): np.int64(3), np.int64(6): np.int64(2), np.int64(7): np.int64(141), np.int64(9): np.int64(9)}, 45: {np.int64(0): np.int64(2), np.int64(1): np.int64(83), np.int64(2): np.int64(3), np.int64(3): np.int64(20), np.int64(4): np.int64(26), np.int64(6): np.int64(13), np.int64(7): np.int64(7), np.int64(8): np.int64(32), np.int64(9): np.int64(149)}, 46: {np.int64(0): np.int64(8), np.int64(1): np.int64(22), np.int64(2): np.int64(7), np.int64(3): np.int64(4), np.int64(4): np.int64(98), np.int64(5): np.int64(4), np.int64(6): np.int64(106), np.int64(7): np.int64(136), np.int64(8): np.int64(196)}, 47: {np.int64(0): np.int64(17), np.int64(1): np.int64(1), np.int64(2): np.int64(76), np.int64(3): np.int64(21), np.int64(4): np.int64(70), np.int64(5): np.int64(4), np.int64(6): np.int64(83), np.int64(7): np.int64(29), np.int64(8): np.int64(5), np.int64(9): np.int64(61)}, 48: {np.int64(0): np.int64(5), np.int64(1): np.int64(159), np.int64(2): np.int64(128), np.int64(3): np.int64(2), np.int64(4): np.int64(13), np.int64(5): np.int64(55), np.int64(6): np.int64(74), np.int64(7): np.int64(72)}, 49: {np.int64(0): np.int64(103), np.int64(1): np.int64(29), np.int64(2): np.int64(2), np.int64(3): np.int64(1), np.int64(4): np.int64(45), np.int64(5): np.int64(8), np.int64(6): np.int64(116), np.int64(7): np.int64(19), np.int64(8): np.int64(217)}, 50: {np.int64(0): np.int64(80), np.int64(1): np.int64(1), np.int64(2): np.int64(40), np.int64(3): np.int64(4), np.int64(4): np.int64(201), np.int64(5): np.int64(201)}, 51: {np.int64(0): np.int64(123), np.int64(1): np.int64(21), np.int64(2): np.int64(59), np.int64(3): np.int64(27), np.int64(4): np.int64(29), np.int64(5): np.int64(194), np.int64(6): np.int64(138)}, 52: {np.int64(1): np.int64(3), np.int64(2): np.int64(491), np.int64(3): np.int64(137)}, 53: {np.int64(0): np.int64(3), np.int64(1): np.int64(71), np.int64(2): np.int64(7), np.int64(3): np.int64(47), np.int64(4): np.int64(36), np.int64(5): np.int64(2), np.int64(6): np.int64(45), np.int64(7): np.int64(11), np.int64(8): np.int64(58), np.int64(9): np.int64(19)}, 54: {np.int64(1): np.int64(146), np.int64(2): np.int64(69), np.int64(3): np.int64(12), np.int64(4): np.int64(99), np.int64(5): np.int64(15), np.int64(6): np.int64(15), np.int64(7): np.int64(1), np.int64(8): np.int64(7), np.int64(9): np.int64(78)}, 55: {np.int64(0): np.int64(30), np.int64(1): np.int64(57), np.int64(2): np.int64(15), np.int64(4): np.int64(25), np.int64(5): np.int64(8), np.int64(6): np.int64(96), np.int64(7): np.int64(105), np.int64(8): np.int64(52), np.int64(9): np.int64(17)}, 56: {np.int64(0): np.int64(54), np.int64(1): np.int64(87), np.int64(2): np.int64(13), np.int64(3): np.int64(116), np.int64(4): np.int64(32), np.int64(5): np.int64(113), np.int64(6): np.int64(250)}, 57: {np.int64(0): np.int64(5), np.int64(2): np.int64(34), np.int64(3): np.int64(93), np.int64(4): np.int64(8), np.int64(5): np.int64(1), np.int64(6): np.int64(173), np.int64(7): np.int64(83), np.int64(8): np.int64(31), np.int64(9): np.int64(85)}, 58: {np.int64(0): np.int64(12), np.int64(1): np.int64(24), np.int64(2): np.int64(4), np.int64(3): np.int64(192), np.int64(4): np.int64(82), np.int64(5): np.int64(9), np.int64(6): np.int64(2), np.int64(7): np.int64(100), np.int64(8): np.int64(24), np.int64(9): np.int64(15)}, 59: {np.int64(0): np.int64(65), np.int64(2): np.int64(154), np.int64(3): np.int64(19), np.int64(4): np.int64(91), np.int64(5): np.int64(34), np.int64(6): np.int64(2), np.int64(7): np.int64(134), np.int64(8): np.int64(136)}, 60: {np.int64(0): np.int64(56), np.int64(1): np.int64(3), np.int64(2): np.int64(1), np.int64(3): np.int64(202), np.int64(4): np.int64(74), np.int64(5): np.int64(43), np.int64(6): np.int64(3), np.int64(7): np.int64(3), np.int64(8): np.int64(146)}, 61: {np.int64(0): np.int64(18), np.int64(1): np.int64(89), np.int64(2): np.int64(14), np.int64(3): np.int64(277), np.int64(4): np.int64(3), np.int64(5): np.int64(4), np.int64(6): np.int64(19), np.int64(7): np.int64(71), np.int64(8): np.int64(22)}, 62: {np.int64(0): np.int64(20), np.int64(1): np.int64(2), np.int64(2): np.int64(39), np.int64(3): np.int64(34), np.int64(4): np.int64(29), np.int64(5): np.int64(217), np.int64(6): np.int64(35), np.int64(7): np.int64(4), np.int64(8): np.int64(113), np.int64(9): np.int64(77)}, 63: {np.int64(0): np.int64(282), np.int64(1): np.int64(47), np.int64(2): np.int64(1), np.int64(3): np.int64(28), np.int64(5): np.int64(43), np.int64(6): np.int64(4), np.int64(7): np.int64(206)}, 64: {np.int64(0): np.int64(30), np.int64(1): np.int64(41), np.int64(2): np.int64(3), np.int64(3): np.int64(1), np.int64(4): np.int64(5), np.int64(5): np.int64(18), np.int64(6): np.int64(1), np.int64(7): np.int64(23), np.int64(8): np.int64(17), np.int64(9): np.int64(2)}, 65: {np.int64(0): np.int64(2), np.int64(1): np.int64(2), np.int64(3): np.int64(27), np.int64(4): np.int64(1), np.int64(5): np.int64(140), np.int64(6): np.int64(20), np.int64(7): np.int64(8), np.int64(8): np.int64(15), np.int64(9): np.int64(1)}, 66: {np.int64(0): np.int64(2), np.int64(1): np.int64(60), np.int64(2): np.int64(29), np.int64(3): np.int64(2), np.int64(4): np.int64(2), np.int64(5): np.int64(42), np.int64(6): np.int64(11), np.int64(7): np.int64(35), np.int64(9): np.int64(81)}, 67: {np.int64(0): np.int64(72), np.int64(1): np.int64(3), np.int64(2): np.int64(15), np.int64(3): np.int64(17), np.int64(4): np.int64(19), np.int64(6): np.int64(150), np.int64(7): np.int64(9), np.int64(8): np.int64(1), np.int64(9): np.int64(7)}, 68: {np.int64(0): np.int64(10), np.int64(1): np.int64(20), np.int64(2): np.int64(4), np.int64(3): np.int64(22), np.int64(4): np.int64(164), np.int64(5): np.int64(5), np.int64(6): np.int64(1), np.int64(7): np.int64(101), np.int64(8): np.int64(205)}, 69: {np.int64(0): np.int64(4), np.int64(1): np.int64(63), np.int64(3): np.int64(16), np.int64(5): np.int64(17), np.int64(6): np.int64(24), np.int64(7): np.int64(135), np.int64(8): np.int64(198)}, 70: {np.int64(0): np.int64(115), np.int64(2): np.int64(11), np.int64(4): np.int64(30), np.int64(5): np.int64(33), np.int64(6): np.int64(11), np.int64(7): np.int64(239), np.int64(8): np.int64(5), np.int64(9): np.int64(2)}, 71: {np.int64(1): np.int64(26), np.int64(2): np.int64(102), np.int64(3): np.int64(58), np.int64(4): np.int64(2), np.int64(5): np.int64(1), np.int64(6): np.int64(6), np.int64(7): np.int64(3), np.int64(8): np.int64(7), np.int64(9): np.int64(21)}, 72: {np.int64(0): np.int64(6), np.int64(1): np.int64(114), np.int64(2): np.int64(130), np.int64(3): np.int64(4), np.int64(4): np.int64(18), np.int64(6): np.int64(91), np.int64(7): np.int64(3), np.int64(8): np.int64(216)}, 73: {np.int64(0): np.int64(92), np.int64(2): np.int64(3), np.int64(3): np.int64(13), np.int64(5): np.int64(50), np.int64(6): np.int64(136), np.int64(7): np.int64(6), np.int64(8): np.int64(7), np.int64(9): np.int64(61)}, 74: {np.int64(0): np.int64(28), np.int64(2): np.int64(2), np.int64(3): np.int64(3), np.int64(4): np.int64(138), np.int64(5): np.int64(56), np.int64(6): np.int64(78), np.int64(7): np.int64(184), np.int64(8): np.int64(331)}, 75: {np.int64(0): np.int64(5), np.int64(1): np.int64(1), np.int64(2): np.int64(124), np.int64(3): np.int64(36), np.int64(4): np.int64(25), np.int64(5): np.int64(1), np.int64(6): np.int64(3), np.int64(7): np.int64(294), np.int64(8): np.int64(4), np.int64(9): np.int64(166)}, 76: {np.int64(0): np.int64(162), np.int64(1): np.int64(95), np.int64(2): np.int64(12), np.int64(3): np.int64(54), np.int64(4): np.int64(44), np.int64(5): np.int64(6), np.int64(6): np.int64(78), np.int64(7): np.int64(39), np.int64(8): np.int64(102)}, 77: {np.int64(0): np.int64(199), np.int64(1): np.int64(30), np.int64(2): np.int64(157), np.int64(3): np.int64(14), np.int64(4): np.int64(22), np.int64(5): np.int64(20), np.int64(6): np.int64(16), np.int64(7): np.int64(3), np.int64(8): np.int64(6), np.int64(9): np.int64(24)}, 78: {np.int64(0): np.int64(20), np.int64(1): np.int64(185), np.int64(2): np.int64(10), np.int64(3): np.int64(193), np.int64(4): np.int64(4), np.int64(5): np.int64(3), np.int64(6): np.int64(8), np.int64(7): np.int64(7), np.int64(8): np.int64(206)}, 79: {np.int64(0): np.int64(1), np.int64(1): np.int64(87), np.int64(2): np.int64(168), np.int64(3): np.int64(31), np.int64(4): np.int64(24), np.int64(5): np.int64(114), np.int64(6): np.int64(50), np.int64(7): np.int64(57)}, 80: {np.int64(0): np.int64(43), np.int64(1): np.int64(4), np.int64(2): np.int64(1), np.int64(3): np.int64(177), np.int64(4): np.int64(13), np.int64(5): np.int64(8), np.int64(6): np.int64(2), np.int64(7): np.int64(28), np.int64(8): np.int64(22), np.int64(9): np.int64(24)}, 81: {np.int64(0): np.int64(32), np.int64(1): np.int64(51), np.int64(2): np.int64(6), np.int64(3): np.int64(3), np.int64(4): np.int64(36), np.int64(5): np.int64(75), np.int64(7): np.int64(9), np.int64(8): np.int64(1), np.int64(9): np.int64(340)}, 82: {np.int64(0): np.int64(3), np.int64(1): np.int64(9), np.int64(2): np.int64(34), np.int64(3): np.int64(28), np.int64(4): np.int64(129), np.int64(5): np.int64(8), np.int64(6): np.int64(1), np.int64(7): np.int64(46), np.int64(8): np.int64(75), np.int64(9): np.int64(1)}, 83: {np.int64(0): np.int64(165), np.int64(1): np.int64(24), np.int64(2): np.int64(3), np.int64(3): np.int64(129), np.int64(4): np.int64(70), np.int64(5): np.int64(29), np.int64(7): np.int64(14), np.int64(8): np.int64(1), np.int64(9): np.int64(227)}, 84: {np.int64(0): np.int64(6), np.int64(1): np.int64(25), np.int64(2): np.int64(44), np.int64(3): np.int64(73), np.int64(4): np.int64(1), np.int64(5): np.int64(9), np.int64(6): np.int64(4), np.int64(7): np.int64(124), np.int64(9): np.int64(34)}, 85: {np.int64(0): np.int64(108), np.int64(1): np.int64(323), np.int64(2): np.int64(5), np.int64(3): np.int64(1), np.int64(4): np.int64(29), np.int64(5): np.int64(10), np.int64(6): np.int64(16), np.int64(8): np.int64(65)}, 86: {np.int64(0): np.int64(12), np.int64(2): np.int64(10), np.int64(3): np.int64(3), np.int64(4): np.int64(42), np.int64(5): np.int64(77), np.int64(6): np.int64(21), np.int64(7): np.int64(9), np.int64(8): np.int64(45), np.int64(9): np.int64(215)}, 87: {np.int64(0): np.int64(17), np.int64(1): np.int64(12), np.int64(2): np.int64(21), np.int64(3): np.int64(26), np.int64(4): np.int64(21), np.int64(5): np.int64(28), np.int64(6): np.int64(4), np.int64(7): np.int64(164), np.int64(8): np.int64(95), np.int64(9): np.int64(67)}, 88: {np.int64(0): np.int64(27), np.int64(1): np.int64(19), np.int64(2): np.int64(25), np.int64(3): np.int64(19), np.int64(4): np.int64(3), np.int64(5): np.int64(9), np.int64(6): np.int64(76), np.int64(8): np.int64(15), np.int64(9): np.int64(96)}, 89: {np.int64(0): np.int64(131), np.int64(1): np.int64(8), np.int64(2): np.int64(147), np.int64(3): np.int64(50), np.int64(5): np.int64(122), np.int64(6): np.int64(1), np.int64(8): np.int64(14), np.int64(9): np.int64(14)}, 90: {np.int64(0): np.int64(43), np.int64(1): np.int64(298), np.int64(2): np.int64(5), np.int64(3): np.int64(80), np.int64(4): np.int64(8), np.int64(5): np.int64(4), np.int64(6): np.int64(50), np.int64(7): np.int64(18)}, 91: {np.int64(0): np.int64(21), np.int64(1): np.int64(27), np.int64(2): np.int64(18), np.int64(4): np.int64(118), np.int64(5): np.int64(136), np.int64(6): np.int64(2), np.int64(8): np.int64(90), np.int64(9): np.int64(157)}, 92: {np.int64(0): np.int64(41), np.int64(1): np.int64(50), np.int64(2): np.int64(56), np.int64(3): np.int64(65), np.int64(4): np.int64(84), np.int64(5): np.int64(23), np.int64(6): np.int64(157), np.int64(7): np.int64(7), np.int64(8): np.int64(5), np.int64(9): np.int64(155)}, 93: {np.int64(0): np.int64(4), np.int64(1): np.int64(83), np.int64(2): np.int64(25), np.int64(3): np.int64(207), np.int64(4): np.int64(196)}, 94: {np.int64(0): np.int64(2), np.int64(1): np.int64(28), np.int64(2): np.int64(69), np.int64(3): np.int64(26), np.int64(4): np.int64(47), np.int64(5): np.int64(78), np.int64(6): np.int64(126), np.int64(7): np.int64(18), np.int64(8): np.int64(75), np.int64(9): np.int64(44)}, 95: {np.int64(0): np.int64(9), np.int64(1): np.int64(10), np.int64(2): np.int64(46), np.int64(3): np.int64(12), np.int64(4): np.int64(32), np.int64(5): np.int64(6), np.int64(6): np.int64(176), np.int64(7): np.int64(108), np.int64(8): np.int64(37), np.int64(9): np.int64(78)}, 96: {np.int64(0): np.int64(2), np.int64(1): np.int64(50), np.int64(2): np.int64(46), np.int64(3): np.int64(3), np.int64(4): np.int64(66), np.int64(5): np.int64(211), np.int64(6): np.int64(82), np.int64(7): np.int64(52)}, 97: {np.int64(0): np.int64(14), np.int64(1): np.int64(3), np.int64(2): np.int64(20), np.int64(3): np.int64(37), np.int64(4): np.int64(58), np.int64(5): np.int64(5), np.int64(6): np.int64(42), np.int64(7): np.int64(1), np.int64(8): np.int64(160), np.int64(9): np.int64(155)}, 98: {np.int64(0): np.int64(12), np.int64(1): np.int64(12), np.int64(2): np.int64(274), np.int64(3): np.int64(9), np.int64(5): np.int64(9), np.int64(7): np.int64(3), np.int64(8): np.int64(83), np.int64(9): np.int64(217)}, 99: {np.int64(0): np.int64(11), np.int64(1): np.int64(143), np.int64(2): np.int64(169), np.int64(3): np.int64(4), np.int64(4): np.int64(6), np.int64(5): np.int64(174), np.int64(6): np.int64(1), np.int64(8): np.int64(1)}}
+2025-06-18 09:23:40,649 - root - INFO - >>>> Initializing nets
+2025-06-18 09:23:40,746 - root - WARNING - >>>>>>>>>>>>> in comm round: 0 from 25
+2025-06-18 09:23:40,765 - root - INFO - Training network 0. n_training: 521
+2025-06-18 09:23:43,963 - root - INFO - Training network 0 with 20 epochs index 1 on: 0.8391926715240126 
+2025-06-18 09:23:43,963 - root - INFO - Training network 0
+2025-06-18 09:23:49,965 - root - INFO - Training network 1. n_training: 772
+2025-06-18 09:23:53,186 - root - INFO - Training network 1 with 18 epochs index 1 on: 0.733950982512656 
+2025-06-18 09:23:53,186 - root - INFO - Training network 1
+2025-06-18 09:24:01,109 - root - INFO - Training network 2. n_training: 176
+2025-06-18 09:24:04,350 - root - INFO - Training network 2 with 20 epochs index 1 on: 0.8607868560243668 
+2025-06-18 09:24:04,350 - root - INFO - Training network 2
+2025-06-18 09:24:06,443 - root - INFO - Training network 3. n_training: 418
+2025-06-18 09:24:09,686 - root - INFO - Training network 3 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 09:24:09,686 - root - INFO - Training network 3
+2025-06-18 09:24:14,104 - root - INFO - Training network 4. n_training: 569
+2025-06-18 09:24:17,356 - root - INFO - Training network 4 with 17 epochs index 1 on: 0.6981186182825552 
+2025-06-18 09:24:17,356 - root - INFO - Training network 4
+2025-06-18 09:24:22,981 - root - INFO - Training network 5. n_training: 583
+2025-06-18 09:24:26,179 - root - INFO - Training network 5 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 09:24:26,179 - root - INFO - Training network 5
+2025-06-18 09:24:33,167 - root - INFO - Training network 6. n_training: 474
+2025-06-18 09:24:36,332 - root - INFO - Training network 6 with 19 epochs index 1 on: 0.7924813177810528 
+2025-06-18 09:24:36,333 - root - INFO - Training network 6
+2025-06-18 09:24:41,488 - root - INFO - Training network 7. n_training: 208
+2025-06-18 09:24:44,672 - root - INFO - Training network 7 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 09:24:44,672 - root - INFO - Training network 7
+2025-06-18 09:24:47,407 - root - INFO - Training network 8. n_training: 434
+2025-06-18 09:24:50,610 - root - INFO - Training network 8 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 09:24:50,610 - root - INFO - Training network 8
+2025-06-18 09:24:56,015 - root - INFO - Training network 9. n_training: 504
+2025-06-18 09:24:59,218 - root - INFO - Training network 9 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 09:24:59,218 - root - INFO - Training network 9
+2025-06-18 09:25:03,853 - root - INFO - Training network 10. n_training: 518
+2025-06-18 09:25:07,036 - root - INFO - Training network 10 with 20 epochs index 1 on: 0.8361766752718697 
+2025-06-18 09:25:07,036 - root - INFO - Training network 10
+2025-06-18 09:25:12,923 - root - INFO - Training network 11. n_training: 522
+2025-06-18 09:25:16,101 - root - INFO - Training network 11 with 15 epochs index 1 on: 0.5885333164633397 
+2025-06-18 09:25:16,101 - root - INFO - Training network 11
+2025-06-18 09:25:20,604 - root - INFO - Training network 12. n_training: 402
+2025-06-18 09:25:23,840 - root - INFO - Training network 12 with 22 epochs index 1 on: 0.9601899990253345 
+2025-06-18 09:25:23,841 - root - INFO - Training network 12
+2025-06-18 09:25:28,892 - root - INFO - Training network 13. n_training: 629
+2025-06-18 09:25:32,127 - root - INFO - Training network 13 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 09:25:32,127 - root - INFO - Training network 13
+2025-06-18 09:25:38,582 - root - INFO - Training network 14. n_training: 625
+2025-06-18 09:25:41,799 - root - INFO - Training network 14 with 18 epochs index 1 on: 0.7650044300566785 
+2025-06-18 09:25:41,799 - root - INFO - Training network 14
+2025-06-18 09:25:48,148 - root - INFO - Training network 15. n_training: 576
+2025-06-18 09:25:51,317 - root - INFO - Training network 15 with 21 epochs index 1 on: 0.8826684309304778 
+2025-06-18 09:25:51,317 - root - INFO - Training network 15
+2025-06-18 09:25:58,193 - root - INFO - Training network 16. n_training: 349
+2025-06-18 09:26:01,362 - root - INFO - Training network 16 with 22 epochs index 1 on: 0.9396197797453716 
+2025-06-18 09:26:01,363 - root - INFO - Training network 16
+2025-06-18 09:26:05,768 - root - INFO - Training network 17. n_training: 271
+2025-06-18 09:26:08,944 - root - INFO - Training network 17 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 09:26:08,944 - root - INFO - Training network 17
+2025-06-18 09:26:12,413 - root - INFO - Training network 18. n_training: 309
+2025-06-18 09:26:15,586 - root - INFO - Training network 18 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 09:26:15,586 - root - INFO - Training network 18
+2025-06-18 09:26:19,563 - root - INFO - Training network 19. n_training: 625
+2025-06-18 09:26:22,727 - root - INFO - Training network 19 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 09:26:22,727 - root - INFO - Training network 19
+2025-06-18 09:26:28,020 - root - INFO - Training network 20. n_training: 168
+2025-06-18 09:26:31,189 - root - INFO - Training network 20 with 20 epochs index 1 on: 0.8401249339242853 
+2025-06-18 09:26:31,190 - root - INFO - Training network 20
+2025-06-18 09:26:33,153 - root - INFO - Training network 21. n_training: 571
+2025-06-18 09:26:36,323 - root - INFO - Training network 21 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 09:26:36,323 - root - INFO - Training network 21
+2025-06-18 09:26:41,840 - root - INFO - Training network 22. n_training: 587
+2025-06-18 09:26:45,007 - root - INFO - Training network 22 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 09:26:45,007 - root - INFO - Training network 22
+2025-06-18 09:26:51,377 - root - INFO - Training network 23. n_training: 572
+2025-06-18 09:26:54,548 - root - INFO - Training network 23 with 6 epochs index 1 on: 0.16532134167837786 
+2025-06-18 09:26:54,549 - root - INFO - Skipped network 23 with SI: 0.1653 
+2025-06-18 09:26:54,549 - root - INFO - Training network 24. n_training: 1008
+2025-06-18 09:26:57,721 - root - INFO - Training network 24 with 8 epochs index 1 on: 0.2528682548458908 
+2025-06-18 09:26:57,721 - root - INFO - Training network 24
+2025-06-18 09:27:02,279 - root - INFO - Training network 25. n_training: 709
+2025-06-18 09:27:05,456 - root - INFO - Training network 25 with 13 epochs index 1 on: 0.4965387490934504 
+2025-06-18 09:27:05,456 - root - INFO - Training network 25
+2025-06-18 09:27:10,712 - root - INFO - Training network 26. n_training: 537
+2025-06-18 09:27:13,896 - root - INFO - Training network 26 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 09:27:13,896 - root - INFO - Training network 26
+2025-06-18 09:27:20,352 - root - INFO - Training network 27. n_training: 575
+2025-06-18 09:27:23,530 - root - INFO - Training network 27 with 19 epochs index 1 on: 0.8226982428475806 
+2025-06-18 09:27:23,530 - root - INFO - Training network 27
+2025-06-18 09:27:29,729 - root - INFO - Training network 28. n_training: 501
+2025-06-18 09:27:32,905 - root - INFO - Training network 28 with 19 epochs index 1 on: 0.809828197427346 
+2025-06-18 09:27:32,905 - root - INFO - Training network 28
+2025-06-18 09:27:38,477 - root - INFO - Training network 29. n_training: 553
+2025-06-18 09:27:41,660 - root - INFO - Training network 29 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 09:27:41,660 - root - INFO - Training network 29
+2025-06-18 09:27:46,554 - root - INFO - Training network 30. n_training: 582
+2025-06-18 09:27:49,736 - root - INFO - Training network 30 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 09:27:49,736 - root - INFO - Training network 30
+2025-06-18 09:27:56,389 - root - INFO - Training network 31. n_training: 512
+2025-06-18 09:27:59,556 - root - INFO - Training network 31 with 17 epochs index 1 on: 0.6964587648909677 
+2025-06-18 09:27:59,557 - root - INFO - Training network 31
+2025-06-18 09:28:04,566 - root - INFO - Training network 32. n_training: 506
+2025-06-18 09:28:07,738 - root - INFO - Training network 32 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 09:28:07,738 - root - INFO - Training network 32
+2025-06-18 09:28:12,898 - root - INFO - Training network 33. n_training: 607
+2025-06-18 09:28:16,073 - root - INFO - Training network 33 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 09:28:16,074 - root - INFO - Training network 33
+2025-06-18 09:28:21,235 - root - INFO - Training network 34. n_training: 717
+2025-06-18 09:28:24,408 - root - INFO - Training network 34 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 09:28:24,408 - root - INFO - Training network 34
+2025-06-18 09:28:28,496 - root - INFO - Training network 35. n_training: 539
+2025-06-18 09:28:31,670 - root - INFO - Training network 35 with 3 epochs index 1 on: 0.0 
+2025-06-18 09:28:31,670 - root - INFO - Skipped network 35 with SI: 0.0000 
+2025-06-18 09:28:31,670 - root - INFO - Training network 36. n_training: 572
+2025-06-18 09:28:34,838 - root - INFO - Training network 36 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 09:28:34,839 - root - INFO - Training network 36
+2025-06-18 09:28:39,359 - root - INFO - Training network 37. n_training: 536
+2025-06-18 09:28:42,537 - root - INFO - Training network 37 with 21 epochs index 1 on: 0.9165275676869828 
+2025-06-18 09:28:42,537 - root - INFO - Training network 37
+2025-06-18 09:28:48,940 - root - INFO - Training network 38. n_training: 565
+2025-06-18 09:28:52,126 - root - INFO - Training network 38 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 09:28:52,126 - root - INFO - Training network 38
+2025-06-18 09:28:57,280 - root - INFO - Training network 39. n_training: 328
+2025-06-18 09:29:00,458 - root - INFO - Training network 39 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 09:29:00,458 - root - INFO - Training network 39
+2025-06-18 09:29:04,409 - root - INFO - Training network 40. n_training: 770
+2025-06-18 09:29:07,588 - root - INFO - Training network 40 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 09:29:07,588 - root - INFO - Training network 40
+2025-06-18 09:29:14,210 - root - INFO - Training network 41. n_training: 648
+2025-06-18 09:29:17,383 - root - INFO - Training network 41 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 09:29:17,383 - root - INFO - Training network 41
+2025-06-18 09:29:23,312 - root - INFO - Training network 42. n_training: 449
+2025-06-18 09:29:26,487 - root - INFO - Training network 42 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 09:29:26,487 - root - INFO - Training network 42
+2025-06-18 09:29:31,858 - root - INFO - Training network 43. n_training: 283
+2025-06-18 09:29:35,029 - root - INFO - Training network 43 with 20 epochs index 1 on: 0.8332809064066585 
+2025-06-18 09:29:35,029 - root - INFO - Training network 43
+2025-06-18 09:29:38,329 - root - INFO - Training network 44. n_training: 325
+2025-06-18 09:29:41,517 - root - INFO - Training network 44 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 09:29:41,517 - root - INFO - Training network 44
+2025-06-18 09:29:45,163 - root - INFO - Training network 45. n_training: 335
+2025-06-18 09:29:48,336 - root - INFO - Training network 45 with 20 epochs index 1 on: 0.8707132614612346 
+2025-06-18 09:29:48,336 - root - INFO - Training network 45
+2025-06-18 09:29:52,202 - root - INFO - Training network 46. n_training: 581
+2025-06-18 09:29:55,376 - root - INFO - Training network 46 with 19 epochs index 1 on: 0.8259618355914848 
+2025-06-18 09:29:55,377 - root - INFO - Training network 46
+2025-06-18 09:30:01,660 - root - INFO - Training network 47. n_training: 367
+2025-06-18 09:30:04,837 - root - INFO - Training network 47 with 22 epochs index 1 on: 0.9644787265435077 
+2025-06-18 09:30:04,838 - root - INFO - Training network 47
+2025-06-18 09:30:09,528 - root - INFO - Training network 48. n_training: 508
+2025-06-18 09:30:12,697 - root - INFO - Training network 48 with 20 epochs index 1 on: 0.8754493035491923 
+2025-06-18 09:30:12,697 - root - INFO - Training network 48
+2025-06-18 09:30:18,522 - root - INFO - Training network 49. n_training: 540
+2025-06-18 09:30:21,702 - root - INFO - Training network 49 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 09:30:21,702 - root - INFO - Training network 49
+2025-06-18 09:30:27,583 - root - INFO - Training network 50. n_training: 527
+2025-06-18 09:30:30,764 - root - INFO - Training network 50 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 09:30:30,764 - root - INFO - Training network 50
+2025-06-18 09:30:35,887 - root - INFO - Training network 51. n_training: 591
+2025-06-18 09:30:39,056 - root - INFO - Training network 51 with 20 epochs index 1 on: 0.8398105607959562 
+2025-06-18 09:30:39,056 - root - INFO - Training network 51
+2025-06-18 09:30:45,789 - root - INFO - Training network 52. n_training: 631
+2025-06-18 09:30:48,961 - root - INFO - Training network 52 with 5 epochs index 1 on: 0.08905677914457166 
+2025-06-18 09:30:48,961 - root - INFO - Skipped network 52 with SI: 0.0891 
+2025-06-18 09:30:48,961 - root - INFO - Training network 53. n_training: 299
+2025-06-18 09:30:52,127 - root - INFO - Training network 53 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 09:30:52,127 - root - INFO - Training network 53
+2025-06-18 09:30:56,018 - root - INFO - Training network 54. n_training: 442
+2025-06-18 09:30:59,196 - root - INFO - Training network 54 with 21 epochs index 1 on: 0.8926658005803801 
+2025-06-18 09:30:59,197 - root - INFO - Training network 54
+2025-06-18 09:31:04,452 - root - INFO - Training network 55. n_training: 405
+2025-06-18 09:31:07,635 - root - INFO - Training network 55 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 09:31:07,635 - root - INFO - Training network 55
+2025-06-18 09:31:12,681 - root - INFO - Training network 56. n_training: 665
+2025-06-18 09:31:15,848 - root - INFO - Training network 56 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 09:31:15,848 - root - INFO - Training network 56
+2025-06-18 09:31:23,060 - root - INFO - Training network 57. n_training: 513
+2025-06-18 09:31:26,237 - root - INFO - Training network 57 with 21 epochs index 1 on: 0.8831211324693516 
+2025-06-18 09:31:26,237 - root - INFO - Training network 57
+2025-06-18 09:31:32,390 - root - INFO - Training network 58. n_training: 464
+2025-06-18 09:31:35,560 - root - INFO - Training network 58 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 09:31:35,560 - root - INFO - Training network 58
+2025-06-18 09:31:40,948 - root - INFO - Training network 59. n_training: 635
+2025-06-18 09:31:44,123 - root - INFO - Training network 59 with 21 epochs index 1 on: 0.88955232669412 
+2025-06-18 09:31:44,123 - root - INFO - Training network 59
+2025-06-18 09:31:51,723 - root - INFO - Training network 60. n_training: 531
+2025-06-18 09:31:54,899 - root - INFO - Training network 60 with 19 epochs index 1 on: 0.8074437886717929 
+2025-06-18 09:31:54,899 - root - INFO - Training network 60
+2025-06-18 09:32:00,661 - root - INFO - Training network 61. n_training: 517
+2025-06-18 09:32:03,832 - root - INFO - Training network 61 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 09:32:03,832 - root - INFO - Training network 61
+2025-06-18 09:32:08,978 - root - INFO - Training network 62. n_training: 570
+2025-06-18 09:32:12,145 - root - INFO - Training network 62 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 09:32:12,146 - root - INFO - Training network 62
+2025-06-18 09:32:18,576 - root - INFO - Training network 63. n_training: 611
+2025-06-18 09:32:21,760 - root - INFO - Training network 63 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 09:32:21,760 - root - INFO - Training network 63
+2025-06-18 09:32:27,301 - root - INFO - Training network 64. n_training: 141
+2025-06-18 09:32:30,470 - root - INFO - Training network 64 with 23 epochs index 1 on: 1.0 
+2025-06-18 09:32:30,470 - root - INFO - Training network 64
+2025-06-18 09:32:32,338 - root - INFO - Training network 65. n_training: 216
+2025-06-18 09:32:35,511 - root - INFO - Training network 65 with 19 epochs index 1 on: 0.8288215127483066 
+2025-06-18 09:32:35,511 - root - INFO - Training network 65
+2025-06-18 09:32:37,869 - root - INFO - Training network 66. n_training: 264
+2025-06-18 09:32:41,054 - root - INFO - Training network 66 with 22 epochs index 1 on: 0.9606713394606733 
+2025-06-18 09:32:41,054 - root - INFO - Training network 66
+2025-06-18 09:32:44,385 - root - INFO - Training network 67. n_training: 293
+2025-06-18 09:32:47,550 - root - INFO - Training network 67 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 09:32:47,550 - root - INFO - Training network 67
+2025-06-18 09:32:50,867 - root - INFO - Training network 68. n_training: 532
+2025-06-18 09:32:54,042 - root - INFO - Training network 68 with 18 epochs index 1 on: 0.7700068488035471 
+2025-06-18 09:32:54,042 - root - INFO - Training network 68
+2025-06-18 09:32:59,539 - root - INFO - Training network 69. n_training: 457
+2025-06-18 09:33:02,714 - root - INFO - Training network 69 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 09:33:02,715 - root - INFO - Training network 69
+2025-06-18 09:33:07,692 - root - INFO - Training network 70. n_training: 446
+2025-06-18 09:33:10,867 - root - INFO - Training network 70 with 17 epochs index 1 on: 0.713801158787791 
+2025-06-18 09:33:10,867 - root - INFO - Training network 70
+2025-06-18 09:33:15,150 - root - INFO - Training network 71. n_training: 226
+2025-06-18 09:33:18,338 - root - INFO - Training network 71 with 21 epochs index 1 on: 0.9156818124154751 
+2025-06-18 09:33:18,338 - root - INFO - Training network 71
+2025-06-18 09:33:21,033 - root - INFO - Training network 72. n_training: 582
+2025-06-18 09:33:24,207 - root - INFO - Training network 72 with 19 epochs index 1 on: 0.7950247193668125 
+2025-06-18 09:33:24,207 - root - INFO - Training network 72
+2025-06-18 09:33:30,514 - root - INFO - Training network 73. n_training: 368
+2025-06-18 09:33:33,683 - root - INFO - Training network 73 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 09:33:33,683 - root - INFO - Training network 73
+2025-06-18 09:33:38,082 - root - INFO - Training network 74. n_training: 820
+2025-06-18 09:33:41,258 - root - INFO - Training network 74 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 09:33:41,258 - root - INFO - Training network 74
+2025-06-18 09:33:49,170 - root - INFO - Training network 75. n_training: 659
+2025-06-18 09:33:52,351 - root - INFO - Training network 75 with 16 epochs index 1 on: 0.6725816528418256 
+2025-06-18 09:33:52,351 - root - INFO - Training network 75
+2025-06-18 09:33:58,319 - root - INFO - Training network 76. n_training: 592
+2025-06-18 09:34:01,477 - root - INFO - Training network 76 with 21 epochs index 1 on: 0.9276176655289192 
+2025-06-18 09:34:01,477 - root - INFO - Training network 76
+2025-06-18 09:34:08,563 - root - INFO - Training network 77. n_training: 491
+2025-06-18 09:34:11,731 - root - INFO - Training network 77 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 09:34:11,731 - root - INFO - Training network 77
+2025-06-18 09:34:17,054 - root - INFO - Training network 78. n_training: 636
+2025-06-18 09:34:20,227 - root - INFO - Training network 78 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 09:34:20,227 - root - INFO - Training network 78
+2025-06-18 09:34:26,418 - root - INFO - Training network 79. n_training: 532
+2025-06-18 09:34:29,587 - root - INFO - Training network 79 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 09:34:29,587 - root - INFO - Training network 79
+2025-06-18 09:34:35,964 - root - INFO - Training network 80. n_training: 322
+2025-06-18 09:34:39,135 - root - INFO - Training network 80 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 09:34:39,135 - root - INFO - Training network 80
+2025-06-18 09:34:42,639 - root - INFO - Training network 81. n_training: 553
+2025-06-18 09:34:45,815 - root - INFO - Training network 81 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 09:34:45,815 - root - INFO - Training network 81
+2025-06-18 09:34:50,232 - root - INFO - Training network 82. n_training: 334
+2025-06-18 09:34:53,406 - root - INFO - Training network 82 with 21 epochs index 1 on: 0.9097885957152367 
+2025-06-18 09:34:53,406 - root - INFO - Training network 82
+2025-06-18 09:34:57,503 - root - INFO - Training network 83. n_training: 662
+2025-06-18 09:35:00,667 - root - INFO - Training network 83 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 09:35:00,667 - root - INFO - Training network 83
+2025-06-18 09:35:07,766 - root - INFO - Training network 84. n_training: 320
+2025-06-18 09:35:10,925 - root - INFO - Training network 84 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 09:35:10,925 - root - INFO - Training network 84
+2025-06-18 09:35:14,714 - root - INFO - Training network 85. n_training: 557
+2025-06-18 09:35:17,897 - root - INFO - Training network 85 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 09:35:17,897 - root - INFO - Training network 85
+2025-06-18 09:35:22,628 - root - INFO - Training network 86. n_training: 434
+2025-06-18 09:35:25,801 - root - INFO - Training network 86 with 19 epochs index 1 on: 0.7975614635226826 
+2025-06-18 09:35:25,802 - root - INFO - Training network 86
+2025-06-18 09:35:30,597 - root - INFO - Training network 87. n_training: 455
+2025-06-18 09:35:33,778 - root - INFO - Training network 87 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 09:35:33,778 - root - INFO - Training network 87
+2025-06-18 09:35:39,226 - root - INFO - Training network 88. n_training: 289
+2025-06-18 09:35:42,393 - root - INFO - Training network 88 with 22 epochs index 1 on: 0.9494278393612096 
+2025-06-18 09:35:42,393 - root - INFO - Training network 88
+2025-06-18 09:35:46,021 - root - INFO - Training network 89. n_training: 487
+2025-06-18 09:35:49,200 - root - INFO - Training network 89 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 09:35:49,200 - root - INFO - Training network 89
+2025-06-18 09:35:54,739 - root - INFO - Training network 90. n_training: 506
+2025-06-18 09:35:57,921 - root - INFO - Training network 90 with 16 epochs index 1 on: 0.6357534677023584 
+2025-06-18 09:35:57,921 - root - INFO - Training network 90
+2025-06-18 09:36:02,485 - root - INFO - Training network 91. n_training: 569
+2025-06-18 09:36:05,671 - root - INFO - Training network 91 with 20 epochs index 1 on: 0.8707913866016752 
+2025-06-18 09:36:05,671 - root - INFO - Training network 91
+2025-06-18 09:36:12,119 - root - INFO - Training network 92. n_training: 643
+2025-06-18 09:36:15,294 - root - INFO - Training network 92 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 09:36:15,294 - root - INFO - Training network 92
+2025-06-18 09:36:23,004 - root - INFO - Training network 93. n_training: 515
+2025-06-18 09:36:26,174 - root - INFO - Training network 93 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 09:36:26,174 - root - INFO - Training network 93
+2025-06-18 09:36:31,157 - root - INFO - Training network 94. n_training: 513
+2025-06-18 09:36:34,363 - root - INFO - Training network 94 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 09:36:34,363 - root - INFO - Training network 94
+2025-06-18 09:36:40,846 - root - INFO - Training network 95. n_training: 514
+2025-06-18 09:36:44,093 - root - INFO - Training network 95 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 09:36:44,093 - root - INFO - Training network 95
+2025-06-18 09:36:50,244 - root - INFO - Training network 96. n_training: 512
+2025-06-18 09:36:53,485 - root - INFO - Training network 96 with 20 epochs index 1 on: 0.839753610247425 
+2025-06-18 09:36:53,485 - root - INFO - Training network 96
+2025-06-18 09:36:59,305 - root - INFO - Training network 97. n_training: 495
+2025-06-18 09:37:02,485 - root - INFO - Training network 97 with 20 epochs index 1 on: 0.8575464085579159 
+2025-06-18 09:37:02,485 - root - INFO - Training network 97
+2025-06-18 09:37:08,075 - root - INFO - Training network 98. n_training: 619
+2025-06-18 09:37:11,235 - root - INFO - Training network 98 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 09:37:11,235 - root - INFO - Training network 98
+2025-06-18 09:37:16,842 - root - INFO - Training network 99. n_training: 509
+2025-06-18 09:37:20,019 - root - INFO - Training network 99 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 09:37:20,019 - root - INFO - Training network 99
+2025-06-18 09:37:25,262 - root - WARNING - >>>>>>>>>>>>> DAISY chain 0
+2025-06-18 09:37:25,263 - root - INFO - Training network 0. n_training: 572
+2025-06-18 09:37:28,460 - root - INFO - Training network 0 with 6 epochs index 1 on: 0.16532134167837786 
+2025-06-18 09:37:28,461 - root - INFO - Skipped network 0 with SI: 0.1653 
+2025-06-18 09:37:28,461 - root - INFO - Training network 1. n_training: 434
+2025-06-18 09:37:31,676 - root - INFO - Training network 1 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 09:37:31,676 - root - INFO - Training network 1
+2025-06-18 09:37:37,137 - root - INFO - Training network 2. n_training: 522
+2025-06-18 09:37:40,381 - root - INFO - Training network 2 with 15 epochs index 1 on: 0.5885333164633397 
+2025-06-18 09:37:40,381 - root - INFO - Training network 2
+2025-06-18 09:37:44,850 - root - INFO - Training network 3. n_training: 208
+2025-06-18 09:37:48,064 - root - INFO - Training network 3 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 09:37:48,065 - root - INFO - Training network 3
+2025-06-18 09:37:50,800 - root - INFO - Training network 4. n_training: 508
+2025-06-18 09:37:53,967 - root - INFO - Training network 4 with 20 epochs index 1 on: 0.8754493035491923 
+2025-06-18 09:37:53,967 - root - INFO - Training network 4
+2025-06-18 09:37:59,788 - root - INFO - Training network 5. n_training: 629
+2025-06-18 09:38:02,965 - root - INFO - Training network 5 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 09:38:02,965 - root - INFO - Training network 5
+2025-06-18 09:38:09,454 - root - INFO - Training network 6. n_training: 772
+2025-06-18 09:38:12,614 - root - INFO - Training network 6 with 18 epochs index 1 on: 0.733950982512656 
+2025-06-18 09:38:12,614 - root - INFO - Training network 6
+2025-06-18 09:38:20,555 - root - INFO - Training network 7. n_training: 569
+2025-06-18 09:38:23,720 - root - INFO - Training network 7 with 20 epochs index 1 on: 0.8707913866016752 
+2025-06-18 09:38:23,720 - root - INFO - Training network 7
+2025-06-18 09:38:30,243 - root - INFO - Training network 8. n_training: 513
+2025-06-18 09:38:33,427 - root - INFO - Training network 8 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 09:38:33,427 - root - INFO - Training network 8
+2025-06-18 09:38:39,922 - root - INFO - Training network 9. n_training: 442
+2025-06-18 09:38:43,131 - root - INFO - Training network 9 with 21 epochs index 1 on: 0.8926658005803801 
+2025-06-18 09:38:43,132 - root - INFO - Training network 9
+2025-06-18 09:38:48,460 - root - INFO - Training network 10. n_training: 349
+2025-06-18 09:38:51,650 - root - INFO - Training network 10 with 22 epochs index 1 on: 0.9396197797453716 
+2025-06-18 09:38:51,650 - root - INFO - Training network 10
+2025-06-18 09:38:56,040 - root - INFO - Training network 11. n_training: 611
+2025-06-18 09:38:59,238 - root - INFO - Training network 11 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 09:38:59,238 - root - INFO - Training network 11
+2025-06-18 09:39:04,856 - root - INFO - Training network 12. n_training: 631
+2025-06-18 09:39:08,040 - root - INFO - Training network 12 with 5 epochs index 1 on: 0.08905677914457166 
+2025-06-18 09:39:08,040 - root - INFO - Skipped network 12 with SI: 0.0891 
+2025-06-18 09:39:08,041 - root - INFO - Training network 13. n_training: 648
+2025-06-18 09:39:11,206 - root - INFO - Training network 13 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 09:39:11,207 - root - INFO - Training network 13
+2025-06-18 09:39:17,305 - root - INFO - Training network 14. n_training: 322
+2025-06-18 09:39:20,470 - root - INFO - Training network 14 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 09:39:20,470 - root - INFO - Training network 14
+2025-06-18 09:39:23,980 - root - INFO - Training network 15. n_training: 176
+2025-06-18 09:39:27,160 - root - INFO - Training network 15 with 20 epochs index 1 on: 0.8607868560243668 
+2025-06-18 09:39:27,160 - root - INFO - Training network 15
+2025-06-18 09:39:29,155 - root - INFO - Training network 16. n_training: 367
+2025-06-18 09:39:32,320 - root - INFO - Training network 16 with 22 epochs index 1 on: 0.9644787265435077 
+2025-06-18 09:39:32,320 - root - INFO - Training network 16
+2025-06-18 09:39:36,875 - root - INFO - Training network 17. n_training: 455
+2025-06-18 09:39:40,072 - root - INFO - Training network 17 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 09:39:40,072 - root - INFO - Training network 17
+2025-06-18 09:39:45,564 - root - INFO - Training network 18. n_training: 636
+2025-06-18 09:39:48,747 - root - INFO - Training network 18 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 09:39:48,747 - root - INFO - Training network 18
+2025-06-18 09:39:54,915 - root - INFO - Training network 19. n_training: 264
+2025-06-18 09:39:58,100 - root - INFO - Training network 19 with 22 epochs index 1 on: 0.9606713394606733 
+2025-06-18 09:39:58,100 - root - INFO - Training network 19
+2025-06-18 09:40:01,394 - root - INFO - Training network 20. n_training: 625
+2025-06-18 09:40:04,569 - root - INFO - Training network 20 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 09:40:04,569 - root - INFO - Training network 20
+2025-06-18 09:40:09,908 - root - INFO - Training network 21. n_training: 474
+2025-06-18 09:40:13,083 - root - INFO - Training network 21 with 19 epochs index 1 on: 0.7924813177810528 
+2025-06-18 09:40:13,083 - root - INFO - Training network 21
+2025-06-18 09:40:18,219 - root - INFO - Training network 22. n_training: 1008
+2025-06-18 09:40:21,394 - root - INFO - Training network 22 with 8 epochs index 1 on: 0.2528682548458908 
+2025-06-18 09:40:21,394 - root - INFO - Training network 22
+2025-06-18 09:40:25,975 - root - INFO - Training network 23. n_training: 518
+2025-06-18 09:40:29,169 - root - INFO - Training network 23 with 20 epochs index 1 on: 0.8361766752718697 
+2025-06-18 09:40:29,169 - root - INFO - Training network 23
+2025-06-18 09:40:35,034 - root - INFO - Training network 24. n_training: 635
+2025-06-18 09:40:38,213 - root - INFO - Training network 24 with 21 epochs index 1 on: 0.88955232669412 
+2025-06-18 09:40:38,213 - root - INFO - Training network 24
+2025-06-18 09:40:45,786 - root - INFO - Training network 25. n_training: 582
+2025-06-18 09:40:48,965 - root - INFO - Training network 25 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 09:40:48,965 - root - INFO - Training network 25
+2025-06-18 09:40:55,586 - root - INFO - Training network 26. n_training: 587
+2025-06-18 09:40:58,769 - root - INFO - Training network 26 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 09:40:58,769 - root - INFO - Training network 26
+2025-06-18 09:41:05,176 - root - INFO - Training network 27. n_training: 553
+2025-06-18 09:41:08,353 - root - INFO - Training network 27 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 09:41:08,353 - root - INFO - Training network 27
+2025-06-18 09:41:13,027 - root - INFO - Training network 28. n_training: 662
+2025-06-18 09:41:16,213 - root - INFO - Training network 28 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 09:41:16,213 - root - INFO - Training network 28
+2025-06-18 09:41:23,360 - root - INFO - Training network 29. n_training: 536
+2025-06-18 09:41:26,539 - root - INFO - Training network 29 with 21 epochs index 1 on: 0.9165275676869828 
+2025-06-18 09:41:26,539 - root - INFO - Training network 29
+2025-06-18 09:41:32,941 - root - INFO - Training network 30. n_training: 515
+2025-06-18 09:41:36,128 - root - INFO - Training network 30 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 09:41:36,129 - root - INFO - Training network 30
+2025-06-18 09:41:41,146 - root - INFO - Training network 31. n_training: 553
+2025-06-18 09:41:44,321 - root - INFO - Training network 31 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 09:41:44,321 - root - INFO - Training network 31
+2025-06-18 09:41:48,714 - root - INFO - Training network 32. n_training: 283
+2025-06-18 09:41:51,903 - root - INFO - Training network 32 with 20 epochs index 1 on: 0.8332809064066585 
+2025-06-18 09:41:51,903 - root - INFO - Training network 32
+2025-06-18 09:41:55,109 - root - INFO - Training network 33. n_training: 509
+2025-06-18 09:41:58,301 - root - INFO - Training network 33 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 09:41:58,301 - root - INFO - Training network 33
+2025-06-18 09:42:03,537 - root - INFO - Training network 34. n_training: 434
+2025-06-18 09:42:06,716 - root - INFO - Training network 34 with 19 epochs index 1 on: 0.7975614635226826 
+2025-06-18 09:42:06,716 - root - INFO - Training network 34
+2025-06-18 09:42:11,505 - root - INFO - Training network 35. n_training: 501
+2025-06-18 09:42:14,694 - root - INFO - Training network 35 with 19 epochs index 1 on: 0.809828197427346 
+2025-06-18 09:42:14,694 - root - INFO - Training network 35
+2025-06-18 09:42:20,233 - root - INFO - Training network 36. n_training: 717
+2025-06-18 09:42:23,420 - root - INFO - Training network 36 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 09:42:23,420 - root - INFO - Training network 36
+2025-06-18 09:42:27,551 - root - INFO - Training network 37. n_training: 289
+2025-06-18 09:42:30,729 - root - INFO - Training network 37 with 22 epochs index 1 on: 0.9494278393612096 
+2025-06-18 09:42:30,729 - root - INFO - Training network 37
+2025-06-18 09:42:34,356 - root - INFO - Training network 38. n_training: 325
+2025-06-18 09:42:37,529 - root - INFO - Training network 38 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 09:42:37,529 - root - INFO - Training network 38
+2025-06-18 09:42:41,095 - root - INFO - Training network 39. n_training: 625
+2025-06-18 09:42:44,282 - root - INFO - Training network 39 with 18 epochs index 1 on: 0.7650044300566785 
+2025-06-18 09:42:44,282 - root - INFO - Training network 39
+2025-06-18 09:42:50,778 - root - INFO - Training network 40. n_training: 320
+2025-06-18 09:42:53,977 - root - INFO - Training network 40 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 09:42:53,977 - root - INFO - Training network 40
+2025-06-18 09:42:57,774 - root - INFO - Training network 41. n_training: 446
+2025-06-18 09:43:00,950 - root - INFO - Training network 41 with 17 epochs index 1 on: 0.713801158787791 
+2025-06-18 09:43:00,950 - root - INFO - Training network 41
+2025-06-18 09:43:05,277 - root - INFO - Training network 42. n_training: 569
+2025-06-18 09:43:08,476 - root - INFO - Training network 42 with 17 epochs index 1 on: 0.6981186182825552 
+2025-06-18 09:43:08,476 - root - INFO - Training network 42
+2025-06-18 09:43:14,168 - root - INFO - Training network 43. n_training: 168
+2025-06-18 09:43:17,339 - root - INFO - Training network 43 with 20 epochs index 1 on: 0.8401249339242853 
+2025-06-18 09:43:17,339 - root - INFO - Training network 43
+2025-06-18 09:43:19,332 - root - INFO - Training network 44. n_training: 576
+2025-06-18 09:43:22,505 - root - INFO - Training network 44 with 21 epochs index 1 on: 0.8826684309304778 
+2025-06-18 09:43:22,506 - root - INFO - Training network 44
+2025-06-18 09:43:29,554 - root - INFO - Training network 45. n_training: 571
+2025-06-18 09:43:32,745 - root - INFO - Training network 45 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 09:43:32,745 - root - INFO - Training network 45
+2025-06-18 09:43:38,316 - root - INFO - Training network 46. n_training: 512
+2025-06-18 09:43:41,487 - root - INFO - Training network 46 with 17 epochs index 1 on: 0.6964587648909677 
+2025-06-18 09:43:41,487 - root - INFO - Training network 46
+2025-06-18 09:43:46,469 - root - INFO - Training network 47. n_training: 592
+2025-06-18 09:43:49,641 - root - INFO - Training network 47 with 21 epochs index 1 on: 0.9276176655289192 
+2025-06-18 09:43:49,641 - root - INFO - Training network 47
+2025-06-18 09:43:56,882 - root - INFO - Training network 48. n_training: 513
+2025-06-18 09:44:00,069 - root - INFO - Training network 48 with 21 epochs index 1 on: 0.8831211324693516 
+2025-06-18 09:44:00,069 - root - INFO - Training network 48
+2025-06-18 09:44:06,331 - root - INFO - Training network 49. n_training: 293
+2025-06-18 09:44:09,514 - root - INFO - Training network 49 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 09:44:09,514 - root - INFO - Training network 49
+2025-06-18 09:44:12,971 - root - INFO - Training network 50. n_training: 368
+2025-06-18 09:44:16,154 - root - INFO - Training network 50 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 09:44:16,154 - root - INFO - Training network 50
+2025-06-18 09:44:20,622 - root - INFO - Training network 51. n_training: 527
+2025-06-18 09:44:23,806 - root - INFO - Training network 51 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 09:44:23,806 - root - INFO - Training network 51
+2025-06-18 09:44:28,984 - root - INFO - Training network 52. n_training: 457
+2025-06-18 09:44:32,169 - root - INFO - Training network 52 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 09:44:32,169 - root - INFO - Training network 52
+2025-06-18 09:44:37,100 - root - INFO - Training network 53. n_training: 709
+2025-06-18 09:44:40,288 - root - INFO - Training network 53 with 13 epochs index 1 on: 0.4965387490934504 
+2025-06-18 09:44:40,288 - root - INFO - Training network 53
+2025-06-18 09:44:45,601 - root - INFO - Training network 54. n_training: 619
+2025-06-18 09:44:48,785 - root - INFO - Training network 54 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 09:44:48,785 - root - INFO - Training network 54
+2025-06-18 09:44:54,518 - root - INFO - Training network 55. n_training: 581
+2025-06-18 09:44:57,705 - root - INFO - Training network 55 with 19 epochs index 1 on: 0.8259618355914848 
+2025-06-18 09:44:57,705 - root - INFO - Training network 55
+2025-06-18 09:45:04,046 - root - INFO - Training network 56. n_training: 512
+2025-06-18 09:45:07,233 - root - INFO - Training network 56 with 20 epochs index 1 on: 0.839753610247425 
+2025-06-18 09:45:07,233 - root - INFO - Training network 56
+2025-06-18 09:45:13,129 - root - INFO - Training network 57. n_training: 521
+2025-06-18 09:45:16,312 - root - INFO - Training network 57 with 20 epochs index 1 on: 0.8391926715240126 
+2025-06-18 09:45:16,312 - root - INFO - Training network 57
+2025-06-18 09:45:22,384 - root - INFO - Training network 58. n_training: 582
+2025-06-18 09:45:25,565 - root - INFO - Training network 58 with 19 epochs index 1 on: 0.7950247193668125 
+2025-06-18 09:45:25,565 - root - INFO - Training network 58
+2025-06-18 09:45:32,042 - root - INFO - Training network 59. n_training: 539
+2025-06-18 09:45:35,219 - root - INFO - Training network 59 with 3 epochs index 1 on: 0.0 
+2025-06-18 09:45:35,219 - root - INFO - Skipped network 59 with SI: 0.0000 
+2025-06-18 09:45:35,219 - root - INFO - Training network 60. n_training: 464
+2025-06-18 09:45:38,386 - root - INFO - Training network 60 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 09:45:38,386 - root - INFO - Training network 60
+2025-06-18 09:45:43,690 - root - INFO - Training network 61. n_training: 643
+2025-06-18 09:45:46,873 - root - INFO - Training network 61 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 09:45:46,873 - root - INFO - Training network 61
+2025-06-18 09:45:54,751 - root - INFO - Training network 62. n_training: 418
+2025-06-18 09:45:57,937 - root - INFO - Training network 62 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 09:45:57,937 - root - INFO - Training network 62
+2025-06-18 09:46:02,330 - root - INFO - Training network 63. n_training: 514
+2025-06-18 09:46:05,513 - root - INFO - Training network 63 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 09:46:05,513 - root - INFO - Training network 63
+2025-06-18 09:46:11,686 - root - INFO - Training network 64. n_training: 665
+2025-06-18 09:46:14,863 - root - INFO - Training network 64 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 09:46:14,863 - root - INFO - Training network 64
+2025-06-18 09:46:22,182 - root - INFO - Training network 65. n_training: 506
+2025-06-18 09:46:25,380 - root - INFO - Training network 65 with 16 epochs index 1 on: 0.6357534677023584 
+2025-06-18 09:46:25,380 - root - INFO - Training network 65
+2025-06-18 09:46:30,075 - root - INFO - Training network 66. n_training: 537
+2025-06-18 09:46:33,260 - root - INFO - Training network 66 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 09:46:33,261 - root - INFO - Training network 66
+2025-06-18 09:46:39,637 - root - INFO - Training network 67. n_training: 770
+2025-06-18 09:46:42,827 - root - INFO - Training network 67 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 09:46:42,827 - root - INFO - Training network 67
+2025-06-18 09:46:49,575 - root - INFO - Training network 68. n_training: 405
+2025-06-18 09:46:52,762 - root - INFO - Training network 68 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 09:46:52,763 - root - INFO - Training network 68
+2025-06-18 09:46:57,874 - root - INFO - Training network 69. n_training: 487
+2025-06-18 09:47:01,067 - root - INFO - Training network 69 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 09:47:01,067 - root - INFO - Training network 69
+2025-06-18 09:47:06,666 - root - INFO - Training network 70. n_training: 659
+2025-06-18 09:47:09,840 - root - INFO - Training network 70 with 16 epochs index 1 on: 0.6725816528418256 
+2025-06-18 09:47:09,840 - root - INFO - Training network 70
+2025-06-18 09:47:15,924 - root - INFO - Training network 71. n_training: 226
+2025-06-18 09:47:19,109 - root - INFO - Training network 71 with 21 epochs index 1 on: 0.9156818124154751 
+2025-06-18 09:47:19,109 - root - INFO - Training network 71
+2025-06-18 09:47:21,908 - root - INFO - Training network 72. n_training: 531
+2025-06-18 09:47:25,101 - root - INFO - Training network 72 with 19 epochs index 1 on: 0.8074437886717929 
+2025-06-18 09:47:25,101 - root - INFO - Training network 72
+2025-06-18 09:47:30,982 - root - INFO - Training network 73. n_training: 449
+2025-06-18 09:47:34,170 - root - INFO - Training network 73 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 09:47:34,171 - root - INFO - Training network 73
+2025-06-18 09:47:39,710 - root - INFO - Training network 74. n_training: 504
+2025-06-18 09:47:42,904 - root - INFO - Training network 74 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 09:47:42,904 - root - INFO - Training network 74
+2025-06-18 09:47:47,598 - root - INFO - Training network 75. n_training: 334
+2025-06-18 09:47:50,780 - root - INFO - Training network 75 with 21 epochs index 1 on: 0.9097885957152367 
+2025-06-18 09:47:50,780 - root - INFO - Training network 75
+2025-06-18 09:47:54,853 - root - INFO - Training network 76. n_training: 328
+2025-06-18 09:47:58,040 - root - INFO - Training network 76 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 09:47:58,040 - root - INFO - Training network 76
+2025-06-18 09:48:02,070 - root - INFO - Training network 77. n_training: 309
+2025-06-18 09:48:05,264 - root - INFO - Training network 77 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 09:48:05,264 - root - INFO - Training network 77
+2025-06-18 09:48:09,129 - root - INFO - Training network 78. n_training: 491
+2025-06-18 09:48:12,317 - root - INFO - Training network 78 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 09:48:12,317 - root - INFO - Training network 78
+2025-06-18 09:48:17,713 - root - INFO - Training network 79. n_training: 532
+2025-06-18 09:48:20,914 - root - INFO - Training network 79 with 18 epochs index 1 on: 0.7700068488035471 
+2025-06-18 09:48:20,914 - root - INFO - Training network 79
+2025-06-18 09:48:26,462 - root - INFO - Training network 80. n_training: 506
+2025-06-18 09:48:29,648 - root - INFO - Training network 80 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 09:48:29,648 - root - INFO - Training network 80
+2025-06-18 09:48:34,905 - root - INFO - Training network 81. n_training: 532
+2025-06-18 09:48:38,103 - root - INFO - Training network 81 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 09:48:38,103 - root - INFO - Training network 81
+2025-06-18 09:48:44,613 - root - INFO - Training network 82. n_training: 402
+2025-06-18 09:48:47,789 - root - INFO - Training network 82 with 22 epochs index 1 on: 0.9601899990253345 
+2025-06-18 09:48:47,789 - root - INFO - Training network 82
+2025-06-18 09:48:52,825 - root - INFO - Training network 83. n_training: 557
+2025-06-18 09:48:55,995 - root - INFO - Training network 83 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 09:48:55,996 - root - INFO - Training network 83
+2025-06-18 09:49:00,723 - root - INFO - Training network 84. n_training: 572
+2025-06-18 09:49:03,913 - root - INFO - Training network 84 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 09:49:03,913 - root - INFO - Training network 84
+2025-06-18 09:49:08,564 - root - INFO - Training network 85. n_training: 271
+2025-06-18 09:49:11,752 - root - INFO - Training network 85 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 09:49:11,752 - root - INFO - Training network 85
+2025-06-18 09:49:15,216 - root - INFO - Training network 86. n_training: 141
+2025-06-18 09:49:18,405 - root - INFO - Training network 86 with 23 epochs index 1 on: 1.0 
+2025-06-18 09:49:18,405 - root - INFO - Training network 86
+2025-06-18 09:49:20,277 - root - INFO - Training network 87. n_training: 575
+2025-06-18 09:49:23,462 - root - INFO - Training network 87 with 19 epochs index 1 on: 0.8226982428475806 
+2025-06-18 09:49:23,462 - root - INFO - Training network 87
+2025-06-18 09:49:29,738 - root - INFO - Training network 88. n_training: 820
+2025-06-18 09:49:32,926 - root - INFO - Training network 88 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 09:49:32,926 - root - INFO - Training network 88
+2025-06-18 09:49:41,034 - root - INFO - Training network 89. n_training: 335
+2025-06-18 09:49:44,223 - root - INFO - Training network 89 with 20 epochs index 1 on: 0.8707132614612346 
+2025-06-18 09:49:44,223 - root - INFO - Training network 89
+2025-06-18 09:49:48,127 - root - INFO - Training network 90. n_training: 517
+2025-06-18 09:49:51,310 - root - INFO - Training network 90 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 09:49:51,311 - root - INFO - Training network 90
+2025-06-18 09:49:56,450 - root - INFO - Training network 91. n_training: 565
+2025-06-18 09:49:59,619 - root - INFO - Training network 91 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 09:49:59,619 - root - INFO - Training network 91
+2025-06-18 09:50:04,813 - root - INFO - Training network 92. n_training: 591
+2025-06-18 09:50:07,972 - root - INFO - Training network 92 with 20 epochs index 1 on: 0.8398105607959562 
+2025-06-18 09:50:07,972 - root - INFO - Training network 92
+2025-06-18 09:50:14,733 - root - INFO - Training network 93. n_training: 570
+2025-06-18 09:50:17,898 - root - INFO - Training network 93 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 09:50:17,898 - root - INFO - Training network 93
+2025-06-18 09:50:24,326 - root - INFO - Training network 94. n_training: 216
+2025-06-18 09:50:27,509 - root - INFO - Training network 94 with 19 epochs index 1 on: 0.8288215127483066 
+2025-06-18 09:50:27,509 - root - INFO - Training network 94
+2025-06-18 09:50:29,884 - root - INFO - Training network 95. n_training: 607
+2025-06-18 09:50:33,077 - root - INFO - Training network 95 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 09:50:33,077 - root - INFO - Training network 95
+2025-06-18 09:50:38,428 - root - INFO - Training network 96. n_training: 583
+2025-06-18 09:50:41,605 - root - INFO - Training network 96 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 09:50:41,605 - root - INFO - Training network 96
+2025-06-18 09:50:48,667 - root - INFO - Training network 97. n_training: 299
+2025-06-18 09:50:51,854 - root - INFO - Training network 97 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 09:50:51,854 - root - INFO - Training network 97
+2025-06-18 09:50:55,930 - root - INFO - Training network 98. n_training: 495
+2025-06-18 09:50:59,126 - root - INFO - Training network 98 with 20 epochs index 1 on: 0.8575464085579159 
+2025-06-18 09:50:59,127 - root - INFO - Training network 98
+2025-06-18 09:51:04,832 - root - INFO - Training network 99. n_training: 540
+2025-06-18 09:51:08,017 - root - INFO - Training network 99 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 09:51:08,017 - root - INFO - Training network 99
+2025-06-18 09:51:13,970 - root - WARNING - >>>>>>>>>>>>> DAISY chain 1
+2025-06-18 09:51:13,971 - root - INFO - Training network 0. n_training: 532
+2025-06-18 09:51:17,162 - root - INFO - Training network 0 with 18 epochs index 1 on: 0.7700068488035471 
+2025-06-18 09:51:17,162 - root - INFO - Training network 0
+2025-06-18 09:51:22,696 - root - INFO - Training network 1. n_training: 512
+2025-06-18 09:51:25,856 - root - INFO - Training network 1 with 20 epochs index 1 on: 0.839753610247425 
+2025-06-18 09:51:25,856 - root - INFO - Training network 1
+2025-06-18 09:51:31,634 - root - INFO - Training network 2. n_training: 659
+2025-06-18 09:51:34,819 - root - INFO - Training network 2 with 16 epochs index 1 on: 0.6725816528418256 
+2025-06-18 09:51:34,819 - root - INFO - Training network 2
+2025-06-18 09:51:40,922 - root - INFO - Training network 3. n_training: 636
+2025-06-18 09:51:44,105 - root - INFO - Training network 3 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 09:51:44,105 - root - INFO - Training network 3
+2025-06-18 09:51:50,339 - root - INFO - Training network 4. n_training: 625
+2025-06-18 09:51:53,519 - root - INFO - Training network 4 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 09:51:53,519 - root - INFO - Training network 4
+2025-06-18 09:51:58,971 - root - INFO - Training network 5. n_training: 283
+2025-06-18 09:52:02,138 - root - INFO - Training network 5 with 20 epochs index 1 on: 0.8332809064066585 
+2025-06-18 09:52:02,139 - root - INFO - Training network 5
+2025-06-18 09:52:05,464 - root - INFO - Training network 6. n_training: 587
+2025-06-18 09:52:08,656 - root - INFO - Training network 6 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 09:52:08,656 - root - INFO - Training network 6
+2025-06-18 09:52:15,179 - root - INFO - Training network 7. n_training: 495
+2025-06-18 09:52:18,361 - root - INFO - Training network 7 with 20 epochs index 1 on: 0.8575464085579159 
+2025-06-18 09:52:18,361 - root - INFO - Training network 7
+2025-06-18 09:52:24,152 - root - INFO - Training network 8. n_training: 271
+2025-06-18 09:52:27,336 - root - INFO - Training network 8 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 09:52:27,336 - root - INFO - Training network 8
+2025-06-18 09:52:30,852 - root - INFO - Training network 9. n_training: 299
+2025-06-18 09:52:34,028 - root - INFO - Training network 9 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 09:52:34,028 - root - INFO - Training network 9
+2025-06-18 09:52:37,908 - root - INFO - Training network 10. n_training: 449
+2025-06-18 09:52:41,050 - root - INFO - Training network 10 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 09:52:41,050 - root - INFO - Training network 10
+2025-06-18 09:52:46,373 - root - INFO - Training network 11. n_training: 289
+2025-06-18 09:52:49,521 - root - INFO - Training network 11 with 22 epochs index 1 on: 0.9494278393612096 
+2025-06-18 09:52:49,522 - root - INFO - Training network 11
+2025-06-18 09:52:53,159 - root - INFO - Training network 12. n_training: 512
+2025-06-18 09:52:56,341 - root - INFO - Training network 12 with 17 epochs index 1 on: 0.6964587648909677 
+2025-06-18 09:52:56,341 - root - INFO - Training network 12
+2025-06-18 09:53:01,412 - root - INFO - Training network 13. n_training: 328
+2025-06-18 09:53:04,583 - root - INFO - Training network 13 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 09:53:04,583 - root - INFO - Training network 13
+2025-06-18 09:53:08,615 - root - INFO - Training network 14. n_training: 226
+2025-06-18 09:53:11,798 - root - INFO - Training network 14 with 21 epochs index 1 on: 0.9156818124154751 
+2025-06-18 09:53:11,799 - root - INFO - Training network 14
+2025-06-18 09:53:14,591 - root - INFO - Training network 15. n_training: 506
+2025-06-18 09:53:17,762 - root - INFO - Training network 15 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 09:53:17,762 - root - INFO - Training network 15
+2025-06-18 09:53:23,071 - root - INFO - Training network 16. n_training: 293
+2025-06-18 09:53:26,240 - root - INFO - Training network 16 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 09:53:26,240 - root - INFO - Training network 16
+2025-06-18 09:53:29,689 - root - INFO - Training network 17. n_training: 513
+2025-06-18 09:53:32,881 - root - INFO - Training network 17 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 09:53:32,881 - root - INFO - Training network 17
+2025-06-18 09:53:39,486 - root - INFO - Training network 18. n_training: 536
+2025-06-18 09:53:42,646 - root - INFO - Training network 18 with 21 epochs index 1 on: 0.9165275676869828 
+2025-06-18 09:53:42,646 - root - INFO - Training network 18
+2025-06-18 09:53:49,264 - root - INFO - Training network 19. n_training: 607
+2025-06-18 09:53:52,430 - root - INFO - Training network 19 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 09:53:52,430 - root - INFO - Training network 19
+2025-06-18 09:53:57,541 - root - INFO - Training network 20. n_training: 648
+2025-06-18 09:54:00,685 - root - INFO - Training network 20 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 09:54:00,685 - root - INFO - Training network 20
+2025-06-18 09:54:06,610 - root - INFO - Training network 21. n_training: 455
+2025-06-18 09:54:09,794 - root - INFO - Training network 21 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 09:54:09,794 - root - INFO - Training network 21
+2025-06-18 09:54:15,432 - root - INFO - Training network 22. n_training: 572
+2025-06-18 09:54:18,588 - root - INFO - Training network 22 with 6 epochs index 1 on: 0.16532134167837786 
+2025-06-18 09:54:18,588 - root - INFO - Skipped network 22 with SI: 0.1653 
+2025-06-18 09:54:18,588 - root - INFO - Training network 23. n_training: 665
+2025-06-18 09:54:21,757 - root - INFO - Training network 23 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 09:54:21,757 - root - INFO - Training network 23
+2025-06-18 09:54:29,216 - root - INFO - Training network 24. n_training: 509
+2025-06-18 09:54:32,397 - root - INFO - Training network 24 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 09:54:32,397 - root - INFO - Training network 24
+2025-06-18 09:54:37,766 - root - INFO - Training network 25. n_training: 557
+2025-06-18 09:54:41,002 - root - INFO - Training network 25 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 09:54:41,002 - root - INFO - Training network 25
+2025-06-18 09:54:45,751 - root - INFO - Training network 26. n_training: 506
+2025-06-18 09:54:48,970 - root - INFO - Training network 26 with 16 epochs index 1 on: 0.6357534677023584 
+2025-06-18 09:54:48,970 - root - INFO - Training network 26
+2025-06-18 09:54:53,502 - root - INFO - Training network 27. n_training: 539
+2025-06-18 09:54:56,650 - root - INFO - Training network 27 with 3 epochs index 1 on: 0.0 
+2025-06-18 09:54:56,650 - root - INFO - Skipped network 27 with SI: 0.0000 
+2025-06-18 09:54:56,650 - root - INFO - Training network 28. n_training: 176
+2025-06-18 09:54:59,778 - root - INFO - Training network 28 with 20 epochs index 1 on: 0.8607868560243668 
+2025-06-18 09:54:59,779 - root - INFO - Training network 28
+2025-06-18 09:55:01,759 - root - INFO - Training network 29. n_training: 464
+2025-06-18 09:55:04,906 - root - INFO - Training network 29 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 09:55:04,906 - root - INFO - Training network 29
+2025-06-18 09:55:10,139 - root - INFO - Training network 30. n_training: 1008
+2025-06-18 09:55:13,281 - root - INFO - Training network 30 with 8 epochs index 1 on: 0.2528682548458908 
+2025-06-18 09:55:13,281 - root - INFO - Training network 30
+2025-06-18 09:55:17,864 - root - INFO - Training network 31. n_training: 540
+2025-06-18 09:55:21,017 - root - INFO - Training network 31 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 09:55:21,017 - root - INFO - Training network 31
+2025-06-18 09:55:26,890 - root - INFO - Training network 32. n_training: 491
+2025-06-18 09:55:30,040 - root - INFO - Training network 32 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 09:55:30,040 - root - INFO - Training network 32
+2025-06-18 09:55:35,362 - root - INFO - Training network 33. n_training: 309
+2025-06-18 09:55:38,546 - root - INFO - Training network 33 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 09:55:38,546 - root - INFO - Training network 33
+2025-06-18 09:55:42,459 - root - INFO - Training network 34. n_training: 402
+2025-06-18 09:55:45,627 - root - INFO - Training network 34 with 22 epochs index 1 on: 0.9601899990253345 
+2025-06-18 09:55:45,627 - root - INFO - Training network 34
+2025-06-18 09:55:50,665 - root - INFO - Training network 35. n_training: 625
+2025-06-18 09:55:53,830 - root - INFO - Training network 35 with 18 epochs index 1 on: 0.7650044300566785 
+2025-06-18 09:55:53,831 - root - INFO - Training network 35
+2025-06-18 09:56:00,144 - root - INFO - Training network 36. n_training: 518
+2025-06-18 09:56:03,309 - root - INFO - Training network 36 with 20 epochs index 1 on: 0.8361766752718697 
+2025-06-18 09:56:03,309 - root - INFO - Training network 36
+2025-06-18 09:56:09,149 - root - INFO - Training network 37. n_training: 629
+2025-06-18 09:56:12,342 - root - INFO - Training network 37 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 09:56:12,343 - root - INFO - Training network 37
+2025-06-18 09:56:18,717 - root - INFO - Training network 38. n_training: 582
+2025-06-18 09:56:21,928 - root - INFO - Training network 38 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 09:56:21,929 - root - INFO - Training network 38
+2025-06-18 09:56:28,490 - root - INFO - Training network 39. n_training: 581
+2025-06-18 09:56:31,704 - root - INFO - Training network 39 with 19 epochs index 1 on: 0.8259618355914848 
+2025-06-18 09:56:31,704 - root - INFO - Training network 39
+2025-06-18 09:56:38,007 - root - INFO - Training network 40. n_training: 527
+2025-06-18 09:56:41,177 - root - INFO - Training network 40 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 09:56:41,177 - root - INFO - Training network 40
+2025-06-18 09:56:46,391 - root - INFO - Training network 41. n_training: 513
+2025-06-18 09:56:49,567 - root - INFO - Training network 41 with 21 epochs index 1 on: 0.8831211324693516 
+2025-06-18 09:56:49,567 - root - INFO - Training network 41
+2025-06-18 09:56:55,752 - root - INFO - Training network 42. n_training: 631
+2025-06-18 09:56:58,916 - root - INFO - Training network 42 with 5 epochs index 1 on: 0.08905677914457166 
+2025-06-18 09:56:58,916 - root - INFO - Skipped network 42 with SI: 0.0891 
+2025-06-18 09:56:58,916 - root - INFO - Training network 43. n_training: 582
+2025-06-18 09:57:02,088 - root - INFO - Training network 43 with 19 epochs index 1 on: 0.7950247193668125 
+2025-06-18 09:57:02,088 - root - INFO - Training network 43
+2025-06-18 09:57:08,457 - root - INFO - Training network 44. n_training: 569
+2025-06-18 09:57:11,689 - root - INFO - Training network 44 with 20 epochs index 1 on: 0.8707913866016752 
+2025-06-18 09:57:11,689 - root - INFO - Training network 44
+2025-06-18 09:57:18,105 - root - INFO - Training network 45. n_training: 434
+2025-06-18 09:57:21,356 - root - INFO - Training network 45 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 09:57:21,356 - root - INFO - Training network 45
+2025-06-18 09:57:26,703 - root - INFO - Training network 46. n_training: 216
+2025-06-18 09:57:29,918 - root - INFO - Training network 46 with 19 epochs index 1 on: 0.8288215127483066 
+2025-06-18 09:57:29,918 - root - INFO - Training network 46
+2025-06-18 09:57:32,245 - root - INFO - Training network 47. n_training: 168
+2025-06-18 09:57:35,417 - root - INFO - Training network 47 with 20 epochs index 1 on: 0.8401249339242853 
+2025-06-18 09:57:35,418 - root - INFO - Training network 47
+2025-06-18 09:57:37,366 - root - INFO - Training network 48. n_training: 325
+2025-06-18 09:57:40,555 - root - INFO - Training network 48 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 09:57:40,556 - root - INFO - Training network 48
+2025-06-18 09:57:44,193 - root - INFO - Training network 49. n_training: 405
+2025-06-18 09:57:47,356 - root - INFO - Training network 49 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 09:57:47,356 - root - INFO - Training network 49
+2025-06-18 09:57:52,432 - root - INFO - Training network 50. n_training: 320
+2025-06-18 09:57:55,595 - root - INFO - Training network 50 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 09:57:55,595 - root - INFO - Training network 50
+2025-06-18 09:57:59,464 - root - INFO - Training network 51. n_training: 717
+2025-06-18 09:58:02,643 - root - INFO - Training network 51 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 09:58:02,643 - root - INFO - Training network 51
+2025-06-18 09:58:06,670 - root - INFO - Training network 52. n_training: 643
+2025-06-18 09:58:09,820 - root - INFO - Training network 52 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 09:58:09,820 - root - INFO - Training network 52
+2025-06-18 09:58:17,702 - root - INFO - Training network 53. n_training: 565
+2025-06-18 09:58:20,886 - root - INFO - Training network 53 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 09:58:20,887 - root - INFO - Training network 53
+2025-06-18 09:58:26,118 - root - INFO - Training network 54. n_training: 820
+2025-06-18 09:58:29,367 - root - INFO - Training network 54 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 09:58:29,367 - root - INFO - Training network 54
+2025-06-18 09:58:37,187 - root - INFO - Training network 55. n_training: 576
+2025-06-18 09:58:40,402 - root - INFO - Training network 55 with 21 epochs index 1 on: 0.8826684309304778 
+2025-06-18 09:58:40,403 - root - INFO - Training network 55
+2025-06-18 09:58:47,307 - root - INFO - Training network 56. n_training: 619
+2025-06-18 09:58:50,531 - root - INFO - Training network 56 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 09:58:50,531 - root - INFO - Training network 56
+2025-06-18 09:58:56,280 - root - INFO - Training network 57. n_training: 442
+2025-06-18 09:58:59,462 - root - INFO - Training network 57 with 21 epochs index 1 on: 0.8926658005803801 
+2025-06-18 09:58:59,462 - root - INFO - Training network 57
+2025-06-18 09:59:04,791 - root - INFO - Training network 58. n_training: 591
+2025-06-18 09:59:07,972 - root - INFO - Training network 58 with 20 epochs index 1 on: 0.8398105607959562 
+2025-06-18 09:59:07,972 - root - INFO - Training network 58
+2025-06-18 09:59:14,892 - root - INFO - Training network 59. n_training: 772
+2025-06-18 09:59:18,055 - root - INFO - Training network 59 with 18 epochs index 1 on: 0.733950982512656 
+2025-06-18 09:59:18,055 - root - INFO - Training network 59
+2025-06-18 09:59:25,974 - root - INFO - Training network 60. n_training: 208
+2025-06-18 09:59:29,123 - root - INFO - Training network 60 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 09:59:29,123 - root - INFO - Training network 60
+2025-06-18 09:59:31,848 - root - INFO - Training network 61. n_training: 457
+2025-06-18 09:59:34,988 - root - INFO - Training network 61 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 09:59:34,988 - root - INFO - Training network 61
+2025-06-18 09:59:39,950 - root - INFO - Training network 62. n_training: 572
+2025-06-18 09:59:43,122 - root - INFO - Training network 62 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 09:59:43,123 - root - INFO - Training network 62
+2025-06-18 09:59:47,795 - root - INFO - Training network 63. n_training: 531
+2025-06-18 09:59:50,955 - root - INFO - Training network 63 with 19 epochs index 1 on: 0.8074437886717929 
+2025-06-18 09:59:50,955 - root - INFO - Training network 63
+2025-06-18 09:59:56,820 - root - INFO - Training network 64. n_training: 474
+2025-06-18 09:59:59,985 - root - INFO - Training network 64 with 19 epochs index 1 on: 0.7924813177810528 
+2025-06-18 09:59:59,985 - root - INFO - Training network 64
+2025-06-18 10:00:05,264 - root - INFO - Training network 65. n_training: 592
+2025-06-18 10:00:08,429 - root - INFO - Training network 65 with 21 epochs index 1 on: 0.9276176655289192 
+2025-06-18 10:00:08,429 - root - INFO - Training network 65
+2025-06-18 10:00:15,680 - root - INFO - Training network 66. n_training: 662
+2025-06-18 10:00:18,856 - root - INFO - Training network 66 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 10:00:18,856 - root - INFO - Training network 66
+2025-06-18 10:00:26,166 - root - INFO - Training network 67. n_training: 532
+2025-06-18 10:00:29,342 - root - INFO - Training network 67 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 10:00:29,342 - root - INFO - Training network 67
+2025-06-18 10:00:35,908 - root - INFO - Training network 68. n_training: 434
+2025-06-18 10:00:39,066 - root - INFO - Training network 68 with 19 epochs index 1 on: 0.7975614635226826 
+2025-06-18 10:00:39,066 - root - INFO - Training network 68
+2025-06-18 10:00:43,870 - root - INFO - Training network 69. n_training: 522
+2025-06-18 10:00:47,038 - root - INFO - Training network 69 with 15 epochs index 1 on: 0.5885333164633397 
+2025-06-18 10:00:47,038 - root - INFO - Training network 69
+2025-06-18 10:00:51,649 - root - INFO - Training network 70. n_training: 553
+2025-06-18 10:00:54,860 - root - INFO - Training network 70 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 10:00:54,860 - root - INFO - Training network 70
+2025-06-18 10:00:59,417 - root - INFO - Training network 71. n_training: 635
+2025-06-18 10:01:02,676 - root - INFO - Training network 71 with 21 epochs index 1 on: 0.88955232669412 
+2025-06-18 10:01:02,676 - root - INFO - Training network 71
+2025-06-18 10:01:10,427 - root - INFO - Training network 72. n_training: 569
+2025-06-18 10:01:13,649 - root - INFO - Training network 72 with 17 epochs index 1 on: 0.6981186182825552 
+2025-06-18 10:01:13,649 - root - INFO - Training network 72
+2025-06-18 10:01:19,289 - root - INFO - Training network 73. n_training: 418
+2025-06-18 10:01:22,502 - root - INFO - Training network 73 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 10:01:22,502 - root - INFO - Training network 73
+2025-06-18 10:01:26,945 - root - INFO - Training network 74. n_training: 322
+2025-06-18 10:01:30,139 - root - INFO - Training network 74 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 10:01:30,139 - root - INFO - Training network 74
+2025-06-18 10:01:33,714 - root - INFO - Training network 75. n_training: 446
+2025-06-18 10:01:36,948 - root - INFO - Training network 75 with 17 epochs index 1 on: 0.713801158787791 
+2025-06-18 10:01:36,948 - root - INFO - Training network 75
+2025-06-18 10:01:41,327 - root - INFO - Training network 76. n_training: 570
+2025-06-18 10:01:44,498 - root - INFO - Training network 76 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 10:01:44,499 - root - INFO - Training network 76
+2025-06-18 10:01:51,065 - root - INFO - Training network 77. n_training: 571
+2025-06-18 10:01:54,280 - root - INFO - Training network 77 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 10:01:54,280 - root - INFO - Training network 77
+2025-06-18 10:01:59,899 - root - INFO - Training network 78. n_training: 514
+2025-06-18 10:02:03,151 - root - INFO - Training network 78 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 10:02:03,151 - root - INFO - Training network 78
+2025-06-18 10:02:09,358 - root - INFO - Training network 79. n_training: 521
+2025-06-18 10:02:12,515 - root - INFO - Training network 79 with 20 epochs index 1 on: 0.8391926715240126 
+2025-06-18 10:02:12,515 - root - INFO - Training network 79
+2025-06-18 10:02:18,559 - root - INFO - Training network 80. n_training: 517
+2025-06-18 10:02:21,790 - root - INFO - Training network 80 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 10:02:21,790 - root - INFO - Training network 80
+2025-06-18 10:02:26,829 - root - INFO - Training network 81. n_training: 504
+2025-06-18 10:02:30,073 - root - INFO - Training network 81 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 10:02:30,073 - root - INFO - Training network 81
+2025-06-18 10:02:34,782 - root - INFO - Training network 82. n_training: 709
+2025-06-18 10:02:37,955 - root - INFO - Training network 82 with 13 epochs index 1 on: 0.4965387490934504 
+2025-06-18 10:02:37,955 - root - INFO - Training network 82
+2025-06-18 10:02:43,329 - root - INFO - Training network 83. n_training: 334
+2025-06-18 10:02:46,572 - root - INFO - Training network 83 with 21 epochs index 1 on: 0.9097885957152367 
+2025-06-18 10:02:46,572 - root - INFO - Training network 83
+2025-06-18 10:02:50,703 - root - INFO - Training network 84. n_training: 553
+2025-06-18 10:02:53,971 - root - INFO - Training network 84 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 10:02:53,971 - root - INFO - Training network 84
+2025-06-18 10:02:58,812 - root - INFO - Training network 85. n_training: 515
+2025-06-18 10:03:02,113 - root - INFO - Training network 85 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 10:03:02,113 - root - INFO - Training network 85
+2025-06-18 10:03:07,323 - root - INFO - Training network 86. n_training: 537
+2025-06-18 10:03:10,615 - root - INFO - Training network 86 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 10:03:10,615 - root - INFO - Training network 86
+2025-06-18 10:03:17,037 - root - INFO - Training network 87. n_training: 501
+2025-06-18 10:03:20,288 - root - INFO - Training network 87 with 19 epochs index 1 on: 0.809828197427346 
+2025-06-18 10:03:20,288 - root - INFO - Training network 87
+2025-06-18 10:03:25,638 - root - INFO - Training network 88. n_training: 770
+2025-06-18 10:03:28,866 - root - INFO - Training network 88 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 10:03:28,866 - root - INFO - Training network 88
+2025-06-18 10:03:35,441 - root - INFO - Training network 89. n_training: 368
+2025-06-18 10:03:38,624 - root - INFO - Training network 89 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 10:03:38,624 - root - INFO - Training network 89
+2025-06-18 10:03:43,060 - root - INFO - Training network 90. n_training: 575
+2025-06-18 10:03:46,233 - root - INFO - Training network 90 with 19 epochs index 1 on: 0.8226982428475806 
+2025-06-18 10:03:46,233 - root - INFO - Training network 90
+2025-06-18 10:03:52,470 - root - INFO - Training network 91. n_training: 487
+2025-06-18 10:03:55,657 - root - INFO - Training network 91 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 10:03:55,657 - root - INFO - Training network 91
+2025-06-18 10:04:01,171 - root - INFO - Training network 92. n_training: 335
+2025-06-18 10:04:04,319 - root - INFO - Training network 92 with 20 epochs index 1 on: 0.8707132614612346 
+2025-06-18 10:04:04,319 - root - INFO - Training network 92
+2025-06-18 10:04:08,114 - root - INFO - Training network 93. n_training: 349
+2025-06-18 10:04:11,281 - root - INFO - Training network 93 with 22 epochs index 1 on: 0.9396197797453716 
+2025-06-18 10:04:11,281 - root - INFO - Training network 93
+2025-06-18 10:04:15,680 - root - INFO - Training network 94. n_training: 508
+2025-06-18 10:04:18,852 - root - INFO - Training network 94 with 20 epochs index 1 on: 0.8754493035491923 
+2025-06-18 10:04:18,852 - root - INFO - Training network 94
+2025-06-18 10:04:24,669 - root - INFO - Training network 95. n_training: 264
+2025-06-18 10:04:27,831 - root - INFO - Training network 95 with 22 epochs index 1 on: 0.9606713394606733 
+2025-06-18 10:04:27,831 - root - INFO - Training network 95
+2025-06-18 10:04:31,124 - root - INFO - Training network 96. n_training: 367
+2025-06-18 10:04:34,268 - root - INFO - Training network 96 with 22 epochs index 1 on: 0.9644787265435077 
+2025-06-18 10:04:34,268 - root - INFO - Training network 96
+2025-06-18 10:04:38,799 - root - INFO - Training network 97. n_training: 583
+2025-06-18 10:04:41,963 - root - INFO - Training network 97 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 10:04:41,963 - root - INFO - Training network 97
+2025-06-18 10:04:48,877 - root - INFO - Training network 98. n_training: 141
+2025-06-18 10:04:52,043 - root - INFO - Training network 98 with 23 epochs index 1 on: 1.0 
+2025-06-18 10:04:52,043 - root - INFO - Training network 98
+2025-06-18 10:04:53,933 - root - INFO - Training network 99. n_training: 611
+2025-06-18 10:04:57,107 - root - INFO - Training network 99 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 10:04:57,107 - root - INFO - Training network 99
+2025-06-18 10:05:02,729 - root - WARNING - >>>>>>>>>>>>> DAISY chain 2
+2025-06-18 10:05:02,729 - root - INFO - Training network 0. n_training: 665
+2025-06-18 10:05:05,974 - root - INFO - Training network 0 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 10:05:05,974 - root - INFO - Training network 0
+2025-06-18 10:05:13,092 - root - INFO - Training network 1. n_training: 521
+2025-06-18 10:05:16,380 - root - INFO - Training network 1 with 20 epochs index 1 on: 0.8391926715240126 
+2025-06-18 10:05:16,381 - root - INFO - Training network 1
+2025-06-18 10:05:22,380 - root - INFO - Training network 2. n_training: 320
+2025-06-18 10:05:25,635 - root - INFO - Training network 2 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 10:05:25,635 - root - INFO - Training network 2
+2025-06-18 10:05:29,475 - root - INFO - Training network 3. n_training: 514
+2025-06-18 10:05:32,675 - root - INFO - Training network 3 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 10:05:32,675 - root - INFO - Training network 3
+2025-06-18 10:05:38,786 - root - INFO - Training network 4. n_training: 289
+2025-06-18 10:05:41,913 - root - INFO - Training network 4 with 22 epochs index 1 on: 0.9494278393612096 
+2025-06-18 10:05:41,913 - root - INFO - Training network 4
+2025-06-18 10:05:45,503 - root - INFO - Training network 5. n_training: 328
+2025-06-18 10:05:48,660 - root - INFO - Training network 5 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 10:05:48,661 - root - INFO - Training network 5
+2025-06-18 10:05:52,551 - root - INFO - Training network 6. n_training: 299
+2025-06-18 10:05:55,696 - root - INFO - Training network 6 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 10:05:55,696 - root - INFO - Training network 6
+2025-06-18 10:05:59,629 - root - INFO - Training network 7. n_training: 442
+2025-06-18 10:06:02,803 - root - INFO - Training network 7 with 21 epochs index 1 on: 0.8926658005803801 
+2025-06-18 10:06:02,803 - root - INFO - Training network 7
+2025-06-18 10:06:08,140 - root - INFO - Training network 8. n_training: 636
+2025-06-18 10:06:11,300 - root - INFO - Training network 8 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 10:06:11,300 - root - INFO - Training network 8
+2025-06-18 10:06:17,388 - root - INFO - Training network 9. n_training: 587
+2025-06-18 10:06:20,523 - root - INFO - Training network 9 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 10:06:20,524 - root - INFO - Training network 9
+2025-06-18 10:06:26,978 - root - INFO - Training network 10. n_training: 418
+2025-06-18 10:06:30,145 - root - INFO - Training network 10 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 10:06:30,145 - root - INFO - Training network 10
+2025-06-18 10:06:34,482 - root - INFO - Training network 11. n_training: 770
+2025-06-18 10:06:37,633 - root - INFO - Training network 11 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 10:06:37,634 - root - INFO - Training network 11
+2025-06-18 10:06:44,151 - root - INFO - Training network 12. n_training: 625
+2025-06-18 10:06:47,292 - root - INFO - Training network 12 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 10:06:47,292 - root - INFO - Training network 12
+2025-06-18 10:06:52,537 - root - INFO - Training network 13. n_training: 464
+2025-06-18 10:06:55,664 - root - INFO - Training network 13 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 10:06:55,664 - root - INFO - Training network 13
+2025-06-18 10:07:00,890 - root - INFO - Training network 14. n_training: 487
+2025-06-18 10:07:04,036 - root - INFO - Training network 14 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 10:07:04,037 - root - INFO - Training network 14
+2025-06-18 10:07:09,492 - root - INFO - Training network 15. n_training: 539
+2025-06-18 10:07:12,665 - root - INFO - Training network 15 with 3 epochs index 1 on: 0.0 
+2025-06-18 10:07:12,665 - root - INFO - Skipped network 15 with SI: 0.0000 
+2025-06-18 10:07:12,665 - root - INFO - Training network 16. n_training: 709
+2025-06-18 10:07:15,839 - root - INFO - Training network 16 with 13 epochs index 1 on: 0.4965387490934504 
+2025-06-18 10:07:15,839 - root - INFO - Training network 16
+2025-06-18 10:07:21,438 - root - INFO - Training network 17. n_training: 474
+2025-06-18 10:07:24,595 - root - INFO - Training network 17 with 19 epochs index 1 on: 0.7924813177810528 
+2025-06-18 10:07:24,595 - root - INFO - Training network 17
+2025-06-18 10:07:29,961 - root - INFO - Training network 18. n_training: 575
+2025-06-18 10:07:33,212 - root - INFO - Training network 18 with 19 epochs index 1 on: 0.8226982428475806 
+2025-06-18 10:07:33,212 - root - INFO - Training network 18
+2025-06-18 10:07:39,483 - root - INFO - Training network 19. n_training: 293
+2025-06-18 10:07:42,611 - root - INFO - Training network 19 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 10:07:42,612 - root - INFO - Training network 19
+2025-06-18 10:07:45,895 - root - INFO - Training network 20. n_training: 571
+2025-06-18 10:07:49,039 - root - INFO - Training network 20 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 10:07:49,039 - root - INFO - Training network 20
+2025-06-18 10:07:54,445 - root - INFO - Training network 21. n_training: 540
+2025-06-18 10:07:57,654 - root - INFO - Training network 21 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 10:07:57,654 - root - INFO - Training network 21
+2025-06-18 10:08:03,424 - root - INFO - Training network 22. n_training: 518
+2025-06-18 10:08:06,625 - root - INFO - Training network 22 with 20 epochs index 1 on: 0.8361766752718697 
+2025-06-18 10:08:06,625 - root - INFO - Training network 22
+2025-06-18 10:08:12,964 - root - INFO - Training network 23. n_training: 717
+2025-06-18 10:08:16,183 - root - INFO - Training network 23 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 10:08:16,183 - root - INFO - Training network 23
+2025-06-18 10:08:20,550 - root - INFO - Training network 24. n_training: 309
+2025-06-18 10:08:23,822 - root - INFO - Training network 24 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 10:08:23,822 - root - INFO - Training network 24
+2025-06-18 10:08:27,949 - root - INFO - Training network 25. n_training: 820
+2025-06-18 10:08:31,232 - root - INFO - Training network 25 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 10:08:31,233 - root - INFO - Training network 25
+2025-06-18 10:08:39,662 - root - INFO - Training network 26. n_training: 569
+2025-06-18 10:08:42,955 - root - INFO - Training network 26 with 20 epochs index 1 on: 0.8707913866016752 
+2025-06-18 10:08:42,955 - root - INFO - Training network 26
+2025-06-18 10:08:49,513 - root - INFO - Training network 27. n_training: 553
+2025-06-18 10:08:52,748 - root - INFO - Training network 27 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 10:08:52,748 - root - INFO - Training network 27
+2025-06-18 10:08:57,153 - root - INFO - Training network 28. n_training: 576
+2025-06-18 10:09:00,294 - root - INFO - Training network 28 with 21 epochs index 1 on: 0.8826684309304778 
+2025-06-18 10:09:00,294 - root - INFO - Training network 28
+2025-06-18 10:09:07,038 - root - INFO - Training network 29. n_training: 565
+2025-06-18 10:09:10,294 - root - INFO - Training network 29 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 10:09:10,294 - root - INFO - Training network 29
+2025-06-18 10:09:15,814 - root - INFO - Training network 30. n_training: 334
+2025-06-18 10:09:19,058 - root - INFO - Training network 30 with 21 epochs index 1 on: 0.9097885957152367 
+2025-06-18 10:09:19,058 - root - INFO - Training network 30
+2025-06-18 10:09:23,253 - root - INFO - Training network 31. n_training: 402
+2025-06-18 10:09:26,549 - root - INFO - Training network 31 with 22 epochs index 1 on: 0.9601899990253345 
+2025-06-18 10:09:26,549 - root - INFO - Training network 31
+2025-06-18 10:09:31,946 - root - INFO - Training network 32. n_training: 557
+2025-06-18 10:09:35,223 - root - INFO - Training network 32 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 10:09:35,223 - root - INFO - Training network 32
+2025-06-18 10:09:40,298 - root - INFO - Training network 33. n_training: 659
+2025-06-18 10:09:43,536 - root - INFO - Training network 33 with 16 epochs index 1 on: 0.6725816528418256 
+2025-06-18 10:09:43,536 - root - INFO - Training network 33
+2025-06-18 10:09:49,958 - root - INFO - Training network 34. n_training: 216
+2025-06-18 10:09:53,199 - root - INFO - Training network 34 with 19 epochs index 1 on: 0.8288215127483066 
+2025-06-18 10:09:53,200 - root - INFO - Training network 34
+2025-06-18 10:09:55,729 - root - INFO - Training network 35. n_training: 572
+2025-06-18 10:09:59,029 - root - INFO - Training network 35 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 10:09:59,029 - root - INFO - Training network 35
+2025-06-18 10:10:03,560 - root - INFO - Training network 36. n_training: 176
+2025-06-18 10:10:06,811 - root - INFO - Training network 36 with 20 epochs index 1 on: 0.8607868560243668 
+2025-06-18 10:10:06,811 - root - INFO - Training network 36
+2025-06-18 10:10:08,780 - root - INFO - Training network 37. n_training: 226
+2025-06-18 10:10:11,978 - root - INFO - Training network 37 with 21 epochs index 1 on: 0.9156818124154751 
+2025-06-18 10:10:11,978 - root - INFO - Training network 37
+2025-06-18 10:10:14,752 - root - INFO - Training network 38. n_training: 553
+2025-06-18 10:10:18,066 - root - INFO - Training network 38 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 10:10:18,066 - root - INFO - Training network 38
+2025-06-18 10:10:23,038 - root - INFO - Training network 39. n_training: 434
+2025-06-18 10:10:26,329 - root - INFO - Training network 39 with 19 epochs index 1 on: 0.7975614635226826 
+2025-06-18 10:10:26,329 - root - INFO - Training network 39
+2025-06-18 10:10:31,247 - root - INFO - Training network 40. n_training: 264
+2025-06-18 10:10:34,484 - root - INFO - Training network 40 with 22 epochs index 1 on: 0.9606713394606733 
+2025-06-18 10:10:34,484 - root - INFO - Training network 40
+2025-06-18 10:10:38,046 - root - INFO - Training network 41. n_training: 512
+2025-06-18 10:10:41,335 - root - INFO - Training network 41 with 17 epochs index 1 on: 0.6964587648909677 
+2025-06-18 10:10:41,335 - root - INFO - Training network 41
+2025-06-18 10:10:46,609 - root - INFO - Training network 42. n_training: 582
+2025-06-18 10:10:49,893 - root - INFO - Training network 42 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 10:10:49,893 - root - INFO - Training network 42
+2025-06-18 10:10:56,804 - root - INFO - Training network 43. n_training: 532
+2025-06-18 10:11:00,033 - root - INFO - Training network 43 with 18 epochs index 1 on: 0.7700068488035471 
+2025-06-18 10:11:00,033 - root - INFO - Training network 43
+2025-06-18 10:11:05,593 - root - INFO - Training network 44. n_training: 662
+2025-06-18 10:11:08,793 - root - INFO - Training network 44 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 10:11:08,793 - root - INFO - Training network 44
+2025-06-18 10:11:15,918 - root - INFO - Training network 45. n_training: 513
+2025-06-18 10:11:19,051 - root - INFO - Training network 45 with 21 epochs index 1 on: 0.8831211324693516 
+2025-06-18 10:11:19,051 - root - INFO - Training network 45
+2025-06-18 10:11:25,487 - root - INFO - Training network 46. n_training: 335
+2025-06-18 10:11:28,685 - root - INFO - Training network 46 with 20 epochs index 1 on: 0.8707132614612346 
+2025-06-18 10:11:28,685 - root - INFO - Training network 46
+2025-06-18 10:11:32,802 - root - INFO - Training network 47. n_training: 168
+2025-06-18 10:11:36,039 - root - INFO - Training network 47 with 20 epochs index 1 on: 0.8401249339242853 
+2025-06-18 10:11:36,040 - root - INFO - Training network 47
+2025-06-18 10:11:38,095 - root - INFO - Training network 48. n_training: 509
+2025-06-18 10:11:41,323 - root - INFO - Training network 48 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 10:11:41,323 - root - INFO - Training network 48
+2025-06-18 10:11:46,765 - root - INFO - Training network 49. n_training: 635
+2025-06-18 10:11:49,970 - root - INFO - Training network 49 with 21 epochs index 1 on: 0.88955232669412 
+2025-06-18 10:11:49,970 - root - INFO - Training network 49
+2025-06-18 10:11:57,393 - root - INFO - Training network 50. n_training: 322
+2025-06-18 10:12:00,552 - root - INFO - Training network 50 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 10:12:00,552 - root - INFO - Training network 50
+2025-06-18 10:12:04,218 - root - INFO - Training network 51. n_training: 271
+2025-06-18 10:12:07,408 - root - INFO - Training network 51 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 10:12:07,408 - root - INFO - Training network 51
+2025-06-18 10:12:11,017 - root - INFO - Training network 52. n_training: 522
+2025-06-18 10:12:14,288 - root - INFO - Training network 52 with 15 epochs index 1 on: 0.5885333164633397 
+2025-06-18 10:12:14,288 - root - INFO - Training network 52
+2025-06-18 10:12:19,101 - root - INFO - Training network 53. n_training: 527
+2025-06-18 10:12:22,346 - root - INFO - Training network 53 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 10:12:22,346 - root - INFO - Training network 53
+2025-06-18 10:12:27,819 - root - INFO - Training network 54. n_training: 629
+2025-06-18 10:12:31,086 - root - INFO - Training network 54 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 10:12:31,086 - root - INFO - Training network 54
+2025-06-18 10:12:37,413 - root - INFO - Training network 55. n_training: 772
+2025-06-18 10:12:40,627 - root - INFO - Training network 55 with 18 epochs index 1 on: 0.733950982512656 
+2025-06-18 10:12:40,627 - root - INFO - Training network 55
+2025-06-18 10:12:48,686 - root - INFO - Training network 56. n_training: 501
+2025-06-18 10:12:51,959 - root - INFO - Training network 56 with 19 epochs index 1 on: 0.809828197427346 
+2025-06-18 10:12:51,959 - root - INFO - Training network 56
+2025-06-18 10:12:57,771 - root - INFO - Training network 57. n_training: 536
+2025-06-18 10:13:01,056 - root - INFO - Training network 57 with 21 epochs index 1 on: 0.9165275676869828 
+2025-06-18 10:13:01,056 - root - INFO - Training network 57
+2025-06-18 10:13:07,954 - root - INFO - Training network 58. n_training: 446
+2025-06-18 10:13:11,248 - root - INFO - Training network 58 with 17 epochs index 1 on: 0.713801158787791 
+2025-06-18 10:13:11,248 - root - INFO - Training network 58
+2025-06-18 10:13:15,585 - root - INFO - Training network 59. n_training: 504
+2025-06-18 10:13:18,817 - root - INFO - Training network 59 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 10:13:18,818 - root - INFO - Training network 59
+2025-06-18 10:13:23,305 - root - INFO - Training network 60. n_training: 531
+2025-06-18 10:13:26,518 - root - INFO - Training network 60 with 19 epochs index 1 on: 0.8074437886717929 
+2025-06-18 10:13:26,519 - root - INFO - Training network 60
+2025-06-18 10:13:32,151 - root - INFO - Training network 61. n_training: 457
+2025-06-18 10:13:35,328 - root - INFO - Training network 61 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 10:13:35,328 - root - INFO - Training network 61
+2025-06-18 10:13:40,379 - root - INFO - Training network 62. n_training: 325
+2025-06-18 10:13:43,684 - root - INFO - Training network 62 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 10:13:43,685 - root - INFO - Training network 62
+2025-06-18 10:13:47,936 - root - INFO - Training network 63. n_training: 1008
+2025-06-18 10:13:51,616 - root - INFO - Training network 63 with 8 epochs index 1 on: 0.2528682548458908 
+2025-06-18 10:13:51,616 - root - INFO - Training network 63
+2025-06-18 10:13:57,237 - root - INFO - Training network 64. n_training: 513
+2025-06-18 10:14:00,620 - root - INFO - Training network 64 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 10:14:00,620 - root - INFO - Training network 64
+2025-06-18 10:14:08,280 - root - INFO - Training network 65. n_training: 625
+2025-06-18 10:14:11,629 - root - INFO - Training network 65 with 18 epochs index 1 on: 0.7650044300566785 
+2025-06-18 10:14:11,629 - root - INFO - Training network 65
+2025-06-18 10:14:19,171 - root - INFO - Training network 66. n_training: 283
+2025-06-18 10:14:22,339 - root - INFO - Training network 66 with 20 epochs index 1 on: 0.8332809064066585 
+2025-06-18 10:14:22,339 - root - INFO - Training network 66
+2025-06-18 10:14:25,598 - root - INFO - Training network 67. n_training: 631
+2025-06-18 10:14:28,764 - root - INFO - Training network 67 with 5 epochs index 1 on: 0.08905677914457166 
+2025-06-18 10:14:28,764 - root - INFO - Skipped network 67 with SI: 0.0891 
+2025-06-18 10:14:28,764 - root - INFO - Training network 68. n_training: 449
+2025-06-18 10:14:31,949 - root - INFO - Training network 68 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 10:14:31,950 - root - INFO - Training network 68
+2025-06-18 10:14:37,365 - root - INFO - Training network 69. n_training: 591
+2025-06-18 10:14:40,621 - root - INFO - Training network 69 with 20 epochs index 1 on: 0.8398105607959562 
+2025-06-18 10:14:40,622 - root - INFO - Training network 69
+2025-06-18 10:14:49,088 - root - INFO - Training network 70. n_training: 517
+2025-06-18 10:14:52,774 - root - INFO - Training network 70 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 10:14:52,774 - root - INFO - Training network 70
+2025-06-18 10:14:58,859 - root - INFO - Training network 71. n_training: 607
+2025-06-18 10:15:02,498 - root - INFO - Training network 71 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 10:15:02,499 - root - INFO - Training network 71
+2025-06-18 10:15:08,826 - root - INFO - Training network 72. n_training: 515
+2025-06-18 10:15:12,543 - root - INFO - Training network 72 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 10:15:12,543 - root - INFO - Training network 72
+2025-06-18 10:15:18,622 - root - INFO - Training network 73. n_training: 405
+2025-06-18 10:15:22,329 - root - INFO - Training network 73 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 10:15:22,329 - root - INFO - Training network 73
+2025-06-18 10:15:28,506 - root - INFO - Training network 74. n_training: 611
+2025-06-18 10:15:32,128 - root - INFO - Training network 74 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 10:15:32,129 - root - INFO - Training network 74
+2025-06-18 10:15:38,647 - root - INFO - Training network 75. n_training: 581
+2025-06-18 10:15:42,275 - root - INFO - Training network 75 with 19 epochs index 1 on: 0.8259618355914848 
+2025-06-18 10:15:42,275 - root - INFO - Training network 75
+2025-06-18 10:15:49,906 - root - INFO - Training network 76. n_training: 592
+2025-06-18 10:15:53,206 - root - INFO - Training network 76 with 21 epochs index 1 on: 0.9276176655289192 
+2025-06-18 10:15:53,206 - root - INFO - Training network 76
+2025-06-18 10:16:00,535 - root - INFO - Training network 77. n_training: 367
+2025-06-18 10:16:03,786 - root - INFO - Training network 77 with 22 epochs index 1 on: 0.9644787265435077 
+2025-06-18 10:16:03,786 - root - INFO - Training network 77
+2025-06-18 10:16:08,903 - root - INFO - Training network 78. n_training: 643
+2025-06-18 10:16:12,600 - root - INFO - Training network 78 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 10:16:12,601 - root - INFO - Training network 78
+2025-06-18 10:16:21,941 - root - INFO - Training network 79. n_training: 583
+2025-06-18 10:16:25,520 - root - INFO - Training network 79 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 10:16:25,520 - root - INFO - Training network 79
+2025-06-18 10:16:34,152 - root - INFO - Training network 80. n_training: 512
+2025-06-18 10:16:37,766 - root - INFO - Training network 80 with 20 epochs index 1 on: 0.839753610247425 
+2025-06-18 10:16:37,766 - root - INFO - Training network 80
+2025-06-18 10:16:44,761 - root - INFO - Training network 81. n_training: 572
+2025-06-18 10:16:48,431 - root - INFO - Training network 81 with 6 epochs index 1 on: 0.16532134167837786 
+2025-06-18 10:16:48,431 - root - INFO - Skipped network 81 with SI: 0.1653 
+2025-06-18 10:16:48,431 - root - INFO - Training network 82. n_training: 619
+2025-06-18 10:16:52,098 - root - INFO - Training network 82 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 10:16:52,098 - root - INFO - Training network 82
+2025-06-18 10:16:58,317 - root - INFO - Training network 83. n_training: 570
+2025-06-18 10:17:01,592 - root - INFO - Training network 83 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 10:17:01,592 - root - INFO - Training network 83
+2025-06-18 10:17:08,104 - root - INFO - Training network 84. n_training: 506
+2025-06-18 10:17:11,356 - root - INFO - Training network 84 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 10:17:11,356 - root - INFO - Training network 84
+2025-06-18 10:17:16,449 - root - INFO - Training network 85. n_training: 491
+2025-06-18 10:17:19,727 - root - INFO - Training network 85 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 10:17:19,727 - root - INFO - Training network 85
+2025-06-18 10:17:25,011 - root - INFO - Training network 86. n_training: 532
+2025-06-18 10:17:28,262 - root - INFO - Training network 86 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 10:17:28,262 - root - INFO - Training network 86
+2025-06-18 10:17:34,986 - root - INFO - Training network 87. n_training: 582
+2025-06-18 10:17:38,690 - root - INFO - Training network 87 with 19 epochs index 1 on: 0.7950247193668125 
+2025-06-18 10:17:38,690 - root - INFO - Training network 87
+2025-06-18 10:17:46,363 - root - INFO - Training network 88. n_training: 508
+2025-06-18 10:17:49,948 - root - INFO - Training network 88 with 20 epochs index 1 on: 0.8754493035491923 
+2025-06-18 10:17:49,948 - root - INFO - Training network 88
+2025-06-18 10:17:56,144 - root - INFO - Training network 89. n_training: 648
+2025-06-18 10:17:59,532 - root - INFO - Training network 89 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 10:17:59,532 - root - INFO - Training network 89
+2025-06-18 10:18:05,378 - root - INFO - Training network 90. n_training: 141
+2025-06-18 10:18:08,617 - root - INFO - Training network 90 with 23 epochs index 1 on: 1.0 
+2025-06-18 10:18:08,617 - root - INFO - Training network 90
+2025-06-18 10:18:10,460 - root - INFO - Training network 91. n_training: 495
+2025-06-18 10:18:13,726 - root - INFO - Training network 91 with 20 epochs index 1 on: 0.8575464085579159 
+2025-06-18 10:18:13,726 - root - INFO - Training network 91
+2025-06-18 10:18:19,236 - root - INFO - Training network 92. n_training: 506
+2025-06-18 10:18:22,438 - root - INFO - Training network 92 with 16 epochs index 1 on: 0.6357534677023584 
+2025-06-18 10:18:22,439 - root - INFO - Training network 92
+2025-06-18 10:18:26,996 - root - INFO - Training network 93. n_training: 537
+2025-06-18 10:18:30,574 - root - INFO - Training network 93 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 10:18:30,575 - root - INFO - Training network 93
+2025-06-18 10:18:38,030 - root - INFO - Training network 94. n_training: 368
+2025-06-18 10:18:41,668 - root - INFO - Training network 94 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 10:18:41,669 - root - INFO - Training network 94
+2025-06-18 10:18:47,027 - root - INFO - Training network 95. n_training: 455
+2025-06-18 10:18:50,703 - root - INFO - Training network 95 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 10:18:50,704 - root - INFO - Training network 95
+2025-06-18 10:18:57,404 - root - INFO - Training network 96. n_training: 569
+2025-06-18 10:19:01,020 - root - INFO - Training network 96 with 17 epochs index 1 on: 0.6981186182825552 
+2025-06-18 10:19:01,020 - root - INFO - Training network 96
+2025-06-18 10:19:06,902 - root - INFO - Training network 97. n_training: 208
+2025-06-18 10:19:10,640 - root - INFO - Training network 97 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 10:19:10,640 - root - INFO - Training network 97
+2025-06-18 10:19:14,049 - root - INFO - Training network 98. n_training: 349
+2025-06-18 10:19:17,808 - root - INFO - Training network 98 with 22 epochs index 1 on: 0.9396197797453716 
+2025-06-18 10:19:17,808 - root - INFO - Training network 98
+2025-06-18 10:19:23,048 - root - INFO - Training network 99. n_training: 434
+2025-06-18 10:19:26,640 - root - INFO - Training network 99 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 10:19:26,640 - root - INFO - Training network 99
+2025-06-18 10:19:32,700 - root - WARNING - >>>>>>>>>>>>> DAISY chain 3
+2025-06-18 10:19:32,700 - root - INFO - Training network 0. n_training: 504
+2025-06-18 10:19:36,116 - root - INFO - Training network 0 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 10:19:36,116 - root - INFO - Training network 0
+2025-06-18 10:19:41,171 - root - INFO - Training network 1. n_training: 659
+2025-06-18 10:19:44,772 - root - INFO - Training network 1 with 16 epochs index 1 on: 0.6725816528418256 
+2025-06-18 10:19:44,772 - root - INFO - Training network 1
+2025-06-18 10:19:51,422 - root - INFO - Training network 2. n_training: 299
+2025-06-18 10:19:55,010 - root - INFO - Training network 2 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 10:19:55,010 - root - INFO - Training network 2
+2025-06-18 10:19:59,290 - root - INFO - Training network 3. n_training: 509
+2025-06-18 10:20:02,657 - root - INFO - Training network 3 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 10:20:02,657 - root - INFO - Training network 3
+2025-06-18 10:20:08,301 - root - INFO - Training network 4. n_training: 591
+2025-06-18 10:20:11,644 - root - INFO - Training network 4 with 20 epochs index 1 on: 0.8398105607959562 
+2025-06-18 10:20:11,645 - root - INFO - Training network 4
+2025-06-18 10:20:19,258 - root - INFO - Training network 5. n_training: 1008
+2025-06-18 10:20:22,851 - root - INFO - Training network 5 with 8 epochs index 1 on: 0.2528682548458908 
+2025-06-18 10:20:22,851 - root - INFO - Training network 5
+2025-06-18 10:20:27,536 - root - INFO - Training network 6. n_training: 457
+2025-06-18 10:20:30,641 - root - INFO - Training network 6 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 10:20:30,641 - root - INFO - Training network 6
+2025-06-18 10:20:34,897 - root - INFO - Training network 7. n_training: 508
+2025-06-18 10:20:38,047 - root - INFO - Training network 7 with 20 epochs index 1 on: 0.8754493035491923 
+2025-06-18 10:20:38,047 - root - INFO - Training network 7
+2025-06-18 10:20:44,809 - root - INFO - Training network 8. n_training: 581
+2025-06-18 10:20:48,225 - root - INFO - Training network 8 with 19 epochs index 1 on: 0.8259618355914848 
+2025-06-18 10:20:48,226 - root - INFO - Training network 8
+2025-06-18 10:20:55,643 - root - INFO - Training network 9. n_training: 514
+2025-06-18 10:20:59,137 - root - INFO - Training network 9 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 10:20:59,137 - root - INFO - Training network 9
+2025-06-18 10:21:05,603 - root - INFO - Training network 10. n_training: 442
+2025-06-18 10:21:08,832 - root - INFO - Training network 10 with 21 epochs index 1 on: 0.8926658005803801 
+2025-06-18 10:21:08,832 - root - INFO - Training network 10
+2025-06-18 10:21:14,082 - root - INFO - Training network 11. n_training: 576
+2025-06-18 10:21:17,352 - root - INFO - Training network 11 with 21 epochs index 1 on: 0.8826684309304778 
+2025-06-18 10:21:17,352 - root - INFO - Training network 11
+2025-06-18 10:21:24,179 - root - INFO - Training network 12. n_training: 334
+2025-06-18 10:21:27,738 - root - INFO - Training network 12 with 21 epochs index 1 on: 0.9097885957152367 
+2025-06-18 10:21:27,738 - root - INFO - Training network 12
+2025-06-18 10:21:32,704 - root - INFO - Training network 13. n_training: 522
+2025-06-18 10:21:36,393 - root - INFO - Training network 13 with 15 epochs index 1 on: 0.5885333164633397 
+2025-06-18 10:21:36,394 - root - INFO - Training network 13
+2025-06-18 10:21:41,789 - root - INFO - Training network 14. n_training: 635
+2025-06-18 10:21:45,464 - root - INFO - Training network 14 with 21 epochs index 1 on: 0.88955232669412 
+2025-06-18 10:21:45,464 - root - INFO - Training network 14
+2025-06-18 10:21:54,623 - root - INFO - Training network 15. n_training: 572
+2025-06-18 10:21:57,963 - root - INFO - Training network 15 with 6 epochs index 1 on: 0.16532134167837786 
+2025-06-18 10:21:57,963 - root - INFO - Skipped network 15 with SI: 0.1653 
+2025-06-18 10:21:57,963 - root - INFO - Training network 16. n_training: 335
+2025-06-18 10:22:01,267 - root - INFO - Training network 16 with 20 epochs index 1 on: 0.8707132614612346 
+2025-06-18 10:22:01,267 - root - INFO - Training network 16
+2025-06-18 10:22:05,592 - root - INFO - Training network 17. n_training: 582
+2025-06-18 10:22:08,815 - root - INFO - Training network 17 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 10:22:08,815 - root - INFO - Training network 17
+2025-06-18 10:22:15,643 - root - INFO - Training network 18. n_training: 271
+2025-06-18 10:22:19,033 - root - INFO - Training network 18 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 10:22:19,033 - root - INFO - Training network 18
+2025-06-18 10:22:23,104 - root - INFO - Training network 19. n_training: 289
+2025-06-18 10:22:26,726 - root - INFO - Training network 19 with 22 epochs index 1 on: 0.9494278393612096 
+2025-06-18 10:22:26,726 - root - INFO - Training network 19
+2025-06-18 10:22:30,875 - root - INFO - Training network 20. n_training: 513
+2025-06-18 10:22:34,441 - root - INFO - Training network 20 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 10:22:34,441 - root - INFO - Training network 20
+2025-06-18 10:22:41,976 - root - INFO - Training network 21. n_training: 512
+2025-06-18 10:22:45,573 - root - INFO - Training network 21 with 20 epochs index 1 on: 0.839753610247425 
+2025-06-18 10:22:45,573 - root - INFO - Training network 21
+2025-06-18 10:22:52,704 - root - INFO - Training network 22. n_training: 325
+2025-06-18 10:22:56,227 - root - INFO - Training network 22 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 10:22:56,227 - root - INFO - Training network 22
+2025-06-18 10:23:00,532 - root - INFO - Training network 23. n_training: 569
+2025-06-18 10:23:04,022 - root - INFO - Training network 23 with 17 epochs index 1 on: 0.6981186182825552 
+2025-06-18 10:23:04,022 - root - INFO - Training network 23
+2025-06-18 10:23:09,755 - root - INFO - Training network 24. n_training: 449
+2025-06-18 10:23:13,378 - root - INFO - Training network 24 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 10:23:13,378 - root - INFO - Training network 24
+2025-06-18 10:23:19,951 - root - INFO - Training network 25. n_training: 434
+2025-06-18 10:23:23,512 - root - INFO - Training network 25 with 19 epochs index 1 on: 0.7975614635226826 
+2025-06-18 10:23:23,512 - root - INFO - Training network 25
+2025-06-18 10:23:29,225 - root - INFO - Training network 26. n_training: 455
+2025-06-18 10:23:32,804 - root - INFO - Training network 26 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 10:23:32,804 - root - INFO - Training network 26
+2025-06-18 10:23:39,307 - root - INFO - Training network 27. n_training: 772
+2025-06-18 10:23:42,849 - root - INFO - Training network 27 with 18 epochs index 1 on: 0.733950982512656 
+2025-06-18 10:23:42,849 - root - INFO - Training network 27
+2025-06-18 10:23:52,129 - root - INFO - Training network 28. n_training: 518
+2025-06-18 10:23:55,516 - root - INFO - Training network 28 with 20 epochs index 1 on: 0.8361766752718697 
+2025-06-18 10:23:55,517 - root - INFO - Training network 28
+2025-06-18 10:24:01,316 - root - INFO - Training network 29. n_training: 527
+2025-06-18 10:24:04,181 - root - INFO - Training network 29 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 10:24:04,181 - root - INFO - Training network 29
+2025-06-18 10:24:08,578 - root - INFO - Training network 30. n_training: 491
+2025-06-18 10:24:11,346 - root - INFO - Training network 30 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 10:24:11,346 - root - INFO - Training network 30
+2025-06-18 10:24:15,708 - root - INFO - Training network 31. n_training: 405
+2025-06-18 10:24:18,456 - root - INFO - Training network 31 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 10:24:18,456 - root - INFO - Training network 31
+2025-06-18 10:24:23,008 - root - INFO - Training network 32. n_training: 540
+2025-06-18 10:24:26,430 - root - INFO - Training network 32 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 10:24:26,430 - root - INFO - Training network 32
+2025-06-18 10:24:32,963 - root - INFO - Training network 33. n_training: 515
+2025-06-18 10:24:36,441 - root - INFO - Training network 33 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 10:24:36,441 - root - INFO - Training network 33
+2025-06-18 10:24:42,333 - root - INFO - Training network 34. n_training: 587
+2025-06-18 10:24:45,797 - root - INFO - Training network 34 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 10:24:45,798 - root - INFO - Training network 34
+2025-06-18 10:24:53,336 - root - INFO - Training network 35. n_training: 636
+2025-06-18 10:24:56,827 - root - INFO - Training network 35 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 10:24:56,827 - root - INFO - Training network 35
+2025-06-18 10:25:04,204 - root - INFO - Training network 36. n_training: 368
+2025-06-18 10:25:07,763 - root - INFO - Training network 36 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 10:25:07,763 - root - INFO - Training network 36
+2025-06-18 10:25:12,654 - root - INFO - Training network 37. n_training: 575
+2025-06-18 10:25:16,157 - root - INFO - Training network 37 with 19 epochs index 1 on: 0.8226982428475806 
+2025-06-18 10:25:16,158 - root - INFO - Training network 37
+2025-06-18 10:25:23,029 - root - INFO - Training network 38. n_training: 226
+2025-06-18 10:25:26,499 - root - INFO - Training network 38 with 21 epochs index 1 on: 0.9156818124154751 
+2025-06-18 10:25:26,499 - root - INFO - Training network 38
+2025-06-18 10:25:29,744 - root - INFO - Training network 39. n_training: 648
+2025-06-18 10:25:33,265 - root - INFO - Training network 39 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 10:25:33,265 - root - INFO - Training network 39
+2025-06-18 10:25:40,064 - root - INFO - Training network 40. n_training: 464
+2025-06-18 10:25:43,647 - root - INFO - Training network 40 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 10:25:43,647 - root - INFO - Training network 40
+2025-06-18 10:25:50,161 - root - INFO - Training network 41. n_training: 770
+2025-06-18 10:25:53,603 - root - INFO - Training network 41 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 10:25:53,603 - root - INFO - Training network 41
+2025-06-18 10:26:00,683 - root - INFO - Training network 42. n_training: 216
+2025-06-18 10:26:03,872 - root - INFO - Training network 42 with 19 epochs index 1 on: 0.8288215127483066 
+2025-06-18 10:26:03,872 - root - INFO - Training network 42
+2025-06-18 10:26:06,283 - root - INFO - Training network 43. n_training: 446
+2025-06-18 10:26:09,826 - root - INFO - Training network 43 with 17 epochs index 1 on: 0.713801158787791 
+2025-06-18 10:26:09,826 - root - INFO - Training network 43
+2025-06-18 10:26:14,796 - root - INFO - Training network 44. n_training: 208
+2025-06-18 10:26:18,395 - root - INFO - Training network 44 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 10:26:18,395 - root - INFO - Training network 44
+2025-06-18 10:26:21,774 - root - INFO - Training network 45. n_training: 434
+2025-06-18 10:26:25,376 - root - INFO - Training network 45 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 10:26:25,376 - root - INFO - Training network 45
+2025-06-18 10:26:32,073 - root - INFO - Training network 46. n_training: 565
+2025-06-18 10:26:35,632 - root - INFO - Training network 46 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 10:26:35,632 - root - INFO - Training network 46
+2025-06-18 10:26:41,958 - root - INFO - Training network 47. n_training: 583
+2025-06-18 10:26:45,291 - root - INFO - Training network 47 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 10:26:45,291 - root - INFO - Training network 47
+2025-06-18 10:26:53,230 - root - INFO - Training network 48. n_training: 513
+2025-06-18 10:26:56,772 - root - INFO - Training network 48 with 21 epochs index 1 on: 0.8831211324693516 
+2025-06-18 10:26:56,772 - root - INFO - Training network 48
+2025-06-18 10:27:04,119 - root - INFO - Training network 49. n_training: 402
+2025-06-18 10:27:07,696 - root - INFO - Training network 49 with 22 epochs index 1 on: 0.9601899990253345 
+2025-06-18 10:27:07,696 - root - INFO - Training network 49
+2025-06-18 10:27:13,555 - root - INFO - Training network 50. n_training: 512
+2025-06-18 10:27:16,759 - root - INFO - Training network 50 with 17 epochs index 1 on: 0.6964587648909677 
+2025-06-18 10:27:16,760 - root - INFO - Training network 50
+2025-06-18 10:27:22,294 - root - INFO - Training network 51. n_training: 506
+2025-06-18 10:27:25,529 - root - INFO - Training network 51 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 10:27:25,529 - root - INFO - Training network 51
+2025-06-18 10:27:30,783 - root - INFO - Training network 52. n_training: 517
+2025-06-18 10:27:34,077 - root - INFO - Training network 52 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 10:27:34,077 - root - INFO - Training network 52
+2025-06-18 10:27:40,146 - root - INFO - Training network 53. n_training: 168
+2025-06-18 10:27:43,689 - root - INFO - Training network 53 with 20 epochs index 1 on: 0.8401249339242853 
+2025-06-18 10:27:43,689 - root - INFO - Training network 53
+2025-06-18 10:27:45,844 - root - INFO - Training network 54. n_training: 501
+2025-06-18 10:27:49,275 - root - INFO - Training network 54 with 19 epochs index 1 on: 0.809828197427346 
+2025-06-18 10:27:49,275 - root - INFO - Training network 54
+2025-06-18 10:27:55,219 - root - INFO - Training network 55. n_training: 607
+2025-06-18 10:27:58,569 - root - INFO - Training network 55 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 10:27:58,569 - root - INFO - Training network 55
+2025-06-18 10:28:03,938 - root - INFO - Training network 56. n_training: 629
+2025-06-18 10:28:07,134 - root - INFO - Training network 56 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 10:28:07,134 - root - INFO - Training network 56
+2025-06-18 10:28:13,629 - root - INFO - Training network 57. n_training: 176
+2025-06-18 10:28:16,894 - root - INFO - Training network 57 with 20 epochs index 1 on: 0.8607868560243668 
+2025-06-18 10:28:16,895 - root - INFO - Training network 57
+2025-06-18 10:28:19,038 - root - INFO - Training network 58. n_training: 619
+2025-06-18 10:28:22,280 - root - INFO - Training network 58 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 10:28:22,280 - root - INFO - Training network 58
+2025-06-18 10:28:28,689 - root - INFO - Training network 59. n_training: 571
+2025-06-18 10:28:32,252 - root - INFO - Training network 59 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 10:28:32,252 - root - INFO - Training network 59
+2025-06-18 10:28:38,576 - root - INFO - Training network 60. n_training: 506
+2025-06-18 10:28:42,138 - root - INFO - Training network 60 with 16 epochs index 1 on: 0.6357534677023584 
+2025-06-18 10:28:42,138 - root - INFO - Training network 60
+2025-06-18 10:28:47,358 - root - INFO - Training network 61. n_training: 709
+2025-06-18 10:28:50,703 - root - INFO - Training network 61 with 13 epochs index 1 on: 0.4965387490934504 
+2025-06-18 10:28:50,704 - root - INFO - Training network 61
+2025-06-18 10:28:56,412 - root - INFO - Training network 62. n_training: 532
+2025-06-18 10:28:59,658 - root - INFO - Training network 62 with 18 epochs index 1 on: 0.7700068488035471 
+2025-06-18 10:28:59,659 - root - INFO - Training network 62
+2025-06-18 10:29:05,679 - root - INFO - Training network 63. n_training: 569
+2025-06-18 10:29:09,239 - root - INFO - Training network 63 with 20 epochs index 1 on: 0.8707913866016752 
+2025-06-18 10:29:09,239 - root - INFO - Training network 63
+2025-06-18 10:29:16,460 - root - INFO - Training network 64. n_training: 625
+2025-06-18 10:29:20,001 - root - INFO - Training network 64 with 18 epochs index 1 on: 0.7650044300566785 
+2025-06-18 10:29:20,002 - root - INFO - Training network 64
+2025-06-18 10:29:27,598 - root - INFO - Training network 65. n_training: 328
+2025-06-18 10:29:31,137 - root - INFO - Training network 65 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 10:29:31,137 - root - INFO - Training network 65
+2025-06-18 10:29:35,803 - root - INFO - Training network 66. n_training: 582
+2025-06-18 10:29:39,248 - root - INFO - Training network 66 with 19 epochs index 1 on: 0.7950247193668125 
+2025-06-18 10:29:39,248 - root - INFO - Training network 66
+2025-06-18 10:29:47,067 - root - INFO - Training network 67. n_training: 592
+2025-06-18 10:29:50,619 - root - INFO - Training network 67 with 21 epochs index 1 on: 0.9276176655289192 
+2025-06-18 10:29:50,619 - root - INFO - Training network 67
+2025-06-18 10:29:59,141 - root - INFO - Training network 68. n_training: 293
+2025-06-18 10:30:02,440 - root - INFO - Training network 68 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 10:30:02,440 - root - INFO - Training network 68
+2025-06-18 10:30:06,230 - root - INFO - Training network 69. n_training: 611
+2025-06-18 10:30:09,502 - root - INFO - Training network 69 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 10:30:09,502 - root - INFO - Training network 69
+2025-06-18 10:30:15,030 - root - INFO - Training network 70. n_training: 662
+2025-06-18 10:30:18,156 - root - INFO - Training network 70 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 10:30:18,156 - root - INFO - Training network 70
+2025-06-18 10:30:25,238 - root - INFO - Training network 71. n_training: 283
+2025-06-18 10:30:28,385 - root - INFO - Training network 71 with 20 epochs index 1 on: 0.8332809064066585 
+2025-06-18 10:30:28,386 - root - INFO - Training network 71
+2025-06-18 10:30:31,587 - root - INFO - Training network 72. n_training: 474
+2025-06-18 10:30:35,041 - root - INFO - Training network 72 with 19 epochs index 1 on: 0.7924813177810528 
+2025-06-18 10:30:35,041 - root - INFO - Training network 72
+2025-06-18 10:30:41,046 - root - INFO - Training network 73. n_training: 557
+2025-06-18 10:30:44,539 - root - INFO - Training network 73 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 10:30:44,539 - root - INFO - Training network 73
+2025-06-18 10:30:50,132 - root - INFO - Training network 74. n_training: 487
+2025-06-18 10:30:53,485 - root - INFO - Training network 74 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 10:30:53,485 - root - INFO - Training network 74
+2025-06-18 10:30:58,487 - root - INFO - Training network 75. n_training: 536
+2025-06-18 10:31:01,243 - root - INFO - Training network 75 with 21 epochs index 1 on: 0.9165275676869828 
+2025-06-18 10:31:01,244 - root - INFO - Training network 75
+2025-06-18 10:31:06,552 - root - INFO - Training network 76. n_training: 537
+2025-06-18 10:31:09,386 - root - INFO - Training network 76 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 10:31:09,386 - root - INFO - Training network 76
+2025-06-18 10:31:14,668 - root - INFO - Training network 77. n_training: 320
+2025-06-18 10:31:17,606 - root - INFO - Training network 77 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 10:31:17,606 - root - INFO - Training network 77
+2025-06-18 10:31:20,743 - root - INFO - Training network 78. n_training: 418
+2025-06-18 10:31:23,533 - root - INFO - Training network 78 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 10:31:23,533 - root - INFO - Training network 78
+2025-06-18 10:31:27,489 - root - INFO - Training network 79. n_training: 322
+2025-06-18 10:31:30,999 - root - INFO - Training network 79 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 10:31:30,999 - root - INFO - Training network 79
+2025-06-18 10:31:35,262 - root - INFO - Training network 80. n_training: 531
+2025-06-18 10:31:38,795 - root - INFO - Training network 80 with 19 epochs index 1 on: 0.8074437886717929 
+2025-06-18 10:31:38,795 - root - INFO - Training network 80
+2025-06-18 10:31:45,659 - root - INFO - Training network 81. n_training: 141
+2025-06-18 10:31:48,834 - root - INFO - Training network 81 with 23 epochs index 1 on: 1.0 
+2025-06-18 10:31:48,834 - root - INFO - Training network 81
+2025-06-18 10:31:50,685 - root - INFO - Training network 82. n_training: 717
+2025-06-18 10:31:53,834 - root - INFO - Training network 82 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 10:31:53,834 - root - INFO - Training network 82
+2025-06-18 10:31:57,842 - root - INFO - Training network 83. n_training: 572
+2025-06-18 10:32:00,979 - root - INFO - Training network 83 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 10:32:00,979 - root - INFO - Training network 83
+2025-06-18 10:32:05,430 - root - INFO - Training network 84. n_training: 553
+2025-06-18 10:32:08,580 - root - INFO - Training network 84 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 10:32:08,580 - root - INFO - Training network 84
+2025-06-18 10:32:13,262 - root - INFO - Training network 85. n_training: 820
+2025-06-18 10:32:16,815 - root - INFO - Training network 85 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 10:32:16,815 - root - INFO - Training network 85
+2025-06-18 10:32:26,280 - root - INFO - Training network 86. n_training: 570
+2025-06-18 10:32:29,796 - root - INFO - Training network 86 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 10:32:29,796 - root - INFO - Training network 86
+2025-06-18 10:32:37,528 - root - INFO - Training network 87. n_training: 367
+2025-06-18 10:32:41,090 - root - INFO - Training network 87 with 22 epochs index 1 on: 0.9644787265435077 
+2025-06-18 10:32:41,090 - root - INFO - Training network 87
+2025-06-18 10:32:46,630 - root - INFO - Training network 88. n_training: 539
+2025-06-18 10:32:50,152 - root - INFO - Training network 88 with 3 epochs index 1 on: 0.0 
+2025-06-18 10:32:50,152 - root - INFO - Skipped network 88 with SI: 0.0000 
+2025-06-18 10:32:50,152 - root - INFO - Training network 89. n_training: 309
+2025-06-18 10:32:53,671 - root - INFO - Training network 89 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 10:32:53,672 - root - INFO - Training network 89
+2025-06-18 10:32:58,052 - root - INFO - Training network 90. n_training: 625
+2025-06-18 10:33:01,225 - root - INFO - Training network 90 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 10:33:01,225 - root - INFO - Training network 90
+2025-06-18 10:33:06,340 - root - INFO - Training network 91. n_training: 643
+2025-06-18 10:33:09,126 - root - INFO - Training network 91 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 10:33:09,126 - root - INFO - Training network 91
+2025-06-18 10:33:15,451 - root - INFO - Training network 92. n_training: 631
+2025-06-18 10:33:18,298 - root - INFO - Training network 92 with 5 epochs index 1 on: 0.08905677914457166 
+2025-06-18 10:33:18,298 - root - INFO - Skipped network 92 with SI: 0.0891 
+2025-06-18 10:33:18,298 - root - INFO - Training network 93. n_training: 532
+2025-06-18 10:33:21,853 - root - INFO - Training network 93 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 10:33:21,853 - root - INFO - Training network 93
+2025-06-18 10:33:29,582 - root - INFO - Training network 94. n_training: 349
+2025-06-18 10:33:33,063 - root - INFO - Training network 94 with 22 epochs index 1 on: 0.9396197797453716 
+2025-06-18 10:33:33,063 - root - INFO - Training network 94
+2025-06-18 10:33:38,387 - root - INFO - Training network 95. n_training: 495
+2025-06-18 10:33:41,914 - root - INFO - Training network 95 with 20 epochs index 1 on: 0.8575464085579159 
+2025-06-18 10:33:41,914 - root - INFO - Training network 95
+2025-06-18 10:33:48,704 - root - INFO - Training network 96. n_training: 521
+2025-06-18 10:33:51,861 - root - INFO - Training network 96 with 20 epochs index 1 on: 0.8391926715240126 
+2025-06-18 10:33:51,861 - root - INFO - Training network 96
+2025-06-18 10:33:57,700 - root - INFO - Training network 97. n_training: 553
+2025-06-18 10:34:00,914 - root - INFO - Training network 97 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 10:34:00,914 - root - INFO - Training network 97
+2025-06-18 10:34:05,237 - root - INFO - Training network 98. n_training: 665
+2025-06-18 10:34:08,767 - root - INFO - Training network 98 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 10:34:08,767 - root - INFO - Training network 98
+2025-06-18 10:34:17,334 - root - INFO - Training network 99. n_training: 264
+2025-06-18 10:34:20,874 - root - INFO - Training network 99 with 22 epochs index 1 on: 0.9606713394606733 
+2025-06-18 10:34:20,874 - root - INFO - Training network 99
+2025-06-18 10:34:24,875 - root - WARNING - >>>>>>>>>>>>> DAISY chain 4
+2025-06-18 10:34:24,876 - root - INFO - Training network 0. n_training: 418
+2025-06-18 10:34:28,422 - root - INFO - Training network 0 with 18 epochs index 1 on: 0.7582474136289974 
+2025-06-18 10:34:28,422 - root - INFO - Training network 0
+2025-06-18 10:34:33,172 - root - INFO - Training network 1. n_training: 141
+2025-06-18 10:34:36,356 - root - INFO - Training network 1 with 23 epochs index 1 on: 1.0 
+2025-06-18 10:34:36,356 - root - INFO - Training network 1
+2025-06-18 10:34:38,282 - root - INFO - Training network 2. n_training: 320
+2025-06-18 10:34:41,474 - root - INFO - Training network 2 with 21 epochs index 1 on: 0.9128725151585547 
+2025-06-18 10:34:41,474 - root - INFO - Training network 2
+2025-06-18 10:34:45,343 - root - INFO - Training network 3. n_training: 540
+2025-06-18 10:34:48,496 - root - INFO - Training network 3 with 19 epochs index 1 on: 0.8068197755259019 
+2025-06-18 10:34:48,496 - root - INFO - Training network 3
+2025-06-18 10:34:54,380 - root - INFO - Training network 4. n_training: 553
+2025-06-18 10:34:57,536 - root - INFO - Training network 4 with 15 epochs index 1 on: 0.6105785807328905 
+2025-06-18 10:34:57,536 - root - INFO - Training network 4
+2025-06-18 10:35:02,678 - root - INFO - Training network 5. n_training: 636
+2025-06-18 10:35:06,200 - root - INFO - Training network 5 with 17 epochs index 1 on: 0.7183725116052779 
+2025-06-18 10:35:06,200 - root - INFO - Training network 5
+2025-06-18 10:35:13,412 - root - INFO - Training network 6. n_training: 434
+2025-06-18 10:35:16,884 - root - INFO - Training network 6 with 22 epochs index 1 on: 0.9315412306880104 
+2025-06-18 10:35:16,884 - root - INFO - Training network 6
+2025-06-18 10:35:22,916 - root - INFO - Training network 7. n_training: 309
+2025-06-18 10:35:26,107 - root - INFO - Training network 7 with 22 epochs index 1 on: 0.9534357210213195 
+2025-06-18 10:35:26,107 - root - INFO - Training network 7
+2025-06-18 10:35:30,323 - root - INFO - Training network 8. n_training: 504
+2025-06-18 10:35:33,608 - root - INFO - Training network 8 with 16 epochs index 1 on: 0.6418189344943626 
+2025-06-18 10:35:33,608 - root - INFO - Training network 8
+2025-06-18 10:35:38,901 - root - INFO - Training network 9. n_training: 517
+2025-06-18 10:35:42,460 - root - INFO - Training network 9 with 17 epochs index 1 on: 0.6967862000437767 
+2025-06-18 10:35:42,460 - root - INFO - Training network 9
+2025-06-18 10:35:48,368 - root - INFO - Training network 10. n_training: 368
+2025-06-18 10:35:51,903 - root - INFO - Training network 10 with 21 epochs index 1 on: 0.8875525266034837 
+2025-06-18 10:35:51,903 - root - INFO - Training network 10
+2025-06-18 10:35:57,086 - root - INFO - Training network 11. n_training: 537
+2025-06-18 10:36:00,667 - root - INFO - Training network 11 with 21 epochs index 1 on: 0.9114490355412656 
+2025-06-18 10:36:00,667 - root - INFO - Training network 11
+2025-06-18 10:36:08,103 - root - INFO - Training network 12. n_training: 570
+2025-06-18 10:36:11,680 - root - INFO - Training network 12 with 20 epochs index 1 on: 0.8512559099492252 
+2025-06-18 10:36:11,680 - root - INFO - Training network 12
+2025-06-18 10:36:19,514 - root - INFO - Training network 13. n_training: 571
+2025-06-18 10:36:22,794 - root - INFO - Training network 13 with 17 epochs index 1 on: 0.7201786713751369 
+2025-06-18 10:36:22,795 - root - INFO - Training network 13
+2025-06-18 10:36:28,204 - root - INFO - Training network 14. n_training: 491
+2025-06-18 10:36:31,286 - root - INFO - Training network 14 with 19 epochs index 1 on: 0.7967823231067194 
+2025-06-18 10:36:31,286 - root - INFO - Training network 14
+2025-06-18 10:36:35,643 - root - INFO - Training network 15. n_training: 583
+2025-06-18 10:36:38,404 - root - INFO - Training network 15 with 21 epochs index 1 on: 0.9106034142717196 
+2025-06-18 10:36:38,405 - root - INFO - Training network 15
+2025-06-18 10:36:44,129 - root - INFO - Training network 16. n_training: 572
+2025-06-18 10:36:46,976 - root - INFO - Training network 16 with 14 epochs index 1 on: 0.5644593982575703 
+2025-06-18 10:36:46,977 - root - INFO - Training network 16
+2025-06-18 10:36:51,454 - root - INFO - Training network 17. n_training: 607
+2025-06-18 10:36:54,604 - root - INFO - Training network 17 with 15 epochs index 1 on: 0.6283000280651184 
+2025-06-18 10:36:54,605 - root - INFO - Training network 17
+2025-06-18 10:36:59,726 - root - INFO - Training network 18. n_training: 770
+2025-06-18 10:37:02,855 - root - INFO - Training network 18 with 15 epochs index 1 on: 0.5906485099040631 
+2025-06-18 10:37:02,855 - root - INFO - Training network 18
+2025-06-18 10:37:09,357 - root - INFO - Training network 19. n_training: 464
+2025-06-18 10:37:12,514 - root - INFO - Training network 19 with 20 epochs index 1 on: 0.8373982895669181 
+2025-06-18 10:37:12,514 - root - INFO - Training network 19
+2025-06-18 10:37:17,752 - root - INFO - Training network 20. n_training: 328
+2025-06-18 10:37:20,883 - root - INFO - Training network 20 with 21 epochs index 1 on: 0.9168078974363199 
+2025-06-18 10:37:20,883 - root - INFO - Training network 20
+2025-06-18 10:37:24,772 - root - INFO - Training network 21. n_training: 513
+2025-06-18 10:37:28,327 - root - INFO - Training network 21 with 22 epochs index 1 on: 0.9709209962410491 
+2025-06-18 10:37:28,327 - root - INFO - Training network 21
+2025-06-18 10:37:35,752 - root - INFO - Training network 22. n_training: 587
+2025-06-18 10:37:39,198 - root - INFO - Training network 22 with 19 epochs index 1 on: 0.7838364017107271 
+2025-06-18 10:37:39,198 - root - INFO - Training network 22
+2025-06-18 10:37:46,241 - root - INFO - Training network 23. n_training: 271
+2025-06-18 10:37:49,686 - root - INFO - Training network 23 with 22 epochs index 1 on: 0.9610833497982679 
+2025-06-18 10:37:49,686 - root - INFO - Training network 23
+2025-06-18 10:37:53,450 - root - INFO - Training network 24. n_training: 565
+2025-06-18 10:37:56,882 - root - INFO - Training network 24 with 16 epochs index 1 on: 0.6722001900363688 
+2025-06-18 10:37:56,882 - root - INFO - Training network 24
+2025-06-18 10:38:02,527 - root - INFO - Training network 25. n_training: 625
+2025-06-18 10:38:05,864 - root - INFO - Training network 25 with 15 epochs index 1 on: 0.6128243557643218 
+2025-06-18 10:38:05,864 - root - INFO - Training network 25
+2025-06-18 10:38:11,568 - root - INFO - Training network 26. n_training: 717
+2025-06-18 10:38:14,792 - root - INFO - Training network 26 with 10 epochs index 1 on: 0.34581700861885034 
+2025-06-18 10:38:14,792 - root - INFO - Training network 26
+2025-06-18 10:38:18,940 - root - INFO - Training network 27. n_training: 509
+2025-06-18 10:38:22,075 - root - INFO - Training network 27 with 18 epochs index 1 on: 0.7489825506511171 
+2025-06-18 10:38:22,075 - root - INFO - Training network 27
+2025-06-18 10:38:27,252 - root - INFO - Training network 28. n_training: 293
+2025-06-18 10:38:30,394 - root - INFO - Training network 28 with 20 epochs index 1 on: 0.8480712514560619 
+2025-06-18 10:38:30,394 - root - INFO - Training network 28
+2025-06-18 10:38:33,723 - root - INFO - Training network 29. n_training: 455
+2025-06-18 10:38:36,869 - root - INFO - Training network 29 with 21 epochs index 1 on: 0.9001087649630988 
+2025-06-18 10:38:36,869 - root - INFO - Training network 29
+2025-06-18 10:38:42,298 - root - INFO - Training network 30. n_training: 582
+2025-06-18 10:38:45,446 - root - INFO - Training network 30 with 20 epochs index 1 on: 0.8358992500887539 
+2025-06-18 10:38:45,446 - root - INFO - Training network 30
+2025-06-18 10:38:52,049 - root - INFO - Training network 31. n_training: 532
+2025-06-18 10:38:55,242 - root - INFO - Training network 31 with 21 epochs index 1 on: 0.8926323315679277 
+2025-06-18 10:38:55,242 - root - INFO - Training network 31
+2025-06-18 10:39:02,260 - root - INFO - Training network 32. n_training: 449
+2025-06-18 10:39:05,409 - root - INFO - Training network 32 with 21 epochs index 1 on: 0.9223622045413649 
+2025-06-18 10:39:05,409 - root - INFO - Training network 32
+2025-06-18 10:39:10,821 - root - INFO - Training network 33. n_training: 527
+2025-06-18 10:39:13,969 - root - INFO - Training network 33 with 17 epochs index 1 on: 0.7201880304431283 
+2025-06-18 10:39:13,969 - root - INFO - Training network 33
+2025-06-18 10:39:19,117 - root - INFO - Training network 34. n_training: 629
+2025-06-18 10:39:22,542 - root - INFO - Training network 34 with 18 epochs index 1 on: 0.735322076405013 
+2025-06-18 10:39:22,542 - root - INFO - Training network 34
+2025-06-18 10:39:30,010 - root - INFO - Training network 35. n_training: 457
+2025-06-18 10:39:33,185 - root - INFO - Training network 35 with 19 epochs index 1 on: 0.7871238034262058 
+2025-06-18 10:39:33,185 - root - INFO - Training network 35
+2025-06-18 10:39:38,254 - root - INFO - Training network 36. n_training: 514
+2025-06-18 10:39:41,343 - root - INFO - Training network 36 with 21 epochs index 1 on: 0.8908369997251808 
+2025-06-18 10:39:41,343 - root - INFO - Training network 36
+2025-06-18 10:39:46,566 - root - INFO - Training network 37. n_training: 648
+2025-06-18 10:39:49,432 - root - INFO - Training network 37 with 16 epochs index 1 on: 0.633619664395698 
+2025-06-18 10:39:49,433 - root - INFO - Training network 37
+2025-06-18 10:39:54,445 - root - INFO - Training network 38. n_training: 299
+2025-06-18 10:39:57,315 - root - INFO - Training network 38 with 23 epochs index 1 on: 0.9839108523203367 
+2025-06-18 10:39:57,315 - root - INFO - Training network 38
+2025-06-18 10:40:00,903 - root - INFO - Training network 39. n_training: 553
+2025-06-18 10:40:04,145 - root - INFO - Training network 39 with 14 epochs index 1 on: 0.5651592132847173 
+2025-06-18 10:40:04,145 - root - INFO - Training network 39
+2025-06-18 10:40:08,822 - root - INFO - Training network 40. n_training: 619
+2025-06-18 10:40:12,277 - root - INFO - Training network 40 with 16 epochs index 1 on: 0.634841484058472 
+2025-06-18 10:40:12,277 - root - INFO - Training network 40
+2025-06-18 10:40:18,445 - root - INFO - Training network 41. n_training: 487
+2025-06-18 10:40:21,893 - root - INFO - Training network 41 with 20 epochs index 1 on: 0.8510643922291967 
+2025-06-18 10:40:21,893 - root - INFO - Training network 41
+2025-06-18 10:40:27,983 - root - INFO - Training network 42. n_training: 405
+2025-06-18 10:40:31,426 - root - INFO - Training network 42 with 22 epochs index 1 on: 0.9545218271409075 
+2025-06-18 10:40:31,426 - root - INFO - Training network 42
+2025-06-18 10:40:37,099 - root - INFO - Training network 43. n_training: 506
+2025-06-18 10:40:40,557 - root - INFO - Training network 43 with 18 epochs index 1 on: 0.7789907375035376 
+2025-06-18 10:40:40,557 - root - INFO - Training network 43
+2025-06-18 10:40:46,333 - root - INFO - Training network 44. n_training: 665
+2025-06-18 10:40:49,900 - root - INFO - Training network 44 with 19 epochs index 1 on: 0.8051623398991579 
+2025-06-18 10:40:49,900 - root - INFO - Training network 44
+2025-06-18 10:40:57,997 - root - INFO - Training network 45. n_training: 643
+2025-06-18 10:41:01,269 - root - INFO - Training network 45 with 21 epochs index 1 on: 0.9222971137970921 
+2025-06-18 10:41:01,269 - root - INFO - Training network 45
+2025-06-18 10:41:09,556 - root - INFO - Training network 46. n_training: 557
+2025-06-18 10:41:12,815 - root - INFO - Training network 46 with 15 epochs index 1 on: 0.5941971641451957 
+2025-06-18 10:41:12,815 - root - INFO - Training network 46
+2025-06-18 10:41:18,330 - root - INFO - Training network 47. n_training: 515
+2025-06-18 10:41:21,804 - root - INFO - Training network 47 with 17 epochs index 1 on: 0.7064196009037141 
+2025-06-18 10:41:21,804 - root - INFO - Training network 47
+2025-06-18 10:41:27,472 - root - INFO - Training network 48. n_training: 662
+2025-06-18 10:41:31,013 - root - INFO - Training network 48 with 19 epochs index 1 on: 0.7962930247745805 
+2025-06-18 10:41:31,013 - root - INFO - Training network 48
+2025-06-18 10:41:39,321 - root - INFO - Training network 49. n_training: 208
+2025-06-18 10:41:43,010 - root - INFO - Training network 49 with 23 epochs index 1 on: 0.9804392008331789 
+2025-06-18 10:41:43,010 - root - INFO - Training network 49
+2025-06-18 10:41:46,419 - root - INFO - Training network 50. n_training: 820
+2025-06-18 10:41:50,010 - root - INFO - Training network 50 with 17 epochs index 1 on: 0.6863066993842928 
+2025-06-18 10:41:50,010 - root - INFO - Training network 50
+2025-06-18 10:41:59,389 - root - INFO - Training network 51. n_training: 322
+2025-06-18 10:42:02,876 - root - INFO - Training network 51 with 19 epochs index 1 on: 0.8244828478728736 
+2025-06-18 10:42:02,876 - root - INFO - Training network 51
+2025-06-18 10:42:07,150 - root - INFO - Training network 52. n_training: 325
+2025-06-18 10:42:10,596 - root - INFO - Training network 52 with 19 epochs index 1 on: 0.8277946208860875 
+2025-06-18 10:42:10,596 - root - INFO - Training network 52
+2025-06-18 10:42:14,700 - root - INFO - Training network 53. n_training: 611
+2025-06-18 10:42:18,286 - root - INFO - Training network 53 with 16 epochs index 1 on: 0.6371983329788137 
+2025-06-18 10:42:18,286 - root - INFO - Training network 53
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 14659144.0 ON paul32 CANCELLED AT 2025-06-18T10:42:21 ***
+slurmstepd: error: *** JOB 14659144 ON paul32 CANCELLED AT 2025-06-18T10:42:21 ***
