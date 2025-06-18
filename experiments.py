@@ -625,7 +625,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
                 logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
 
             # skip training if SI < 0.2
-            if "tresh" in args.local_epochs_test and si < 0.2:
+            if "thresh" in args.local_epochs_test and si < 0.2:
                 logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(si)))
                 continue
         else:
@@ -843,8 +843,10 @@ if __name__ == '__main__':
     else:
         algorithm_subpath = args.alg
     log_path = os.path.join("results", args.experiment, args.dataset, args.partition, str(args.n_parties),
-                            algorithm_subpath, str(args.epochs) + "E", str(args.lr) + "LR", args.local_epochs_test,
-                            str(args.si_local_epochs), str(args.combined_si_alpha), exp_tag)
+                            algorithm_subpath, str(args.epochs) + "E", str(args.lr) + "LR",
+                            str(args.local_epochs_test) if args.local_epochs_test is not None else "NoLeTest",
+                            str(args.si_local_epochs) if args.si_local_epochs is not None else "NoSiEpoch",
+                            str(args.combined_si_alpha) if args.combined_si_alpha is not None else "NoCombAlpha", exp_tag)
     mkdirs(log_path)
     mkdirs(log_path + '/plots')
 
