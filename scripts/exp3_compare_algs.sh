@@ -1,10 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=e3
-#SBATCH --partition=paul-long
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=4-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
@@ -31,7 +31,7 @@ do
     		--n_parties=50 \
     		--rho=0.9 \
     		--mu=0.01 \
-    		--comm_round=50 \
+    		--comm_round=25 \
     		--daisy=5 \
     		--daisy_perm=rand \
     		--partition=mixed-dirichlet \
