@@ -9,3 +9,4 @@ tmp/
 partitions/
 *.pkl
 .DS_Store
+figs/

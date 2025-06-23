@@ -619,8 +619,14 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
 
             if label_dis is not None and args.si_local_epochs is not None:
                 si = float(label_dis[local_data_index[net_id]][si_idx])
-                n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
-                n_epoch = max(1,n_epoch) # min 1 epoch
+
+                if "sild-lr" in args.local_epochs_test:
+                    local_epochs = float(args.lr) + ( si / 100 ) # [0.001, 0.011]
+                    n_epoch = args.epochs
+                else:
+                    n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
+                    local_epochs = args.lr
+                    n_epoch = max(1,n_epoch) # min 1 epoch
 
                 logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
 
@@ -630,9 +636,10 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
                 continue
         else:
             n_epoch = args.epochs
+            local_epochs = args.lr
             logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
 
-        train_net(net_id, net, train_dl_local, test_dl, n_epoch, args.lr, args.optimizer, args, device=device)
+        train_net(net_id, net, train_dl_local, test_dl, n_epoch, local_epochs, args.optimizer, args, device=device)
 
     nets_list = list(nets.values())
     return nets_list
