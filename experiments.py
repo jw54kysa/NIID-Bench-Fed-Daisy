@@ -621,14 +621,14 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
                 si = float(label_dis[local_data_index[net_id]][si_idx])
 
                 if "sild-lr" in args.local_epochs_test:
-                    local_epochs = float(args.lr) + ( si / 100 ) # [0.001, 0.011]
+                    local_epochs = float(args.lr) + ( si / 200 ) # [0.001, 0.011]
                     n_epoch = args.epochs
+                    logger.info(f"Training network {net_id} with {n_epoch} epochs with LR{local_epochs} on: {si} ")
                 else:
                     n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
                     local_epochs = args.lr
                     n_epoch = max(1,n_epoch) # min 1 epoch
-
-                logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
+                    logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
 
             # skip training if SI < 0.2
             if "thresh" in args.local_epochs_test and si < 0.2:

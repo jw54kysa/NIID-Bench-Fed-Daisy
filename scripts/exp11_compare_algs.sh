@@ -13,24 +13,23 @@
 
 for alg in feddc
 do
-	for epoch in 10
+	for epoch in 20 10
 	do 
 		srun singularity exec FEDDC.sif \
   		python3.9 -u experiments.py \
     		--model=simple-cnn \
     		--dataset=cifar10 \
     		--alg=$alg \
-    		--lr=0.01 \
+    		--lr=0.001 \
     		--batch-size=64 \
     		--epochs=$epoch \
     		--n_parties=100 \
     		--rho=0.9 \
     		--mu=0.01 \
-    		--comm_round=150 \
+    		--comm_round=100 \
     		--daisy=10 \
     		--daisy_perm=prob_size \
     		--partition=iid-diff-quantity-rand \
-    		--partition_path='partitions/cifar10/iid-diff-quantity-rand/100/partition_tuple.pkl' \
     		--beta=0.5 \
     		--device='cpu' \
     		--datadir='./data/' \
@@ -38,6 +37,6 @@ do
     		--noise=0 \
     		--sample=1 \
     		--init_seed=0 \
-    		--experiment='E11-long'
+    		--experiment='E11-long-2-8'
 	done
 done

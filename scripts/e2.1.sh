@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=e2.0
+#SBATCH --job-name=e2.0.lrtest
 #SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -37,8 +37,8 @@ do
       --comm_round=25 \
       --daisy=5 \
       --daisy_perm=rand \
-      --local_epochs_test='sild-chi_thresh' \
-      --si_local_epochs=0.23 \
+      --local_epochs_test='sild-kl_sild-lr' \
+      --si_local_epochs=0.5 \
       --partition=noniid-labeldir \
       --partition_path='partitions/cifar10/noniid-labeldir/100/partition_tuple.pkl' \
       --beta=0.5 \
@@ -48,6 +48,6 @@ do
       --noise=0 \
       --sample=1 \
       --init_seed=0 \
-      --experiment='E2.0'
+      --experiment='E2.0.LRtest'
   done
 done
