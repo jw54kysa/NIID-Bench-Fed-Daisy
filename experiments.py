@@ -625,7 +625,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
                     n_epoch = args.epochs
                     logger.info(f"Training network {net_id} with {n_epoch} epochs with LR{local_epochs} on: {si} ")
                 else:
-                    n_epoch = int(args.epochs * (si + float(args.si_local_epochs)))
+                    n_epoch = int(int(args.epochs) * si * float(args.si_local_epochs))
                     local_epochs = args.lr
                     n_epoch = max(1,n_epoch) # min 1 epoch
                     logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
