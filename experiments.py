@@ -584,7 +584,7 @@ def view_image(train_dataloader):
         exit(0)
 
 
-def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=None, test_dl=None, device="cpu"):
+def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh, label_dis=None, test_dl=None, device="cpu"):
     avg_acc = 0.0
 
     for net_id, net in nets.items():
@@ -612,7 +612,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
         if args.local_epochs_test is not None:
             if "sild-chi" in args.local_epochs_test:
                 si_idx = 1
-            if "sild-kl" in args.local_epochs_test:
+            elif "sild-kl" in args.local_epochs_test:
                 si_idx = 3
             elif "sicomb" in args.local_epochs_test:
                 si_idx = 4
@@ -631,8 +631,8 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, lab
                     logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
 
             # skip training if SI < 0.2
-            if "thresh" in args.local_epochs_test and si < 0.2:
-                logger.info("Skipped network %s with SI: %.4f " % (str(net_id), float(si)))
+            if "thresh" in args.local_epochs_test and si < thresh:
+                logger.info("Skipped network %s with SI: %.4f and  thresh: %.4f " % (str(net_id), float(si), float(thresh)))
                 continue
         else:
             n_epoch = args.epochs
@@ -835,6 +835,27 @@ def get_partition_dict(dataset, partition, n_parties, init_seed=0, datadir='./da
 
     return net_dataidx_map
 
+def get_thresh_val(percent:float, label_dis):
+
+    if args.local_epochs_test is not None:
+        if "sild-chi" in args.local_epochs_test:
+            si_idx = 1
+        elif "sild-kl" in args.local_epochs_test:
+            si_idx = 3
+        elif "sicomb" in args.local_epochs_test:
+            si_idx = 4
+
+        si_liste = [float(label_dis[net_id][si_idx]) for net_id in label_dis.keys()]
+
+        werte = np.sort(si_liste)
+
+        for wert in werte:
+            anteil = np.mean(werte < wert)
+            if anteil >= percent:
+                print('>>>>>> Found THRESH value: ', wert)
+                return wert
+
+
 if __name__ == '__main__':
 
     # torch.set_printoptions(profile="full")
@@ -924,8 +945,6 @@ if __name__ == '__main__':
         X_train, y_train, X_test, y_test, net_dataidx_map, traindata_cls_counts = partition_data(
             args.dataset, args.datadir, args.logdir, args.partition, args.n_parties, log_path, beta=args.beta)
 
-        #plot_data_dis(net_dataidx_map, log_path, args)
-
         # Sample-Index Label Distribution
         sample_index_label_dis = create_data_dis_plots(net_dataidx_map, log_path + '/plots/plot', args)
         # {client_id:
@@ -934,6 +953,8 @@ if __name__ == '__main__':
         # 2: kl,
         # 3: norm_kl,
         # 4: combined)
+
+    thresh_value = get_thresh_val(0.1, sample_index_label_dis)
 
     n_classes = len(np.unique(y_train))
 
@@ -1019,7 +1040,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             local_data_index = np.arange(args.n_parties)
-            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
+            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
@@ -1117,7 +1138,7 @@ if __name__ == '__main__':
 
             for daisy in range(args.daisy):
 
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
