@@ -625,7 +625,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thr
                     n_epoch = args.epochs
                     logger.info(f"Training network {net_id} with {n_epoch} epochs with LR{local_epochs} on: {si} ")
                 else:
-                    n_epoch = int(int(args.epochs) * si * float(args.si_local_epochs))
+                    n_epoch = round(int(args.epochs) * si * float(args.si_local_epochs))
                     local_epochs = args.lr
                     n_epoch = max(1,n_epoch) # min 1 epoch
                     logger.info(f"Training network {net_id} with {n_epoch} epochs index {si_idx} on: {si} ")
@@ -1023,15 +1023,15 @@ if __name__ == '__main__':
 
         results = []
 
-        for round in range(args.comm_round):
-            logger.warning("in comm round: %s from %s" % (str(round), str(args.comm_round)))
+        for c_round in range(args.comm_round):
+            logger.warning("in comm round: %s from %s" % (str(c_round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1066,7 +1066,7 @@ if __name__ == '__main__':
                                                          device=device)
 
             results.append({
-                "Round": round,
+                "Round": c_round,
                 "Epoch": args.epochs,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
@@ -1075,7 +1075,7 @@ if __name__ == '__main__':
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
+                f.write(', '.join([str(c_round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1120,15 +1120,15 @@ if __name__ == '__main__':
         if args.daisy is None or args.daisy == 0:
             args.daisy = 1
 
-        for round in range(args.comm_round):
-            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
+        for c_round in range(args.comm_round):
+            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(c_round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1202,7 +1202,7 @@ if __name__ == '__main__':
             test_acc, conf_matrix, f1 = compute_accuracy(global_model, test_dl_global, get_confusion_matrix=True, w_f1=True, device=device)
 
             results.append({
-                "Round": round,
+                "Round": c_round,
                 "Epoch": args.epochs,
                 "Train Accuracy": 0,
                 "Test Accuracy": test_acc,
@@ -1211,7 +1211,7 @@ if __name__ == '__main__':
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(0), str(test_acc), str(0), str(time.time() - start_time)]) + '\n')
+                f.write(', '.join([str(c_round), str(0), str(test_acc), str(0), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
@@ -1245,15 +1245,15 @@ if __name__ == '__main__':
 
         results = []
 
-        for round in range(args.comm_round):
-            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(round), str(args.comm_round)))
+        for c_round in range(args.comm_round):
+            logger.warning(">>>>>>>>>>>>> in comm round: %s from %s" % (str(c_round), str(args.comm_round)))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1289,14 +1289,14 @@ if __name__ == '__main__':
                                                          device=device)
 
             results.append({
-                "Round": round,
+                "Round": c_round,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
+                f.write(', '.join([str(c_round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1328,15 +1328,15 @@ if __name__ == '__main__':
 
         results = []
 
-        for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+        for c_round in range(args.comm_round):
+            logger.info("in comm round:" + str(c_round))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1372,14 +1372,14 @@ if __name__ == '__main__':
                                                          device=device)
 
             results.append({
-                "Round": round,
+                "Round": c_round,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
+                f.write(', '.join([str(c_round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1419,15 +1419,15 @@ if __name__ == '__main__':
 
         results = []
 
-        for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+        for c_round in range(args.comm_round):
+            logger.info("in comm round:" + str(c_round))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1485,14 +1485,14 @@ if __name__ == '__main__':
                                                          device=device)
 
             results.append({
-                "Round": round,
+                "Round": c_round,
                 "Train Accuracy": train_acc,
                 "Test Accuracy": test_acc,
                 "Confusion Matrix": conf_matrix.tolist()
             })
 
             with open(os.path.join(log_path, 'results.csv'), 'a') as f:
-                f.write(', '.join([str(round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
+                f.write(', '.join([str(c_round), str(train_acc), str(test_acc), str(f1), str(time.time() - start_time)]) + '\n')
 
             logger.info('>> Global Model Train accuracy: %f' % train_acc)
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
@@ -1522,15 +1522,15 @@ if __name__ == '__main__':
             for param in net.parameters():
                 param.requires_grad = False
 
-        for round in range(args.comm_round):
-            logger.info("in comm round:" + str(round))
+        for c_round in range(args.comm_round):
+            logger.info("in comm round:" + str(c_round))
 
             arr = np.arange(args.n_parties)
             np.random.shuffle(arr)
             selected = arr[:int(args.n_parties * args.sample)]
 
             global_para = global_model.state_dict()
-            if round == 0:
+            if c_round == 0:
                 if args.is_same_initial:
                     for idx in selected:
                         nets[idx].load_state_dict(global_para)
@@ -1539,7 +1539,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             local_train_net_moon(nets, selected, args, net_dataidx_map, test_dl = test_dl_global, global_model=global_model,
-                                 prev_model_pool=old_nets_pool, round=round, device=device)
+                                 prev_model_pool=old_nets_pool, round=c_round, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model

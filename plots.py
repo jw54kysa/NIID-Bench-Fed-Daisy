@@ -83,22 +83,22 @@ def print_plot(path, label_distribution, data):
         if appendix in ['_chi2']:
             normalized_chi2_sorted = [label_distribution[client][sorting_idx] for client in clients_sorted]
             ax2 = ax1.twinx()
-            ax2.plot(np.arange(len(normalized_chi2_sorted)) + 1, normalized_chi2_sorted, label='Chi²-Distanz (normalisiert)',
+            ax2.plot(np.arange(len(normalized_chi2_sorted)) + 1, normalized_chi2_sorted, label=r"$SI^{\chi^2}$",
                      color='red',
                      marker='o')
             if appendix == '_chi2':
-                ax2.set_ylabel("Chi²-Distanz", color='red', fontsize=14)
+                ax2.set_ylabel(r"$SI^{\chi^2}$", color='red', fontsize=14)
                 ax2.tick_params(axis='y', labelcolor='red')
             ax2.legend(loc='upper left')
 
         if appendix in ['_kl_div', '_kl_and_combined']:
             normalized_kl_sorted = [label_distribution[client][3] for client in clients_sorted]
             ax2 = ax1.twinx()
-            ax2.plot(np.arange(len(normalized_kl_sorted)) + 1, normalized_kl_sorted, label='KL-Divergenz (normalisiert)',
+            ax2.plot(np.arange(len(normalized_kl_sorted)) + 1, normalized_kl_sorted, label=r"$SI^{KL}$",
                      color='blue',
                      marker='o')
             if appendix == '_kl_div':
-                ax2.set_ylabel("KL-Divergenz", color='blue', fontsize=14)
+                ax2.set_ylabel(r"$SI^{KL}$", color='blue', fontsize=14)
                 ax2.tick_params(axis='y', labelcolor='blue')
                 ax2.legend(loc='upper left')
             else:
@@ -107,10 +107,10 @@ def print_plot(path, label_distribution, data):
         if appendix in ['_combined', '_kl_and_combined']:
             combined_ld_sorted = [label_distribution[client][sorting_idx] for client in clients_sorted]
             ax3 = ax1.twinx()
-            ax3.plot(np.arange(len(combined_ld_sorted)) + 1, combined_ld_sorted, label='Kombinierter Sampling-Index (normalisiert)',
+            ax3.plot(np.arange(len(combined_ld_sorted)) + 1, combined_ld_sorted, label=r"$SI^{comb}$",
                      color='black',
                      marker='o')
-            ax3.set_ylabel("Kombinierter Sampling-Index", color='black', fontsize=14)
+            ax3.set_ylabel(r"$SI^{comb}$", color='black', fontsize=14)
             ax3.tick_params(axis='y', labelcolor='black')
             ax3.legend(loc='upper left')
 

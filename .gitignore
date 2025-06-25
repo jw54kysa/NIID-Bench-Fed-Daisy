@@ -4,9 +4,11 @@ data/
 niid-b/
 *.sif
 Singularity
-compare_results.ipynb
 tmp/
 partitions/
 *.pkl
 .DS_Store
 figs/
+
+evaluateE2.ipynb
+compare_results.ipynb
