@@ -1,0 +1,13 @@
+2025-06-23 15:42:38,575 - root - INFO - cpu
+2025-06-23 15:42:38,576 - root - INFO - ####################################################################################################
+2025-06-23 15:42:38,579 - root - WARNING - Using Partition Pickle File
+2025-06-23 15:45:25,044 - root - INFO - >>>> Initializing nets
+2025-06-23 15:45:25,145 - root - WARNING - >>>>>>>>>>>>> in comm round: 0 from 25
+2025-06-23 15:45:25,166 - root - INFO - Training network 0. n_training: 395
+Traceback (most recent call last):
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 1120, in <module>
+    local_train_net(nets, selected, args, net_dataidx_map, local_data_index, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 642, in local_train_net
+    train_net(net_id, net, train_dl_local, test_dl, n_epoch, local_epochs, args.optimizer, args, device=device)
+UnboundLocalError: local variable 'n_epoch' referenced before assignment
+srun: error: paul02: task 0: Exited with exit code 1
