@@ -7,14 +7,14 @@ from scipy.special import rel_entr
 from sympy.physics.quantum.gate import normalized
 from utils import *
 
-# PLOT SAMPLE SIZE AND VISITS
-def plot_rss_visits(client_idxs, visits, path):
+# Creates plot for permutation visits
+def plot_permutation_visits(client_idxs, visits, path):
 
     counts = [0 for _ in range(len(client_idxs))]
     for idx, l in client_idxs.items():
         counts[idx] = len(l)
 
-    fig, ax1 = plt.subplots(figsize=(16, 8))
+    fig, ax1 = plt.subplots(figsize=(10, 4))
 
     if visits is not None:
         combined = sorted(zip(counts, visits.values()), key=lambda x: x[0])
@@ -24,65 +24,22 @@ def plot_rss_visits(client_idxs, visits, path):
         visits = list(sorted_visits)
 
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
-    ax1.bar(np.arange(len(counts)), counts, label='Sample Size', alpha=0.7, color='blue')
-    ax1.set_title("Client Sample Size")
-    ax1.set_xlabel("Client")
-    ax1.set_ylabel("Sample Size", color='blue')
+    ax1.bar(np.arange(len(counts)) + 1, counts, alpha=0.7, color='blue')
+    ax1.set_xlabel("Clients", fontsize=14)
+    ax1.set_ylabel("Datensatzgröße", color='blue', fontsize=14)
     ax1.tick_params(axis='y', labelcolor='blue')
 
     if visits is not None:
         ax2 = ax1.twinx()
-        ax2.plot(np.arange(len(visits)), visits, label='Visits', color='red', marker='o')
-        ax2.set_ylabel("Visits", color='red')
+        ax2.plot(np.arange(len(visits)) + 1, visits, label='Besuche', color='red', marker='o')
+        ax2.set_ylabel("Visits", color='red', fontsize=14)
         ax2.tick_params(axis='y', labelcolor='red')
 
-    fig.legend()
+    fig.legend(loc='upper left')
+    plt.tight_layout()
+    plt.savefig(path + "/permutation_visits.png", dpi=300)
 
-    plt.savefig(path + "/rss_plt.png")
-
-def plot_data_dis(client_idxs, path, args):
-
-    data = {}
-    for idx, l in client_idxs.items():
-        train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, l,
-                                                             0)
-        label_counter = Counter()
-        for inputs, clients in train_dl_local:
-            label_counter.update(clients.tolist())
-
-        data[idx] = dict(label_counter)
-
-    clients = list(data.keys())
-    categories = set(cat for label in data for cat in data[label].keys())
-    category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
-
-    client_sums = {client: sum(data[client].values()) for client in clients}
-
-    clients_sorted = sorted(clients, key=lambda client: client_sums[client])
-
-    print(clients)
-    print(clients_sorted)
-
-    fig, ax = plt.subplots(figsize=(16, 8))
-    bottom = np.zeros(len(clients))
-
-    sorted_categories = sorted(category_values.items(), key=lambda x: x[1])
-
-    for category in categories:
-        values = category_values[category]
-        val = [values[clients.index(client)] for client in clients_sorted]
-        ax.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
-        bottom += np.array(val)  # Update the bottom for the next category
-
-    # Adding clients and title
-    ax.set_xlabel('Client')
-    ax.set_ylabel('Sample Size')
-    ax.set_title('Sample Size & Label Distribution per Client')
-    ax.legend()
-
-    plt.savefig(path + "/rss_plt_niid.png")
-
-# Print several plots with data distribution and sample index
+# Creates several plots with data distribution and sample index
 def print_plot(path, label_distribution, data):
     clients = list(data.keys())
 
@@ -90,17 +47,20 @@ def print_plot(path, label_distribution, data):
     categories = set(cat for label in data for cat in data[label].keys())
     category_values = {category: [data[label].get(category, 0) for label in clients] for category in categories}
 
-    for appendix in ['_sample_size', '_kl_div', '_combined', '_kl_and_combined']:
+    for appendix in ['_sample_size', '_chi2', '_kl_div', '_combined', '_kl_and_combined']:
 
         # Sorting
+        # (chi2, normal_chi2, kl, normal_kl, combined)
         if appendix == '_sample_size':
             sorting_idx = None
-        elif appendix == '_kl_div':
+        elif appendix == '_chi2':
             sorting_idx = 1
+        elif appendix == '_kl_div':
+            sorting_idx = 3
         elif appendix == '_combined':
-            sorting_idx = 2
+            sorting_idx = 4
         elif appendix == '_kl_and_combined':
-            sorting_idx == 1
+            sorting_idx == 4
         else:
             sorting_idx = None
 
@@ -111,46 +71,61 @@ def print_plot(path, label_distribution, data):
             clients_sorted = sorted(clients, key=lambda client: client_sums[client])
 
         # FIG
-        fig, ax1 = plt.subplots(figsize=(16, 8))
+        fig, ax1 = plt.subplots(figsize=(10, 4))
         bottom = np.zeros(len(clients))
 
         for category in categories:
             values = category_values[category]
             val = [values[clients.index(client)] for client in clients_sorted]
-            ax1.bar(np.arange(len(clients)), val, bottom=bottom, label=category)
+            ax1.bar(np.arange(len(clients)) + 1, val, bottom=bottom, label=category)
             bottom += np.array(val)
 
-        if appendix in ['_kl_div', '_kl_and_combined']:
-            normalized_kl_sorted = [label_distribution[client][1] for client in clients_sorted]
+        if appendix in ['_chi2']:
+            normalized_chi2_sorted = [label_distribution[client][sorting_idx] for client in clients_sorted]
             ax2 = ax1.twinx()
-            ax2.plot(np.arange(len(normalized_kl_sorted)), normalized_kl_sorted, label='Normalized KL-Divergenz',
+            ax2.plot(np.arange(len(normalized_chi2_sorted)) + 1, normalized_chi2_sorted, label='Chi²-Distanz (normalisiert)',
                      color='red',
                      marker='o')
-            if appendix == '_kl_div':
-                ax2.set_ylabel("Normalized KL-Divergenz", color='red')
+            if appendix == '_chi2':
+                ax2.set_ylabel("Chi²-Distanz", color='red', fontsize=14)
                 ax2.tick_params(axis='y', labelcolor='red')
-            ax2.legend(loc=0)
+            ax2.legend(loc='upper left')
+
+        if appendix in ['_kl_div', '_kl_and_combined']:
+            normalized_kl_sorted = [label_distribution[client][3] for client in clients_sorted]
+            ax2 = ax1.twinx()
+            ax2.plot(np.arange(len(normalized_kl_sorted)) + 1, normalized_kl_sorted, label='KL-Divergenz (normalisiert)',
+                     color='blue',
+                     marker='o')
+            if appendix == '_kl_div':
+                ax2.set_ylabel("KL-Divergenz", color='blue', fontsize=14)
+                ax2.tick_params(axis='y', labelcolor='blue')
+                ax2.legend(loc='upper left')
+            else:
+                ax2.legend(loc='upper left', bbox_to_anchor = (0, 0.91))
 
         if appendix in ['_combined', '_kl_and_combined']:
-            combined_ld_sorted = [label_distribution[client][2] for client in clients_sorted]
+            combined_ld_sorted = [label_distribution[client][sorting_idx] for client in clients_sorted]
             ax3 = ax1.twinx()
-            ax3.plot(np.arange(len(combined_ld_sorted)), combined_ld_sorted, label='Combined Sample Index',
+            ax3.plot(np.arange(len(combined_ld_sorted)) + 1, combined_ld_sorted, label='Kombinierter Sampling-Index (normalisiert)',
                      color='black',
                      marker='o')
-            ax3.set_ylabel("Normalized Combined Sample Index", color='black')
+            ax3.set_ylabel("Kombinierter Sampling-Index", color='black', fontsize=14)
             ax3.tick_params(axis='y', labelcolor='black')
-            ax3.legend(loc=0)
+            ax3.legend(loc='upper left')
 
         # Adding clients and title
-        ax1.set_xlabel('Client')
-        ax1.set_ylabel('Sample Size')
-        ax1.set_title('Sample Size & Label Distribution per Client')
-        # ax1.legend()
+        ax1.set_xlabel('Clients', fontsize=14)
+        ax1.set_ylabel('Datensatzgröße', fontsize=14)
 
+        plt.tight_layout()
         if path is not None:
-            plt.savefig(path + appendix + '.png')
+            plt.savefig(path + appendix + '.png', dpi=300)
 
-# Plot Label Distribution and Sampling Index Chi Stat
+# Creates label_distribution with:
+# { client_id: (chi2, normal_chi2, kl, normal_kl, combined) }
+#
+# plots sampling-index plots
 def create_data_dis_plots(client_idxs, path, args):
     label_distribution = {}
     data = {}

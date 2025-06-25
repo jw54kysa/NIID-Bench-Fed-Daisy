@@ -1169,7 +1169,7 @@ if __name__ == '__main__':
                 elif args.daisy_perm == 'mixed':
                     # probabilistic permutation on sample size
                     daisy_data_idx = list(net_dataidx_map.values())
-                    # use indx 4 for combined sample index
+                    # use idx 4 for combined sample index
                     label_scores = np.array([sample_index_label_dis[i][4] for i in range(len(sample_index_label_dis))])
 
                     permuted_data_idx = np.random.choice(range(len(label_scores)), size=len(label_scores), replace=True,
@@ -1215,7 +1215,7 @@ if __name__ == '__main__':
 
             logger.info('>> Global Model Test accuracy: %f' % test_acc)
 
-        plot_rss_visits(net_dataidx_map, visits, log_path)
+        plot_permutation_visits(net_dataidx_map, visits, log_path)
 
         # Convert the list of results to a pandas DataFrame
         df_results = pd.DataFrame(results)
