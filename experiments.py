@@ -584,7 +584,7 @@ def view_image(train_dataloader):
         exit(0)
 
 
-def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh, label_dis=None, test_dl=None, device="cpu"):
+def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, dataloaders, thresh, label_dis=None, test_dl=None, device="cpu"):
     avg_acc = 0.0
 
     for net_id, net in nets.items():
@@ -600,12 +600,14 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thr
         if net_id == args.n_parties - 1:
             noise_level = 0
 
-        if args.noise_type == 'space':
-            train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level, net_id, args.n_parties-1)
+        if dataloaders is not None:
+            local_training_dl = dataloaders[local_data_index[net_id]]
         else:
-            noise_level = args.noise / (args.n_parties - 1) * net_id
-            train_dl_local, test_dl_local, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level)
-        train_dl_global, test_dl_global, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32)
+            if args.noise_type == 'space':
+                local_training_dl, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level, net_id, args.n_parties-1)
+            else:
+                noise_level = args.noise / (args.n_parties - 1) * net_id
+                local_training_dl, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs, noise_level)
 
         # calculate local epochs based on label distribution
 
@@ -639,7 +641,7 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thr
             local_epochs = args.lr
             logger.info("Training network %s. with %s epochs" % (str(net_id), str(n_epoch)))
 
-        train_net(net_id, net, train_dl_local, test_dl, n_epoch, local_epochs, args.optimizer, args, device=device)
+        train_net(net_id, net, local_training_dl, test_dl, n_epoch, local_epochs, args.optimizer, args, device=device)
 
     nets_list = list(nets.values())
     return nets_list
@@ -999,6 +1001,14 @@ if __name__ == '__main__':
     with open(os.path.join(log_path, 'metas.txt'), 'a') as f:
         f.write(f'Total training data: {total_count} \n')
 
+    # Create Dataloaders
+    dataloaders = None
+    if args.partition == 'iid-diff-quantity-rand':
+        dataloaders = {}
+        for idx, data_idxs in net_dataidx_map.items():
+            local_training_dl, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, data_idxs)
+            dataloaders[idx] = local_training_dl
+
     # start timer
     start_time = time.time()
 
@@ -1040,7 +1050,7 @@ if __name__ == '__main__':
                     nets[idx].load_state_dict(global_para)
 
             local_data_index = np.arange(args.n_parties)
-            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
+            local_train_net(nets, selected, args, net_dataidx_map, local_data_index, dataloaders, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
             # update global model
             total_data_points = sum([len(net_dataidx_map[r]) for r in selected])
@@ -1138,7 +1148,7 @@ if __name__ == '__main__':
 
             for daisy in range(args.daisy):
 
-                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
+                local_train_net(nets, selected, args, net_dataidx_map, local_data_index, dataloaders, thresh_value, label_dis=sample_index_label_dis, test_dl = test_dl_global, device=device)
 
                 logger.warning(">>>>>>>>>>>>> DAISY chain %s" % str(daisy))
 
