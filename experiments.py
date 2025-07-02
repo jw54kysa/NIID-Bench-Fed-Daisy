@@ -574,7 +574,7 @@ def local_train_net_fedprox(nets, selected, global_model, args, net_dataidx_map,
             noise_level = 0
 
         if dataloaders is not None:
-            train_dl_local = dataloaders[local_data_index[net_id]]
+            train_dl_local = dataloaders[net_id]
         else:
             if args.noise_type == 'space':
                 train_dl_local, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs,
@@ -613,7 +613,7 @@ def local_train_net_scaffold(nets, selected, global_model, c_nets, c_global, arg
             noise_level = 0
 
         if dataloaders is not None:
-            train_dl_local = dataloaders[local_data_index[net_id]]
+            train_dl_local = dataloaders[net_id]
         else:
             if args.noise_type == 'space':
                 train_dl_local, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs,
@@ -671,7 +671,7 @@ def local_train_net_fednova(nets, selected, global_model, args, net_dataidx_map,
             noise_level = 0
 
         if dataloaders is not None:
-            train_dl_local = dataloaders[local_data_index[net_id]]
+            train_dl_local = dataloaders[net_id]
         else:
             if args.noise_type == 'space':
                 train_dl_local, _, _, _ = get_dataloader(args.dataset, args.datadir, args.batch_size, 32, dataidxs,
