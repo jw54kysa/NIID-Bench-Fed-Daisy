@@ -1172,7 +1172,7 @@ if __name__ == '__main__':
                 for idx in selected:
                     nets[idx].load_state_dict(global_para)
 
-            local_train_net_fedprox(nets, selected, global_model, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+            local_train_net_fedprox(nets, selected, global_model, args, net_dataidx_map, dataloaders, test_dl = test_dl_global, device=device)
             global_model.to('cpu')
 
             # update global model
@@ -1255,7 +1255,7 @@ if __name__ == '__main__':
                 for idx in selected:
                     nets[idx].load_state_dict(global_para)
 
-            local_train_net_scaffold(nets, selected, global_model, c_nets, c_global, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+            local_train_net_scaffold(nets, selected, global_model, c_nets, c_global, args, net_dataidx_map, dataloaders, test_dl = test_dl_global, device=device)
             # local_train_net(nets, args, net_dataidx_map, local_split=False, device=device)
 
             # update global model
@@ -1346,7 +1346,7 @@ if __name__ == '__main__':
                 for idx in selected:
                     nets[idx].load_state_dict(global_para)
 
-            _, a_list, d_list, n_list = local_train_net_fednova(nets, selected, global_model, args, net_dataidx_map, test_dl = test_dl_global, device=device)
+            _, a_list, d_list, n_list = local_train_net_fednova(nets, selected, global_model, args, net_dataidx_map, dataloaders, test_dl = test_dl_global, device=device)
             total_n = sum(n_list)
             #print("total_n:", total_n)
             d_total_round = copy.deepcopy(global_model.state_dict())
