@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 845, in <module>
-    log_path = os.path.join("results", args.experiment, args.dataset, args.partition, str(args.n_parties),
-  File "/usr/local/lib/python3.9/posixpath.py", line 90, in join
-    genericpath._check_arg_types('join', a, *p)
-  File "/usr/local/lib/python3.9/genericpath.py", line 152, in _check_arg_types
-    raise TypeError(f'{funcname}() argument must be str, bytes, or '
-TypeError: join() argument must be str, bytes, or os.PathLike object, not 'NoneType'
-srun: error: paul28: task 0: Exited with exit code 1
