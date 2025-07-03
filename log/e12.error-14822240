@@ -1,0 +1,6 @@
+2025-07-02 10:46:41,656 - root - INFO - cpu
+2025-07-02 10:46:41,656 - root - INFO - ####################################################################################################
+2025-07-02 10:46:41,658 - root - WARNING - Using Partition Pickle File
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 14822240 ON paul02 CANCELLED AT 2025-07-02T10:50:15 ***
+slurmstepd: error: *** STEP 14822240.0 ON paul02 CANCELLED AT 2025-07-02T10:50:21 ***

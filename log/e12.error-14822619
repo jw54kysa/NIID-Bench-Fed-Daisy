@@ -1,0 +1,13 @@
+2025-07-02 11:26:13,698 - root - INFO - cpu
+2025-07-02 11:26:13,698 - root - INFO - ####################################################################################################
+2025-07-02 11:26:13,701 - root - WARNING - Using Partition Pickle File
+2025-07-02 11:28:53,301 - root - INFO - Initializing nets
+2025-07-02 11:28:53,353 - root - WARNING - >>>>>>>>>>>>> in comm round: 0 from 50
+2025-07-02 11:28:53,364 - root - INFO - Training network 0. n_training: 10
+Traceback (most recent call last):
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 1175, in <module>
+    local_train_net_fedprox(nets, selected, global_model, args, net_dataidx_map, dataloaders, test_dl = test_dl_global, device=device)
+  File "/home/sc.uni-leipzig.de/jw54kysa/NIID-Bench-Fed-Daisy/experiments.py", line 577, in local_train_net_fedprox
+    train_dl_local = dataloaders[local_data_index[net_id]]
+NameError: name 'local_data_index' is not defined
+srun: error: paul02: task 0: Exited with exit code 1

@@ -1,0 +1,60 @@
+2025-07-02 10:44:55,950 - root - INFO - cpu
+2025-07-02 10:44:55,950 - root - INFO - ####################################################################################################
+2025-07-02 10:44:55,953 - root - WARNING - Using Partition Pickle File
+2025-07-02 10:50:03,750 - root - INFO - Initializing nets
+2025-07-02 10:50:03,945 - root - INFO - in comm round:0
+2025-07-02 10:50:03,966 - root - INFO - Training network 0. n_training: 9
+2025-07-02 10:50:06,560 - root - INFO - Training network 0
+2025-07-02 10:50:07,962 - root - INFO - >> Pre-Training Training accuracy: 0.2222222222222222
+2025-07-02 10:50:07,962 - root - INFO - >> Pre-Training Test accuracy: 0.1001
+2025-07-02 10:50:08,521 - root - INFO - Epoch: 0 Loss: 2.287272
+2025-07-02 10:50:08,529 - root - INFO - Epoch: 1 Loss: 2.284568
+2025-07-02 10:50:08,536 - root - INFO - Epoch: 2 Loss: 2.279655
+2025-07-02 10:50:08,544 - root - INFO - Epoch: 3 Loss: 2.272777
+2025-07-02 10:50:08,551 - root - INFO - Epoch: 4 Loss: 2.264666
+2025-07-02 10:50:08,559 - root - INFO - Epoch: 5 Loss: 2.255040
+2025-07-02 10:50:08,567 - root - INFO - Epoch: 6 Loss: 2.244419
+2025-07-02 10:50:08,574 - root - INFO - Epoch: 7 Loss: 2.231411
+2025-07-02 10:50:08,582 - root - INFO - Epoch: 8 Loss: 2.217818
+2025-07-02 10:50:08,589 - root - INFO - Epoch: 9 Loss: 2.204058
+2025-07-02 10:50:08,596 - root - INFO - Epoch: 10 Loss: 2.189881
+2025-07-02 10:50:08,603 - root - INFO - Epoch: 11 Loss: 2.173980
+2025-07-02 10:50:08,610 - root - INFO - Epoch: 12 Loss: 2.159165
+2025-07-02 10:50:08,618 - root - INFO - Epoch: 13 Loss: 2.143613
+2025-07-02 10:50:08,625 - root - INFO - Epoch: 14 Loss: 2.127114
+2025-07-02 10:50:08,633 - root - INFO - Epoch: 15 Loss: 2.110426
+2025-07-02 10:50:08,640 - root - INFO - Epoch: 16 Loss: 2.093720
+2025-07-02 10:50:08,648 - root - INFO - Epoch: 17 Loss: 2.077256
+2025-07-02 10:50:08,655 - root - INFO - Epoch: 18 Loss: 2.059806
+2025-07-02 10:50:08,663 - root - INFO - Epoch: 19 Loss: 2.042730
+2025-07-02 10:50:10,057 - root - INFO - >> Training accuracy: 0.444444
+2025-07-02 10:50:13,610 - root - INFO - >> Test accuracy: 0.100000
+2025-07-02 10:50:13,611 - root - INFO -  ** Training complete **
+2025-07-02 10:50:13,612 - root - INFO - net 0 final test acc 0.100000
+2025-07-02 10:50:13,612 - root - INFO - Training network 1. n_training: 11
+2025-07-02 10:50:16,247 - root - INFO - Training network 1
+2025-07-02 10:50:17,596 - root - INFO - >> Pre-Training Training accuracy: 0.0
+2025-07-02 10:50:17,596 - root - INFO - >> Pre-Training Test accuracy: 0.1001
+2025-07-02 10:50:17,607 - root - INFO - Epoch: 0 Loss: 2.313255
+2025-07-02 10:50:17,616 - root - INFO - Epoch: 1 Loss: 2.312792
+2025-07-02 10:50:17,625 - root - INFO - Epoch: 2 Loss: 2.311502
+2025-07-02 10:50:17,634 - root - INFO - Epoch: 3 Loss: 2.309554
+2025-07-02 10:50:17,643 - root - INFO - Epoch: 4 Loss: 2.307461
+2025-07-02 10:50:17,651 - root - INFO - Epoch: 5 Loss: 2.305048
+2025-07-02 10:50:17,661 - root - INFO - Epoch: 6 Loss: 2.302222
+2025-07-02 10:50:17,669 - root - INFO - Epoch: 7 Loss: 2.298787
+2025-07-02 10:50:17,678 - root - INFO - Epoch: 8 Loss: 2.295941
+2025-07-02 10:50:17,686 - root - INFO - Epoch: 9 Loss: 2.292732
+2025-07-02 10:50:17,695 - root - INFO - Epoch: 10 Loss: 2.289060
+2025-07-02 10:50:17,704 - root - INFO - Epoch: 11 Loss: 2.284975
+2025-07-02 10:50:17,712 - root - INFO - Epoch: 12 Loss: 2.281457
+2025-07-02 10:50:17,721 - root - INFO - Epoch: 13 Loss: 2.277958
+2025-07-02 10:50:17,730 - root - INFO - Epoch: 14 Loss: 2.273770
+2025-07-02 10:50:17,738 - root - INFO - Epoch: 15 Loss: 2.269791
+2025-07-02 10:50:17,747 - root - INFO - Epoch: 16 Loss: 2.265792
+2025-07-02 10:50:17,755 - root - INFO - Epoch: 17 Loss: 2.262003
+2025-07-02 10:50:17,764 - root - INFO - Epoch: 18 Loss: 2.258249
+2025-07-02 10:50:17,773 - root - INFO - Epoch: 19 Loss: 2.254055
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 14822198.0 ON paul01 CANCELLED AT 2025-07-02T10:50:18 ***
+slurmstepd: error: *** JOB 14822198 ON paul01 CANCELLED AT 2025-07-02T10:50:18 ***
