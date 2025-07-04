@@ -1,3 +1,0 @@
-Meta Daten: 
- 
-Total training data: 19432 
