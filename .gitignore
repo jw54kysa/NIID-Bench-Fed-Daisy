@@ -9,7 +9,7 @@ partitions/
 *.pkl
 .DS_Store
 figs/
-logs/
+*.log
 
 evaluateE2.ipynb
 compare_results.ipynb
