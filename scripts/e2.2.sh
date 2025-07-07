@@ -1,10 +1,10 @@
 #!/bin/bash --
 #SBATCH --job-name=e2.2
-#SBATCH --partition=paul
+#SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=4-00:00:00
 #SBATCH -o log/%x.out-%j
 #SBATCH -e log/%x.error-%j
 #SBATCH --mail-type=END
@@ -15,7 +15,7 @@
 
 for alg in feddc
 do
-  for si in 0
+  for si in 0 1 2
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
@@ -28,19 +28,19 @@ do
       --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
-      --comm_round=25 \
+      --comm_round=50 \
       --daisy=5 \
       --daisy_perm=rand \
       --local_epochs_test='sild-kl' \
+      --si_local_epochs=0.5 \
       --partition=noniid-labeldir \
-      --partition_path='partitions/cifar10/noniid-labeldir/100/partition_tuple.pkl' \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \
       --logdir='./logs/' \
       --noise=0 \
-      --sample=1 \
+      --sample=$si \
       --init_seed=0 \
-      --experiment='E2.2'
+      --experiment='E2.2.seeds'
   done
 done
