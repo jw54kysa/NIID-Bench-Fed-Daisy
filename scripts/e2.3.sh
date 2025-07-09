@@ -14,7 +14,7 @@
 #	--combined_si_alpha=1 \
 
 
-for alg in fedavg
+for alg in feddc
 do
   for si in 0 1 2
   do
@@ -25,13 +25,15 @@ do
       --alg=$alg \
       --lr=0.001 \
       --batch-size=64 \
-      --epochs=20 \
+      --epochs=10 \
       --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
       --daisy=5 \
       --daisy_perm=rand \
+      --local_epochs_test='sicomb' \
+      --si_local_epochs=2 \
       --partition=mixed-dirichlet \
       --beta=0.5 \
       --device='cpu' \
@@ -40,6 +42,6 @@ do
       --noise=0 \
       --sample=1 \
       --init_seed=$si \
-      --experiment='E2.3.alpha.compare'
+      --experiment='E2.3'
   done
 done

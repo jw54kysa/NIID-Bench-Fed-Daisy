@@ -31,7 +31,7 @@ do
       --comm_round=50 \
       --daisy=5 \
       --daisy_perm=rand \
-      --local_epochs_test='sild-kl' \
+      --local_epochs_test='sild-kl_thresh' \
       --si_local_epochs=0.5 \
       --partition=noniid-labeldir \
       --beta=0.5 \

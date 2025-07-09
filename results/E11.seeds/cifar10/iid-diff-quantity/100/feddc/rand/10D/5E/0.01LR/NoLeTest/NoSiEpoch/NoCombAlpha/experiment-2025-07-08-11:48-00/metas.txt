@@ -1,0 +1,6 @@
+Meta Daten: 
+ 
+Total training data: 50000 
+execution time: 79520.40267276764 sec 
+execution time formated: 22 hours, 5 minutes, 20.40 seconds 
+global epoch counter: 250000 
