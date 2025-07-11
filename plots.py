@@ -31,11 +31,11 @@ def plot_permutation_visits(client_idxs, visits, path):
 
     if visits is not None:
         ax2 = ax1.twinx()
-        ax2.plot(np.arange(len(visits)) + 1, visits, label='Visits', color='red', marker='o')
-        ax2.set_ylabel("Visits", color='red', fontsize=14)
+        ax2.plot(np.arange(len(visits)) + 1, visits, label='Besuche', color='red', marker='o')
+        ax2.set_ylabel("Besuche", color='red', fontsize=14)
         ax2.tick_params(axis='y', labelcolor='red')
 
-    fig.legend()
+    plt.legend(loc='upper left')
     plt.tight_layout()
     plt.savefig(path + "/permutation_visits.png", dpi=300)
 
