@@ -1,0 +1,2 @@
+332250
+Combined Mean: 332250.0, Std Dev: 0.0
