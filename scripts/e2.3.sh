@@ -5,9 +5,6 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
 #SBATCH --time=4-00:00:00
-#SBATCH -o log/%x.out-%j
-#SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=END
 
 #--local_epochs_test='sicomb_thresh' \
 #      --si_local_epochs=0.5 \
@@ -16,7 +13,7 @@
 
 for alg in feddc
 do
-  for si in 0 1 2
+  for si in 1 2
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
@@ -32,7 +29,7 @@ do
       --comm_round=50 \
       --daisy=5 \
       --daisy_perm=rand \
-      --local_epochs_test='sicomb' \
+      --local_epochs_test='sicomb_thresh' \
       --si_local_epochs=2 \
       --partition=mixed-dirichlet \
       --beta=0.5 \

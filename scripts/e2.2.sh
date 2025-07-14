@@ -1,13 +1,10 @@
 #!/bin/bash --
-#SBATCH --job-name=e2.2
+#SBATCH --job-name=e2.2.seeds
 #SBATCH --partition=paul-long
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
 #SBATCH --time=4-00:00:00
-#SBATCH -o log/%x.out-%j
-#SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=END
 
 # --si_local_epochs=0 \
 #--local_epochs_test='thresh' \
@@ -32,15 +29,15 @@ do
       --daisy=5 \
       --daisy_perm=rand \
       --local_epochs_test='sild-kl_thresh' \
-      --si_local_epochs=0.5 \
+      --si_local_epochs=2 \
       --partition=noniid-labeldir \
       --beta=0.5 \
       --device='cpu' \
       --datadir='./data/' \
       --logdir='./logs/' \
       --noise=0 \
-      --sample=$si \
-      --init_seed=0 \
-      --experiment='E2.2.seeds'
+      --sample=1 \
+      --init_seed=$si \
+      --experiment='E2.2.seeds2'
   done
 done
