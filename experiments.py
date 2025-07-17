@@ -131,8 +131,10 @@ def init_nets(net_configs, dropout_p, n_parties, args):
                 elif args.model == "vgg":
                     net = vgg11()
                 elif args.model == "simple-cnn":
-                    if args.dataset in ("cifar10", "cinic10", "svhn"):
+                    if args.dataset in ("cifar10", "cinic10", "svhn",):
                         net = SimpleCNN(input_dim=(16 * 5 * 5), hidden_dims=[120, 84], output_dim=10)
+                    if args.dataset in ("cifar100"):
+                        net = SimpleCNN(input_dim=(16 * 5 * 5),hidden_dims=[256, 128, 84],output_dim=100)
                     elif args.dataset in ("mnist", 'femnist', 'fmnist'):
                         net = SimpleCNNMNIST(input_dim=(16 * 4 * 4), hidden_dims=[120, 84], output_dim=10)
                     elif args.dataset == 'celeba':
