@@ -1,19 +1,16 @@
 #!/bin/bash --
-#SBATCH --job-name=e12
-#SBATCH --partition=paul-long
+#SBATCH --job-name=e13
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=7-00:00:00
-#SBATCH -o log/%x.out-%j
-#SBATCH -e log/%x.error-%j
-#SBATCH --mail-type=END
+#SBATCH --time=2-00:00:00
 
  # --daisy_perm=rand \ prob_size
 
 for alg in fedavg
 do
-	for epoch in 10 25
+	for epoch in 25
 	do 
 		srun singularity exec FEDDC.sif \
   		python3.9 -u experiments.py \
@@ -23,14 +20,13 @@ do
     		--lr=0.01 \
     		--batch-size=64 \
     		--epochs=$epoch \
-    		--n_parties=200 \
+    		--n_parties=50 \
     		--rho=0.9 \
     		--mu=0.01 \
     		--comm_round=100 \
     		--daisy=10 \
     		--daisy_perm=rand \
     		--partition=iid-diff-quantity-rand-sb \
-    		--partition_path='partitions/cifar10/iid-diff-quantity-rand-sb/200/partition_tuple.pkl' \
     		--beta=0.5 \
     		--device='cpu' \
     		--datadir='./data/' \
@@ -38,6 +34,6 @@ do
     		--noise=0 \
     		--sample=1 \
     		--init_seed=0 \
-    		--experiment='E12'
+    		--experiment='E13'
 	done
 done

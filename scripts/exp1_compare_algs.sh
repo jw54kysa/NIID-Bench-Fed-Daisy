@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=e11.seeds
+#SBATCH --job-name=e11
 #SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -8,7 +8,7 @@
 
  # --daisy_perm=rand \ prob_size
 
-for alg in scaffold
+for alg in fedavg
 do
 	for si in 2
 	do 
@@ -17,13 +17,13 @@ do
     		--model=simple-cnn \
     		--dataset=cifar10 \
     		--alg=$alg \
-    		--lr=0.001 \
+    		--lr=0.01 \
     		--batch-size=64 \
-    		--epochs=10 \
-    		--n_parties=100 \
+    		--epochs=25 \
+    		--n_parties=50 \
     		--rho=0.9 \
     		--mu=0.01 \
-    		--comm_round=50 \
+    		--comm_round=200 \
     		--daisy=5 \
     		--daisy_perm=rand \
     		--partition=iid-diff-quantity \
@@ -33,7 +33,7 @@ do
     		--logdir='./logs/' \
     		--noise=0 \
     		--sample=1 \
-    		--init_seed=$si \
-    		--experiment='E11.seeds'
+    		--init_seed=0 \
+    		--experiment='E11'
 	done
 done

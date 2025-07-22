@@ -9,9 +9,9 @@
 # --local_epochs_test='sicomb_thresh' \
 #      --si_local_epochs=2 \
 
-for alg in fedavg
+for alg in feddc
 do
-  for si in 2
+  for si in 0
   do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
@@ -27,6 +27,8 @@ do
       --comm_round=50 \
       --daisy=5 \
       --daisy_perm=rand \
+      --local_epochs_test='sicomb_thresh' \
+      --si_local_epochs=2 \
       --partition=mixed-dirichlet \
       --beta=0.5 \
       --device='cpu' \
