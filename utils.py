@@ -403,7 +403,7 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
 
     elif partition == "iid-diff-quantity-rand":
         min_size = 2
-        max_size = 9
+        max_size = 17
 
         sizes = []
         for _ in range(n_parties):
@@ -417,8 +417,8 @@ def partition_data(dataset, datadir, logdir, partition, n_parties, log_path, bet
 
     elif partition == "iid-diff-quantity-rand-sb":
         min_portion = 0.5
-        min_size = (2, 16)
-        max_size = (128, 256)
+        min_size = (2, 17)
+        max_size = (128, 257)
 
         sizes = []
         for _ in range(int(n_parties * min_portion)):

@@ -14,8 +14,8 @@ for alg in feddc
 do
   for si in 0
   do
-    srun singularity exec FEDDC.sif \
-    python3.9 -u experiments.py \
+    #srun singularity exec FEDDC.sif \
+    python3 -u experiments.py \
       --model=simple-cnn \
       --dataset=cifar100 \
       --alg=$alg \
@@ -29,8 +29,12 @@ do
       --daisy=5 \
       --daisy_perm=rand \
       --local_epochs_test='sicomb_thresh' \
+<<<<<<< Updated upstream
       --si_local_epochs=9.71 \
       --combined_si_alpha=1.0 \
+=======
+      --si_local_epochs=2.29 \
+>>>>>>> Stashed changes
       --partition=mixed-dirichlet \
       --beta=0.5 \
       --device='cpu' \
@@ -39,6 +43,6 @@ do
       --noise=0 \
       --sample=1 \
       --init_seed=$si \
-      --experiment='E4-cifar100'
+      --experiment='E4-test'
   done
 done

@@ -26,13 +26,13 @@ def plot_permutation_visits(client_idxs, visits, path):
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
     ax1.bar(np.arange(len(counts)) + 1, counts, alpha=0.7, color='blue')
     ax1.set_xlabel("Clients", fontsize=14)
-    ax1.set_ylabel("Datensatzgröße", color='blue', fontsize=14)
+    ax1.set_ylabel("Dataset Size", color='blue', fontsize=14)
     ax1.tick_params(axis='y', labelcolor='blue')
 
     if visits is not None:
         ax2 = ax1.twinx()
-        ax2.plot(np.arange(len(visits)) + 1, visits, label='Besuche', color='red', marker='o')
-        ax2.set_ylabel("Besuche", color='red', fontsize=14)
+        ax2.plot(np.arange(len(visits)) + 1, visits, label='Visits', color='red', marker='o')
+        ax2.set_ylabel("Visits", color='red', fontsize=14)
         ax2.tick_params(axis='y', labelcolor='red')
 
     plt.legend(loc='upper left')
@@ -116,7 +116,7 @@ def print_plot(path, label_distribution, data):
 
         # Adding clients and title
         ax1.set_xlabel('Clients', fontsize=14)
-        ax1.set_ylabel('Datensatzgröße', fontsize=14)
+        ax1.set_ylabel('Dataset Size', fontsize=14)
 
         plt.tight_layout()
         if path is not None:

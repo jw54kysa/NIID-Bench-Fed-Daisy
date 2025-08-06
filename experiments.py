@@ -534,6 +534,8 @@ def local_train_net(nets, selected, args, net_dataidx_map, local_data_index, dat
             if label_dis is not None and args.si_local_epochs is not None:
                 si = float(label_dis[local_data_index[net_id]][si_idx])
 
+                print(f"Hier sind die Values: \nEpochs:{args.epochs}\nSI:{si}\nsi_local_epochs:{args.si_local_epochs}")
+
                 if "sild-lr" in args.local_epochs_test:
                     local_epochs = float(args.lr) + ( si / 200 ) # [0.001, 0.011]
                     n_epoch = args.epochs
