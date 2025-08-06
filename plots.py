@@ -139,7 +139,11 @@ def create_data_dis_plots(client_idxs, path, args):
         data[idx] = dict(label_counter)
 
         # compare distributions
-        all_label = range(0, 10)
+        if args.dataset == 'cifar100':
+            all_label = range(0, 100)
+        else:
+            all_label = range(0, 10)
+
         client_label_dis = np.array([dict(label_counter).get(label, 0) for label in all_label], dtype=np.float64)
 
         gesamt_summe = client_label_dis.sum()

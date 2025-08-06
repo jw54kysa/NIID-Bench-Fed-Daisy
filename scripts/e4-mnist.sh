@@ -1,14 +1,14 @@
 #!/bin/bash --
-#SBATCH --job-name=e4
-#SBATCH --partition=paul-long
+#SBATCH --job-name=e4-mnist
+#SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=4-00:00:00
+#SBATCH --time=2-00:00:00
 
 # --local_epochs_test='sicomb_thresh' \
-#      --si_local_epochs=2 \
-#	--combined_si_alpha=1.0 \
+#      --combined_si_alpha=1.0 \
+#      --si_local_epochs=9.71 \
 
 for alg in feddc
 do
@@ -17,7 +17,7 @@ do
     srun singularity exec FEDDC.sif \
     python3.9 -u experiments.py \
       --model=simple-cnn \
-      --dataset=cifar100 \
+      --dataset=mnist \
       --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
@@ -29,8 +29,8 @@ do
       --daisy=5 \
       --daisy_perm=rand \
       --local_epochs_test='sicomb_thresh' \
-      --si_local_epochs=9.71 \
-      --combined_si_alpha=1.0 \
+      --si_local_epochs=2.45 \
+      --combined_si_alpha=0.5 \
       --partition=mixed-dirichlet \
       --beta=0.5 \
       --device='cpu' \
@@ -39,6 +39,6 @@ do
       --noise=0 \
       --sample=1 \
       --init_seed=$si \
-      --experiment='E4-cifar100'
+      --experiment='E4-mnist'
   done
 done

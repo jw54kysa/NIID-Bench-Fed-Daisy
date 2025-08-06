@@ -4,10 +4,13 @@
 #SBATCH -N 1
 #SBATCH --ntasks=1
 #SBATCH --mem=64G
-#SBATCH --time=3-00:00:00
+#SBATCH --time=4-00:00:00
 
 # --local_epochs_test='sicomb_thresh' \
+#      --combined_si_alpha=1 \
 #      --si_local_epochs=2 \
+
+# rand
 
 for alg in feddc
 do
@@ -20,15 +23,13 @@ do
       --alg=$alg \
       --lr=0.01 \
       --batch-size=64 \
-      --epochs=20 \
+      --epochs=10 \
       --n_parties=100 \
       --rho=0.9 \
       --mu=0.01 \
       --comm_round=50 \
-      --daisy=5 \
-      --daisy_perm=rand \
-      --local_epochs_test='sicomb_thresh' \
-      --si_local_epochs=2 \
+      --daisy=10 \
+      --daisy_perm='rand' \
       --partition=mixed-dirichlet \
       --beta=0.5 \
       --device='cpu' \

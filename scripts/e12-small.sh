@@ -1,5 +1,5 @@
 #!/bin/bash --
-#SBATCH --job-name=e12
+#SBATCH --job-name=e12-very-small
 #SBATCH --partition=paul
 #SBATCH -N 1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 
 for alg in feddc
 do
-	for epoch in 2
+	for epoch in 1
 	do 
 		srun singularity exec FEDDC.sif \
   		python3.9 -u experiments.py \
@@ -18,14 +18,14 @@ do
     		--dataset=cifar10 \
     		--alg=$alg \
     		--lr=0.01 \
-    		--batch-size=8 \
+    		--batch-size=4 \
     		--epochs=$epoch \
     		--n_parties=500 \
     		--rho=0.9 \
     		--mu=0.01 \
     		--comm_round=200 \
-    		--daisy=10 \
-    		--daisy_perm=prob_size \
+    		--daisy=20 \
+    		--daisy_perm=rand \
     		--partition=iid-diff-quantity-rand \
     		--beta=0.5 \
     		--device='cpu' \
@@ -34,6 +34,6 @@ do
     		--noise=0 \
     		--sample=1 \
     		--init_seed=0 \
-    		--experiment='E12_1_daisy'
+    		--experiment='E12-very-small'
 	done
 done
