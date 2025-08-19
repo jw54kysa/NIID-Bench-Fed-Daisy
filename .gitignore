@@ -8,11 +8,7 @@ tmp/
 partitions/
 *.pkl
 .DS_Store
-figs/
 
 *.log
 logs/
 log/
-
-evaluateE2.ipynb
-compare_results.ipynb

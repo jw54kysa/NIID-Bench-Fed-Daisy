@@ -10,6 +10,19 @@ This is the code of paper [Federated Learning on Non-IID Data Silos: An Experime
 
 This code runs a benchmark for federated learning algorithms under non-IID data distribution scenarios. Specifically, we implement 4 federated learning algorithms (FedAvg, FedProx, SCAFFOLD & FedNova), 3 types of non-IID settings (label distribution skew, feature distribution skew & quantity skew) and 9 datasets (MNIST, Cifar-10, Fashion-MNIST, SVHN, Generated 3D dataset, FEMNIST, adult, rcv1, covtype).
 
+## Updates for Federated-Daisy-Chaining in NIID-Bench
+
+The paper *"Verbesserung von Federated-Daisy-Chaining bei heterogenen Daten"* introduced the Federated-Daisy-Chaining (FedDC) algorithm from Kamp et al. and implemented several improvements for heterogeneous data environments within the NIID-Bench simulation framework.  
+
+The improvements include:  
+- a probabilistic client permutation strategy based on dataset sizes,  
+- and a dynamic adjustment of local training epochs based on client label distributions.  
+
+Experiments were conducted on datasets (e.g. CIFAR-10, MNIST, CIFAR-100), and the results are documented in the `results/` folder and visualized in `figs_final/`.  
+The heterogeneous partitioning strategies are found in `utils.py` and new visualisation code in `plots.py`.
+
+[1] "Federated Learning from Small Datasets", Michael Kamp and Jonas Fischer and Jilles Vreeken, 2023, https://arxiv.org/abs/2110.03469
+
 
 ## Updates on NIID-Bench
 Our follow-up works based on NIID-Bench:

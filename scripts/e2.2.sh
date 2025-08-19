@@ -7,8 +7,7 @@
 #SBATCH --time=4-00:00:00
 
 # --si_local_epochs=0 \
-#--local_epochs_test='thresh' \
-#--local_epochs_test='sild-chi' \
+#--local_epochs_test='sild-kl_thresh' \
 
 for alg in feddc
 do

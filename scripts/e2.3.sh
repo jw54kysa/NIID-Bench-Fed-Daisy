@@ -7,8 +7,8 @@
 #SBATCH --time=2-00:00:00
 
 #--local_epochs_test='sicomb_thresh' \
-#      --si_local_epochs=0.5 \
-#	--combined_si_alpha=1 \
+#--si_local_epochs=0.5 \
+#--combined_si_alpha=1 \
 
 
 for alg in feddc
