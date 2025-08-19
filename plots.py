@@ -115,7 +115,7 @@ def print_plot(path, label_distribution, data):
             ax3.legend(loc='upper left')
 
         # Adding clients and title
-        ax1.set_xlabel('Clients', fontsize=14)
+        ax1.set_xlabel('Ranked Clients', fontsize=14)
         ax1.set_ylabel('Dataset Size', fontsize=14)
 
         plt.tight_layout()
